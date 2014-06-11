@@ -15,30 +15,46 @@ public class Context<E> {
 	{
 		length=Utilities.getRandomNumberInRange(1,1000);
 		start=Utilities.getRandomNumberInRange(1,1000);
-		list = new ArrayList<E>();
+		list = new ArrayList<Integer>();
 	}
 	
 	public void generate(int type)
 	{
-		
-	}
-	
-	public ArrayList<E> getList()
-	{
-		
-	}
-	
-	public E getAns() 
-	{
-		if(type == 1)
+		if(type ==  1)
 		{
-			
+			listGen1();
+		}else if(type == 2)
+		{
+			listGen2();
 		}
+	}
+	
+	public ArrayList<Integer> getList()
+	{
+		return list;
+	}
+	
+	public int getAns() 
+	{
+		return length; 
 	}
 	
 	private void listGen1()
 	{
+		start = 1;
 		list.add(start);
-		list.
+		list.add(start +1);
+		list.add(start+2);
+		list.add(start+3);
+		list.add(start+length);
+	}
+	
+	private void listGen2()
+	{
+		list.add(start);
+		list.add(start +1);
+		list.add(start+2);
+		list.add(start+3);
+		list.add(start+length);
 	}
 }
