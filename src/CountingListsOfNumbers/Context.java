@@ -2,7 +2,6 @@ package CountingListsOfNumbers;
 
 import java.util.ArrayList;
 import com.Utilities;
-import com.Fraction;
 
 public class Context<E> {
 	private int type;
@@ -26,6 +25,9 @@ public class Context<E> {
 		}else if(type == 2)
 		{
 			listGen2();
+		}else if(type == 3)
+		{
+			listGen3();
 		}
 	}
 	
@@ -57,4 +59,16 @@ public class Context<E> {
 		list.add(start+3);
 		list.add(start+length);
 	}
+	
+	private void listGen3()
+	{
+		start = Utilities.getRandomNumberInRange(-1000,1000);
+		list.add(start);
+		list.add(start +1);
+		list.add(start+2);
+		list.add(start+3);
+		list.add(start+length);
+	}
+	
+	
 }
