@@ -15,6 +15,4 @@ public class Question {
 		//cannot do that until I can run it and see 
 		//what this will look like and what must be done.
 	}
-	
-
 }
