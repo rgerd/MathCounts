@@ -3,13 +3,13 @@ package com;
 public class PrimeGenerator {
 	private int[] primes;
 	private int index;
+	private int _cap;
 	
 	/**
 	 * Creates a new prime number generator with an initial capacity of 100 prime numbers.
 	 */
 	public PrimeGenerator() {
-		primes = new int[100];
-		index = 0;
+		this(100);
 	}
 	
 	/**
@@ -19,6 +19,7 @@ public class PrimeGenerator {
 	public PrimeGenerator(int cap) {
 		primes = new int[cap];
 		index = 0;
+		_cap = cap;
 	}
 	
 	/**
@@ -31,23 +32,33 @@ public class PrimeGenerator {
 			return 2;
 		}
 		int prime = primes[index - 1];
-		if(prime == 2)
-			prime = 3;
+		if(prime == 2) {
+			storePrime(3);
+			return 3;
+		}
 		boolean found = false;
 		while(!found) {
 			found = true;
+			prime += 2;
 			int sqrt = (int) Math.sqrt(prime);
 			for (int i = 1; i < index; i++) {
-				if(primes[i] >= sqrt) break;
+				if(primes[i] > sqrt) break;
 				if(prime % primes[i] == 0 || prime == primes[i]) {
 					found = false;
-					prime += 2;
 					break;
 				}
 			}
 		}
 		storePrime(prime);
 		return prime;
+	}
+	
+	/**
+	 * Resets the generator.
+	 */
+	public void reset() {
+		index = 0;
+		primes = new int[_cap];
 	}
 	
 	/**
