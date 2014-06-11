@@ -2,7 +2,7 @@ package CountingListsOfNumbers;
 
 import java.util.ArrayList;
 import com.Utilities;
-import com.Fraction;
+
 
 public class Context<E> {
 	private int type;
