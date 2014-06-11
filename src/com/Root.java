@@ -6,7 +6,6 @@ import java.util.Set;
 
 /* RADICAL, DUDE */
 public class Root {
-	private PrimeGenerator primes;
 	private int factor;
 	private int prime;
 	private int degree;
@@ -20,7 +19,7 @@ public class Root {
 	 */
 	public Root(int num, int degree) {
 		this.degree = degree;
-		primes = new PrimeGenerator();
+		PrimeGenerator primes = new PrimeGenerator();
 		HashMap<Integer, Integer> factors = new HashMap<Integer, Integer>();
 		while(true) {
 			int prime = primes.nextPrime();
