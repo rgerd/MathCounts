@@ -1,0 +1,4 @@
+=ROBERT=
+- Turning binary operations into lambda functions
+- Making fractions
+- Working on utilities
