@@ -103,4 +103,15 @@ public class Fraction {
 	public int getDenominator() {
 		return den;
 	}
+	
+	/**
+	 * Returns whether this fraction equals another.
+	 * @param other the other fraction.
+	 * @return whether this fraction equals another.
+	 */
+	public boolean equals(Fraction other) {
+		Fraction frac_0 = this.simplify();
+		Fraction frac_1 = this.simplify();
+		return (frac_0.num == frac_1.num) && (frac_0.den == frac_1.den);
+	}
 }
