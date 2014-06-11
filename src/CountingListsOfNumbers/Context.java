@@ -18,7 +18,7 @@ public class Context<E> {
 	}
 	
 	public void generate(int type)
-	{
+	{	
 		if(type ==  1)
 		{
 			listGen1();
