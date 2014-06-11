@@ -85,7 +85,10 @@ public class Fraction {
 	 * @return a string representation of the fraction.
 	 */
 	public String toString() {
-		return "[" + num + "/" + den + "]";
+		Fraction simp = this.simplify();
+		if(simp.den == 1)
+			return Integer.toString(simp.num);
+		return num + "/" + den;
 	}
 	
 	/**
