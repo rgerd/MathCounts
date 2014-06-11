@@ -21,18 +21,52 @@ public class Fraction {
 		return (double) num / (double) den;
 	}
 	
-	public Fraction multiply(Fraction other) {
+	/**
+	 * Returns the result when this fraction is multiplied by another.
+	 * @param other the other fraction.
+	 * @return the result when this fraction is multiplied by another.
+	 */
+	public Fraction mult(Fraction other) {
 		return new Fraction(num * other.num, den * other.den);
 	}
 	
-	public Fraction divide(Fraction other) {
-		return multiply(other.reciprocal());
+	/**
+	 * Returns the result when this fraction is divided by another.
+	 * @param other the other fraction.
+	 * @return the result when this fraction is divided by another.
+	 */
+	public Fraction div(Fraction other) {
+		return mult(other.reciprocal());
 	}
 	
+	/**
+	 * Returns the result when the fraction is added to another.
+	 * @param other the other fraction.
+	 * @return the result when the fraction is added to another.
+	 */
 	public Fraction add(Fraction other) {
-		
+		int lcm = Utilities.LCM(den, other.den);
+		int mult1 = lcm / den;
+		int mult2 = lcm / other.den;
+		return new Fraction(num * mult1 + other.num * mult2, lcm);
 	}
 	
+	/**
+	 * Returns the result when the fraction is subtracted from another.
+	 * @param other the other fraction.
+	 * @return the result when the fraction is subtracted from another.
+	 */
+	public Fraction sub(Fraction other) {
+		int lcm = Utilities.LCM(den, other.den);
+		int mult1 = lcm / den;
+		int mult2 = lcm / other.den;
+		return new Fraction(num * mult1 - other.num * mult2, lcm);
+	}
+	
+	/**
+	 * Returns the reciprocal of the function.
+	 * @return the reciprocal of the function.
+	 */
 	public Fraction reciprocal() {
 		return new Fraction(den, num);
 	}
@@ -48,15 +82,24 @@ public class Fraction {
 	
 	/**
 	 * Returns a string representation of the fraction.
+	 * @return a string representation of the fraction.
 	 */
 	public String toString() {
 		return "[" + num + "/" + den + "]";
 	}
 	
+	/**
+	 * Returns the numerator of the fraction.
+	 * @return the numerator of the fraction.
+	 */
 	public int getNumerator() {
 		return num;
 	}
-	
+
+	/**
+	 * Returns the denominator of the fraction.
+	 * @return the denominator of the fraction.
+	 */
 	public int getDenominator() {
 		return den;
 	}
