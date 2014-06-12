@@ -2,6 +2,7 @@ package CountingListsOfNumbers;
 
 import java.util.ArrayList;
 
+import com.Fraction;
 import com.Utilities;
 import com.Number;
 import com.Int;
@@ -91,6 +92,28 @@ public class Context {
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = 1000/start;
 		length = Utilities.getRandomNumberInRange(2,lengthRange);
+		int chance = Utilities.getRandomNumberInRange(1, 2);
+		if(chance == 1)
+		{
+			list.add((Number) new Int(start));
+			list.add((Number) new Int(start + start));
+			list.add((Number) new Int(start + start*2));
+			list.add((Number) new Int(start + start*3));
+			list.add((Number) new Int(start + start*(length-1)));
+		}else
+		{
+			list.add((Number) new Int(start));
+			list.add((Number) new Fraction(start,start));
+			list.add((Number) new Fraction(start,start*2));
+			list.add((Number) new Fraction(start,start*3));
+			list.add((Number) new Fraction(start,start*length));
+		}
+		
+	}
+	
+	private void listGen6()
+	{
+		
 	}
 	
 	
