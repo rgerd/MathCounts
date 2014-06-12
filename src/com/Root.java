@@ -11,11 +11,11 @@ public class Root {
 	private int degree;
 	
 	/**
-	 * Simplifies a this.prime to the nth degree.
-	 * To simplify a cube this.prime, use Root(512, 3);
+	 * Simplifies a root to the nth degree.
+	 * To simplify a cube root, use Root(512, 3);
 	 * 
-	 * @param num the number to this.prime.
-	 * @param degree the degree of the this.prime.
+	 * @param num the number to root.
+	 * @param degree the degree of the root.
 	 */
 	public Root(int num, int degree) {
 		this.degree = degree;
