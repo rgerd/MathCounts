@@ -32,9 +32,12 @@ public class Context {
 		}else if(type == 3)
 		{
 			listGen3();
-		}else if(type == 3)
+		}else if(type == 4)
 		{
 			listGen4();
+		}else if(type == 5)
+		{
+			listGen5();
 		}
 	}
 	
