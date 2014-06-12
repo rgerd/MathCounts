@@ -49,9 +49,8 @@ public class Root implements Number {
 	}
 	
 	private Root(int factor, int prime, int degree) {
-		this.factor = factor;
-		this.prime = prime;
-		this.degree = degree;
+		this(prime, degree);
+		this.factor *= factor;
 	}
 	
 	/**
@@ -95,7 +94,12 @@ public class Root implements Number {
 		return null;
 	}
 
+	/**
+	 * Divides this root with another.
+	 * @return the result.
+	 */
 	public Number div(Number n) {
+		Root _n = (Root) n;
 		return null;
 	}
 
@@ -107,16 +111,12 @@ public class Root implements Number {
 		Root _n = (Root) n;
 		int lcm = Utilities.LCM(this.degree, _n.degree);
 		int mult_0 = lcm / degree;
-		int mult_1 = lcm / degree;
-		
+		int mult_1 = lcm / _n.degree;
 		int prime_0 = (int) Math.pow(this.prime, mult_0);
 		int prime_1 = (int) Math.pow(_n.prime, mult_1);
-		int prime = prime_0 * prime_1;
-		
-		int factor = this.factor * _n.factor;
-		
-		Root r = new Root(factor, prime, lcm);
-		
-		return r;
+		int _prime = prime_0 * prime_1;
+		int _degree = lcm;
+		int _factor = this.factor * _n.factor;
+		return new Root(_factor, _prime, _degree);
 	}
 }
