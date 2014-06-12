@@ -1,18 +1,21 @@
 package CountingListsOfNumbers;
 
 import java.util.ArrayList;
-import com.Utilities;
 
-public class Context<E> {
+import com.Utilities;
+import com.Number;
+import com.Int;
+
+public class Context<Number> {
 	private int type;
 	private int length;
-	private ArrayList<Integer> list;
+	private ArrayList<Number> list;
 	private int start;
 	
 	
 	public Context()
 	{
-		list = new ArrayList<Integer>();
+		list = new ArrayList<Number>();
 	}
 	
 	public void generate(int type)
@@ -31,7 +34,7 @@ public class Context<E> {
 		}
 	}
 	
-	public ArrayList<Integer> getList()
+	public ArrayList<Number> getList()
 	{
 		return list;
 	}
@@ -44,40 +47,40 @@ public class Context<E> {
 	private void listGen1()
 	{
 		start = 1;
-		list.add(start);
-		list.add(start +1);
-		list.add(start+2);
-		list.add(start+3);
-		list.add(start+length-1);
+		list.add((Number) new Int(start));
+		list.add((Number) new Int(start +1));
+		list.add((Number) new Int(start +2));
+		list.add((Number) new Int(start+3));
+		list.add((Number) new Int(start+length-1));
 	}
 	
 	private void listGen2()
 	{
-		list.add(start);
-		list.add(start +1);
-		list.add(start+2);
-		list.add(start+3);
-		list.add(start+length-1);
+		list.add((Number) new Int(start));
+		list.add((Number) new Int(start +1));
+		list.add((Number) new Int(start +2));
+		list.add((Number) new Int(start+3));
+		list.add((Number) new Int(start+length-1));
 	}
 	
 	private void listGen3()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
-		list.add(start);
-		list.add(start +1);
-		list.add(start+2);
-		list.add(start+3);
-		list.add(start+length -1);
+		list.add((Number) new Int(start));
+		list.add((Number) new Int(start +1));
+		list.add((Number) new Int(start +2));
+		list.add((Number) new Int(start+3));
+		list.add((Number) new Int(start+length-1));
 	}
 	
 	private void listGen4()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
-		list.add(start);
-		list.add(start -1);
-		list.add(start - 2);
-		list.add(start - 3);
-		list.add(start - length+1);
+		list.add((Number) new Int(start));
+		list.add((Number) new Int(start -1));
+		list.add((Number) new Int(start - 2));
+		list.add((Number) new Int(start - 3));
+		list.add((Number) new Int(start - length+1));
 	}
 	
 	private void listGen5()
