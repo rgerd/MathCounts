@@ -94,7 +94,7 @@ public class Context {
 	private void listGen5()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = 1000/start;
+		int lengthRange = (1000/start)-1;
 		length = Utilities.getRandomNumberInRange(2,lengthRange);
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
@@ -107,10 +107,10 @@ public class Context {
 		}else
 		{
 			list.add(new Int(start));
-			list.add(new Fraction(start,start));
-			list.add(new Fraction(start,start*2));
-			list.add(new Fraction(start,start*3));
-			list.add(new Fraction(start,start*length));
+			list.add(new Fraction(start,start).simplify());
+			list.add(new Fraction(start,start*2).simplify());
+			list.add(new Fraction(start,start*3).simplify());
+			list.add(new Fraction(start,start*length-1).simplify());
 		}
 		
 	}
