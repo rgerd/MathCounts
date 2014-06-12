@@ -18,7 +18,7 @@ public class Driver
 			output = new PrintWriter(new FileWriter(f));
 			for (int i = 0; i < 10; i++) {
 				 Context con = new Context();
-				 con.generate(2);
+				 con.generate(5);
 				 Question quest = new Question();
 				 String q = quest.getQ(con);
 				 output.print("MC"+"\t"+q+"\t");
