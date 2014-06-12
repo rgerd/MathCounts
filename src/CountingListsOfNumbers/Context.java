@@ -38,6 +38,12 @@ public class Context {
 		}else if(type == 5)
 		{
 			listGen5();
+		}else if(type == 6)
+		{
+			listGen6();
+		}else if(type == 7)
+		{
+			listGen7();
 		}
 	}
 	
@@ -54,7 +60,7 @@ public class Context {
 	private void listGen1()
 	{
 		start = 1;
-		length=Utilities.getRandomNumberInRange(5,999);
+		length=Utilities.getRandomNumberInRange(5,998);
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.add(new Int(1)));
@@ -65,7 +71,7 @@ public class Context {
 	
 	private void listGen2()
 	{		
-		start=Utilities.getRandomNumberInRange(1,1000);
+		start=Utilities.getRandomNumberInRange(1,994);
 		length=Utilities.getRandomNumberInRange(5,999-start);
 		Int init = new Int(start);
 		list.add(init);
@@ -77,7 +83,7 @@ public class Context {
 	
 	private void listGen3()
 	{
-		start = Utilities.getRandomNumberInRange(-1000,1000);
+		start = Utilities.getRandomNumberInRange(-1000,994);
 		length=Utilities.getRandomNumberInRange(5,999-start);
 		Int init = new Int(start);
 		list.add(init);
@@ -89,8 +95,8 @@ public class Context {
 	
 	private void listGen4()
 	{
-		start = Utilities.getRandomNumberInRange(-1000,1000);
-		length=Utilities.getRandomNumberInRange(5,Math.abs(-1000-start));
+		start = Utilities.getRandomNumberInRange(-994,1000);
+		length=Utilities.getRandomNumberInRange(5,Math.abs(-999-start));
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.sub(new Int(1)));
@@ -127,7 +133,7 @@ public class Context {
 	private void listGen6()
 	{
 		start = Utilities.getRandomNumberInRange(-199,199);
-		int lengthRange = 1000/(start-1);
+		int lengthRange = 1000/Math.abs((start));
 		length = Utilities.getRandomNumberInRange(5,lengthRange);
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
@@ -142,7 +148,6 @@ public class Context {
 		}else
 		{
 			//decreasing
-
 			list.add(new Int(start));
 			list.add(new Int(start - start));
 			list.add(new Int(start - start*2));
@@ -154,13 +159,31 @@ public class Context {
 	
 	private void listGen7()
 	{
-		/**
-		list.add(new Fraction(1,start).simplify());
-		list.add(new Fraction(1+1,start).simplify());
-		list.add(new Fraction(1+2,start).simplify());
-		list.add(new Fraction(1+3,start).simplify());
-		list.add(new Fraction(1+length-1,start).simplify());
-		**/
+		start = Utilities.getRandomNumberInRange(2,10);
+		//How long should the list of unit fractions be?
+		length = Utilities.getRandomNumberInRange(5,999);
+		int chance = Utilities.getRandomNumberInRange(1,2);
+		if(chance == 1)
+		{
+			list.add(new Fraction(1,start).simplify());
+			list.add(new Fraction(1+1,start).simplify());
+			list.add(new Fraction(1+2,start).simplify());
+			list.add(new Fraction(1+3,start).simplify());
+			list.add(new Fraction(1+length-1,start).simplify());
+		}else
+		{
+			list.add(new Fraction(1,start).simplify());
+			list.add(new Fraction(0,start).simplify());
+			list.add(new Fraction(-1,start).simplify());
+			list.add(new Fraction(-2,start).simplify());
+			list.add(new Fraction(1-(length-1),start).simplify());
+		}
+		
+	}
+	
+	private void listGen8()
+	{
+		
 	}
 	private void listGen16()
 	{
