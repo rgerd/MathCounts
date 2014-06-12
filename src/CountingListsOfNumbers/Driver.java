@@ -1,6 +1,8 @@
 package CountingListsOfNumbers;
 
 import java.io.File;
+import com.Number;
+import com.Int;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,7 +30,7 @@ public class Driver
 				 
 				 int ans = con.getAns();
 				 AnswerGen a = new AnswerGen(ans);
-				 ArrayList<Integer> arr = new ArrayList<Integer>();
+				 ArrayList<Number> arr = new ArrayList<Number>();
 				 arr = a.getWrong("window");
 				 System.out.println(arr);
 				
