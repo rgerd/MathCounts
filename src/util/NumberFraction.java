@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public class NumberFraction {
 	private Number num, den;

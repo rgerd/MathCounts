@@ -1,15 +1,15 @@
 package CountingListsOfNumbers;
 
 import java.io.File;
-import com.Number;
-import com.Int;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-import com.BinaryOperator;
-import com.Utilities;
+import util.BinaryOperator;
+import util.Int;
+import util.Number;
+import util.Utilities;
 
 public class Driver 
 {

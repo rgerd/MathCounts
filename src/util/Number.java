@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public interface Number {
 	public Number add(Number n);

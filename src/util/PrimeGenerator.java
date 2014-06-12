@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public class PrimeGenerator {
 	private int[] primes;

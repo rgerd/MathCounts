@@ -3,8 +3,9 @@ package CountingListsOfNumbers;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import com.Number;
-import com.Int;
+
+import util.Int;
+import util.Number;
 
 
 public class AnswerGen 

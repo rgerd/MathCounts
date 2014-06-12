@@ -2,11 +2,11 @@ package CountingListsOfNumbers;
 
 import java.util.ArrayList;
 
-import com.Root;
-import com.Fraction;
-import com.Utilities;
-import com.Number;
-import com.Int;
+import util.Fraction;
+import util.Int;
+import util.Number;
+import util.Root;
+import util.Utilities;
 
 public class Context {
 	private int type;
