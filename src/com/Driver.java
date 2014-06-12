@@ -1,9 +1,14 @@
 package com;
 
+import java.util.ArrayList;
+
 public class Driver {
 	public static void main(String[] args) {
 		Number a = new Root(25088, 3);
 		Number b = new Root(25088, 2);
+		
+		ArrayList<Number> nums = new ArrayList<Number>();
+		nums.add(new Int(4));
 		System.out.println(a + " * " + b + " = " + a.mult(b));
 	}
 	
