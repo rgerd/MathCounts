@@ -44,6 +44,9 @@ public class Context {
 		}else if(type == 7)
 		{
 			listGen7();
+		}else if(type == 8)
+		{
+			listGen8();
 		}
 	}
 	
@@ -183,7 +186,10 @@ public class Context {
 	
 	private void listGen8()
 	{
-		
+		int denom = Utilities.getRandomNumberInRange(2,10);
+		int numer = Utilities.getRandomNumberInRange(-994,994);
+		int length = Utilities.getRandomNumberInRange(5,999-)
+
 	}
 	private void listGen16()
 	{
