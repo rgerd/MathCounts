@@ -98,18 +98,18 @@ public class Context {
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
 		{
-			list.add((Number) new Int(start));
-			list.add((Number) new Int(start + start));
-			list.add((Number) new Int(start + start*2));
-			list.add((Number) new Int(start + start*3));
-			list.add((Number) new Int(start + start*(length-1)));
+			list.add(new Int(start));
+			list.add(new Int(start + start));
+			list.add(new Int(start + start*2));
+			list.add(new Int(start + start*3));
+			list.add(new Int(start + start*(length-1)));
 		}else
 		{
-			list.add((Number) new Int(start));
-			list.add((Number) new Fraction(start,start));
-			list.add((Number) new Fraction(start,start*2));
-			list.add((Number) new Fraction(start,start*3));
-			list.add((Number) new Fraction(start,start*length));
+			list.add(new Int(start));
+			list.add(new Fraction(start,start));
+			list.add(new Fraction(start,start*2));
+			list.add(new Fraction(start,start*3));
+			list.add(new Fraction(start,start*length));
 		}
 		
 	}
