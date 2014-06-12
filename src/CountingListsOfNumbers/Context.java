@@ -6,7 +6,7 @@ import com.Utilities;
 import com.Number;
 import com.Int;
 
-public class Context<Number> {
+public class Context {
 	private int type;
 	private int length;
 	private ArrayList<Number> list;
@@ -50,40 +50,40 @@ public class Context<Number> {
 	private void listGen1()
 	{
 		start = 1;
-		list.add((Number) new Int(start));
-		list.add((Number) new Int(start +1));
-		list.add((Number) new Int(start +2));
-		list.add((Number) new Int(start+3));
-		list.add((Number) new Int(start+length-1));
+		list.add(new Int(start));
+		list.add(new Int(start +1));
+		list.add(new Int(start +2));
+		list.add(new Int(start+3));
+		list.add(new Int(start+length-1));
 	}
 	
 	private void listGen2()
 	{
-		list.add((Number) new Int(start));
-		list.add((Number) new Int(start +1));
-		list.add((Number) new Int(start +2));
-		list.add((Number) new Int(start+3));
-		list.add((Number) new Int(start+length-1));
+		list.add(new Int(start));
+		list.add(new Int(start +1));
+		list.add(new Int(start +2));
+		list.add(new Int(start+3));
+		list.add(new Int(start+length-1));
 	}
 	
 	private void listGen3()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
-		list.add((Number) new Int(start));
-		list.add((Number) new Int(start +1));
-		list.add((Number) new Int(start +2));
-		list.add((Number) new Int(start+3));
-		list.add((Number) new Int(start+length-1));
+		list.add(new Int(start));
+		list.add(new Int(start +1));
+		list.add(new Int(start +2));
+		list.add(new Int(start+3));
+		list.add(new Int(start+length-1));
 	}
 	
 	private void listGen4()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
-		list.add((Number) new Int(start));
-		list.add((Number) new Int(start -1));
-		list.add((Number) new Int(start - 2));
-		list.add((Number) new Int(start - 3));
-		list.add((Number) new Int(start - length+1));
+		list.add(new Int(start));
+		list.add(new Int(start -1));
+		list.add(new Int(start - 2));
+		list.add(new Int(start - 3));
+		list.add(new Int(start - length+1));
 	}
 	
 	private void listGen5()
