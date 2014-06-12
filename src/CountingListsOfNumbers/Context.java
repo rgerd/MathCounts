@@ -31,6 +31,9 @@ public class Context<Number> {
 		}else if(type == 3)
 		{
 			listGen3();
+		}else if(type == 3)
+		{
+			listGen4();
 		}
 	}
 	
@@ -85,7 +88,9 @@ public class Context<Number> {
 	
 	private void listGen5()
 	{
-		
+		start = Utilities.getRandomNumberInRange(2,10);
+		int lengthRange = 1000/start;
+		length = Utilities.getRandomNumberInRange(2,lengthRange);
 	}
 	
 	
