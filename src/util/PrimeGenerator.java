@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public class PrimeGenerator {
 	private int[] primes;
@@ -67,7 +67,6 @@ public class PrimeGenerator {
 	 */
 	private void storePrime(int prime) {
 		primes[index++] = prime;
-		
 		if(index == primes.length) {
 			int[] _p = new int[primes.length * 2];
 			for(int i = 0; i < primes.length; i++) {

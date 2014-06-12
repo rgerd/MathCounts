@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public class Fraction implements Number {
 	private int num, den;

@@ -1,28 +1,40 @@
 package CountingListsOfNumbers;
 
 import java.io.File;
+<<<<<<< HEAD
 import com.Number;
 import com.Int;
 
 import java.io.FileNotFoundException;
+=======
+>>>>>>> FETCH_HEAD
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Scanner;
 
 import com.BinaryOperator;
 import com.Utilities;
+=======
+import util.Number;
+import util.Utilities;
+>>>>>>> FETCH_HEAD
 
 public class Driver 
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
+<<<<<<< HEAD
 		Scanner in = new Scanner(new File("input1.txt"));
+=======
+>>>>>>> FETCH_HEAD
 		PrintWriter output = null;
 		try {
 			File f = new File("output.txt");
 			output = new PrintWriter(new FileWriter(f));
+<<<<<<< HEAD
 			while(in.hasNext())
 			{
 				 String[] s = in.nextLine().split("\t");
@@ -39,6 +51,14 @@ public class Driver
 					 int type = Integer.parseInt(ty.substring(1, ty.length()));
 					 types.add(type);
 				 }
+=======
+			for (int i = 0; i < 10; i++) {
+				 Context con = new Context();
+				 con.generate(5);
+				 Question quest = new Question();
+				 String q = quest.getQ(con);
+				 output.print("MC"+"\t"+q+"\t");
+>>>>>>> FETCH_HEAD
 				 
 				 for(int j = 0; j < types.size(); j++)
 				 {

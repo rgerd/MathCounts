@@ -1,4 +1,4 @@
-package com;
+package CountingWithAdditionAndSubtraction;
 /**
  * Example question format: 
  * *number* *noun* *verb* the *noun*, *number* *noun* *verb*, *number* 

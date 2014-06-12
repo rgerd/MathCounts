@@ -1,4 +1,4 @@
-package com;
+package util;
 
 public class Int implements Number {
 	private int value;
