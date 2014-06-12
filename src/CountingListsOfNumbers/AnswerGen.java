@@ -1,6 +1,10 @@
 package CountingListsOfNumbers;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+
+
 
 public class AnswerGen 
 {
@@ -12,8 +16,10 @@ public class AnswerGen
 		ans = answer;
 	}
 	
-	public void getWrong(String type)
+	public ArrayList<Integer> getWrong(String type)
 	{
+		h = new HashSet<Integer>();
+		System.out.println(ans);
 		if(type.equals("window"))
 		{
 			h.add(ans+1);
@@ -21,10 +27,16 @@ public class AnswerGen
 			h.add(ans-1);
 			h.add(ans-2);
 		}
+
+		ArrayList<Integer> h1 = new ArrayList<Integer>();
+		Iterator<Integer> itr = h.iterator();
+		for(int i= 0; i < h.size(); i++)
+		{
+			h1.add(itr.next());
+		}
+		
+		return h1;
 	}
 	
-	public HashSet<Integer> getHash()
-	{
-		return h;
-	}
+
 }
