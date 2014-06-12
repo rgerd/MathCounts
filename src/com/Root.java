@@ -83,7 +83,7 @@ public class Root implements Number {
 	 * @return the string representation of this radical.
 	 */
 	public String toString() {
-		return factor + " " + (degree > 2 ? degree : "") + "Ã" + prime;
+		return "[" + factor + " " + (degree > 2 ? degree : "") + "Ã" + prime + "]";
 	}
 
 	public Number add(Number n) {
