@@ -29,6 +29,8 @@ public class AnswerGen
 		}
 
 		ArrayList<Number> h1 = new ArrayList<Number>();
+		h1.add(new Int(ans));
+		
 		Iterator<Number> itr = h.iterator();
 		for(int i= 0; i < h.size(); i++)
 		{

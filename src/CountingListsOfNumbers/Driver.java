@@ -26,7 +26,7 @@ public class Driver
 				 con.generate(1);
 				 Question quest = new Question();
 				 String q = quest.getQ(con);
-				 output.println("MC"+"\t"+q);
+				 System.out.println("MC"+"\t"+q);
 				 
 				 int ans = con.getAns();
 				 AnswerGen a = new AnswerGen(ans);
