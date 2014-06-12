@@ -1,4 +1,4 @@
-package CountingListsOfNumbers;
+package com;
 
 public interface Number 
 {
