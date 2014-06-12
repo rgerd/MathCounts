@@ -45,7 +45,7 @@ public class Fraction implements Number {
 	 * @return the result when this fraction is divided by another.
 	 */
 	public Number div(Number other) {
-		return mult(((Fraction)other).reciprocal());
+		return mult(((Fraction) other).reciprocal());
 	}
 
 	/**
