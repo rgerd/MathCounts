@@ -55,44 +55,48 @@ public class Context {
 	{
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,999);
-		list.add(new Int(start));
-		list.add(new Int(start +1));
-		list.add(new Int(start +2));
-		list.add(new Int(start+3));
-		list.add(new Int(start+length-1));
+		Int init = new Int(start);
+		list.add(init);
+		list.add(init.add(new Int(1)));
+		list.add(init.add(new Int(2)));
+		list.add(init.add(new Int(3)));
+		list.add(init.add(new Int(length-1)));
 	}
 	
 	private void listGen2()
 	{		
 		start=Utilities.getRandomNumberInRange(1,1000);
 		length=Utilities.getRandomNumberInRange(5,999-start);
-		list.add(new Int(start));
-		list.add(new Int(start +1));
-		list.add(new Int(start +2));
-		list.add(new Int(start+3));
-		list.add(new Int(start+length-1));
+		Int init = new Int(start);
+		list.add(init);
+		list.add(init.add(new Int(1)));
+		list.add(init.add(new Int(2)));
+		list.add(init.add(new Int(3)));
+		list.add(init.add(new Int(length-1)));
 	}
 	
 	private void listGen3()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
 		length=Utilities.getRandomNumberInRange(5,999-start);
-		list.add(new Int(start));
-		list.add(new Int(start +1));
-		list.add(new Int(start +2));
-		list.add(new Int(start +3));
-		list.add(new Int(start+length-1));
+		Int init = new Int(start);
+		list.add(init);
+		list.add(init.add(new Int(1)));
+		list.add(init.add(new Int(2)));
+		list.add(init.add(new Int(3)));
+		list.add(init.add(new Int(length-1)));
 	}
 	
 	private void listGen4()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,1000);
 		length=Utilities.getRandomNumberInRange(5,Math.abs(-1000-start));
-		list.add(new Int(start));
-		list.add(new Int(start -1));
-		list.add(new Int(start - 2));
-		list.add(new Int(start - 3));
-		list.add(new Int(start - length+1));
+		Int init = new Int(start);
+		list.add(init);
+		list.add(init.sub(new Int(1)));
+		list.add(init.sub(new Int(2)));
+		list.add(init.sub(new Int(3)));
+		list.add(init.sub(new Int(length-1)));
 	}
 	
 	private void listGen5()
