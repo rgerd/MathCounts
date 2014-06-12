@@ -96,10 +96,11 @@ public class Root implements Number {
 
 	/**
 	 * Divides this root with another.
-	 * @return the result.
+	 * @return the result (a fraction).
 	 */
 	public Number div(Number n) {
 		Root _n = (Root) n;
+		
 		return null;
 	}
 
