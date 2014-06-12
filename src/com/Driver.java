@@ -1,13 +1,14 @@
 package com;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 public class Driver {
 	public static void main(String[] args) {
-		BinaryOperator b = new BinaryOperator();
+		Number a = new Root(25088, 3);
+		Number b = new Root(25088, 2);
+		System.out.println(a + " * " + b + " = " + a.mult(b));
+	}
+	
+	/*
+	 	BinaryOperator b = new BinaryOperator();
 
 		PrintWriter output = null;
 		try {
@@ -29,6 +30,5 @@ public class Driver {
 		} finally {
 			output.close();
 		}
-
-	}
+	 */
 }

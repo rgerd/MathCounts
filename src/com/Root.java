@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /* RADICAL, DUDE */
-public class Root {
+public class Root implements Number {
 	private int factor;
 	private int prime;
 	private int degree;
@@ -48,6 +48,12 @@ public class Root {
 		}
 	}
 	
+	private Root(int factor, int prime, int degree) {
+		this.factor = factor;
+		this.prime = prime;
+		this.degree = degree;
+	}
+	
 	/**
 	 * Returns the degree of the root.
 	 * @return the degree of the root.
@@ -77,6 +83,40 @@ public class Root {
 	 * @return the string representation of this radical.
 	 */
 	public String toString() {
-		return factor + "Ã" + prime;
+		return factor + " " + (degree > 2 ? degree : "") + "Ã" + prime;
+	}
+
+	public Number add(Number n) {
+		Root _n = (Root)n;
+		return null;
+	}
+
+	public Number sub(Number n) {
+		return null;
+	}
+
+	public Number div(Number n) {
+		return null;
+	}
+
+	/**
+	 * Multiplies this root with another.
+	 * @return the result.
+	 */
+	public Number mult(Number n) {
+		Root _n = (Root) n;
+		int lcm = Utilities.LCM(this.degree, _n.degree);
+		int mult_0 = lcm / degree;
+		int mult_1 = lcm / degree;
+		
+		int prime_0 = (int) Math.pow(this.prime, mult_0);
+		int prime_1 = (int) Math.pow(_n.prime, mult_1);
+		int prime = prime_0 * prime_1;
+		
+		int factor = this.factor * _n.factor;
+		
+		Root r = new Root(factor, prime, lcm);
+		
+		return r;
 	}
 }
