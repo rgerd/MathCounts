@@ -1,6 +1,6 @@
 package com;
 
-public class Fraction {
+public class Fraction implements Number {
 	private int num, den;
 
 	/**
@@ -32,8 +32,9 @@ public class Fraction {
 	 *            the other fraction.
 	 * @return the result when this fraction is multiplied by another.
 	 */
-	public Fraction mult(Fraction other) {
-		return new Fraction(num * other.num, den * other.den);
+	public Number mult(Number other) {
+		Fraction _other = (Fraction) other;
+		return new Fraction(num * _other.num, den * _other.den);
 	}
 
 	/**
@@ -43,8 +44,8 @@ public class Fraction {
 	 *            the other fraction.
 	 * @return the result when this fraction is divided by another.
 	 */
-	public Fraction div(Fraction other) {
-		return mult(other.reciprocal());
+	public Number div(Number other) {
+		return mult(((Fraction)other).reciprocal());
 	}
 
 	/**
@@ -54,11 +55,12 @@ public class Fraction {
 	 *            the other fraction.
 	 * @return the result when the fraction is added to another.
 	 */
-	public Fraction add(Fraction other) {
-		int lcm = Utilities.LCM(den, other.den);
+	public Number add(Number other) {
+		Fraction _other = (Fraction) other;
+		int lcm = Utilities.LCM(den, _other.den);
 		int mult1 = lcm / den;
-		int mult2 = lcm / other.den;
-		return new Fraction(num * mult1 + other.num * mult2, lcm);
+		int mult2 = lcm / _other.den;
+		return new Fraction(num * mult1 + _other.num * mult2, lcm);
 	}
 
 	/**
@@ -68,11 +70,12 @@ public class Fraction {
 	 *            the other fraction.
 	 * @return the result when the fraction is subtracted from another.
 	 */
-	public Fraction sub(Fraction other) {
-		int lcm = Utilities.LCM(den, other.den);
+	public Number sub(Number other) {
+		Fraction _other = (Fraction) other;
+		int lcm = Utilities.LCM(den, _other.den);
 		int mult1 = lcm / den;
-		int mult2 = lcm / other.den;
-		return new Fraction(num * mult1 - other.num * mult2, lcm);
+		int mult2 = lcm / _other.den;
+		return new Fraction(num * mult1 - _other.num * mult2, lcm);
 	}
 
 	/**
