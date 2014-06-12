@@ -111,10 +111,10 @@ public class Context {
 		}else
 		{
 			list.add(new Fraction(1,start).simplify());
-			list.add(new Fraction(2,start).simplify());
-			list.add(new Fraction(3,start).simplify());
-			list.add(new Fraction(4,start).simplify());
-			list.add(new Fraction(length-1,start).simplify());
+			list.add(new Fraction(1+1,start).simplify());
+			list.add(new Fraction(1+2,start).simplify());
+			list.add(new Fraction(1+3,start).simplify());
+			list.add(new Fraction(1+length-1,start).simplify());
 		}
 		
 	}
@@ -157,6 +157,19 @@ public class Context {
 		list.add(new Fraction(start,start*2).simplify());
 		list.add(new Fraction(start,start*3).simplify());
 		list.add(new Fraction(start,start*length-1).simplify());
+	}
+	
+	private void listGen17()
+	{
+		start = Utilities.getRandomNumberInRange(2,10);
+		int lengthRange = (1000/start)-1;
+		length = Utilities.getRandomNumberInRange(2,lengthRange);
+		int chance = Utilities.getRandomNumberInRange(1, 2);
+		list.add(new Fraction(1,start).simplify());
+		list.add(new Fraction(1,start*2).simplify());
+		list.add(new Fraction(1,start*3).simplify());
+		list.add(new Fraction(1,start*4).simplify());
+		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 	
 }
