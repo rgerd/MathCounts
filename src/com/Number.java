@@ -9,5 +9,7 @@ public interface Number {
 
 	public Number mult(Number n);
 
+	public boolean equals(Number n);
+	
 	public String toString();
 }

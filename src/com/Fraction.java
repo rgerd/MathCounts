@@ -134,9 +134,10 @@ public class Fraction implements Number {
 	 *            the other fraction.
 	 * @return whether this fraction equals another.
 	 */
-	public boolean equals(Fraction other) {
+	public boolean equals(Number other) {
+		Fraction _other = (Fraction) other;
 		Fraction frac_0 = this.simplify();
-		Fraction frac_1 = this.simplify();
+		Fraction frac_1 = _other.simplify();
 		return (frac_0.num == frac_1.num) && (frac_0.den == frac_1.den);
 	}
 }

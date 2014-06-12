@@ -120,4 +120,12 @@ public class Root implements Number {
 		int _factor = this.factor * _n.factor;
 		return new Root(_factor, _prime, _degree);
 	}
+
+	/**
+	 * Returns whether this root is equal to another.
+	 * @return whether this root is equal to another.
+	 */
+	public boolean equals(Number n) {
+		return factor == ((Root) n).factor && prime == ((Root) n).prime && degree == ((Root) n).degree;
+	}
 }

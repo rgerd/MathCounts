@@ -69,4 +69,13 @@ public class Int implements Number {
 		return Integer.toString(value);
 	}
 
+	
+	/**
+	 * Returns whether this int is equal to another.
+	 * @return whether this int is equal to another.
+	 */
+	public boolean equals(Number other) {
+		return value == ((Int) other).value;
+	}
+	
 }
