@@ -19,7 +19,6 @@ public class AnswerGen
 	public ArrayList<Integer> getWrong(String type)
 	{
 		h = new HashSet<Integer>();
-		System.out.println(ans);
 		if(type.equals("window"))
 		{
 			h.add(ans+1);
