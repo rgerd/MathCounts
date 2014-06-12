@@ -12,13 +12,13 @@ public class Context<E> {
 	
 	public Context()
 	{
-		length=Utilities.getRandomNumberInRange(1,1000);
-		start=Utilities.getRandomNumberInRange(1,1000);
 		list = new ArrayList<Integer>();
 	}
 	
 	public void generate(int type)
 	{	
+		length=Utilities.getRandomNumberInRange(1,1000);
+		start=Utilities.getRandomNumberInRange(1,1000);
 		if(type ==  1)
 		{
 			listGen1();
@@ -48,7 +48,7 @@ public class Context<E> {
 		list.add(start +1);
 		list.add(start+2);
 		list.add(start+3);
-		list.add(start+length);
+		list.add(start+length-1);
 	}
 	
 	private void listGen2()
@@ -57,7 +57,7 @@ public class Context<E> {
 		list.add(start +1);
 		list.add(start+2);
 		list.add(start+3);
-		list.add(start+length);
+		list.add(start+length-1);
 	}
 	
 	private void listGen3()
@@ -67,10 +67,20 @@ public class Context<E> {
 		list.add(start +1);
 		list.add(start+2);
 		list.add(start+3);
-		list.add(start+length);
+		list.add(start+length -1);
 	}
 	
 	private void listGen4()
+	{
+		start = Utilities.getRandomNumberInRange(-1000,1000);
+		list.add(start);
+		list.add(start -1);
+		list.add(start - 2);
+		list.add(start - 3);
+		list.add(start - length+1);
+	}
+	
+	private void listGen5()
 	{
 		
 	}
