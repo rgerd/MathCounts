@@ -108,13 +108,14 @@ public class Context {
 			list.add(new Int(start + start*2));
 			list.add(new Int(start + start*3));
 			list.add(new Int(start + start*(length-1)));
-		}else
+		}
+		else
 		{
-			list.add(new Fraction(1,start).simplify());
-			list.add(new Fraction(1+1,start).simplify());
-			list.add(new Fraction(1+2,start).simplify());
-			list.add(new Fraction(1+3,start).simplify());
-			list.add(new Fraction(1+length-1,start).simplify());
+			list.add(new Int(start));
+			list.add(new Int(start - start));
+			list.add(new Int(start - start*2));
+			list.add(new Int(start - start*3));
+			list.add(new Int(start - start*(length-1)));
 		}
 		
 	}
@@ -145,6 +146,17 @@ public class Context {
 			list.add(new Int(start - start*(length-1)));
 
 		}
+	}
+	
+	private void listGen7()
+	{
+		/**
+		list.add(new Fraction(1,start).simplify());
+		list.add(new Fraction(1+1,start).simplify());
+		list.add(new Fraction(1+2,start).simplify());
+		list.add(new Fraction(1+3,start).simplify());
+		list.add(new Fraction(1+length-1,start).simplify());
+		**/
 	}
 	private void listGen16()
 	{

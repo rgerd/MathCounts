@@ -1,1 +1,1 @@
-Counting Lists of Numbers	1	5 t2	5 t1
+Counting Lists of Numbers	1	5 t5	5 t1
