@@ -1,8 +1,8 @@
 package CountingListsOfNumbers;
 
 import java.io.File;
-import com.Number;
-import com.Int;
+import util.Number;
+import util.Int;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -11,8 +11,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.BinaryOperator;
-import com.Utilities;
+import util.Utilities;
 
 public class Driver 
 {
