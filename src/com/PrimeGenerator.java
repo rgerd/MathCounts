@@ -27,15 +27,15 @@ public class PrimeGenerator {
 	 * @return the next ascending prime number.
 	 */
 	public int nextPrime() {
-		if(index == 0) {
+		switch(index) {
+		case 0:
 			storePrime(2);
 			return 2;
-		}
-		int prime = primes[index - 1];
-		if(prime == 2) {
+		case 1:
 			storePrime(3);
 			return 3;
 		}
+		int prime = primes[index - 1];
 		boolean found = false;
 		while(!found) {
 			found = true;
