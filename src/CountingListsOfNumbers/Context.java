@@ -2,11 +2,8 @@ package CountingListsOfNumbers;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
 import com.Root;
-=======
 import com.Fraction;
->>>>>>> FETCH_HEAD
 import com.Utilities;
 import com.Number;
 import com.Int;
