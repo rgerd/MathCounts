@@ -5,8 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
-import util.BinaryOperator;
 import util.Int;
 import util.Number;
 import util.Utilities;
@@ -15,8 +13,6 @@ public class Driver
 {
 	public static void main(String[] args)
 	{
-		BinaryOperator b = new BinaryOperator();
-
 		PrintWriter output = null;
 		try {
 			File f = new File("output.txt");
