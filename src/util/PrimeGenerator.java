@@ -67,7 +67,6 @@ public class PrimeGenerator {
 	 */
 	private void storePrime(int prime) {
 		primes[index++] = prime;
-		
 		if(index == primes.length) {
 			int[] _p = new int[primes.length * 2];
 			for(int i = 0; i < primes.length; i++) {
