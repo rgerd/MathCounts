@@ -125,6 +125,26 @@ public class Context {
 		int lengthRange = 1000/(start-1);
 		length = Utilities.getRandomNumberInRange(5,lengthRange);
 		int chance = Utilities.getRandomNumberInRange(1, 2);
+		if(chance == 1)
+		{
+			//increasing
+
+			list.add(new Int(start));
+			list.add(new Int(start + start));
+			list.add(new Int(start + start*2));
+			list.add(new Int(start + start*3));
+			list.add(new Int(start + start*(length-1)));
+		}else
+		{
+			//decreasing
+
+			list.add(new Int(start));
+			list.add(new Int(start - start));
+			list.add(new Int(start - start*2));
+			list.add(new Int(start - start*3));
+			list.add(new Int(start - start*(length-1)));
+
+		}
 	}
 	private void listGen16()
 	{
