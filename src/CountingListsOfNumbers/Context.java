@@ -441,17 +441,41 @@ public class Context {
 		if(chance == 1)
 		{
 			list.add(new Int(start));
-			list.add(new Int(start * (int) Math.pow(r, 1)));
-			list.add(new Int(start * (int) Math.pow(r, 2)));
-			list.add(new Int(start * (int) Math.pow(r, 3)));
+			int num = r.getNumerator();
+			int den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
+			list.add(r.mult(new Int(start)));
+			
 			list.add(new Int(end));
 		}
 		else
 		{
 			list.add(new Int(start));
-			list.add(new Int(start * (int) Math.pow(r, 1)* (int) Math.pow(-1, 1)));
-			list.add(new Int(start * (int) Math.pow(r, 2)* (int) Math.pow(-1, 2)));
-			list.add(new Int(start * (int) Math.pow(r, 3)* (int) Math.pow(-1, 3)));
+			
+			int num = r.getNumerator();
+			int den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
+			list.add(r.mult(new Int(start*-1)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
+			list.add(r.mult(new Int(start*-1)));
 
 			if(length %2 == 0)
 				list.add(new Int(end*-1));
@@ -469,7 +493,6 @@ public class Context {
 	public int getType()
 	{
 		return type;
-
 	}
 }
 
