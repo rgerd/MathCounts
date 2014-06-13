@@ -7,15 +7,15 @@ public class Question {
 	private static final String Q = "How many numbers are in the list:";
 	private static final String Q_T14 = "How many numbers are multiples of: ";
 	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
+	private static final String M = "How Many numbers are multiples of";
 	private static final String Q_TYPE17 = "How many pairs of consecutive integers have products less than ";
-
 	private int length;
 	
 	public String getQ (Context c)
 	{
 		if(c.getType() == 17)
 		{
-			String str = Q_TYPE17 + c.getType17() + "?";
+			String str = Q_TYPE17 + c.getType() + "?";
 			return str;
 		}else
 		{
