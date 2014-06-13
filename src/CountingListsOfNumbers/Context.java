@@ -368,7 +368,7 @@ public class Context {
 		length=30;
 		int i= 1;
 		int i1=1;
-		while(util.Utilities.GCD(i,i1)==1)
+		while(util.Utilities.GCD(i,i1)!=1)
 		{
 			i=Utilities.getRandomNumberInRange(1,15);
 			i1=Utilities.getRandomNumberInRange(1,15);
