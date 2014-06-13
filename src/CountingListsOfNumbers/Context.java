@@ -436,15 +436,7 @@ public class Context {
 	}
 	private void listGen16()//DO THIS
 	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = (1000/start)-1;
-		length = Utilities.getRandomNumberInRange(2,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		list.add(new Int(start));
-		list.add(new Fraction(start,start).simplify());
-		list.add(new Fraction(start,start*2).simplify());
-		list.add(new Fraction(start,start*3).simplify());
-		list.add(new Fraction(start,start*length-1).simplify());
+		
 	}
 
 	private void listGen17()
@@ -539,13 +531,6 @@ public class Context {
 		return type;
 	}
 }
-<<<<<<< HEAD
 
-
-
-
-
-=======
->>>>>>> FETCH_HEAD
 
 
