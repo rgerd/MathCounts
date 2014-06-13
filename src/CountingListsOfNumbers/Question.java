@@ -6,6 +6,7 @@ import util.Utilities;
 public class Question {
 	private static final String Q = "How many numbers are in the list:";
 	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
+	private static final String M = "How Many numbers are multiples of";
 	private int length;
 	
 	public String getQ (Context c)
