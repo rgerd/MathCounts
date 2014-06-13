@@ -425,12 +425,12 @@ public class Context {
 	{
 
 		int can = Utilities.getRandomNumberInRange(1,15);
-		int cant = Utilities.getRandomNumberInRange(1,15);
+		int cant = Utilities.getRandomNumberInRange(can,15);
 		int gcd = Utilities.GCD(can,cant);
-		while(gcd == 1)
+		while(gcd == 1 || can == cant)
 		{
 			can = Utilities.getRandomNumberInRange(1,15);
-			cant = Utilities.getRandomNumberInRange(1,15);
+			cant = Utilities.getRandomNumberInRange(can,15);
 			gcd = Utilities.GCD(can,cant);
 
 		}
@@ -453,13 +453,9 @@ public class Context {
 				notinlist++;
 			}
 		}
-		System.out.println("Length: "+length+ " noninlist: " +notinlist);
+		System.out.println("Length: "+length+ " notinlist: " +notinlist);
 		length = length - notinlist;
-		list.add(new Int(nums.get(0)));
-		list.add(new Int(nums.get(1)));
-		list.add(new Int(nums.get(2)));
-		list.add(new Int(nums.get(3)));
-		list.add(new Int(nums.get(nums.size() -1)));
+		System.out.println("\n "+length);
 		
 		
 	}
