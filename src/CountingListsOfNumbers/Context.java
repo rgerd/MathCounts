@@ -377,7 +377,7 @@ public class Context {
 		}
 	}
 
-	private void listGen13()//DO THIS
+	private void listGen13()//REMEMBER ANSWERS DONT COUNT 0 OR 1000
 	{
 
 		start = 1;
