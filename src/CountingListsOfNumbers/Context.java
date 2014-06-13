@@ -292,7 +292,7 @@ public class Context {
 	private void listGen10()//DO THIS
 	{start = Utilities.getRandomNumberInRange(2,10);
 	int lengthRange = (1000/start)-1;
-	length = Utilities.getRandomNumberInRange(2,lengthRange);
+	length = Utilities.getRandomNumberInRange(5,lengthRange);
 	
 	list.add(new Fraction(1,start).simplify());
 	list.add(new Fraction(1,start*2).simplify());
