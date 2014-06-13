@@ -403,7 +403,7 @@ public class Context {
 			}
 			
 		}
-		ar.remove(smallest);
+		ar.remove(ar.get(smallest));
 		retarl.add(smallest);
 		}while(ar.size()>0);
 		for(int check: retarl)
