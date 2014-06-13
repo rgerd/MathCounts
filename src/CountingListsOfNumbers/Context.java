@@ -13,7 +13,7 @@ public class Context {
 	private int length;
 	private ArrayList<Number> list;
 	private int start;
-
+	private int type17;
 
 	public Context()
 	{
@@ -107,6 +107,26 @@ public class Context {
 	public int getAns() 
 	{
 		return length; 
+	}
+	
+	public int getAns17()
+	{
+		
+	}
+	
+	public int getAns15()
+	{
+		
+	}
+	
+	public int getAns16()
+	{
+		
+	}
+	
+	public int getType17()
+	{
+		return type17;
 	}
 
 	private void listGen1()
@@ -208,6 +228,7 @@ public class Context {
 
 		}
 	}
+
 
 	private void listGen7()
 	{
@@ -482,7 +503,11 @@ public class Context {
 
 	private void listGen17()
 	{
+<<<<<<< HEAD
+		type17 = Utilities.getRandomNumberInRange(1, 999);
+=======
 		
+>>>>>>> FETCH_HEAD
 	}
 
 	private void listGen18()
