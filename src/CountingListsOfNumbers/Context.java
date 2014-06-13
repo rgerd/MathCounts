@@ -371,12 +371,57 @@ public class Context {
 		length=Utilities.getRandomNumberInRange(5,1000);
 		int i= 1;
 		int i1=1;
-		while(i%i1==0)
+		while(util.Utilities.GCD(i,i1)==1)
 		{
 			i=Utilities.getRandomNumberInRange(1,15);
 			i1=Utilities.getRandomNumberInRange(1,15);
 		}
-
+		int larger;
+		if(i>i1)
+			larger=i;
+		else
+				larger=i1;
+	length=Utilities.getRandomNumberInRange(500%larger,1000%larger);
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		int x =1;
+		while(x*i<length )
+		{
+			ar.add(i*x);
+			x++;
+		}
+		 x =1;
+		while(x*i1<length )
+		{
+			ar.add(i1*x);
+			x++;
+		}
+		ArrayList<Integer> retarl = new ArrayList<Integer>();
+		do{
+		int smallest=1000;
+		for(int item: ar)
+		{
+			if(item<smallest)
+			{
+				smallest=item;
+				
+			}
+			
+		}
+		ar.remove(smallest);
+		retarl.add(smallest);
+		}while(ar.size()>0);
+		for(int check: retarl)
+		{
+		if(check%i1==0)	
+			retarl.remove(i1);
+		}
+		length=retarl.size();
+		list.add(new Int(retarl.get(0)));
+		list.add(new Int(retarl.get(1)));
+		list.add(new Int( retarl.get(2)));
+		list.add(new Int( retarl.get(3)));
+		list.add(new Int(retarl.get(retarl.size()-1) ));
+			
 
 	}
 
@@ -441,15 +486,7 @@ public class Context {
 
 	private void listGen17()
 	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = (1000/start)-1;
-		length = Utilities.getRandomNumberInRange(2,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		list.add(new Fraction(1,start).simplify());
-		list.add(new Fraction(1,start*2).simplify());
-		list.add(new Fraction(1,start*3).simplify());
-		list.add(new Fraction(1,start*4).simplify());
-		list.add(new Fraction(1,start*(length-1)).simplify());
+		
 	}
 
 	private void listGen18()
