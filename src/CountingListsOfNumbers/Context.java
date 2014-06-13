@@ -106,7 +106,23 @@ public class Context {
 
 	public int getAns() 
 	{
+		if(type == 17)
+		{
+			int count = 0;
+			for(int i = 1; i < type17/2; i++)
+			{
+				if(i*(i+1) < type17)
+					count++;
+			}
+			
+			return count;
+		}
 		return length; 
+	}
+	
+	public int getType17()
+	{
+		return type17;
 	}
 
 	private void listGen1()
@@ -539,6 +555,11 @@ public class Context {
 				list.add(end);
 		}
 
+	}
+	
+	public void listGen19()
+	{
+		int diff = Utilities.
 	}
 
 	private void setType(int t)
