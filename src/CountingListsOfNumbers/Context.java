@@ -209,12 +209,17 @@ public class Context {
 	}
 	private void listGen9()
 	{
-		start = Utilities.getRandomNumberInRange(1, 20);
+		int g1 = Utilities.getRandomNumberInRange(1, 20);
+		
 		double r = Utilities.getRandomNumberInRange(2, 10);
+		start = g1;
 		length = Utilities.getRandomNumberInRange(5, 999);
 		int end = (int) Math.pow(r, (double)length-1);
 		list.add(new Int(start));
-		
+		list.add(new Int(start * (int) Math.pow(r, 1)));
+		list.add(new Int(start * (int) Math.pow(r, 2)));
+		list.add(new Int(start * (int) Math.pow(r, 3)));
+		list.add(new Int(end));
 	}
 	
 	private void listGen10()
