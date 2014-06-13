@@ -282,7 +282,7 @@ public class Context {
 			list.add(new Int ((int)(Math.pow(start+1,2))));
 			list.add(new Int ((int)(Math.pow(start+2,2))));
 			list.add(new Int ((int)(Math.pow(start+3,2))));
-			list.add(new Int ((int)(Math.pow(start + length-1,2))));
+			list.add(new Int ((int)(Math.pow(length-1,2))));
 
 		}else{
 			//decreasing
@@ -292,8 +292,8 @@ public class Context {
 			list.add(new Int ((int)(Math.pow(start-1,2))));
 			list.add(new Int ((int)(Math.pow(start-2,2))));
 			list.add(new Int ((int)(Math.pow(start-3,2))));
-			list.add(new Int ((int)(Math.pow(start-(length-1),2))));
-		}
+			list.add(new Int ((int)(Math.pow(start-length-1,2))));
+		}	
 		
 	}
 	
@@ -343,7 +343,8 @@ public class Context {
 	
 	private void listGen14()
 	{
-		
+		int int1 = Utilities.getRandomNumberInRange(min, max);
+		int int2 = Utilities.getRandomNumberInRange(min,max);
 		
 		
 		
