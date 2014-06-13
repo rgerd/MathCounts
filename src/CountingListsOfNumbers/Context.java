@@ -380,19 +380,6 @@ public class Context {
 
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,1000);
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-=======
 		int i= 1;
 		int i1=1;
         while(i%i1==0)
@@ -402,47 +389,13 @@ public class Context {
         }
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
->>>>>>> FETCH_HEAD
 	}
 
 	private void listGen14()
 	{
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 		int int1 = Utilities.getRandomNumberInRange(min, max);
 		int int2 = Utilities.getRandomNumberInRange(min,max);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
->>>>>>> FETCH_HEAD
+	
 	}
 
 	private void listGen15()
