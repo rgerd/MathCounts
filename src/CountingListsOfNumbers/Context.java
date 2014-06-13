@@ -243,8 +243,30 @@ public class Context {
 	
 	private void listGen11()
 	{
-		
-		
+		int chance = Utilities.getRandomNumberInRange(1,2);
+		start = Utilities.getRandomNumberInRange(1,20);
+		length = Utilities.getRandomNumberInRange(1,20);
+		if(chance == 1)
+		{
+			//increasing
+			start = Utilities.getRandomNumberInRange(1,15);
+			length = Utilities.getRandomNumberInRange(5, 20-start);
+			list.add(new Int ((int)(Math.pow(start,2))));
+			list.add(new Int ((int)(Math.pow(start+1,2))));
+			list.add(new Int ((int)(Math.pow(start+2,2))));
+			list.add(new Int ((int)(Math.pow(start+3,2))));
+			list.add(new Int ((int)(Math.pow(length-1,2))));
+
+		}else{
+			//decreasing
+			start = Utilities.getRandomNumberInRange(5,20);
+			length = Utilities.getRandomNumberInRange(5, Math.abs(0-start));
+			list.add(new Int ((int)(Math.pow(start,2))));
+			list.add(new Int ((int)(Math.pow(start-1,2))));
+			list.add(new Int ((int)(Math.pow(start-2,2))));
+			list.add(new Int ((int)(Math.pow(start-3,2))));
+			list.add(new Int ((int)(Math.pow(start-length-1,2))));
+		}
 		
 		
 		
