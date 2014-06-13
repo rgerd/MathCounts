@@ -488,11 +488,7 @@ public class Context {
 
 	private void listGen17()
 	{
-<<<<<<< HEAD
 		type17 = Utilities.getRandomNumberInRange(1, 999);
-=======
-		
->>>>>>> FETCH_HEAD
 	}
 
 	private void listGen18()
