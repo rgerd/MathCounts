@@ -382,10 +382,40 @@ public class Context {
 
 	private void listGen14()
 	{
-		int int1 = Utilities.getRandomNumberInRange(1,15);
-		int int2 = Utilities.getRandomNumberInRange(1,15);
-		int int1 = Utilities.getRandomNumberInRange(1, 69);
-		int int2 = Utilities.getRandomNumberInRange(420,500);
+		int can = Utilities.getRandomNumberInRange(1,15);
+		int cant = Utilities.getRandomNumberInRange(1,15);
+		int gcd = 0;
+		while(gcd == 0)
+		{
+			gcd = Utilities.getRandomNumberInRange(can,cant);
+		}
+		int length = Utilities.getRandomNumberInRange(1,50);
+		while((length * can) % cant == 0)
+		{
+			length = Utilities.getRandomNumberInRange(1,50);
+		}
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		int notinlist = 0;
+		for(int i = 1; i < 50; i++)
+		{
+			if((can * i) % cant != 0)
+			{
+			nums.add(can * i);
+			}
+			else
+			{
+				notinlist++;
+			}
+		}
+		
+		length = length - notinlist;
+		list.add(new Int(nums.get(0)));
+		list.add(new Int(nums.get(1)));
+		list.add(new Int(nums.get(2)));
+		list.add(new Int(nums.get(3)));
+		list.add(new Int(nums.get(nums.size() -1)));
+		
+		
 	}
 
 	private void listGen15()
