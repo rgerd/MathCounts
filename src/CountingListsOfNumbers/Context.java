@@ -382,8 +382,8 @@ public class Context {
 
 	private void listGen14()
 	{
-		int int1 = Utilities.getRandomNumberInRange(min, max);
-		int int2 = Utilities.getRandomNumberInRange(min,max);
+		int int1 = Utilities.getRandomNumberInRange(1,15);
+		int int2 = Utilities.getRandomNumberInRange(1,15);
 	
 	}
 
