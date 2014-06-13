@@ -364,7 +364,7 @@ public class Context {
 	{
 
 		start = 1;
-		length=Utilities.getRandomNumberInRange(5,1000);
+		length=30;
 		int i= 1;
 		int i1=1;
 		while(util.Utilities.GCD(i,i1)==1)
@@ -377,46 +377,32 @@ public class Context {
 			larger=i;
 		else
 				larger=i1;
-	length=Utilities.getRandomNumberInRange(500%larger,1000%larger);
+	length=Utilities.getRandomNumberInRange(500,1000);
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
+		
+		
 		while(x*i<length )
 		{
-			ar.add(i*x);
-			x++;
-		}
-		 x =1;
-		while(x*i1<length )
-		{
-			ar.add(i1*x);
-			x++;
-		}
-		ArrayList<Integer> retarl = new ArrayList<Integer>();
-		do{
-		int smallest=1000;
-		for(int item: ar)
-		{
-			if(item<smallest)
+			boolean isgood = true;
+			for(int y=0;y*i1<length;y++ )
 			{
-				smallest=item;
+				if(i*x == i1*y)
+				{
+					isgood=false;
+					
+				}
+				
 				
 			}
+			if(isgood==true)
+				ar.add(i*x);
+			x++;
 			
 		}
-		ar.remove(ar.get(smallest));
-		retarl.add(smallest);
-		}while(ar.size()>0);
-		for(int check: retarl)
-		{
-		if(check%i1==0)	
-			retarl.remove(i1);
-		}
-		length=retarl.size();
-		list.add(new Int(retarl.get(0)));
-		list.add(new Int(retarl.get(1)));
-		list.add(new Int( retarl.get(2)));
-		list.add(new Int( retarl.get(3)));
-		list.add(new Int(retarl.get(retarl.size()-1) ));
+		
+		length=ar.size();
+		
 			
 
 	}
