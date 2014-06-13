@@ -13,13 +13,14 @@ public class Context {
 	private int length;
 	private ArrayList<Number> list;
 	private int start;
-	
-	
+
+
 	public Context()
 	{
 		list = new ArrayList<Number>();
 	}
 	
+
 	public void generate(int type)
 	{	
 		start=Utilities.getRandomNumberInRange(1,1000);
@@ -52,17 +53,17 @@ public class Context {
 			listGen9();
 		}
 	}
-	
+
 	public ArrayList<Number> getList()
 	{
 		return list;
 	}
-	
+
 	public int getAns() 
 	{
 		return length; 
 	}
-	
+
 	private void listGen1()
 	{
 		start = 1;
@@ -74,7 +75,7 @@ public class Context {
 		list.add(init.add(new Int(3)));
 		list.add(init.add(new Int(length-1)));
 	}
-	
+
 	private void listGen2()
 	{		
 		start=Utilities.getRandomNumberInRange(1,994);
@@ -86,7 +87,7 @@ public class Context {
 		list.add(init.add(new Int(3)));
 		list.add(init.add(new Int(length-1)));
 	}
-	
+
 	private void listGen3()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,994);
@@ -98,7 +99,7 @@ public class Context {
 		list.add(init.add(new Int(3)));
 		list.add(init.add(new Int(length-1)));
 	}
-	
+
 	private void listGen4()
 	{
 		start = Utilities.getRandomNumberInRange(-994,1000);
@@ -110,7 +111,7 @@ public class Context {
 		list.add(init.sub(new Int(3)));
 		list.add(init.sub(new Int(length-1)));
 	}
-	
+
 	private void listGen5()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
@@ -133,9 +134,9 @@ public class Context {
 			list.add(new Int(start - start*3));
 			list.add(new Int(start - start*(length-1)));
 		}
-		
+
 	}
-	
+
 	private void listGen6()
 	{
 		start = Utilities.getRandomNumberInRange(-199,199);
@@ -162,7 +163,7 @@ public class Context {
 
 		}
 	}
-	
+
 	private void listGen7()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
@@ -184,9 +185,9 @@ public class Context {
 			list.add(new Fraction(-2,start).simplify());
 			list.add(new Fraction(1-(length-1),start).simplify());
 		}
-		
+
 	}
-	
+
 	private void listGen8()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
@@ -213,34 +214,52 @@ public class Context {
 	private void listGen9()
 	{
 		int g1 = Utilities.getRandomNumberInRange(1, 8);
-		
-		double r = Utilities.getRandomNumberInRange(2, 5);
+
+		double r = Utilities.getRandomNumberInRange(2, 4);
 		start = g1;
-		length = Utilities.getRandomNumberInRange(5, 10);
+
+		length = Utilities.getRandomNumberInRange(5, 8);
 		int end = (int) Math.pow(r, (double)length-1);
-		list.add(new Int(start));
-		list.add(new Int(start * (int) Math.pow(r, 1)));
-		list.add(new Int(start * (int) Math.pow(r, 2)));
-		list.add(new Int(start * (int) Math.pow(r, 3)));
-		list.add(new Int(end));
+
+		int chance = Utilities.getRandomNumberInRange(1, 2);
+		if(chance == 1)
+		{
+			list.add(new Int(start));
+			list.add(new Int(start * (int) Math.pow(r, 1)));
+			list.add(new Int(start * (int) Math.pow(r, 2)));
+			list.add(new Int(start * (int) Math.pow(r, 3)));
+			list.add(new Int(end));
+		}
+		else
+		{
+			list.add(new Int(start));
+			list.add(new Int(start * (int) Math.pow(r, 1)* (int) Math.pow(-1, 1)));
+			list.add(new Int(start * (int) Math.pow(r, 2)* (int) Math.pow(-1, 2)));
+			list.add(new Int(start * (int) Math.pow(r, 3)* (int) Math.pow(-1, 3)));
+
+			if(length %2 == 0)
+				list.add(new Int(end*-1));
+			else
+				list.add(new Int(end));
+		}
 	}
-	
+
 	private void listGen10()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
 	}
-	
+
 	private void listGen11()
 	{
 		int chance = Utilities.getRandomNumberInRange(1,2);
@@ -267,26 +286,26 @@ public class Context {
 			list.add(new Int ((int)(Math.pow(start-3,2))));
 			list.add(new Int ((int)(Math.pow(start-length-1,2))));
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
 	}
-	
+
 	private void listGen12()
 	{
-		
+
 		start = Utilities.getRandomNumberInRange(1,5);
 		length = Utilities.getRandomNumberInRange(start+4,10);
 		int chance = Utilities.getRandomNumberInRange(1,2);
-		
+
 		if(chance == 1)
 		{
 			//increasing
@@ -305,55 +324,55 @@ public class Context {
 			list.add(new Int((int) Math.pow(-length, 3) ));
 		}
 	}
-	
+
 	private void listGen13()
 	{
-		
+
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,1000);
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
 	}
-	
+
 	private void listGen14()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
 	}
-	
+
 	private void listGen15()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 	private void listGen16()
 	{
@@ -367,7 +386,7 @@ public class Context {
 		list.add(new Fraction(start,start*3).simplify());
 		list.add(new Fraction(start,start*length-1).simplify());
 	}
-	
+
 	private void listGen17()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
@@ -380,14 +399,21 @@ public class Context {
 		list.add(new Fraction(1,start*4).simplify());
 		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
-	
+
 	private void listGen18()
 	{
 		int rNum = Utilities.getRandomNumberInRange(1, 10);
 		int rDen = Utilities.getRandomNumberInRange(1, 8);
 		int g1 = Utilities.getRandomNumberInRange(1, 20);
 		Fraction r = new Fraction(rNum, rDen);
+		int start = g1;
+
 	}
 	
+	private void setType(int t)
+	{
+		type = t;
+	}
+
 }
 
