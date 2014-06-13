@@ -29,15 +29,15 @@ public class Question {
 			}
 		}
 		String returnstring;
-		int r = Utilities.getRandomNumberInRange(1,2);
-		if(c.getType() == 12&&r==1)
-		{
-			returnstring = R + st;
-		}
-		else
-		{
+		//int r = Utilities.getRandomNumberInRange(1,2);
+		//if(c.getType() == 12&&r==1)
+		//{
+		//	returnstring = R + st;
+		//}
+		//else
+		//{
 		returnstring = Q + st;
-		}
+		//}
 		return returnstring;
 	
 	}
