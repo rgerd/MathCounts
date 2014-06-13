@@ -209,6 +209,21 @@ public class Context {
 	}
 	private void listGen9()
 	{
+		start = Utilities.getRandomNumberInRange(1, 20);
+		length = Utilities.getRandomNumberInRange(5, 999);
+		list.add(new Int(start));
+		start = start*start;
+		list.add(new Int(start));
+		start = start*start;
+		list.add(new Int(start));
+		start = start*start;
+		list.add(new Int(start));
+		
+	}
+	
+	private void listGen95()
+	{
+		
 		
 		
 		
@@ -221,7 +236,6 @@ public class Context {
 		
 		
 	}
-	
 	private void listGen10()
 	{
 		
