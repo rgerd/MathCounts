@@ -26,7 +26,15 @@ public class Question {
 				x = st.length();
 			}
 		}
-		String returnstring = Q + st;
+		String returnstring;
+		if(c.getType() == 12)
+		{
+			returnstring = R + st;
+		}
+		else
+		{
+		returnstring = Q + st;
+		}
 		return returnstring;
 	
 	}
