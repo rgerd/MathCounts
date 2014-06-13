@@ -1,4 +1,4 @@
-Counting Lists of Numbers	1	5 t18	5 t12
+Counting Lists of Numbers	1	5 t10	5 t1
 
 
 

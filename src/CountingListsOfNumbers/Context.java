@@ -290,19 +290,15 @@ public class Context {
 	}
 
 	private void listGen10()//DO THIS
-	{
-
-
-
-
-
-
-
-
-
-
-
-
+	{start = Utilities.getRandomNumberInRange(2,10);
+	int lengthRange = (1000/start)-1;
+	length = Utilities.getRandomNumberInRange(2,lengthRange);
+	
+	list.add(new Fraction(1,start).simplify());
+	list.add(new Fraction(1,start*2).simplify());
+	list.add(new Fraction(1,start*3).simplify());
+	list.add(new Fraction(1,start*4).simplify());
+	list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 
 	private void listGen11()
@@ -407,28 +403,12 @@ public class Context {
 	}
 	private void listGen16()//DO THIS
 	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = (1000/start)-1;
-		length = Utilities.getRandomNumberInRange(2,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		list.add(new Int(start));
-		list.add(new Fraction(start,start).simplify());
-		list.add(new Fraction(start,start*2).simplify());
-		list.add(new Fraction(start,start*3).simplify());
-		list.add(new Fraction(start,start*length-1).simplify());
+		
 	}
 
 	private void listGen17()//DO THIS
 	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = (1000/start)-1;
-		length = Utilities.getRandomNumberInRange(2,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		list.add(new Fraction(1,start).simplify());
-		list.add(new Fraction(1,start*2).simplify());
-		list.add(new Fraction(1,start*3).simplify());
-		list.add(new Fraction(1,start*4).simplify());
-		list.add(new Fraction(1,start*(length-1)).simplify());
+		
 	}
 
 	private void listGen18()//DO THIS
@@ -496,18 +476,8 @@ public class Context {
 	public int getType()
 	{
 		return type;
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
->>>>>>> FETCH_HEAD
-	}
-}
-
-=======
->>>>>>> FETCH_HEAD
 
 	}
 }
