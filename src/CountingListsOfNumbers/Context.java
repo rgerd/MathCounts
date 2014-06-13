@@ -109,21 +109,6 @@ public class Context {
 		return length; 
 	}
 	
-	public int getAns17()
-	{
-		
-	}
-	
-	public int getAns15()
-	{
-		
-	}
-	
-	public int getAns16()
-	{
-		
-	}
-	
 	public int getType17()
 	{
 		return type17;
