@@ -108,11 +108,6 @@ public class Context {
 	{
 		return length; 
 	}
-	
-	public int getType17()
-	{
-		return type17;
-	}
 
 	private void listGen1()
 	{
