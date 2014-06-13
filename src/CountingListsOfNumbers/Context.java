@@ -382,9 +382,15 @@ public class Context {
 
 	private void listGen14()
 	{
+<<<<<<< HEAD
 		int int1 = Utilities.getRandomNumberInRange(min, max);
 		int int2 = Utilities.getRandomNumberInRange(min,max);
 
+=======
+		int int1 = Utilities.getRandomNumberInRange(1, 69);
+		int int2 = Utilities.getRandomNumberInRange(420,500);
+	
+>>>>>>> FETCH_HEAD
 	}
 
 	private void listGen15()
@@ -470,6 +476,11 @@ public class Context {
 	{
 		return type;
 
+<<<<<<< HEAD
 	}
+=======
+}
+}
+>>>>>>> FETCH_HEAD
 
 }
