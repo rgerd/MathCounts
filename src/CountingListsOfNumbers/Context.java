@@ -455,7 +455,7 @@ public class Context {
 			}
 		}
 		System.out.println("Length: "+length+ " notinlist: " +notinlist);
-		length = length - notinlist;
+		length = nums.size();
 		System.out.println("\n "+length);
 		
 		
