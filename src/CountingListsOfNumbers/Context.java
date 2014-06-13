@@ -382,12 +382,19 @@ public class Context {
 
 	private void listGen14()//DO THIS
 	{
+<<<<<<< HEAD
 
 
 		int int1 = Utilities.getRandomNumberInRange(1, 69);
 		int int2 = Utilities.getRandomNumberInRange(420,500);
 
 
+=======
+		int int1 = Utilities.getRandomNumberInRange(1,15);
+		int int2 = Utilities.getRandomNumberInRange(1,15);
+		int int1 = Utilities.getRandomNumberInRange(1, 69);
+		int int2 = Utilities.getRandomNumberInRange(420,500);
+>>>>>>> origin/master
 	}
 
 	private void listGen15()//DO THIS
@@ -473,10 +480,15 @@ public class Context {
 	{
 		return type;
 
+<<<<<<< HEAD
 
 	}
 }
 
 
+=======
+	}
+}
+>>>>>>> origin/master
 
 
