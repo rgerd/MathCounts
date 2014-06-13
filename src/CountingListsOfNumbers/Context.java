@@ -382,10 +382,15 @@ public class Context {
 
 	private void listGen14()
 	{
+<<<<<<< HEAD
 
 		int int1 = Utilities.getRandomNumberInRange(1, 69);
 		int int2 = Utilities.getRandomNumberInRange(420,500);
 	
+=======
+		int int1 = Utilities.getRandomNumberInRange(1, 69);
+		int int2 = Utilities.getRandomNumberInRange(420,500);
+>>>>>>> origin/master
 
 	}
 
@@ -438,7 +443,7 @@ public class Context {
 		Fraction r = new Fraction(rNum, rDen);
 		int start = g1;
 		int end = 0;
-		
+
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
 		{
@@ -460,7 +465,7 @@ public class Context {
 			else
 				list.add(new Int(end));
 		}
-		
+
 	}
 
 	private void setType(int t)
@@ -472,11 +477,16 @@ public class Context {
 	{
 		return type;
 
+<<<<<<< HEAD
 
 	
 
 }
 }
+=======
+	}
+}
+>>>>>>> origin/master
 
 
 
