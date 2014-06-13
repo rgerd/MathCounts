@@ -186,9 +186,24 @@ public class Context {
 	
 	private void listGen8()
 	{
-		int denom = Utilities.getRandomNumberInRange(2,10);
-		int numer = Utilities.getRandomNumberInRange(-994,994);
-		int length = Utilities.getRandomNumberInRange(5,999);
+		start = Utilities.getRandomNumberInRange(2,10);
+		length = Utilities.getRandomNumberInRange(2,25);
+		int chance = Utilities.getRandomNumberInRange(1,2);
+		int rand = Utilities.getRandomNumberInRange(1,25-length);
+		if(chance == 1)
+		{
+			list.add(new Fraction(rand,start).simplify());
+			list.add(new Fraction(rand+1,start).simplify());
+			list.add(new Fraction(rand+2,start).simplify());
+			list.add(new Fraction(rand+3,start).simplify());
+			list.add(new Fraction(rand+length,start).simplify());
+		}else
+		{
+			list.add(new Fraction(-rand,start).simplify());
+			list.add(new Fraction(-rand+1,start).simplify());
+			list.add(new Fraction(-rand+2,start).simplify());
+			list.add(new Fraction(-rand+3,start).simplify());
+			list.add(new Fraction(-rand+length,start).simplify());		}
 
 	}
 	private void listGen9()
