@@ -210,6 +210,7 @@ public class Context {
 	private void listGen9()
 	{
 		start = Utilities.getRandomNumberInRange(1, 20);
+		int r = Utilities.getRandomNumberInRange(2, )
 		length = Utilities.getRandomNumberInRange(5, 999);
 		list.add(new Int(start));
 		start = start*start;
@@ -221,7 +222,7 @@ public class Context {
 		
 	}
 	
-	private void listGen95()
+	private void listGen9point5()
 	{
 		
 		
