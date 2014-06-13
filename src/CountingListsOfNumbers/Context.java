@@ -438,7 +438,7 @@ public class Context {
 
 		}
 		System.out.println("Can: "+can+" Cant: "+cant+" GCD: "+gcd);
-		int length = Utilities.getRandomNumberInRange(1,50);
+		int length = 1000/can;
 		while((length * can) % cant == 0)
 		{
 			length = Utilities.getRandomNumberInRange(1,50);
