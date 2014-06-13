@@ -289,7 +289,7 @@ public class Context {
 		}
 	}
 
-	private void listGen10()
+	private void listGen10()//DO THIS
 	{
 
 
@@ -364,7 +364,7 @@ public class Context {
 		}
 	}
 
-	private void listGen13()
+	private void listGen13()//DO THIS
 	{
 
 		start = 1;
@@ -380,8 +380,9 @@ public class Context {
 
 	}
 
-	private void listGen14()
+	private void listGen14()//DO THIS
 	{
+
 		int can = Utilities.getRandomNumberInRange(1,15);
 		int cant = Utilities.getRandomNumberInRange(1,15);
 		int gcd = 0;
@@ -418,7 +419,7 @@ public class Context {
 		
 	}
 
-	private void listGen15()
+	private void listGen15()//DO THIS
 	{
 
 
@@ -433,7 +434,7 @@ public class Context {
 
 
 	}
-	private void listGen16()
+	private void listGen16()//DO THIS
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -446,7 +447,7 @@ public class Context {
 		list.add(new Fraction(start,start*length-1).simplify());
 	}
 
-	private void listGen17()
+	private void listGen17()//DO THIS
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -459,7 +460,7 @@ public class Context {
 		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 
-	private void listGen18()
+	private void listGen18()//DO THIS
 	{
 		int rNum = Utilities.getRandomNumberInRange(1, 10);
 		int rDen = Utilities.getRandomNumberInRange(1, 8);
@@ -472,17 +473,41 @@ public class Context {
 		if(chance == 1)
 		{
 			list.add(new Int(start));
-			list.add(new Int(start * (int) Math.pow(r, 1)));
-			list.add(new Int(start * (int) Math.pow(r, 2)));
-			list.add(new Int(start * (int) Math.pow(r, 3)));
+			int num = r.getNumerator();
+			int den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
+			list.add(r.mult(new Int(start)));
+			
 			list.add(new Int(end));
 		}
 		else
 		{
 			list.add(new Int(start));
-			list.add(new Int(start * (int) Math.pow(r, 1)* (int) Math.pow(-1, 1)));
-			list.add(new Int(start * (int) Math.pow(r, 2)* (int) Math.pow(-1, 2)));
-			list.add(new Int(start * (int) Math.pow(r, 3)* (int) Math.pow(-1, 3)));
+			
+			int num = r.getNumerator();
+			int den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
+			list.add(r.mult(new Int(start*-1)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
+			list.add(r.mult(new Int(start)));
+			
+			num = r.getNumerator();
+			den = r.getDenominator();
+			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
+			list.add(r.mult(new Int(start*-1)));
 
 			if(length %2 == 0)
 				list.add(new Int(end*-1));
@@ -500,7 +525,6 @@ public class Context {
 	public int getType()
 	{
 		return type;
-
 	}
 }
 
