@@ -13,7 +13,7 @@ public class Context {
 	private int length;
 	private ArrayList<Number> list;
 	private int start;
-
+	private int type17;
 
 	public Context()
 	{
@@ -209,6 +209,7 @@ public class Context {
 		}
 	}
 
+
 	private void listGen7()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
@@ -292,7 +293,7 @@ public class Context {
 	private void listGen10()//DO THIS
 	{start = Utilities.getRandomNumberInRange(2,10);
 	int lengthRange = (1000/start)-1;
-	length = Utilities.getRandomNumberInRange(2,lengthRange);
+	length = Utilities.getRandomNumberInRange(5,lengthRange);
 	
 	list.add(new Fraction(1,start).simplify());
 	list.add(new Fraction(1,start*2).simplify());
@@ -407,16 +408,20 @@ public class Context {
 
 	}
 
-	private void listGen14()//DO THIS
+	private void listGen14()
 	{
 
 		int can = Utilities.getRandomNumberInRange(1,15);
-		int cant = Utilities.getRandomNumberInRange(1,15);
-		int gcd = 0;
-		while(gcd == 0)
+		int cant = Utilities.getRandomNumberInRange(can,15);
+		int gcd = Utilities.GCD(can,cant);
+		while(gcd == 1 || can == cant)
 		{
-			gcd = Utilities.getRandomNumberInRange(can,cant);
+			can = Utilities.getRandomNumberInRange(1,15);
+			cant = Utilities.getRandomNumberInRange(can,15);
+			gcd = Utilities.GCD(can,cant);
+
 		}
+		System.out.println("Can: "+can+" Cant: "+cant+" GCD: "+gcd);
 		int length = Utilities.getRandomNumberInRange(1,50);
 		while((length * can) % cant == 0)
 		{
@@ -435,13 +440,9 @@ public class Context {
 				notinlist++;
 			}
 		}
-		
-		length = length - notinlist;
-		list.add(new Int(nums.get(0)));
-		list.add(new Int(nums.get(1)));
-		list.add(new Int(nums.get(2)));
-		list.add(new Int(nums.get(3)));
-		list.add(new Int(nums.get(nums.size() -1)));
+		System.out.println("Length: "+length+ " notinlist: " +notinlist);
+		length = nums.size();
+		System.out.println("\n "+length);
 		
 		
 	}
@@ -468,7 +469,7 @@ public class Context {
 
 	private void listGen17()
 	{
-		
+		type17 = Utilities.getRandomNumberInRange(1, 999);
 	}
 
 	private void listGen18()
