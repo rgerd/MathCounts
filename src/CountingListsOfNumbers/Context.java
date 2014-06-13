@@ -210,14 +210,9 @@ public class Context {
 	private void listGen9()
 	{
 		start = Utilities.getRandomNumberInRange(1, 20);
-		int r = Utilities.getRandomNumberInRange(2, )
+		double r = Utilities.getRandomNumberInRange(2, 10);
 		length = Utilities.getRandomNumberInRange(5, 999);
-		list.add(new Int(start));
-		start = start*start;
-		list.add(new Int(start));
-		start = start*start;
-		list.add(new Int(start));
-		start = start*start;
+		int end = (int) Math.pow(r, (double)length-1);
 		list.add(new Int(start));
 		
 	}
