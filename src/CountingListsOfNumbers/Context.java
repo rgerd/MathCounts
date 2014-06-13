@@ -421,16 +421,20 @@ public class Context {
 
 	}
 
-	private void listGen14()//DO THIS
+	private void listGen14()
 	{
 
 		int can = Utilities.getRandomNumberInRange(1,15);
 		int cant = Utilities.getRandomNumberInRange(1,15);
-		int gcd = 0;
-		while(gcd == 0)
+		int gcd = Utilities.GCD(can,cant);
+		while(gcd == 1)
 		{
-			gcd = Utilities.getRandomNumberInRange(can,cant);
+			can = Utilities.getRandomNumberInRange(1,15);
+			cant = Utilities.getRandomNumberInRange(1,15);
+			gcd = Utilities.GCD(can,cant);
+
 		}
+		System.out.println("Can: "+can+" Cant: "+cant+" GCD: "+gcd);
 		int length = Utilities.getRandomNumberInRange(1,50);
 		while((length * can) % cant == 0)
 		{
@@ -449,7 +453,7 @@ public class Context {
 				notinlist++;
 			}
 		}
-		
+		System.out.println("Length: "+length+ " noninlist: " +notinlist);
 		length = length - notinlist;
 		list.add(new Int(nums.get(0)));
 		list.add(new Int(nums.get(1)));
