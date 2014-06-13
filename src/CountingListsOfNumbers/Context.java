@@ -318,7 +318,7 @@ public class Context {
 		{
 			//increasing
 
-			list.add(new Int(start ));
+			list.add(new Int((int) Math.pow(start, 3) ));
 			list.add(new Int((int) Math.pow(start+1, 3) ));
 			list.add(new Int((int) Math.pow(start+2, 3) ));
 			list.add(new Int((int) Math.pow(start+3, 3) ));
@@ -326,9 +326,9 @@ public class Context {
 		}else
 		{
 			list.add(new Int((int)Math.pow(-start, 3) ));
-			list.add(new Int((int) Math.pow(-start+1, 3) ));
-			list.add(new Int((int) Math.pow(-start+2, 3) ));
-			list.add(new Int((int) Math.pow(-start+3, 3) ));
+			list.add(new Int((int) Math.pow(-start-1, 3) ));
+			list.add(new Int((int) Math.pow(-start-2, 3) ));
+			list.add(new Int((int) Math.pow(-start-3, 3) ));
 			list.add(new Int((int) Math.pow(-length, 3) ));
 		}
 	}
