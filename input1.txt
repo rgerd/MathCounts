@@ -1,4 +1,5 @@
-Counting Lists of Numbers	1	5 t17	5 t12
+Counting Lists of Numbers	1	5 t17	5 t10
+
 
 
 
