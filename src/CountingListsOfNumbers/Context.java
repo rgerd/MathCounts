@@ -283,17 +283,27 @@ public class Context {
 	private void listGen12()
 	{
 		
+		start = Utilities.getRandomNumberInRange(1,5);
+		length = Utilities.getRandomNumberInRange(start+4,10);
+		int chance = Utilities.getRandomNumberInRange(1,2);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		if(chance == 1)
+		{
+			//increasing
+
+			list.add(new Int(start ));
+			list.add(new Int((int) Math.pow(start+1, 3) ));
+			list.add(new Int((int) Math.pow(start+2, 3) ));
+			list.add(new Int((int) Math.pow(start+3, 3) ));
+			list.add(new Int((int) Math.pow(length, 3) ));
+		}else
+		{
+			list.add(new Int((int)Math.pow(-start, 3) ));
+			list.add(new Int((int) Math.pow(-start+1, 3) ));
+			list.add(new Int((int) Math.pow(-start+2, 3) ));
+			list.add(new Int((int) Math.pow(-start+3, 3) ));
+			list.add(new Int((int) Math.pow(-length, 3) ));
+		}
 	}
 	
 	private void listGen13()
