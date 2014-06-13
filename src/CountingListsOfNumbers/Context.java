@@ -222,21 +222,6 @@ public class Context {
 		
 	}
 	
-	private void listGen9point5()
-	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 	private void listGen10()
 	{
 		
@@ -357,6 +342,23 @@ public class Context {
 		list.add(new Fraction(1,start*3).simplify());
 		list.add(new Fraction(1,start*4).simplify());
 		list.add(new Fraction(1,start*(length-1)).simplify());
+	}
+	
+	private void listGen18()
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 }
