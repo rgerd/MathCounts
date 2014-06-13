@@ -51,6 +51,33 @@ public class Context {
 		}else if(type == 9)
 		{
 			listGen9();
+		}else if(type == 10)
+		{
+			listGen10();
+		}else if(type == 11)
+		{
+			listGen11();
+		}else if(type == 12)
+		{
+			listGen12();
+		}else if(type == 13)
+		{
+			listGen13();
+		}else if(type == 14)
+		{
+			listGen14();
+		}else if(type == 15)
+		{
+			listGen15();
+		}else if(type == 16)
+		{
+			listGen16();
+		}else if(type == 17)
+		{
+			listGen17();
+		}else if(type == 18)
+		{
+			listGen18();
 		}
 	}
 
@@ -285,6 +312,7 @@ public class Context {
 			list.add(new Int ((int)(Math.pow(start-2,2))));
 			list.add(new Int ((int)(Math.pow(start-3,2))));
 			list.add(new Int ((int)(Math.pow(start-length-1,2))));
+<<<<<<< HEAD
 		}
 
 
@@ -297,6 +325,10 @@ public class Context {
 
 
 
+=======
+		}	
+		
+>>>>>>> FETCH_HEAD
 	}
 
 	private void listGen12()
@@ -310,7 +342,7 @@ public class Context {
 		{
 			//increasing
 
-			list.add(new Int(start ));
+			list.add(new Int((int) Math.pow(start, 3) ));
 			list.add(new Int((int) Math.pow(start+1, 3) ));
 			list.add(new Int((int) Math.pow(start+2, 3) ));
 			list.add(new Int((int) Math.pow(start+3, 3) ));
@@ -318,9 +350,9 @@ public class Context {
 		}else
 		{
 			list.add(new Int((int)Math.pow(-start, 3) ));
-			list.add(new Int((int) Math.pow(-start+1, 3) ));
-			list.add(new Int((int) Math.pow(-start+2, 3) ));
-			list.add(new Int((int) Math.pow(-start+3, 3) ));
+			list.add(new Int((int) Math.pow(-start-1, 3) ));
+			list.add(new Int((int) Math.pow(-start-2, 3) ));
+			list.add(new Int((int) Math.pow(-start-3, 3) ));
 			list.add(new Int((int) Math.pow(-length, 3) ));
 		}
 	}
@@ -330,6 +362,7 @@ public class Context {
 
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,1000);
+<<<<<<< HEAD
 
 
 
@@ -341,10 +374,30 @@ public class Context {
 
 
 
+=======
+		int i= 1;
+		int i1=1;
+        while(i%i1==0)
+        {
+        	i=Utilities.getRandomNumberInRange(1,15);
+        	i1=Utilities.getRandomNumberInRange(1,15);
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+>>>>>>> FETCH_HEAD
 	}
 
 	private void listGen14()
 	{
+<<<<<<< HEAD
 
 
 
@@ -357,6 +410,21 @@ public class Context {
 
 
 
+=======
+		int int1 = Utilities.getRandomNumberInRange(min, max);
+		int int2 = Utilities.getRandomNumberInRange(min,max);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+>>>>>>> FETCH_HEAD
 	}
 
 	private void listGen15()
