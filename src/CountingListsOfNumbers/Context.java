@@ -338,7 +338,13 @@ public class Context {
 		
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,1000);
-
+		int i= 1;
+		int i1=1;
+        while(i%i1==0)
+        {
+        	i=Utilities.getRandomNumberInRange(1,15);
+        	i1=Utilities.getRandomNumberInRange(1,15);
+        }
 		
 		
 		
