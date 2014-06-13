@@ -47,6 +47,9 @@ public class Context {
 		}else if(type == 8)
 		{
 			listGen8();
+		}else if(type == 9)
+		{
+			listGen9();
 		}
 	}
 	
@@ -348,19 +351,9 @@ public class Context {
 	
 	private void listGen18()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		int rNum = Utilities.getRandomNumberInRange(1, 10);
+		int rDen = Utilities.getRandomNumberInRange(1, 8);
+		int g1 = Utilities.getRandomNumberInRange(min, max)
 	}
 	
 }
