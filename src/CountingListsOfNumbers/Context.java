@@ -19,7 +19,7 @@ public class Context {
 	{
 		list = new ArrayList<Number>();
 	}
-	
+
 
 	public void generate(int type)
 	{	
@@ -333,8 +333,8 @@ public class Context {
 		}
 
 
-		
-		
+
+
 
 	}
 
@@ -371,20 +371,20 @@ public class Context {
 		length=Utilities.getRandomNumberInRange(5,1000);
 		int i= 1;
 		int i1=1;
-        while(i%i1==0)
-        {
-        	i=Utilities.getRandomNumberInRange(1,15);
-        	i1=Utilities.getRandomNumberInRange(1,15);
-        }
-		
-		
+		while(i%i1==0)
+		{
+			i=Utilities.getRandomNumberInRange(1,15);
+			i1=Utilities.getRandomNumberInRange(1,15);
+		}
+
+
 	}
 
 	private void listGen14()
 	{
 		int int1 = Utilities.getRandomNumberInRange(min, max);
 		int int2 = Utilities.getRandomNumberInRange(min,max);
-	
+
 	}
 
 	private void listGen15()
@@ -435,17 +435,41 @@ public class Context {
 		int g1 = Utilities.getRandomNumberInRange(1, 20);
 		Fraction r = new Fraction(rNum, rDen);
 		int start = g1;
+		int end = 0;
+		
+		int chance = Utilities.getRandomNumberInRange(1, 2);
+		if(chance == 1)
+		{
+			list.add(new Int(start));
+			list.add(new Int(start * (int) Math.pow(r, 1)));
+			list.add(new Int(start * (int) Math.pow(r, 2)));
+			list.add(new Int(start * (int) Math.pow(r, 3)));
+			list.add(new Int(end));
+		}
+		else
+		{
+			list.add(new Int(start));
+			list.add(new Int(start * (int) Math.pow(r, 1)* (int) Math.pow(-1, 1)));
+			list.add(new Int(start * (int) Math.pow(r, 2)* (int) Math.pow(-1, 2)));
+			list.add(new Int(start * (int) Math.pow(r, 3)* (int) Math.pow(-1, 3)));
 
+			if(length %2 == 0)
+				list.add(new Int(end*-1));
+			else
+				list.add(new Int(end));
+		}
+		
 	}
-	
+
 	private void setType(int t)
 	{
 		type = t;
 	}
-	
+
 	public int getType()
 	{
 		return type;
 
-}
+	}
 
+}
