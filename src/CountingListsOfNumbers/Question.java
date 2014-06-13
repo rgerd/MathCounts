@@ -1,5 +1,7 @@
 package CountingListsOfNumbers;
 
+import util.Utilities;
+
 
 public class Question {
 	private static final String Q = "How many numbers are in the list:";
@@ -27,14 +29,15 @@ public class Question {
 			}
 		}
 		String returnstring;
-		if(c.getType() == 12)
-		{
-			returnstring = R + st;
-		}
-		else
-		{
+		//int r = Utilities.getRandomNumberInRange(1,2);
+		//if(c.getType() == 12&&r==1)
+		//{
+		//	returnstring = R + st;
+		//}
+		//else
+		//{
 		returnstring = Q + st;
-		}
+		//}
 		return returnstring;
 	
 	}

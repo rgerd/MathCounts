@@ -289,7 +289,7 @@ public class Context {
 		}
 	}
 
-	private void listGen10()
+	private void listGen10()//DO THIS
 	{
 
 
@@ -364,7 +364,7 @@ public class Context {
 		}
 	}
 
-	private void listGen13()
+	private void listGen13()//DO THIS
 	{
 
 		start = 1;
@@ -380,14 +380,24 @@ public class Context {
 
 	}
 
-	private void listGen14()
+	private void listGen14()//DO THIS
 	{
+<<<<<<< HEAD
+
+
 		int int1 = Utilities.getRandomNumberInRange(1, 69);
 		int int2 = Utilities.getRandomNumberInRange(420,500);
 
+
+=======
+		int int1 = Utilities.getRandomNumberInRange(1,15);
+		int int2 = Utilities.getRandomNumberInRange(1,15);
+		int int1 = Utilities.getRandomNumberInRange(1, 69);
+		int int2 = Utilities.getRandomNumberInRange(420,500);
+>>>>>>> origin/master
 	}
 
-	private void listGen15()
+	private void listGen15()//DO THIS
 	{
 
 
@@ -402,7 +412,7 @@ public class Context {
 
 
 	}
-	private void listGen16()
+	private void listGen16()//DO THIS
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -415,7 +425,7 @@ public class Context {
 		list.add(new Fraction(start,start*length-1).simplify());
 	}
 
-	private void listGen17()
+	private void listGen17()//DO THIS
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -428,7 +438,7 @@ public class Context {
 		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 
-	private void listGen18()
+	private void listGen18()//DO THIS
 	{
 		int rNum = Utilities.getRandomNumberInRange(1, 10);
 		int rDen = Utilities.getRandomNumberInRange(1, 8);
@@ -493,8 +503,19 @@ public class Context {
 	public int getType()
 	{
 		return type;
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+
+>>>>>>> FETCH_HEAD
 	}
 }
 
+
+=======
+	}
+}
+>>>>>>> origin/master
 
 
