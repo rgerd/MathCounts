@@ -140,4 +140,5 @@ public class Fraction implements Number {
 		Fraction frac_1 = _other.simplify();
 		return (frac_0.num == frac_1.num) && (frac_0.den == frac_1.den);
 	}
+	
 }
