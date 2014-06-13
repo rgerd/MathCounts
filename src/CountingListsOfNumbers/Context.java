@@ -216,7 +216,7 @@ public class Context {
 		
 		double r = Utilities.getRandomNumberInRange(2, 10);
 		start = g1;
-		length = Utilities.getRandomNumberInRange(5, 999);
+		length = Utilities.getRandomNumberInRange(5, 20);
 		int end = (int) Math.pow(r, (double)length-1);
 		list.add(new Int(start));
 		list.add(new Int(start * (int) Math.pow(r, 1)));
@@ -354,6 +354,7 @@ public class Context {
 		int rNum = Utilities.getRandomNumberInRange(1, 10);
 		int rDen = Utilities.getRandomNumberInRange(1, 8);
 		int g1 = Utilities.getRandomNumberInRange(1, 20);
+		Fraction r = new 
 	}
 	
 }
