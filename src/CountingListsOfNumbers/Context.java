@@ -353,7 +353,7 @@ public class Context {
 	{
 		int rNum = Utilities.getRandomNumberInRange(1, 10);
 		int rDen = Utilities.getRandomNumberInRange(1, 8);
-		int g1 = Utilities.getRandomNumberInRange(min, max)
+		int g1 = Utilities.getRandomNumberInRange(1, 20);
 	}
 	
 }
