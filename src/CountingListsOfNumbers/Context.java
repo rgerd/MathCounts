@@ -188,7 +188,7 @@ public class Context {
 	{
 		int denom = Utilities.getRandomNumberInRange(2,10);
 		int numer = Utilities.getRandomNumberInRange(-994,994);
-		int length = Utilities.getRandomNumberInRange(5,999-)
+		int length = Utilities.getRandomNumberInRange(5,999);
 
 	}
 	private void listGen16()
