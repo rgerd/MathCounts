@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import util.Fraction;
 import util.Int;
 import util.Number;
-import util.Root;
 import util.Utilities;
 
 public class Context {
