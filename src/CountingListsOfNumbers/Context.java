@@ -558,7 +558,7 @@ public class Context {
 	
 	public void listGen19()
 	{
-		int diff = Utilities.
+		int diff = Utilities.getRandomNumberInRange(0, 10000);
 	}
 
 	private void setType(int t)
