@@ -113,13 +113,13 @@ public class Context {
 				if(i*(i+1) < type17)
 					count++;
 			}
-			
+
 			return count;
 		}
 		return length; 
-		
+
 	}
-	
+
 	public int getType17()
 	{
 		return type17;
@@ -313,15 +313,16 @@ public class Context {
 	}
 
 	private void listGen10()//DO THIS
-	{start = Utilities.getRandomNumberInRange(2,10);
-	int lengthRange = (1000/start)-1;
-	length = Utilities.getRandomNumberInRange(5,lengthRange);
-	
-	list.add(new Fraction(1,start).simplify());
-	list.add(new Fraction(1,start*2).simplify());
-	list.add(new Fraction(1,start*3).simplify());
-	list.add(new Fraction(1,start*4).simplify());
-	list.add(new Fraction(1,start*(length-1)).simplify());
+	{
+		start = Utilities.getRandomNumberInRange(2,10);
+		int lengthRange = (1000/start)-1;
+		length = Utilities.getRandomNumberInRange(5,lengthRange);
+
+		list.add(new Fraction(1,start).simplify());
+		list.add(new Fraction(1,start*2).simplify());
+		list.add(new Fraction(1,start*3).simplify());
+		list.add(new Fraction(1,start*4).simplify());
+		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 
 	private void listGen11()
@@ -398,7 +399,7 @@ public class Context {
 		length=Utilities.getRandomNumberInRange(100,700);
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
-		
+
 		while(x*i<length )
 		{
 			boolean isgood = true;
@@ -407,23 +408,23 @@ public class Context {
 				if(i*x == i1*y)
 				{
 					isgood=false;
-					
+
 				}
-				
-				
+
+
 			}
 			if(isgood==true)
 				ar.add(i*x);
 			x++;
-			
+
 		}
-		
+
 		list.add(new Int(length));
 		length=ar.size();
 		list.add(new Int(i));
 		list.add(new Int(i1));
-		
-			
+
+
 
 	}
 
@@ -442,7 +443,7 @@ public class Context {
 		length=Utilities.getRandomNumberInRange(100,700);
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
-		
+
 		while(x*i<length )
 		{
 			boolean isgood = true;
@@ -451,22 +452,22 @@ public class Context {
 				if(i*x == i1*y)
 				{
 					isgood=false;
-					
+
 				}
-				
-				
+
+
 			}
 			if(isgood==true)
 				ar.add(i*x);
 			x++;
-			
+
 		}
-		
+
 		list.add(new Int(length));
 		length=ar.size();
 		list.add(new Int(i));
 		list.add(new Int(i1));
-		
+
 	}
 
 	private void listGen15()//DO THIS
@@ -486,7 +487,7 @@ public class Context {
 	}
 	private void listGen16()//DO THIS
 	{
-		
+
 	}
 
 	private void listGen17()
@@ -506,7 +507,7 @@ public class Context {
 		int den = r.getDenominator();
 		Fraction end = new Fraction((int) Math.pow(num, length-1), (int) Math.pow(den, length-1));;
 		end = new Fraction(end.getNumerator()*start, end.getDenominator());
-				
+
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
 		{
@@ -516,38 +517,38 @@ public class Context {
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
 			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
-			
+
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
 			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
-			
+
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
 			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
-			
+
 			list.add(end.simplify());
 		}
 		else
 		{
 			list.add(new Int(start));
-			
+
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
 			r = new Fraction(r.getNumerator()*start*-1, r.getDenominator());
 			list.add(r.simplify());
-		
-			
+
+
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
 			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
-			
+
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
