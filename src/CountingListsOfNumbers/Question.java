@@ -19,7 +19,7 @@ public class Question {
 			return str;
 		}else if(c.getType() == 14 || c.getType() == 13)
 		{
-			String str = Q_T14 + c.getType() + "?";
+			String str = Q_T14 + c.getList().get(0) + " but not " + c.getList().get(1) + "?";
 			return str;
 		}
 		else

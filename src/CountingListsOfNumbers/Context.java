@@ -265,7 +265,7 @@ public class Context {
 			list.add(new Fraction(rand+1,start).simplify());
 			list.add(new Fraction(rand+2,start).simplify());
 			list.add(new Fraction(rand+3,start).simplify());
-			list.add(new Fraction(length,start).simplify());
+			list.add(new Fraction(rand + length,start).simplify());
 		}else
 		{
 			list.add(new Fraction(-rand,start).simplify());
@@ -274,6 +274,7 @@ public class Context {
 			list.add(new Fraction(-rand+3,start).simplify());
 			list.add(new Fraction(-rand+length,start).simplify());	
 		}
+		length = length +1;
 
 	}
 	private void listGen9()
@@ -285,6 +286,7 @@ public class Context {
 
 		length = Utilities.getRandomNumberInRange(5, 8);
 		int end = (int) Math.pow(r, (double)length-1);
+		end = end*start;
 
 		int chance = Utilities.getRandomNumberInRange(1, 2);
 		if(chance == 1)
