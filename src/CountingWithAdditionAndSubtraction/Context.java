@@ -126,14 +126,10 @@ public class Context {
 
 	private void listGen1()
 	{
-		start = 1;
-		length=Utilities.getRandomNumberInRange(5,998);
-		Int init = new Int(start);
-		list.add(init);
-		list.add(init.add(new Int(1)));
-		list.add(init.add(new Int(2)));
-		list.add(init.add(new Int(3)));
-		list.add(init.add(new Int(length-1)));
+		int type1 = Utilities.getRandomNumberInRange(2,15);
+		int type2 = Utilities.getRandomNumberInRange(2,15);
+		list.add(type1);
+		list.add(type2);
 	}
 
 	private void listGen2()
