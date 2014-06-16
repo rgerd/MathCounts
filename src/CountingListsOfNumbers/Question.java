@@ -19,7 +19,6 @@ public class Question {
 			return str;
 		}else if(c.getType() == 14 || c.getType() == 13)
 		{
-			System.out.println(c.getList().size());
 			String str = Q_T14 + c.getList().get(0) + " are multiples of " + c.getList().get(1) + " but not " + c.getList().get(2) + "?";
 			return str;
 		}
