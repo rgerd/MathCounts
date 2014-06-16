@@ -22,7 +22,6 @@ public class Context {
 
 	public void generate(int type)
 	{	
-		start=Utilities.getRandomNumberInRange(1,1000);
 		if(type ==  1)
 		{
 			setType(1);
