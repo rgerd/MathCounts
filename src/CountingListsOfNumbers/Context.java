@@ -387,20 +387,15 @@ public class Context {
 		length=30;
 		int i= 1;
 		int i1=1;
-		while(util.Utilities.GCD(i,i1)!=1)
+		while(util.Utilities.GCD(i,i1)!=1 || i == i1 || (i % i1) == 0)
 		{
 			i=Utilities.getRandomNumberInRange(1,15);
 			i1=Utilities.getRandomNumberInRange(1,15);
 		}
-		int larger;
-		if(i>i1)
-			larger=i;
-		else
-				larger=i1;
-	length=1000;
+		length=100;
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
-		
+		System.out.println("The numbers are: " + i + " and " + i1);
 		
 		while(x*i<length )
 		{
@@ -422,6 +417,7 @@ public class Context {
 		}
 		
 		length=ar.size();
+		System.out.println(ar.toString());
 		
 			
 
