@@ -42,58 +42,6 @@ public class Context {
 		{
 			setType(5);
 			listGen5();
-		}else if(type == 6)
-		{
-			setType(6);
-			listGen6();
-		}else if(type == 7)
-		{
-			setType(7);
-			listGen7();
-		}else if(type == 8)
-		{
-			setType(8);
-			listGen8();
-		}else if(type == 9)
-		{
-			setType(9);
-			listGen9();
-		}else if(type == 10)
-		{
-			setType(10);
-			listGen10();
-		}else if(type == 11)
-		{
-			setType(11);
-			listGen11();
-		}else if(type == 12)
-		{
-			setType(12);
-			listGen12();
-		}else if(type == 13)
-		{
-			setType(13);
-			listGen13();
-		}else if(type == 14)
-		{
-			setType(14);
-			listGen14();
-		}else if(type == 15)
-		{
-			setType(15);
-			listGen15();
-		}else if(type == 16)
-		{
-			setType(16);
-			listGen16();
-		}else if(type == 17)
-		{
-			setType(17);
-			listGen17();
-		}else if(type == 18)
-		{
-			setType(18);
-			listGen18();
 		}
 	}
 
@@ -119,10 +67,6 @@ public class Context {
 
 	}
 
-	public int getType17()
-	{
-		return type17;
-	}
 
 	private void listGen1()
 	{
