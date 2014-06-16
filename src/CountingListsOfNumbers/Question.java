@@ -15,7 +15,7 @@ public class Question {
 	{
 		if(c.getType() == 17)
 		{
-			String str = Q_TYPE17 + c.getType() + "?";
+			String str = Q_TYPE17 + c.getType17() + "?";
 			return str;
 		}else if(c.getType() == 14 || c.getType() == 13)
 		{
