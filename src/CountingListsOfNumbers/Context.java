@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import util.Fraction;
 import util.Int;
 import util.Number;
-import util.Root;
 import util.Utilities;
 
 public class Context {
@@ -377,7 +376,7 @@ public class Context {
 		}
 	}
 
-	private void listGen13()//DO THIS
+	private void listGen13()//REMEMBER ANSWERS DONT COUNT 0 OR 1000
 	{
 
 		start = 1;
@@ -438,7 +437,7 @@ public class Context {
 
 		}
 		System.out.println("Can: "+can+" Cant: "+cant+" GCD: "+gcd);
-		int length = Utilities.getRandomNumberInRange(1,50);
+		int length = 1000/can;
 		while((length * can) % cant == 0)
 		{
 			length = Utilities.getRandomNumberInRange(1,50);
@@ -559,8 +558,12 @@ public class Context {
 	
 	public void listGen19()
 	{
+<<<<<<< HEAD
 		int diff = Utilities.getRandomNumberInRange(1, 100);
 		int product = Utilities.getRandomNumberInRange(1, 999);
+=======
+		int diff = Utilities.getRandomNumberInRange(0, 10000);
+>>>>>>> FETCH_HEAD
 	}
 
 	private void setType(int t)
