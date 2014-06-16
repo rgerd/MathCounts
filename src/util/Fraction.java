@@ -14,6 +14,10 @@ public class Fraction implements Number {
 	public Fraction(int numerator, int denominator) {
 		num = numerator;
 		den = denominator;
+<<<<<<< HEAD
+		
+=======
+>>>>>>> origin/master
 	}
 
 	/**
@@ -94,6 +98,11 @@ public class Fraction implements Number {
 	 */
 	public Fraction simplify() {
 		int gcd = Utilities.GCD(num, den);
+		if(den < 0 && num > 0)
+		{
+			num *= -1;
+			den *= -1;
+		}
 		return new Fraction(num / gcd, den / gcd);
 	}
 
