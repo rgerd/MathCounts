@@ -1,6 +1,5 @@
 package util.lang;
 
-import util.Number;
 import util.Int;
 import util.Utilities;
 
