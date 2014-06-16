@@ -417,8 +417,8 @@ public class Context {
 		}
 		
 		length=ar.size();
-		System.out.println(ar.toString());
-		
+		list.add(new Int(i));
+		list.add(new Int(i1));
 			
 
 	}
@@ -460,8 +460,8 @@ public class Context {
 		}
 		
 		length=ar.size();
-		System.out.println(ar.toString());
-		
+		list.add(new Int(i));
+		list.add(new Int(i1));
 		
 	}
 
