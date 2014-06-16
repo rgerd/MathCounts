@@ -275,9 +275,7 @@ public class Context {
 			list.add(new Fraction(-rand+3,start).simplify());
 			list.add(new Fraction(-rand+length,start).simplify());	
 		}
-		length = length-rand;
-		length++;
-
+		
 	}
 	private void listGen9()
 	{
