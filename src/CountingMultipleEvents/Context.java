@@ -11,11 +11,9 @@ import util.Utilities;
 
 public class Context {
 	private int type;
-	private int length;
+	private int ans;
 	private ArrayList<Number> list;
 	private int start;
-	private int type17;
-
 	public Context()
 	{
 		list = new ArrayList<Number>();
@@ -54,18 +52,7 @@ public class Context {
 
 	public int getAns() 
 	{
-		if(type == 17)
-		{
-			int count = 0;
-			for(int i = 1; i < type17/2; i++)
-			{
-				if(i*(i+1) < type17)
-					count++;
-			}
-
-			return count;
-		}
-		return length; 
+		return ans; 
 
 	}
 
