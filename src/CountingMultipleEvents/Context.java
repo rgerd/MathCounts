@@ -92,4 +92,14 @@ public class Context {
 	{
 
 	}
+	private void setType(int t)
+	{
+		type = t;
+	}
+
+	public int getType()
+	{
+		return type;
+
+	}
 }
