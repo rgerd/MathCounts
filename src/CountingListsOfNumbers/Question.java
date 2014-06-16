@@ -5,7 +5,7 @@ import util.Utilities;
 
 public class Question {
 	private static final String Q = "How many numbers are in the list:";
-	private static final String Q_T14 = "How many numbers are multiples of ";
+	private static final String Q_T14 = "How many positive numbers under ";
 	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
 	private static final String M = "How Many numbers are multiples of";
 	private static final String Q_TYPE17 = "How many pairs of consecutive integers have products less than ";
@@ -19,7 +19,8 @@ public class Question {
 			return str;
 		}else if(c.getType() == 14 || c.getType() == 13)
 		{
-			String str = Q_T14 + c.getList().get(0) + " but not " + c.getList().get(1) + "?";
+			System.out.println(c.getList().size());
+			String str = Q_T14 + c.getList().get(0) + " are multiples of " + c.getList().get(1) + " but not " + c.getList().get(2) + "?";
 			return str;
 		}
 		else
