@@ -22,11 +22,9 @@ public class Driver
 		try {
 			File f = new File("output.txt");
 			output = new PrintWriter(new FileWriter(f));
-			while(in.hasNext())
+			while(in.hasNextLine())
 			{
 				 String[] s = in.nextLine().split("\t");
-				 output.println("Chapter: " + s[0]);
-				 output.println("Level " + s[1] + ": ");
 				 
 				 ArrayList<Integer> nums = new ArrayList<Integer>();
 				 ArrayList<Integer> types = new ArrayList<Integer>();
