@@ -471,17 +471,11 @@ public class Context {
 
 	private void listGen15()//DO THIS
 	{
-
-
-
-
-
-
-
-
-
-
-
+		start = Utilities.getRandomNumberInRange(1, 25);
+		length = Utilities.getRandomNumberInRange(5, 999);
+		int end = start + length;
+		list.add(new Int(start));
+		list.add(new Int(end));
 
 	}
 	private void listGen16()//DO THIS
