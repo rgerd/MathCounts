@@ -11,7 +11,10 @@
 	teacher, teachers
 	phone, phones
 	whiteboard, whiteboards
-	microwave, microwaves	
+	microwave, microwaves
+	student, students
+	desk, desks
+	poster, posters
 </noun>
 
 <adj>
@@ -37,6 +40,18 @@
 	lame
 	dumb
 	classy
+	funny
+	happy
+	angry
+	rough
+	smooth
+	interesting
+	boring
+	sad
+	furious
+	hard
+	soft
+	yolked
 </adj>
 
 <venue>
@@ -45,4 +60,6 @@
 	in_a_school
 	at_Starbucks
 	in_math_class
+	at_the_library
+	in_Chicago
 </venue>
