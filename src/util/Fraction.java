@@ -14,6 +14,11 @@ public class Fraction implements Number {
 	public Fraction(int numerator, int denominator) {
 		num = numerator;
 		den = denominator;
+		if(den < 0 && num > 0)
+		{
+			num *= -1;
+			den *= -1;
+		}
 	}
 
 	/**
