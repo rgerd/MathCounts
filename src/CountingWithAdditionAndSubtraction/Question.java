@@ -1,9 +1,6 @@
 package CountingWithAdditionAndSubtraction;
 
-<<<<<<< HEAD
-public class Question {
 
-=======
 import util.Utilities;
 
 
@@ -54,5 +51,5 @@ public class Question {
 	
 	}
 	
->>>>>>> origin/master
+
 }

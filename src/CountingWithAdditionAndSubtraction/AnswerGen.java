@@ -1,10 +1,6 @@
 package CountingWithAdditionAndSubtraction;
 
-<<<<<<< HEAD
-public class AnswerGen {
 
-}
-=======
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -79,8 +75,7 @@ public class AnswerGen
 		}
 		
 		return h1;
-	}
 	
-
+	
+	}
 }
->>>>>>> origin/master

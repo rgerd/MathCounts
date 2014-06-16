@@ -1,38 +1,6 @@
 package CountingWithAdditionAndSubtraction;
 
-<<<<<<< HEAD
-import CountingWithAdditionAndSubtraction.African;
-import CountingWithAdditionAndSubtraction.American;
-import CountingWithAdditionAndSubtraction.European;
-import CountingWithAdditionAndSubtraction.In;
-import CountingWithAdditionAndSubtraction.Question;
-import CountingWithAdditionAndSubtraction.Same;
-import CountingWithAdditionAndSubtraction.a;
-import CountingWithAdditionAndSubtraction.and;
-import CountingWithAdditionAndSubtraction.can;
-import CountingWithAdditionAndSubtraction.choose;
-import CountingWithAdditionAndSubtraction.consisting;
-import CountingWithAdditionAndSubtraction.country;
-import CountingWithAdditionAndSubtraction.fill;
-import CountingWithAdditionAndSubtraction.form;
-import CountingWithAdditionAndSubtraction.from;
-import CountingWithAdditionAndSubtraction.international;
-import CountingWithAdditionAndSubtraction.more;
-import CountingWithAdditionAndSubtraction.on;
-import CountingWithAdditionAndSubtraction.one;
-import CountingWithAdditionAndSubtraction.outfit;
-import CountingWithAdditionAndSubtraction.previous;
-import CountingWithAdditionAndSubtraction.s;
-import CountingWithAdditionAndSubtraction.ways;
-import CountingWithAdditionAndSubtraction.we;
 
-/**
- * Example question format: 
- * *number* *noun* *verb* the *noun*, *number* *noun* *verb*, *number* 
- * @author Douglass
- *
- */
-=======
 import java.util.ArrayList;
 
 import util.Fraction;
@@ -40,7 +8,7 @@ import util.Int;
 import util.Number;
 import util.Utilities;
 
->>>>>>> origin/master
+
 public class Context {
 	private int type;
 	private int length;
@@ -169,7 +137,7 @@ private void type02()
 
 
 	}
-<<<<<<< HEAD
+
 private void type03()
 
 {
@@ -179,12 +147,10 @@ private void type03()
 			Variation #2: Courses in a schedule
 			Variation #3: Anagrams of a word
 
-=======
-	}
->>>>>>> origin/master
+
 }
 
-=======
+
 	private void setType(int t)
 	{
 		type = t;
@@ -195,5 +161,5 @@ private void type03()
 		return type;
 
 	}
->>>>>>> 9a1647b7d066a94c96be3fa6fd861be601abb2c4
+
 }

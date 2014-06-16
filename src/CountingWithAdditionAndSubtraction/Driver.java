@@ -1,10 +1,6 @@
 package CountingWithAdditionAndSubtraction;
 
-<<<<<<< HEAD
-public class Driver {
 
-}
-=======
 import java.io.File;
 import util.Number;
 import util.Int;
@@ -83,4 +79,4 @@ public class Driver
 		
 	}
 
->>>>>>> origin/master
+
