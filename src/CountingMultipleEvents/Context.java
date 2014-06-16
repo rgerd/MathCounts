@@ -169,6 +169,7 @@ private void type02()
 
 
 	}
+<<<<<<< HEAD
 private void type03()
 
 {
@@ -183,4 +184,16 @@ private void type03()
 >>>>>>> origin/master
 }
 
+=======
+	private void setType(int t)
+	{
+		type = t;
+	}
+
+	public int getType()
+	{
+		return type;
+
+	}
+>>>>>>> 9a1647b7d066a94c96be3fa6fd861be601abb2c4
 }
