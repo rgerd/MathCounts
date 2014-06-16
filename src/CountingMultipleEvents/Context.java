@@ -1,5 +1,6 @@
 package CountingMultipleEvents;
 
-public class Context {
+public class Context 
+{
 
 }
