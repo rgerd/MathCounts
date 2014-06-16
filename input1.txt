@@ -1,7 +1,14 @@
-Counting Lists of Numbers	1	5 t14	5 t10
-
-
-
-
-
-
+Counting Lists of Numbers	1	100 t1
+Counting Lists of Numbers	1	100 t2
+Counting Lists of Numbers	1	100 t3
+Counting Lists of Numbers	1	100 t4
+Counting Lists of Numbers	1	100 t5
+Counting Lists of Numbers	1	100 t7
+Counting Lists of Numbers	1	100 t8
+Counting Lists of Numbers	1	100 t9
+Counting Lists of Numbers	1	100 t10
+Counting Lists of Numbers	1	100 t11
+Counting Lists of Numbers	1	100 t12
+Counting Lists of Numbers	1	100 t13
+Counting Lists of Numbers	1	100 t17
+Counting Lists of Numbers	1	100 t18
