@@ -1,4 +1,4 @@
-package CountingListsOfNumbers;
+package CountingMultipleEvents;
 
 import java.io.File;
 
