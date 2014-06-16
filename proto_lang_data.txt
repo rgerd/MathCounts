@@ -38,3 +38,11 @@
 	dumb
 	classy
 </adj>
+
+<venue>
+	in_a_classroom
+	at_a_park
+	in_a_school
+	at_Starbucks
+	in_math_class
+</venue>

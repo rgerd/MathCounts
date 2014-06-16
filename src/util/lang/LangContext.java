@@ -6,14 +6,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.Map.Entry;
+import java.util.Set;
 import util.Utilities;
 
 public class LangContext {
 	private HashMap<String, ArrayList<LangComponent>> components;
+	private HashMap<String, ArrayList<LangComponent>> _components;
+	private boolean plural;
 
 	public LangContext(String data_file) {
 		components = new HashMap<String, ArrayList<LangComponent>>();
+		_components = new HashMap<String, ArrayList<LangComponent>>();
 
 		BufferedReader in = null;
 		try {
@@ -26,11 +30,14 @@ public class LangContext {
 		try {
 			while((line = in.readLine()) != null) {
 				line = line.replaceAll(" ", "");
-				if(line.startsWith("#"))
+				line = line.replaceAll("\t", "");
+				if(line.startsWith("#") || line.length() == 0)
 					continue;
 				
 				if(line.startsWith("<")) {
 					char[] chars = line.toCharArray();
+					if(chars[1] == '/')
+						continue;
 					int end = 0;
 					for(int i = 0; i < line.length(); i++) {
 						if(chars[i] == '>')
@@ -41,40 +48,50 @@ public class LangContext {
 						components.put(attr, new ArrayList<LangComponent>());
 					}
 					curr_attr = attr;
+					continue;
 				}
 				
-				
+				line = line.replaceAll("_", " ");
+				components.get(curr_attr).add(new LangComponent(curr_attr, line.split(",")));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public LangComponent generate(byte type) {
+	public LangComponent generate(String type, int index) {
 		LangComponent lc = null;
-		switch (type) {
-		case LangComponent.NOUN:
-			lc = nouns.remove(Utilities.getRandomNumberInRange(0, nouns.size()));
-			_nouns.add(lc);
+		
+		
+		ArrayList<LangComponent> _comps = _components.get(type);
+		if(_comps != null && _comps.size() > index) {
+			lc = _comps.get(index);
+			lc.setPlural(plural);
 			return lc;
-		case LangComponent.ADJECTIVE:
-			lc = adjectives.remove(Utilities.getRandomNumberInRange(0, nouns.size()));
-			_adjectives.add(lc);
-			return lc;
-		default:
-			return null;
 		}
+		
+		ArrayList<LangComponent> comps = components.get(type);
+		lc = comps.remove(Utilities.getRandomNumberInRange(0, comps.size() - 1));
+		if(_components.containsKey(type)) {
+			_components.get(type).add(lc);
+		} else {
+			ArrayList<LangComponent> al = new ArrayList<LangComponent>();
+			al.add(lc);
+			_components.put(type, al);
+		}
+		lc.setPlural(plural);
+		return lc;
 	}
 
 	public void reset() {
-		while (_nouns.size() != 0)
-			nouns.add(_nouns.remove(0));
-		while (_adjectives.size() != 0)
-			nouns.add(_adjectives.remove(0));
+		Set<Entry<String, ArrayList<LangComponent>>> entries = _components.entrySet();
+		for(Entry<String, ArrayList<LangComponent>> entry : entries) {
+			components.get(entry.getKey()).addAll(entry.getValue());
+		}
+		_components.clear();
 	}
-
-	public LangComponent generate(String attr, int ind) {
-
-		return null;
+	
+	public void setPlural(boolean plu) {
+		plural = plu;
 	}
 }

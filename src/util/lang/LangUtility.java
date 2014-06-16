@@ -2,14 +2,16 @@ package util.lang;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import util.Number;
 
 public class LangUtility {
 	private static LangContext context = loadContext();
 	
-	public static String populate(String format, int... ints) {
+	public static String populate(String format, Number... nums) {
+		context.reset();
 		StringBuilder sb = new StringBuilder(format);
 		ArrayList<LangComponent> components = new ArrayList<LangComponent>();
-		int last_num = -1;
+		Number last_num = null;
 
 		int start_brace = -1;
 		for (int i = 0; i < sb.length(); i++) {
@@ -26,14 +28,19 @@ public class LangUtility {
 				int _ind = Integer.parseInt(ind);
 
 				if (attr.equals("num")) {
-					last_num = ints[_ind];
-					components.add(new LangComponent(LangComponent.OTHER, Integer.toString(last_num)));
+					last_num = nums[_ind];
+					components.add(new LangComponent("number", last_num.toString()));
+					if(!last_num.toString().equals("1")) {
+						context.setPlural(true);
+					} else {
+						context.setPlural(false);
+					}
 				} else {
 					components.add(context.generate(attr, _ind));
 				}
 
 				sb.replace(start_brace, i + 1, "%s");
-
+				i -= (i + 1) - start_brace;
 				start_brace = -1;
 			}
 		}
@@ -42,10 +49,7 @@ public class LangUtility {
 		for (int i = 0; i < strings.length; i++) {
 			strings[i] = components.get(i).toString();
 		}
-
-		System.out.println(String.format(sb.toString(), (Object[]) strings));
-
-		return null;
+		return String.format(sb.toString(), (Object[]) strings);
 	}
 	
 	private static LangContext loadContext() {
