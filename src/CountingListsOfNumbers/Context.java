@@ -555,16 +555,6 @@ public class Context {
 		}
 
 	}
-	
-	public void listGen19()
-	{
-<<<<<<< HEAD
-		int diff = Utilities.getRandomNumberInRange(1, 100);
-		int product = Utilities.getRandomNumberInRange(1, 999);
-=======
-		int diff = Utilities.getRandomNumberInRange(0, 10000);
->>>>>>> FETCH_HEAD
-	}
 
 	private void setType(int t)
 	{
