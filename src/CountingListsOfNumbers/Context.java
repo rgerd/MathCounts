@@ -117,6 +117,7 @@ public class Context {
 			return count;
 		}
 		return length; 
+		
 	}
 	
 	public int getType17()
@@ -274,8 +275,12 @@ public class Context {
 			list.add(new Fraction(-rand+3,start).simplify());
 			list.add(new Fraction(-rand+length,start).simplify());	
 		}
+<<<<<<< HEAD
 		length = length +1;
 
+=======
+		
+>>>>>>> FETCH_HEAD
 	}
 	private void listGen9()
 	{
@@ -391,8 +396,8 @@ public class Context {
 		int i1=1;
 		while(util.Utilities.GCD(i,i1)!=1 || i == i1 || (i % i1) == 0)
 		{
-			i=Utilities.getRandomNumberInRange(1,15);
-			i1=Utilities.getRandomNumberInRange(1,15);
+			i=Utilities.getRandomNumberInRange(2,15);
+			i1=Utilities.getRandomNumberInRange(2,15);
 		}
 		length=100;
 		ArrayList<Integer> ar = new ArrayList<Integer>();
@@ -434,8 +439,8 @@ public class Context {
 		int i1=1;
 		while(util.Utilities.GCD(i,i1)==1 || i == i1 || (i % i1) == 0)
 		{
-			i=Utilities.getRandomNumberInRange(1,15);
-			i1=Utilities.getRandomNumberInRange(1,15);
+			i=Utilities.getRandomNumberInRange(2,15);
+			i1=Utilities.getRandomNumberInRange(2,15);
 		}
 		length=100;
 		ArrayList<Integer> ar = new ArrayList<Integer>();
