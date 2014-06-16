@@ -200,6 +200,10 @@ public class Context {
 	private void listGen6()
 	{
 		start = Utilities.getRandomNumberInRange(-199,199);
+		while(start == 0)
+		{
+			Utilities.getRandomNumberInRange(-199,199);
+		}
 		int lengthRange = 1000/Math.abs((start));
 		length = Utilities.getRandomNumberInRange(5,lengthRange);
 		int chance = Utilities.getRandomNumberInRange(1, 2);
@@ -426,38 +430,41 @@ public class Context {
 	private void listGen14()
 	{
 
-		int can = Utilities.getRandomNumberInRange(1,15);
-		int cant = Utilities.getRandomNumberInRange(can,15);
-		int gcd = Utilities.GCD(can,cant);
-		while(gcd == 1 || can == cant)
+		start = 1;
+		length=30;
+		int i= 1;
+		int i1=1;
+		while(util.Utilities.GCD(i,i1)==1 || i == i1 || (i % i1) == 0)
 		{
-			can = Utilities.getRandomNumberInRange(1,15);
-			cant = Utilities.getRandomNumberInRange(can,15);
-			gcd = Utilities.GCD(can,cant);
-
+			i=Utilities.getRandomNumberInRange(1,15);
+			i1=Utilities.getRandomNumberInRange(1,15);
 		}
-		System.out.println("Can: "+can+" Cant: "+cant+" GCD: "+gcd);
-		int length = 1000/can;
-		while((length * can) % cant == 0)
+		length=100;
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		int x =1;
+		System.out.println("The numbers are: " + i + " and " + i1);
+		
+		while(x*i<length )
 		{
-			length = Utilities.getRandomNumberInRange(1,50);
-		}
-		ArrayList<Integer> nums = new ArrayList<Integer>();
-		int notinlist = 0;
-		for(int i = 1; i < 50; i++)
-		{
-			if((can * i) % cant != 0)
+			boolean isgood = true;
+			for(int y=0;y*i1<length;y++ )
 			{
-			nums.add(can * i);
+				if(i*x == i1*y)
+				{
+					isgood=false;
+					
+				}
+				
+				
 			}
-			else
-			{
-				notinlist++;
-			}
+			if(isgood==true)
+				ar.add(i*x);
+			x++;
+			
 		}
-		System.out.println("Length: "+length+ " notinlist: " +notinlist);
-		length = nums.size();
-		System.out.println("\n "+length);
+		
+		length=ar.size();
+		System.out.println(ar.toString());
 		
 		
 	}
