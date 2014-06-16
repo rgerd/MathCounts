@@ -16,7 +16,6 @@ public class Context {
 	private int start;
 	public Context()
 	{
-		list = new ArrayList<Number>();
 	}
 
 
