@@ -1,0 +1,40 @@
+# THIS IS A PROTOTYPE
+
+<noun>
+	cupcake, cupcakes
+	cat, cats
+	kitten, kittens
+	computer, computers
+	person, people
+	woman, women
+	man, men
+	teacher, teachers
+	phone, phones
+	whiteboard, whiteboards
+	microwave, microwaves	
+</noun>
+
+<adj>
+	red
+	blue
+	green
+	orange
+	yellow
+	young
+	old
+	tall
+	small
+	short
+	little
+	big
+	giant
+	smart
+	intelligent
+	self-aware
+	amazing
+	awesome
+	cool
+	lame
+	dumb
+	classy
+</adj>
