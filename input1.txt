@@ -11,5 +11,3 @@ Counting Lists of Numbers	1	100 t11
 Counting Lists of Numbers	1	100 t12
 Counting Lists of Numbers	1	100 t13
 Counting Lists of Numbers	1	100 t14
-Counting Lists of Numbers	1	100 t17
-Counting Lists of Numbers	1	100 t18

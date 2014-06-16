@@ -398,7 +398,6 @@ public class Context {
 		length=100;
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
-		System.out.println("The numbers are: " + i + " and " + i1);
 		
 		while(x*i<length )
 		{
@@ -441,7 +440,6 @@ public class Context {
 		length=100;
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x =1;
-		System.out.println("The numbers are: " + i + " and " + i1);
 		
 		while(x*i<length )
 		{
