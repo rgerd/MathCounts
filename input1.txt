@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 Counting Lists of Numbers	1	10 t13
+=======
+Counting Lists of Numbers	1	25 t13
+Counting Lists of Numbers	1	25 t14
+
+>>>>>>> FETCH_HEAD

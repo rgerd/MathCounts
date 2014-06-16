@@ -1,13 +1,23 @@
 package util.lang;
 
 public class LangComponent {
-	private String str;
+	private final String type;
+	private String[] data;
 	
-	public LangComponent(String str) {
-		this.str = str;
+	public LangComponent(String type, String... strs) {
+		this.type = type;
+		data = strs;
+	}
+	
+	public String[] getData() {
+		return data;
 	}
 	
 	public String toString() {
-		return str;
+		return data[0];
+	}
+	
+	public String getType() {
+		return type;
 	}
 }
