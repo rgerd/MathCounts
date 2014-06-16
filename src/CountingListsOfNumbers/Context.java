@@ -512,22 +512,22 @@ public class Context {
 		if(chance == 1)
 		{
 			list.add(new Int(start));
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
-			r = new Fraction(start, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
 
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
-			r = new Fraction(start, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
 
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
-			r = new Fraction(start, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
 
 			list.add(end.simplify());
@@ -536,23 +536,23 @@ public class Context {
 		{
 			list.add(new Int(start));
 
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
-			r = new Fraction(start*-1, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start*-1, r.getDenominator());
 			list.add(r.simplify());
 
 
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
-			r = new Fraction(start, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start, r.getDenominator());
 			list.add(r.simplify());
 
-
+			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
-			r = new Fraction(start*-1, r.getDenominator());
+			r = new Fraction(r.getNumerator()*start*-1, r.getDenominator());
 			list.add(r.simplify());
 
 			Fraction e = (Fraction) end.mult(new Fraction(-1, 1));
