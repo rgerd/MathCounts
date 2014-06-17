@@ -13,9 +13,10 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
+	private boolean ana;
 
 	private int length;
-	
+
 	public Context()
 	{
 		list = new ArrayList<String>();
@@ -23,7 +24,7 @@ public class Context {
 	}
 	public void generate(int type) {
 		if (type == 1) {
-			System.out.println("Calling");
+			
 			setType(1);
 			type01();
 		}else if(type == 2)
@@ -51,13 +52,13 @@ public class Context {
 
 	public int getAns() {
 
-		
-		
+
+
 		return ans; 
 
 
 	}
-	
+
 	private void type01()
 	{
 		int chance = Utilities.getRandomNumberInRange(1,4);
@@ -68,11 +69,11 @@ public class Context {
 		String action ="";
 		if(chance == 1)
 		{
-		num1 = Utilities.getRandomNumberInRange(1,15);
-		num2 = Utilities.getRandomNumberInRange(1,15);
-		noun1 = "shirt";
-		noun2 = "pair of pants";
-		action = "arrange an outfit";
+			num1 = Utilities.getRandomNumberInRange(1,15);
+			num2 = Utilities.getRandomNumberInRange(1,15);
+			noun1 = "shirt";
+			noun2 = "pair of pants";
+			action = "arrange an outfit";
 		}else if(chance == 2)
 		{
 			noun1 = "flavor";
@@ -94,7 +95,7 @@ public class Context {
 			num2 = Utilities.getRandomNumberInRange(1,15);
 			action = "elect candidates";
 		}
-		
+
 		list.add(Integer.toString(num1));
 		list.add(noun1);
 		list.add(Integer.toString(num2));
@@ -119,82 +120,87 @@ public class Context {
 
 		 **/
 
-		
+
 		Integer types=Utilities.getRandomNumberInRange(3, 5);
 		Int init = new Int(start);
-      for(int i=0;i<types;i++)
-      {
-    	  int i4=Utilities.getRandomNumberInRange(2,15);
-    	  list.add(Integer.toString(i4));
-    	  if(i==0)
-  		list.add("hat");
-    	  if(i==1)
-    	  		list.add("sock");
-    	  if(i==2)
-    	  		list.add("shoe");
-    	  if(i==3)
-    	  		list.add("shirt");
-    	  if(i==4)
-    	  		list.add("pant");
-  		
-    	list2.add(init.add(new Int(i4)));  
-      }
-  	list.add("outfits");
-   
-			int count = 0;
-			for(int i = 0; i < list2.size(); i++)
+		for(int i=0;i<types;i++)
+		{
+			int i4=Utilities.getRandomNumberInRange(2,15);
+			list.add(Integer.toString(i4));
+			if(i==0)
+				list.add("hat");
+			if(i==1)
+				list.add("sock");
+			if(i==2)
+				list.add("shoe");
+			if(i==3)
+				list.add("shirt");
+			if(i==4)
+				list.add("pant");
+
+			list2.add(init.add(new Int(i4)));  
+		}
+		list.add("outfits");
+
+		int count = 0;
+		for(int i = 0; i < list2.size(); i++)
+		{
+			if(i==0)
 			{
-				if(i==0)
-				{
-					Int i1 = (Int)(list2.get(i));
-					int i2=i1.getValue();
-					System.out.println(i2);
-					count=+i2;
-				}
-				else{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-				System.out.println(i2);
-						count*=i2;
-				}
-			
-			System.out.println(count);
+				
+				count=+i2;
 			}
-			ans=count;
+			else{
+				Int i1 = (Int)(list2.get(i));
+				int i2=i1.getValue();
+			
+				count*=i2;
+			}
+
+	
+		}
+		ans=count;
 
 	}
 
 	private void type03()
 
 	{
-		
-		int chance = Utilities.getRandomNumberInRange(1,2);
+
+		ana = false;
+		int chance =Utilities.getRandomNumberInRange(1,2);
+
 		int numb = Utilities.getRandomNumberInRange(4,10);
+		String g = Integer.toString(numb);
+		list.add(g);
 		if(chance == 1)
 		{
-			
+
 			int answer =1;
 			while(numb>=1)
 			{
-				System.out.println("hello");
+				
 				answer = answer*numb;
 				numb--;
 			}
 			ans=answer;
-			
-			
+
+
 		}
 		else
 		{
-			
-			ans = anagramhelper(Question.GetRearrangement());
-			
+			String h = Question.GetRearrangement();
+			ans = anagramhelper(h);
+			list.add(h);
+			ana = true;
+
 		}
-		String g = Integer.toString(numb);
-		list.add(g);
-		
+
+
 	}
-	
+
 	private void type04()
 	{
 
@@ -217,12 +223,12 @@ public class Context {
 		Variation #5: People on a sports team
 		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
 		Do other sports**/
-		
-		
+
+
 
 	}
-	
-	
+
+
 	private void type05()
 	{
 		
@@ -238,12 +244,12 @@ public class Context {
 		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [venue_0]. In how many ways can [num_3] [noun_0] be drawn, in order, from the bin?", nums);
 		System.out.println(an);
 	}
-	
+
 
 
 	private int anagramhelper(String s)
 	{
-	return s.length();	
+		return s.length();	
 	}
 
 
@@ -254,6 +260,10 @@ public class Context {
 	public int getType() {
 		return type;
 
+	}
+	public boolean getAna()
+	{
+		return ana;
 	}
 
 }
