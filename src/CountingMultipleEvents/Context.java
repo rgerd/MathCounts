@@ -1,9 +1,11 @@
 package CountingMultipleEvents;
 
 import java.util.ArrayList;
+
 import util.Utilities;
 import util.Int;
 import util.Number;
+import util.lang.LangUtility;
 
 public class Context {
 	private int type;
@@ -224,20 +226,17 @@ public class Context {
 	private void type05()
 	{
 		
+		/** Type 05: Choosing with and without replacement
+			Example context: 12 balls numbered 1 through 12 are placed in a bin. In how many ways can 3 balls be drawn, in order, from the bin
+			if each ball remains outside the bin after it is drawn?
+			if each ball is placed back into the bin if it is drawn?
+			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
+		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
+		Number[] nums = {size, new Int(1), size, numItems };
+		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [venue_0]. In how many ways can [num_3] [noun_0] be drawn, in order, from the bin?", nums);
+		System.out.println(an);
 	}
 	
 

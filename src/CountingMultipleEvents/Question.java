@@ -2,6 +2,8 @@ package CountingMultipleEvents;
 
 import java.util.ArrayList;
 
+import util.lang.LangUtility;
+
 
 
 public class Question {
@@ -46,6 +48,12 @@ public class Question {
 
 			return ret;
 
+		}
+		else if(c.getType() == 4)
+		{
+			
+		}else if(c.getType() == 5){
+			
 		}
 		return  ret;
 
