@@ -3,6 +3,7 @@ package CountingMultipleEvents;
 import java.util.ArrayList;
 import util.Utilities;
 import util.Int;
+import util.Number;
 
 public class Context {
 	private int type;
@@ -10,7 +11,7 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
-<<<<<<< HEAD
+
 	private int length;
 	
 	public Context()
@@ -18,8 +19,7 @@ public class Context {
 		list = new ArrayList<String>();
 		list2 = new ArrayList<Number>();
 	}
-=======
->>>>>>> FETCH_HEAD
+
 	public void generate(int type) {
 		if (type == 1) {
 			System.out.println("Calling");
@@ -67,14 +67,11 @@ public class Context {
 		list.add(Integer.toString(num1));
 		list.add(noun2);
 		list.add(Integer.toString(num2));
-<<<<<<< HEAD
+
 
 		ans = num1 * num2;
 
-=======
-		System.out.println("called");
-		ans = num1 * num2;
->>>>>>> FETCH_HEAD
+
 		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
 				Context: shirts and pants make an outfit
 				Variation #1: flavors + toppings on ice cream
