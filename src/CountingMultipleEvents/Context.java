@@ -128,13 +128,14 @@ public class Context {
 	{
 		
 		int chance = Utilities.getRandomNumberInRange(1,2);
-		int numb = Utilities.getRandomNumberInRange(1,10);
+		int numb = Utilities.getRandomNumberInRange(4,10);
 		if(chance == 1)
 		{
 			
-			int answer =0;
+			int answer =1;
 			while(numb>=1)
 			{
+				System.out.println("hello");
 				answer = answer*numb;
 				numb--;
 			}
