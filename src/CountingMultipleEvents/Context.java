@@ -11,6 +11,7 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
+	private boolean chance;
 
 	private int length;
 	
@@ -165,8 +166,8 @@ public class Context {
 	private void type03()
 
 	{
-		
-		int chance =1;
+		chance = false;
+		int chance =Utilities.getRandomNumberInRange(1,2);
 		int numb = Utilities.getRandomNumberInRange(4,10);
 		String g = Integer.toString(numb);
 		list.add(g);
@@ -188,6 +189,7 @@ public class Context {
 		{
 			
 			ans = anagramhelper(Question.GetRearrangement());
+			chance = true;
 			
 		}
 		
