@@ -9,6 +9,7 @@ import util.lang.LangUtility;
 public class Question {
 	private static final String Q1 = "You have ";
 	private static final String Q3 = "In how many ways can I arrange ";
+	private static final String QANA = "How many different arrangements of the word ";
 	private String ret;
 
 	public String getQ (Context c)
@@ -43,7 +44,10 @@ public class Question {
 		{
 			String ret = Q3 + list.get(0) + " books on a shelf?";
 
-
+			if(c.getAna())
+			{
+				ret = QANA + list.get(0) + " can you make?";
+			}
 			return ret;
 
 		}
