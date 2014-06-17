@@ -142,10 +142,10 @@ public class Context {
 	{
 		
 		int chance = Utilities.getRandomNumberInRange(1,2);
-		int start = Utilities.getRandomNumberInRange(1,20);
+		int numb = Utilities.getRandomNumberInRange(1,10);
 		if(chance == 1)
 		{
-			int numb = Utilities.getRandomNumberInRange(1,10);
+			
 			int answer =0;
 			while(numb>=1)
 			{
@@ -162,6 +162,8 @@ public class Context {
 			ans = anagramhelper(Question.GetRearrangement());
 			
 		}
+		String g = Integer.toString(numb);
+		list.add(g);
 		
 	}
 	

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 
 public class Question {
-	private static String Q1 = "You have ";
+	private static final String Q1 = "You have ";
+	private static final String Q3 = "In how many ways can I arrange ";
 	private String ret;
 
 	public String getQ (Context c)
@@ -34,6 +35,10 @@ public class Question {
 
 		else if(c.getType()==3)
 		{
+
+			System.out.println(list);
+			String ret = Q3 + list.get(0) + "books on a shelf?";
+			return ret;
 
 		}
 		return  ret;
