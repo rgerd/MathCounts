@@ -1,16 +1,19 @@
 package CountingListsOfNumbers;
 
+import java.util.ArrayList;
+
 import util.Utilities;
 
 
 public class Question {
-	private static final String Q = "You have ";
+	private static final String Q1 = "You have ";
 	
 	public String getQ (Context c)
 	{
+		ArrayList<String> list = c.getList();
 		if(c.getType() == 1)
 		{
-			
+			Q1 += c.getList().get(0)+ " "+ c.getList 
 		}
 		else
 		{

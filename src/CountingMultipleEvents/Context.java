@@ -1,5 +1,4 @@
-package CountingWithAdditionAndSubtraction;
-
+package CountingMultipleEvents;
 
 import java.util.ArrayList;
 
@@ -8,22 +7,13 @@ import util.Int;
 import util.Number;
 import util.Utilities;
 
-
 public class Context {
 	private int type;
 	private int ans;
 	private ArrayList<String> list;
-	private int start;
-	public Context()
-	{
-		
-	}
 
-
-	public void generate(int type)
-	{	
-		if(type ==  1)
-		{
+	public void generate(int type) {
+		if (type == 1) {
 			setType(1);
 			type01();
 		}else if(type == 2)
@@ -45,16 +35,15 @@ public class Context {
 		}
 	}
 
-	public ArrayList<Number> getList()
-	{
+	public ArrayList<Number> getList() {
 		return list;
 	}
 
-	public int getAns() 
-	{
-		return ans; 
+	public int getAns() {
+		return ans;
 
 	}
+
 
 	public String getContext(int op, String problem)
 	{
@@ -100,17 +89,26 @@ public class Context {
 						Variation #2: Courses in a schedule
 						Variation #3: Anagrams of a word **/
 
-
+		/**
+		 * Same as previous type, but with more options to fill Example: In how
+		 * many ways can we form an international commission if we must choose
+		 * one European country from among 6 European countries, one Asian
+		 * country from among 4, one North American Country from among 3, and
+		 * one African country from among 7? Variation #1: choose animals for a
+		 * zoo Variation #2: choose topping types for ice cream (types of fruit
+		 * + types of nuts + types of candies + types of sauce) Variation #3:
+		 * license plate combinations context will involve types of restrictions
+		 * restriction: 3 letters + 4 numbers restriction: 2 letters + 3 numbers
+		 * + 2 letters
+		 **/
 	}
 
 
-	private void setType(int t)
-	{
+	private void setType(int t) {
 		type = t;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		return type;
 
 	}
