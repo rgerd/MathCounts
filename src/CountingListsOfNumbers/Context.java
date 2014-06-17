@@ -102,6 +102,18 @@ public class Context {
 		{
 			setType(20);
 			listGen20();
+		}else if(type == 21)
+		{
+			setType(21);
+			listGen15();
+		}else if(type == 22)
+		{
+			setType(22);
+			listGen19();
+		}else if(type == 23)
+		{
+			setType(23);
+			listGen20();
 		}
 	}
 
@@ -477,11 +489,11 @@ public class Context {
 
 	}
 
-	private void listGen15()//DO THIS
+	private void listGen15()
 	{
 		start = Utilities.getRandomNumberInRange(1, 25);
 		length = Utilities.getRandomNumberInRange(5, 999);
-		int end = start + length;
+		int end = start + length-1;
 		list.add(new Int(start));
 		list.add(new Int(end));
 
@@ -593,6 +605,7 @@ public class Context {
 		}
 		length = counter;
 	}
+	
 
 	private void setType(int t)
 	{
