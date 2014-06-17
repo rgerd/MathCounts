@@ -14,6 +14,9 @@ public class Question {
 	
 	public String getQ (Context c)
 	{
+		return null;
+		//Commented out until someone can fix the errors
+		/*
 		if(c.getType() == 17)
 		{
 			String str = Q_TYPE17 + c.getType17() + "?";
@@ -48,7 +51,7 @@ public class Question {
 		
 		return returnstring;
 		}
-	
+		*/
 	}
 	
 
