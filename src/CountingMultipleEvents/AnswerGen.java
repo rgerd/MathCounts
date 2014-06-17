@@ -1,6 +1,10 @@
-package CountingWithAdditionAndSubtraction;
+package CountingMultipleEvents;
 
+<<<<<<< HEAD
+public class AnswerGen {
 
+}
+=======
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -75,7 +79,8 @@ public class AnswerGen
 		}
 		
 		return h1;
-	
-	
 	}
+	
+
 }
+>>>>>>> 9a1647b7d066a94c96be3fa6fd861be601abb2c4
