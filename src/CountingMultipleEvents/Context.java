@@ -49,6 +49,7 @@ public class Context {
 	
 	private void type01()
 	{
+		int chance = Utilities.getRandomNumberInRange(1,4);
 		String noun1 = "shirts";
 		String noun2 = "pants";
 		int num1 = Utilities.getRandomNumberInRange(1,10);
@@ -57,7 +58,6 @@ public class Context {
 		list.add(Integer.toString(num1));
 		list.add(noun2);
 		list.add(Integer.toString(num2));
-		System.out.println("called");
 		ans = num1 * num2;
 		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
 				Context: shirts and pants make an outfit
