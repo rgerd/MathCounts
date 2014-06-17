@@ -253,7 +253,8 @@ public class Context {
 	}
 
 
-	private void setType(int t) {
+	private void setType(int t) 
+	{
 		type = t;
 	}
 
