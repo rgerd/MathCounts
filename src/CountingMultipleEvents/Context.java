@@ -166,8 +166,10 @@ public class Context {
 
 	{
 		
-		int chance = Utilities.getRandomNumberInRange(1,2);
+		int chance =1;
 		int numb = Utilities.getRandomNumberInRange(4,10);
+		String g = Integer.toString(numb);
+		list.add(g);
 		if(chance == 1)
 		{
 			
@@ -188,8 +190,7 @@ public class Context {
 			ans = anagramhelper(Question.GetRearrangement());
 			
 		}
-		String g = Integer.toString(numb);
-		list.add(g);
+		
 		
 	}
 	
