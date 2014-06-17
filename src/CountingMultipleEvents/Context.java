@@ -173,11 +173,12 @@ public class Context {
 		int chance =Utilities.getRandomNumberInRange(1,2);
 
 		int numb = Utilities.getRandomNumberInRange(4,10);
-		String g = Integer.toString(numb);
-		list.add(g);
+		
 		if(chance == 1)
 		{
 
+			String g = Integer.toString(numb);
+			list.add(g);
 			int answer =1;
 			while(numb>=1)
 			{
