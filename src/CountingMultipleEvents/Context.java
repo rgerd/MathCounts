@@ -97,8 +97,22 @@ public class Context {
 		Int init = new Int(start);
       for(int i=0;i<types;i++)
       {
-    	list2.add(init.add(new Int(Utilities.getRandomNumberInRange(2,15))));  
+    	  int i4=Utilities.getRandomNumberInRange(2,15);
+    	  list.add(Integer.toString(i4));
+    	  if(i==0)
+  		list.add("hat");
+    	  if(i==1)
+    	  		list.add("sock");
+    	  if(i==2)
+    	  		list.add("shoe");
+    	  if(i==3)
+    	  		list.add("shirt");
+    	  if(i==4)
+    	  		list.add("pant");
+  		
+    	list2.add(init.add(new Int(i4)));  
       }
+  	list.add("outfits");
    
 			int count = 0;
 			for(int i = 0; i < list2.size(); i++)
