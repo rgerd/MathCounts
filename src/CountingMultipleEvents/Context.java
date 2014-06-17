@@ -21,7 +21,7 @@ public class Context {
 	}
 	public void generate(int type) {
 		if (type == 1) {
-			System.out.println("Calling");
+			
 			setType(1);
 			type01();
 		}else if(type == 2)
