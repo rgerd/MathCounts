@@ -1,2 +1,2 @@
-Counting Lists of Numbers	1	100 t15
+Counting Lists of Numbers	1	10 t19
 

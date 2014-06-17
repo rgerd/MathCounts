@@ -94,6 +94,10 @@ public class Context {
 		{
 			setType(18);
 			listGen18();
+		}else if(type == 19)
+		{
+			setType(19);
+			listGen19();
 		}
 	}
 
@@ -556,6 +560,13 @@ public class Context {
 		}
 
 	}
+	private void listGen19()
+	{
+		start = Utilities.getRandomNumberInRange(1, 25);
+		length = Utilities.getRandomNumberInRange(5, 999);
+		list.add(new Int(start));
+		list.add(new Int(length*2 + start));
+	}
 
 	private void setType(int t)
 	{
@@ -565,7 +576,6 @@ public class Context {
 	public int getType()
 	{
 		return type;
-
 	}
 }
 
