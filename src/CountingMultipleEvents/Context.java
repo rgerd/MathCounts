@@ -10,6 +10,13 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
+	
+	public Context()
+	{
+		list = new ArrayList<String>();
+		list2 = new ArrayList<Number>();
+	}
+	
 	public void generate(int type) {
 		if (type == 1) {
 			System.out.println("Calling");

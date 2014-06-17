@@ -26,9 +26,15 @@ public class Driver
 			while(in.hasNextLine())
 			{
 				String[] s = in.nextLine().split("\t");
-
+				for(int i = 0; i < s.length; i++)
+				{
+					System.out.println(s[i]);
+				}
+				
 				ArrayList<Integer> nums = new ArrayList<Integer>();
+				
 				ArrayList<Integer> types = new ArrayList<Integer>();
+				
 				for(int i = 2; i < s.length; i++)
 				{
 					String[] t = s[i].split(" ");
@@ -37,19 +43,21 @@ public class Driver
 					int type = Integer.parseInt(ty.substring(1, ty.length()));
 					types.add(type);
 				}
+				System.out.println(nums);
+				System.out.println(types);
 
 				for(int j = 0; j < types.size(); j++)
 				{
 					int typee = types.get(j);
 					for(int k = 0; k < nums.get(j); k++)
 					{
-						Context con = new Context();
-						con.generate(typee);
+						Context c = new Context();
+						c.generate(typee);
 						Question quest = new Question();
-						String q = quest.getQ(con);
+						String q = quest.getQ(c);
 						output.print("MC"+"\t"+q+"\t");
 
-						int ans = con.getAns();
+						int ans = c.getAns();
 						AnswerGen a = new AnswerGen(ans);
 						ArrayList<Number> arr = new ArrayList<Number>();
 						arr = a.getWrong("window");
