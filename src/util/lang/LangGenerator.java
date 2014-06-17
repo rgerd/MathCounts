@@ -2,6 +2,7 @@ package util.lang;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -19,10 +20,11 @@ public class LangGenerator {
 		LangParser.parseLangData(data_file, components, flags);
 	}
 	
-	public LangComponent generate(boolean plural, String... tag_data) {
+	public LangComponent generate(String[] tag_data, HashSet<String> tag_flags) {
 		LangComponent lc = null;
 		String type = tag_data[0];
 		int index = Integer.parseInt(tag_data[1]);
+		boolean plural = tag_flags.contains("pl");
 		
 		// If it exists
 		ArrayList<LangComponent> _comps = _components.get(type);
@@ -45,10 +47,6 @@ public class LangGenerator {
 		
 		lc.setPlural(plural);
 		return lc;
-	}
-
-	public LangComponent generate(String... tag_data) {
-		return generate(false, tag_data);
 	}
 
 	public void reset() {

@@ -1,7 +1,9 @@
 package util.lang;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.StringTokenizer;
+
 import util.Number;
 
 public class LangUtility {
@@ -32,26 +34,35 @@ public class LangUtility {
 
 				StringTokenizer st = new StringTokenizer(str, "_");
 
-				String[] tag_data = new String[st.countTokens()];
-				int tdi = 0;
-				while (st.hasMoreTokens()) {
-					tag_data[tdi] = st.nextToken();
-					tdi++;
+				String[] tag_data = new String[2];
+				tag_data[0] = st.nextToken();
+				tag_data[1] = st.nextToken();
+				
+				HashSet<String> tag_flags = new HashSet<String>();
+				while(st.hasMoreTokens()) {
+					tag_flags.add(st.nextToken());
 				}
 
 				String attr = tag_data[0];
-				int ind = -1;
-				if (tag_data.length > 1)
-					ind = Integer.parseInt(tag_data[1]);
+				int ind = Integer.parseInt(tag_data[1]);
 
 				if (attr.equals("num")) {
 					last_num = nums[ind];
 					components.add(new LangComponent("number", null, last_num.toString()));
 					last_num_plural = !last_num.toString().equals("1");
 				} else {
+					boolean this_plural = false;
 					if(attr.equals("noun"))
-						last_noun_plural = tag_data.length >= 3;
-					LangComponent lc = generator.generate(last_noun_plural || last_num_plural, tag_data);
+						last_noun_plural = last_num_plural || tag_flags.contains("pl");
+					
+					this_plural = last_noun_plural;
+					last_num_plural = false;
+					
+					if(this_plural)
+						tag_flags.add("pl");
+					
+					
+					LangComponent lc = generator.generate(tag_data, tag_flags);
 					components.add(lc);
 				}
 
