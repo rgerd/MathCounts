@@ -262,5 +262,9 @@ public class Context {
 		return type;
 
 	}
+	public boolean getAna()
+	{
+		return ana;
+	}
 
 }
