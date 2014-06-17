@@ -189,9 +189,9 @@ public class Context {
 		}
 		else
 		{
-
-			ans = anagramhelper(Question.GetRearrangement());
-
+			String h = Question.GetRearrangement();
+			ans = anagramhelper(h);
+			list.add(h);
 			ana = true;
 
 		}
