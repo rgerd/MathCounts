@@ -25,27 +25,27 @@ public class Context {
 		if(type ==  1)
 		{
 			setType(1);
-			listGen1();
+			cWAAS1();
 		}else if(type == 2)
 		{
 			setType(2);
-			listGen2();
+			cWAAS2();
 		}else if(type == 3)
 		{
 			setType(3);
-			listGen3();
+			cWAAS3();
 		}else if(type == 4)
 		{
 			setType(4);
-			listGen4();
+			cWAAS4();
 		}else if(type == 5)
 		{
 			setType(5);
-			listGen5();
+			cWAAS5();
 		}else if(type == 6)
 		{
 			setType(6);
-			listGen6();
+			cWAAS6();
 		}
 	}
 
@@ -76,7 +76,7 @@ public class Context {
 		return type17;
 	}
 
-	private void listGen1()
+	private void cWAAS1()
 	{
 		Integer type1 = Utilities.getRandomNumberInRange(2,15);
 		Integer type2 = Utilities.getRandomNumberInRange(2,15);
@@ -85,151 +85,26 @@ public class Context {
 		list.add(init.add(new Int(type1)));
 		list.add(init.add(new Int(type2)));
 	}
-
-	private void listGen2()
+	private void cWAAS2()
 	{		
-		start=Utilities.getRandomNumberInRange(1,994);
-		length=Utilities.getRandomNumberInRange(5,999-start);
-		Int init = new Int(start);
-		list.add(init);
-		list.add(init.add(new Int(1)));
-		list.add(init.add(new Int(2)));
-		list.add(init.add(new Int(3)));
-		list.add(init.add(new Int(length-1)));
+		
 	}
-
-	private void listGen3()
+	private void cWAAS3()
 	{
-		start = Utilities.getRandomNumberInRange(-1000,994);
-		length=Utilities.getRandomNumberInRange(5,999-start);
-		Int init = new Int(start);
-		list.add(init);
-		list.add(init.add(new Int(1)));
-		list.add(init.add(new Int(2)));
-		list.add(init.add(new Int(3)));
-		list.add(init.add(new Int(length-1)));
+		
 	}
-
-	private void listGen4()
+	private void cWAAS4()
 	{
-		start = Utilities.getRandomNumberInRange(-994,1000);
-		length=Utilities.getRandomNumberInRange(5,Math.abs(-999-start));
-		Int init = new Int(start);
-		list.add(init);
-		list.add(init.sub(new Int(1)));
-		list.add(init.sub(new Int(2)));
-		list.add(init.sub(new Int(3)));
-		list.add(init.sub(new Int(length-1)));
+		
 	}
-
-	private void listGen5()
+	private void cWAAS5()
 	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		int lengthRange = (1000/start)-1;
-		length = Utilities.getRandomNumberInRange(2,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		if(chance == 1)
-		{
-			list.add(new Int(start));
-			list.add(new Int(start + start));
-			list.add(new Int(start + start*2));
-			list.add(new Int(start + start*3));
-			list.add(new Int(start + start*(length-1)));
-		}
-		else
-		{
-			list.add(new Int(start));
-			list.add(new Int(start - start));
-			list.add(new Int(start - start*2));
-			list.add(new Int(start - start*3));
-			list.add(new Int(start - start*(length-1)));
-		}
-
+		
 	}
-
-	private void listGen6()
+	private void cWAAS6()
 	{
-		start = Utilities.getRandomNumberInRange(-199,199);
-		while(start == 0)
-		{
-			Utilities.getRandomNumberInRange(-199,199);
-		}
-		int lengthRange = 1000/Math.abs((start));
-		length = Utilities.getRandomNumberInRange(5,lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		if(chance == 1)
-		{
-			//increasing
-
-			list.add(new Int(start));
-			list.add(new Int(start + start));
-			list.add(new Int(start + start*2));
-			list.add(new Int(start + start*3));
-			list.add(new Int(start + start*(length-1)));
-		}else
-		{
-			//decreasing
-			list.add(new Int(start));
-			list.add(new Int(start - start));
-			list.add(new Int(start - start*2));
-			list.add(new Int(start - start*3));
-			list.add(new Int(start - start*(length-1)));
-
-		}
+		
 	}
-
-
-	private void listGen7()
-	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		//How long should the list of unit fractions be?
-		length = Utilities.getRandomNumberInRange(5,999);
-		int chance = Utilities.getRandomNumberInRange(1,2);
-		if(chance == 1)
-		{
-			list.add(new Fraction(1,start).simplify());
-			list.add(new Fraction(1+1,start).simplify());
-			list.add(new Fraction(1+2,start).simplify());
-			list.add(new Fraction(1+3,start).simplify());
-			list.add(new Fraction(1+length-1,start).simplify());
-		}else
-		{
-			list.add(new Fraction(1,start).simplify());
-			list.add(new Fraction(0,start).simplify());
-			list.add(new Fraction(-1,start).simplify());
-			list.add(new Fraction(-2,start).simplify());
-			list.add(new Fraction(1-(length-1),start).simplify());
-		}
-
-	}
-
-	private void listGen8()
-	{
-		start = Utilities.getRandomNumberInRange(2,10);
-		length = Utilities.getRandomNumberInRange(15,25);
-		int chance = Utilities.getRandomNumberInRange(1,2);
-		int rand = Utilities.getRandomNumberInRange(1,10);
-		if(chance == 1)
-		{
-			list.add(new Fraction(rand,start).simplify());
-			list.add(new Fraction(rand+1,start).simplify());
-			list.add(new Fraction(rand+2,start).simplify());
-			list.add(new Fraction(rand+3,start).simplify());
-			list.add(new Fraction(rand + length,start).simplify());
-		}else
-		{
-			list.add(new Fraction(-rand,start).simplify());
-			list.add(new Fraction(-rand+1,start).simplify());
-			list.add(new Fraction(-rand+2,start).simplify());
-			list.add(new Fraction(-rand+3,start).simplify());
-			list.add(new Fraction(-rand+length,start).simplify());	
-		}
-		length = length +1;
-
-	}
-	
-	
-
 	private void setType(int t)
 	{
 		type = t;
