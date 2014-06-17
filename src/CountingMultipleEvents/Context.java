@@ -3,6 +3,7 @@ package CountingMultipleEvents;
 import java.util.ArrayList;
 import util.Utilities;
 import util.Int;
+import util.Number;
 
 public class Context {
 	private int type;
@@ -10,13 +11,14 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
+
+	private int length;
 	
 	public Context()
 	{
 		list = new ArrayList<String>();
 		list2 = new ArrayList<Number>();
 	}
-	
 	public void generate(int type) {
 		if (type == 1) {
 			System.out.println("Calling");
