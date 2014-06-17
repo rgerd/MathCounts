@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 
 public class Question {
-	private static String Q1 = "You have ";
+	private static final String Q1 = "You have ";
+	private static final String Q3 = "In how many ways can I arrange ";
 	private String ret;
 
 	public String getQ (Context c)
