@@ -9,15 +9,26 @@ public class TagData {
 	private HashSet<String> flags;
 	
 	public TagData(String tag) {
-		
 		StringTokenizer st = new StringTokenizer(tag, "_");
 		
 		attr = st.nextToken();
 		index = Integer.parseInt(st.nextToken());
 		
-		HashSet<String> flags = new HashSet<String>();
+		flags = new HashSet<String>();
 		while(st.hasMoreTokens()) {
 			flags.add(st.nextToken());
 		}
+	}
+	
+	public String getAttr() {
+		return attr;
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	
+	public HashSet<String> getFlags() {
+		return flags;
 	}
 }

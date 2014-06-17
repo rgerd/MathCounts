@@ -11,26 +11,27 @@ import util.Utilities;
 public class LangGenerator {
 	private HashMap<String, ArrayList<LangComponent>> components;
 	private HashMap<String, ArrayList<LangComponent>> _components;
-	private HashMap<String, ArrayList<String>> flags;
+	private HashMap<String, HashSet<String>> flags;
 
 	public LangGenerator(String data_file) {
 		components = new HashMap<String, ArrayList<LangComponent>>(); 
 		_components = new HashMap<String, ArrayList<LangComponent>>();
-		flags = new HashMap<String, ArrayList<String>>();
+		flags = new HashMap<String, HashSet<String>>();
 		LangParser.parseLangData(data_file, components, flags);
 	}
 	
-	public LangComponent generate(String[] tag_data, HashSet<String> tag_flags) {
+	public LangComponent generate(TagData tag) {
 		LangComponent lc = null;
-		String type = tag_data[0];
-		int index = Integer.parseInt(tag_data[1]);
-		boolean plural = tag_flags.contains("pl");
+		
+		String type = tag.getAttr();
+		int index = tag.getIndex();
+		HashSet<String> tag_flags = tag.getFlags();
 		
 		// If it exists
 		ArrayList<LangComponent> _comps = _components.get(type);
 		if(_comps != null && _comps.size() > index) {
 			lc = _comps.get(index).clone();
-			lc.setPlural(plural);
+			lc.setFlags(tag_flags);
 			return lc;
 		}
 		
@@ -45,7 +46,7 @@ public class LangGenerator {
 			al.add(lc);
 		}
 		
-		lc.setPlural(plural);
+		lc.setFlags(tag_flags);
 		return lc;
 	}
 

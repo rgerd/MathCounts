@@ -6,9 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class LangParser {
-	public static void parseLangData(String data_file, HashMap<String, ArrayList<LangComponent>> components, HashMap<String, ArrayList<String>> flags) {
+	public static void parseLangData(String data_file, HashMap<String, ArrayList<LangComponent>> components, HashMap<String, HashSet<String>> flags) {
 		BufferedReader in = null;
 		try {
 			in = new BufferedReader(new FileReader(new File(data_file)));
@@ -35,7 +36,7 @@ public class LangParser {
 					}
 					String attr = line.substring(1, end);
 					
-					ArrayList<String> ___flags = null;
+					HashSet<String> ___flags = null;
 					
 					String _flags = null;
 					int flags_start = attr.indexOf('[');
@@ -50,7 +51,7 @@ public class LangParser {
 						components.put(attr, new ArrayList<LangComponent>());
 						if(_flags != null) {
 							String[] __flags = _flags.split(",");
-							___flags = new ArrayList<String>();
+							___flags = new HashSet<String>();
 							for(String flag : __flags) {
 								___flags.add(flag);
 							}
@@ -62,7 +63,7 @@ public class LangParser {
 				}
 				
 				line = line.replaceAll("_", " ");
-				components.get(curr_attr).add(new LangComponent(curr_attr, flags.get(curr_attr), line.split(",")));
+				components.get(curr_attr).add(new LangComponent(curr_attr, flags.get(curr_attr), new HashSet<String>(), line.split(",")));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
