@@ -41,14 +41,6 @@ public class Context {
 	}
 
 
-	public String getContext(int op, String problem)
-	{
-		if(op==1)
-		{
-
-		}
-		return null;
-	}
 	private void type01()
 	{
 		String noun1 = "shirts";
