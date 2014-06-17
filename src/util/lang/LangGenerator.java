@@ -14,7 +14,6 @@ import util.Utilities;
 public class LangGenerator {
 	private HashMap<String, ArrayList<LangComponent>> components;
 	private HashMap<String, ArrayList<LangComponent>> _components;
-	private boolean plural;
 
 	public LangGenerator(String data_file) {
 		components = new HashMap<String, ArrayList<LangComponent>>();
@@ -61,28 +60,26 @@ public class LangGenerator {
 	}
 
 	public LangComponent generate(String... tag_data) {
+		return generate(false, tag_data);
+	}
+	
+	public LangComponent generate(boolean plural, String... tag_data) {
 		LangComponent lc = null;
-		boolean _plural = plural;
 		String type = tag_data[0];
 
 		if(type.equals("verb")) {
 			lc = components.get("verb").get(0);
-			lc.setPlural(_plural);
-
+			lc.setPlural(plural);
 			return lc;
 		}
 			
 		
 		int index = Integer.parseInt(tag_data[1]);
 		
-		if(tag_data.length >= 3 && tag_data[2].equals("pl"))
-			_plural = true;		
-		
-		
 		ArrayList<LangComponent> _comps = _components.get(type);
 		if(_comps != null && _comps.size() > index) {
 			lc = _comps.get(index);
-			lc.setPlural(_plural);
+			lc.setPlural(plural);
 			return lc;
 		}
 		
@@ -95,7 +92,7 @@ public class LangGenerator {
 			al.add(lc);
 			_components.put(type, al);
 		}
-		lc.setPlural(_plural);
+		lc.setPlural(plural);
 		return lc;
 	}
 
@@ -105,9 +102,5 @@ public class LangGenerator {
 			components.get(entry.getKey()).addAll(entry.getValue());
 		}
 		_components.clear();
-	}
-	
-	public void setPlural(boolean plu) {
-		plural = plu;
 	}
 }

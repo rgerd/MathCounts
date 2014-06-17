@@ -10,10 +10,13 @@ public class Question {
 	private static final String M = "How Many numbers are multiples of";
 	private static final String Q_TYPE17 = "How many pairs of consecutive integers have products less than ";
 	private static final String Q_TYPE15 = "You are assigned homework problems from ";
+<<<<<<< HEAD
 	private static final String Q_TYPE21 = "You are numbering jerseys for a sports team. How many players are on the team if the first jersey is labeled ";
 	private static final String Q_TYPE19 = "You are assigned odd homework problems from ";
 	private static final String Q_TYPE20 = "You are assigned even homework problems from ";
 	private static final String Q_TYPE22 = "You are counting players with odd jerseys on a team. If the first jersey is labeled ";
+=======
+>>>>>>> FETCH_HEAD
 	private int length;
 
 	public String getQ (Context c)
@@ -34,6 +37,7 @@ public class Question {
 			else
 				str = Q_TYPE21 + c.getList().get(0) + " and the last is labeled " + c.getList().get(1) + "?";
 			return str;
+<<<<<<< HEAD
 		}else if (c.getType() == 19 || c.getType() == 20 || c.getType() == 22 || c.getType() == 23)
 		{
 			if(c.getType() == 19)
@@ -47,6 +51,17 @@ public class Question {
 				return str;
 			}
 			else if(c.getType() == 22)
+=======
+		}
+		else
+		{
+		String st = c.getList().toString();
+		int y = 0;
+		
+		for(int x =0; x<st.length();x++)
+		{
+			if(st.substring(x,x+1).equals(","))
+>>>>>>> FETCH_HEAD
 			{
 				String str = Q_TYPE22 + c.getList().get(0) + " and the last is labeled " + c.getList().get(1) + ", how many odd jerseys are there?";
 				return str;
