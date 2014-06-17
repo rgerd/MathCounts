@@ -2,12 +2,15 @@ package CountingMultipleEvents;
 
 import java.util.ArrayList;
 import util.Utilities;
+import util.Int;
 
 public class Context {
 	private int type;
 	private int ans;
 	private ArrayList<String> list;
-
+	private ArrayList<Number> list2;
+	private int start;
+	private int length;
 	public void generate(int type) {
 		if (type == 1) {
 			System.out.println("Calling");
@@ -37,7 +40,11 @@ public class Context {
 	}
 
 	public int getAns() {
-		return ans;
+
+		
+		
+		return ans; 
+
 
 	}
 	
@@ -45,13 +52,17 @@ public class Context {
 	{
 		String noun1 = "shirts";
 		String noun2 = "pants";
-		int num1 = Utilities.getRandomNumberInRange(1,50);
-		int num2 = Utilities.getRandomNumberInRange(1,50);
+		int num1 = Utilities.getRandomNumberInRange(1,10);
+		int num2 = Utilities.getRandomNumberInRange(1,10);
 		list.add(noun1);
 		list.add(Integer.toString(num1));
 		list.add(noun2);
 		list.add(Integer.toString(num2));
+<<<<<<< HEAD
 		System.out.println("called");
+=======
+		ans = num1 * num2;
+>>>>>>> FETCH_HEAD
 		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
 				Context: shirts and pants make an outfit
 				Variation #1: flavors + toppings on ice cream
@@ -74,6 +85,36 @@ public class Context {
 	restriction: 2 letters + 3 numbers + 2 letters
 
 		 **/
+
+		
+		Integer types=Utilities.getRandomNumberInRange(3, 5);
+		Int init = new Int(start);
+      for(int i=0;i<types;i++)
+      {
+    	list2.add(init.add(new Int(Utilities.getRandomNumberInRange(2,15))));  
+      }
+   
+			int count = 0;
+			for(int i = 0; i < list2.size(); i++)
+			{
+				if(i==0)
+				{
+					Int i1 = (Int)(list2.get(i));
+					int i2=i1.getValue();
+					System.out.println(i2);
+					count=+i2;
+				}
+				else{
+				Int i1 = (Int)(list2.get(i));
+				int i2=i1.getValue();
+				System.out.println(i2);
+						count*=i2;
+				}
+			
+			System.out.println(count);
+			}
+			ans=count;
+
 	}
 
 	private void type03()
