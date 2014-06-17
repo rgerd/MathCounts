@@ -7,6 +7,12 @@ import util.Number;
 public class LangUtility {
 	private static LangGenerator generator = loadGenerator();
 
+	/**
+	 * Populates a format string. Read LANG_README.txt to learn the format.
+	 * @param format the formatted string.
+	 * @param nums the numbers to use.
+	 * @return the populated string.
+	 */
 	public static String populate(String format, Number... nums) {
 		generator.reset();
 		StringBuilder sb = new StringBuilder(format);
