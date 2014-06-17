@@ -176,7 +176,7 @@ public class Context {
 			int answer =1;
 			while(numb>=1)
 			{
-				System.out.println("hello");
+				
 				answer = answer*numb;
 				numb--;
 			}
