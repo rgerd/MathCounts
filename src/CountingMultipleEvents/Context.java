@@ -199,7 +199,27 @@ public class Context {
 
 	private int anagramhelper(String s)
 	{
-	return s.length();	
+	ArrayList al = new ArrayList();
+	for(int i=0; i<s.length(); i++)
+	{
+		String st = s.substring(i,i+1);
+		if(al.contains(st))
+		{
+			
+		}
+		else
+		{
+			al.add(st);
+		}
+	}
+	int numb = al.size();
+	int answer=1;
+	while(numb>=1)
+	{
+		answer = answer*numb;
+		numb--;
+	}
+	return answer;
 	}
 
 
