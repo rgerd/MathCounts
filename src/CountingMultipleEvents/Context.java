@@ -79,6 +79,29 @@ public class Context {
 	private void type03()
 
 	{
+		
+		int chance = Utilities.getRandomNumberInRange(1,2);
+		start = Utilities.getRandomNumberInRange(1,20);
+		if(chance == 1)
+		{
+			int numb = Utilities.getRandomNumberInRange(1,10);
+			int answer;
+			while(numb>=1)
+			{
+				answer = answer*numb;
+				numb--;
+			}
+			ans=answer;
+			
+			
+		}
+		else
+		{
+			
+			ans = anagramhelper(Question.GetRearrangement());
+		}
+			
+		
 		/**Question format: In how many ways can I arrange (#1) (objects) on a shelf?
 					Context: Books on a shelf
 					Variation #1: Students in a line to buy a ticket for (event)
@@ -136,6 +159,13 @@ public class Context {
 		
 		
 		
+		
+	}
+	
+
+
+	private int anagramhelper(String s)
+	{
 		
 	}
 
