@@ -28,4 +28,8 @@ public class LangComponent {
 	public void setPlural(boolean plural) {
 		this.plural = plural;
 	}
+	
+	public boolean isPlural() {
+		return plural;
+	}
 }

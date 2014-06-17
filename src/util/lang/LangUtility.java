@@ -13,6 +13,9 @@ public class LangUtility {
 		ArrayList<LangComponent> components = new ArrayList<LangComponent>();
 		Number last_num = null;
 
+		
+		boolean last_num_plural = false;
+		boolean last_noun_plural = false;
 		int start_brace = -1;
 		for (int i = 0; i < sb.length(); i++) {
 			char c = sb.charAt(i);
@@ -38,13 +41,12 @@ public class LangUtility {
 				if (attr.equals("num")) {
 					last_num = nums[ind];
 					components.add(new LangComponent("number", last_num.toString()));
-					if (!last_num.toString().equals("1")) {
-						generator.setPlural(true);
-					} else {
-						generator.setPlural(false);
-					}
+					last_num_plural = !last_num.toString().equals("1");
 				} else {
-					components.add(generator.generate(tag_data));
+					if(attr.equals("noun"))
+						last_noun_plural = tag_data.length >= 3;
+					System.out.println(last_noun_plural + ", " + last_num_plural + ", " + (last_noun_plural || last_num_plural) + ", " + tag_data[0]);
+					components.add(generator.generate(last_noun_plural || last_num_plural, tag_data));
 				}
 
 				sb.replace(start_brace, i + 1, "%s");
