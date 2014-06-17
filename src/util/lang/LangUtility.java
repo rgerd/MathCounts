@@ -41,8 +41,11 @@ public class LangUtility {
 				start_brace = -1;
 			}
 		}
+		
+		
 		for (int i = 0; i < tags.size(); i++) {
 			TagData tag = tags.get(i);
+			System.out.println(tag);
 			String attr = tag.getAttr();
 			int ind = tag.getIndex();
 			HashSet<String> tag_flags = tag.getFlags();

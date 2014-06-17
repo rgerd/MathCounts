@@ -31,4 +31,8 @@ public class TagData {
 	public HashSet<String> getFlags() {
 		return flags;
 	}
+	
+	public String toString() {
+		return attr + ", " + index + ", " + flags;
+	}
 }

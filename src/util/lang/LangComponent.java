@@ -39,6 +39,8 @@ public class LangComponent {
 
 	public void setFlags(HashSet<String> flags) {
 		this.flags.clear();
+		if(init_flags != null)
+			this.flags.addAll(init_flags);
 		this.flags.addAll(flags);
 	}
 	
@@ -47,7 +49,10 @@ public class LangComponent {
 	}
 	
 	public HashSet<String> getFlags() {
-		return flags;
+		HashSet<String> _flags = new HashSet<String>();
+		_flags.addAll(flags);
+		_flags.addAll(init_flags);
+		return _flags;
 	}
 	
 	public boolean hasFlag(String flag) {
