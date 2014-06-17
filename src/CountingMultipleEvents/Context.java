@@ -59,21 +59,46 @@ public class Context {
 	private void type01()
 	{
 		int chance = Utilities.getRandomNumberInRange(1,4);
-		String noun1 = "shirt";
-		String noun2 = "pant";
-		int num1 = Utilities.getRandomNumberInRange(1,10);
-		int num2 = Utilities.getRandomNumberInRange(1,10);
+		String noun1;
+		String noun2;
+		int num1;
+		int num2;
+		String action ="";
+		if(chance == 1)
+		{
+		num1 = Utilities.getRandomNumberInRange(1,15);
+		num2 = Utilities.getRandomNumberInRange(1,15);
+		noun1 = "shirt";
+		noun2 = "pair of pants";
+		action = "arrange an outfit";
+		}else if(chance == 2)
+		{
+			noun1 = "flavor";
+			noun2 = "topping";
+			num1 = Utilities.getRandomNumberInRange(1,15);
+			num2 = Utilities.getRandomNumberInRange(1,15);
+			action = "order";
+		}else if(chance == 3)
+		{
+			noun1 = "language classe";
+			noun2 = "art classe";
+			num1 = Utilities.getRandomNumberInRange(1,15);
+			num2 = Utilities.getRandomNumberInRange(1,15);
+			action = "choose classes";
+		}else{
+			noun1 = "president";
+			noun2 = "vice-president";
+			num1 = Utilities.getRandomNumberInRange(1,15);
+			num2 = Utilities.getRandomNumberInRange(1,15);
+			action = "elect candidates";
+		}
+		
 		list.add(Integer.toString(num1));
 		list.add(noun1);
 		list.add(Integer.toString(num2));
 		list.add(noun2);
-		list.add("outfits");
+		list.add(action);
 		ans = num1 * num2;
-		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
-				Context: shirts and pants make an outfit
-				Variation #1: flavors + toppings on ice cream
-				Variation #2: electives - language classes + art classes
-				Variation #3: president and vice president**/
 
 	}
 	private void type02()
@@ -219,27 +244,7 @@ public class Context {
 
 	private int anagramhelper(String s)
 	{
-	ArrayList al = new ArrayList();
-	for(int i=0; i<s.length(); i++)
-	{
-		String st = s.substring(i,i+1);
-		if(al.contains(st))
-		{
-			
-		}
-		else
-		{
-			al.add(st);
-		}
-	}
-	int numb = al.size();
-	int answer=1;
-	while(numb>=1)
-	{
-		answer = answer*numb;
-		numb--;
-	}
-	return answer;
+	return s.length();	
 	}
 
 
