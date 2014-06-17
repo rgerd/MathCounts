@@ -26,11 +26,6 @@ public class Driver
 			while(in.hasNextLine())
 			{
 				String[] s = in.nextLine().split("\t");
-				for(int i = 0; i < s.length; i++)
-				{
-					System.out.println(s[i]);
-				}
-				
 				ArrayList<Integer> nums = new ArrayList<Integer>();
 				
 				ArrayList<Integer> types = new ArrayList<Integer>();
@@ -43,8 +38,6 @@ public class Driver
 					int type = Integer.parseInt(ty.substring(1, ty.length()));
 					types.add(type);
 				}
-				System.out.println(nums);
-				System.out.println(types);
 
 				for(int j = 0; j < types.size(); j++)
 				{

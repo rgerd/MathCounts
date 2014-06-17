@@ -24,7 +24,9 @@ public class Question {
 		}
 		else if(c.getType()==3)
 		{
-			
+			System.out.println(list);
+			String ret = Q3 + list.get(0) + "books on a shelf?";
+			return ret;
 		}
 		return  ret;
 			
