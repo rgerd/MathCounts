@@ -43,29 +43,8 @@ public class Context {
 	}
 
 	public int getAns() {
-		if(type == 2)
-		{
-			int count = 0;
-			for(int i = 0; i < list2.size(); i++)
-			{
-				if(i==0)
-				{
-					Int i1 = (Int)(list2.get(i));
-					int i2=i1.getValue();
-					System.out.println(i2);
-					count=+i2;
-				}
-				else{
-				Int i1 = (Int)(list2.get(i));
-				int i2=i1.getValue();
-				System.out.println(i2);
-						count*=i2;
-				}
-			}
-			System.out.println(count);
-
-			return count;
-		}
+		
+		
 		return length; 
 
 
@@ -106,6 +85,27 @@ public class Context {
       {
     	list2.add(init.add(new Int(Utilities.getRandomNumberInRange(2,15))));  
       }
+   
+			int count = 0;
+			for(int i = 0; i < list2.size(); i++)
+			{
+				if(i==0)
+				{
+					Int i1 = (Int)(list2.get(i));
+					int i2=i1.getValue();
+					System.out.println(i2);
+					count=+i2;
+				}
+				else{
+				Int i1 = (Int)(list2.get(i));
+				int i2=i1.getValue();
+				System.out.println(i2);
+						count*=i2;
+				}
+			
+			System.out.println(count);
+			}
+			ans=count;
 	}
 
 	private void type03()
