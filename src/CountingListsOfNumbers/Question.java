@@ -28,10 +28,10 @@ public class Question {
 		{
 			String str = Q_TYPE15 + c.getList().get(0) + " to " + c.getList().get(1) + " (inclusive). How many problems were assigned?";
 			return str;
-		}else if (c.getType() == 19)
+		}else if (c.getType() == 19 || c.getType() == 20)
 		{
 			int chance = Utilities.getRandomNumberInRange(1, 2);
-			if(chance == 1)
+			if(c.getType() == 19)
 			{
 				String str = Q_TYPE19 + c.getList().get(0) + " to " + c.getList().get(1) + " (inclusive). How many problems were assigned?";
 				return str;
