@@ -54,17 +54,22 @@
 	yolked
 </adj>
 
-<venue>
-	in_a_classroom
-	at_a_park
-	in_a_school
-	at_Starbucks
-	in_math_class
-	at_the_library
-	in_Chicago
+<venue [place]>
+	classroom, in
+	park, at
+	school, in
+	Starbucks, at
+	math_class, in
+	library, in
+	Chicago, in
 </venue>
+
+<container [place]>
+	bin, in
+	shelf, on
+</container>
 
 <verb>
 	is, are
-	has, have
+#	has, have
 </verb>

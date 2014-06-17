@@ -13,7 +13,7 @@ public class Driver {
 			Int num_0 = new Int((int) (((Int) total.sub(other)).getValue() * p_num_1));
 			Int num_1 = new Int((int) (((Int) total.sub(other)).getValue() * (1 - p_num_1)));
 
-			String question = LangUtility.populate("[num_0] [noun_0] [verb] [venue_0]. [num_1] of them [verb] [adj_0]. [num_2] of them [verb] [adj_1]. How many [noun_0_pl] [verb] not [adj_0] or [adj_1]??", total, num_0, num_1);
+			String question = LangUtility.populate("[num_0] [noun_0] [verb_0] [venue_0]. [num_1] of them [verb_0] [adj_0]. [num_2] of them [verb_0] [adj_1]. How many [noun_0_pl] [verb_0] not [adj_0] or [adj_1]??", total, num_0, num_1);
 			System.out.println(question);
 		}
 	}

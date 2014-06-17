@@ -46,7 +46,7 @@ public class LangUtility {
 
 				if (attr.equals("num")) {
 					last_num = nums[ind];
-					components.add(new LangComponent("number", last_num.toString()));
+					components.add(new LangComponent("number", null, last_num.toString()));
 					last_num_plural = !last_num.toString().equals("1");
 				} else {
 					if(attr.equals("noun"))
