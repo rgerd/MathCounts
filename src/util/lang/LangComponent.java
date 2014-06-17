@@ -18,7 +18,7 @@ public class LangComponent {
 	}
 	
 	public LangComponent clone() {
-		return new LangComponent(type, init_flags, flags, data);
+		return new LangComponent(type, init_flags, new HashSet<String>(), data);
 	}
 	
 	public String[] getData() {

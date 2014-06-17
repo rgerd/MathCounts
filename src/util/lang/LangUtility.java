@@ -20,47 +20,29 @@ public class LangUtility {
 	 */
 	public static String populate(String format, Number... nums) {
 		generator.reset();
-		StringBuilder sb = new StringBuilder(format);
 		ArrayList<LangComponent> components = new ArrayList<LangComponent>();
-		Number last_num = null;
-		ArrayList<TagData> tags = new ArrayList<TagData>();
-
+		
+		StringBuilder sb = new StringBuilder(format);
+		ArrayList<TagData> tags = LangParser.getTags(sb);
+		
 		boolean last_num_plural = false;
 		boolean last_noun_plural = false;
-		int start_brace = -1;
-		for (int i = 0; i < sb.length(); i++) {
-			char c = sb.charAt(i);
-			if (c == '[') {
-				start_brace = i;
-			} else if (c == ']') {
-				String tag_str = sb.substring(start_brace + 1, i);
-				tags.add(new TagData(tag_str));
 
-				sb.replace(start_brace, i + 1, "%s");
-				i -= (i + 1) - start_brace;
-				start_brace = -1;
-			}
-		}
-		
-		
 		for (int i = 0; i < tags.size(); i++) {
 			TagData tag = tags.get(i);
-			System.out.println(tag);
 			String attr = tag.getAttr();
 			int ind = tag.getIndex();
 			HashSet<String> tag_flags = tag.getFlags();
 			
 			if (attr.equals("num")) {
-				last_num = nums[ind];
-				components.add(LangComponent.createNumberComponent(last_num));
-				last_num_plural = !last_num.toString().equals("1");
+				Number num = nums[ind];
+				components.add(LangComponent.createNumberComponent(num));
+				last_num_plural = !num.toString().equals("1");
 			} else {
 				boolean this_plural = false;
 				if (attr.equals("noun"))
-					last_noun_plural = last_num_plural || tag_flags.contains("pl");
-
-				this_plural = last_noun_plural;
-				last_num_plural = false;
+					last_noun_plural = tag_flags.contains("pl");
+				this_plural = last_noun_plural || last_num_plural;
 
 				if (this_plural)
 					tag_flags.add("pl");
