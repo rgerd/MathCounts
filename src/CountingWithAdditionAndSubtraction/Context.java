@@ -65,14 +65,17 @@ public class Context {
 				{
 					Int i1 = (Int)(list.get(i));
 					int i2=i1.getValue();
+					System.out.println(i2);
 					count=+i2;
 				}
 				else{
 				Int i1 = (Int)(list.get(i));
 				int i2=i1.getValue();
+				System.out.println(i2);
 						count*=i2;
 				}
 			}
+			System.out.println(count);
 
 			return count;
 		}
