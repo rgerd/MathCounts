@@ -1,12 +1,8 @@
 package CountingMultipleEvents;
 
 import java.util.ArrayList;
-
-import util.Fraction;
-import util.Int;
-import util.Number;
 import util.Utilities;
-
+import util.Int;
 
 public class Context {
 	private int type;
@@ -43,19 +39,25 @@ public class Context {
 	}
 
 	public int getAns() {
+
 		
 		
 		return length; 
 
 
 	}
-
-
+	
 	private void type01()
 	{
 		String noun1 = "shirts";
 		String noun2 = "pants";
-		
+		int num1 = Utilities.getRandomNumberInRange(1,10);
+		int num2 = Utilities.getRandomNumberInRange(1,10);
+		list.add(noun1);
+		list.add(Integer.toString(num1));
+		list.add(noun2);
+		list.add(Integer.toString(num2));
+		ans = num1 * num2;
 		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
 				Context: shirts and pants make an outfit
 				Variation #1: flavors + toppings on ice cream
@@ -78,6 +80,7 @@ public class Context {
 	restriction: 2 letters + 3 numbers + 2 letters
 
 		 **/
+
 		
 		Integer types=Utilities.getRandomNumberInRange(3, 5);
 		Int init = new Int(start);
@@ -106,6 +109,7 @@ public class Context {
 			System.out.println(count);
 			}
 			ans=count;
+
 	}
 
 	private void type03()
@@ -138,22 +142,27 @@ public class Context {
 	
 	private void type04()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		/**Type 04: Arrangements with restrictions
+		Context: Have 1 shirt and 1 tie in each of 8 different colors. How many outfits can be made, if the shirt and tie must be different colors?
+		Variation #1: Licence plates
+		Can’t choose both number 0 and letter O
+		3 letters + 2 even digits + 2 odd digits
+		etc
+		Variation #2: Books on a shelf
+		6 books, 2 of which are math, arranged with math on ends of stack
+		6 books, 2 of which are math, arranged with math books not next to each other
+		6 books, 2 of which are math, arranged with math exactly 1 space apart
+		Variation #3: Medals to Olympians
+		Context: various sports
+		Context: countries, with and without restrictions of how many times each country can win
+		Variation #4: Student council
+		President, Vice President, Secretary, Treasurer
+		Boys vs Girls
+		Variation #5: People on a sports team
+		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
+		Do other sports**/
+
 	}
 	
 	
