@@ -23,7 +23,7 @@ public class Question {
 	}
 	public static String GetRearrangement()
 	{
-		String anagram = null;
+		String anagram = "angi";
 		return anagram;
 	}
 
