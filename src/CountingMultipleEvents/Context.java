@@ -81,11 +81,11 @@ public class Context {
 	{
 		
 		int chance = Utilities.getRandomNumberInRange(1,2);
-		start = Utilities.getRandomNumberInRange(1,20);
+		int start = Utilities.getRandomNumberInRange(1,20);
 		if(chance == 1)
 		{
 			int numb = Utilities.getRandomNumberInRange(1,10);
-			int answer;
+			int answer =0;
 			while(numb>=1)
 			{
 				answer = answer*numb;
@@ -99,27 +99,9 @@ public class Context {
 		{
 			
 			ans = anagramhelper(Question.GetRearrangement());
-		}
 			
+		}
 		
-		/**Question format: In how many ways can I arrange (#1) (objects) on a shelf?
-					Context: Books on a shelf
-					Variation #1: Students in a line to buy a ticket for (event)
-						Variation #2: Courses in a schedule
-						Variation #3: Anagrams of a word **/
-
-		/**
-		 * Same as previous type, but with more options to fill Example: In how
-		 * many ways can we form an international commission if we must choose
-		 * one European country from among 6 European countries, one Asian
-		 * country from among 4, one North American Country from among 3, and
-		 * one African country from among 7? Variation #1: choose animals for a
-		 * zoo Variation #2: choose topping types for ice cream (types of fruit
-		 * + types of nuts + types of candies + types of sauce) Variation #3:
-		 * license plate combinations context will involve types of restrictions
-		 * restriction: 3 letters + 4 numbers restriction: 2 letters + 3 numbers
-		 * + 2 letters
-		 **/
 	}
 	
 	private void type04()
@@ -166,7 +148,7 @@ public class Context {
 
 	private int anagramhelper(String s)
 	{
-		
+	return s.length();	
 	}
 
 

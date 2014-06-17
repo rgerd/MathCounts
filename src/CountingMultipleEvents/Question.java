@@ -32,8 +32,9 @@ public class Question {
 
 		return returnstring;
 	}
-	public String GetRearrangement()
+	public static String GetRearrangement()
 	{
+		String anagram = null;
 		return anagram;
 	}
 
