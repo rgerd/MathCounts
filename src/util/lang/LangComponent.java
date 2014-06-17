@@ -27,7 +27,7 @@ public class LangComponent {
 	
 	public String toString() {
 		if(hasFlag("place"))
-			return data[1] + (Character.isUpperCase(data[0].charAt(0)) ? " " : " a ") + data[0];
+			return (hasFlag("from") ? "from" : data[1]) + (Character.isUpperCase(data[0].charAt(0)) ? " " : (hasFlag("mentioned") ? " the " : " a ")) + data[0];
 		if(data.length == 1)
 			return data[0];
 		return data[isPlural() ? 1 : 0];
@@ -42,6 +42,14 @@ public class LangComponent {
 		if(init_flags != null)
 			this.flags.addAll(init_flags);
 		this.flags.addAll(flags);
+	}
+	
+	public void addFlag(String flag) {
+		flags.add(flag);
+	}
+	
+	public void removeFlag(String flag) {
+		flags.remove(flag);
 	}
 	
 	public boolean isPlural() {

@@ -32,6 +32,7 @@ public class LangGenerator {
 		if(_comps != null && _comps.size() > index) {
 			lc = _comps.get(index).clone();
 			lc.setFlags(tag_flags);
+			lc.addFlag("mentioned");
 			return lc;
 		}
 		

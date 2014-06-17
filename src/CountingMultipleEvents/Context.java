@@ -242,7 +242,7 @@ public class Context {
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
 		Number[] nums = {size, new Int(1), size, numItems };
-		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [venue_0]. In how many ways can [num_3] [noun_0] be chosen, in order, from the [venue_0]?", size, new Int(1), size, numItems);
+		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", size, new Int(1), size, numItems);
 		System.out.println(an);
 	}
 
