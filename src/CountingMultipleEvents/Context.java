@@ -10,7 +10,6 @@ public class Context {
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
 	private int start;
-	private int length;
 	public void generate(int type) {
 		if (type == 1) {
 			System.out.println("Calling");
