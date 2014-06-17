@@ -10,12 +10,12 @@ import java.util.Map.Entry;
 import java.util.Set;
 import util.Utilities;
 
-public class LangContext {
+public class LangGenerator {
 	private HashMap<String, ArrayList<LangComponent>> components;
 	private HashMap<String, ArrayList<LangComponent>> _components;
 	private boolean plural;
 
-	public LangContext(String data_file) {
+	public LangGenerator(String data_file) {
 		components = new HashMap<String, ArrayList<LangComponent>>();
 		_components = new HashMap<String, ArrayList<LangComponent>>();
 

@@ -5,10 +5,10 @@ import java.util.StringTokenizer;
 import util.Number;
 
 public class LangUtility {
-	private static LangContext context = loadContext();
+	private static LangGenerator generator = loadGenerator();
 	
 	public static String populate(String format, Number... nums) {
-		context.reset();
+		generator.reset();
 		StringBuilder sb = new StringBuilder(format);
 		ArrayList<LangComponent> components = new ArrayList<LangComponent>();
 		Number last_num = null;
@@ -31,12 +31,12 @@ public class LangUtility {
 					last_num = nums[_ind];
 					components.add(new LangComponent("number", last_num.toString()));
 					if(!last_num.toString().equals("1")) {
-						context.setPlural(true);
+						generator.setPlural(true);
 					} else {
-						context.setPlural(false);
+						generator.setPlural(false);
 					}
 				} else {
-					components.add(context.generate(attr, _ind));
+					components.add(generator.generate(attr, _ind));
 				}
 
 				sb.replace(start_brace, i + 1, "%s");
@@ -52,7 +52,7 @@ public class LangUtility {
 		return String.format(sb.toString(), (Object[]) strings);
 	}
 	
-	private static LangContext loadContext() {
-		return new LangContext("proto_lang_data.txt");
+	private static LangGenerator loadGenerator() {
+		return new LangGenerator("proto_lang_data.txt");
 	}
 }
