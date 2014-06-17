@@ -56,24 +56,28 @@ public class Context {
 
 	public int getAns() 
 	{
-		if(type == 17)
+		if(type == 2)
 		{
 			int count = 0;
-			for(int i = 1; i < type17/2; i++)
+			for(int i = 0; i < list.size(); i++)
 			{
-				if(i*(i+1) < type17)
-					count++;
+				if(i==0)
+				{
+					Int i1 = (Int)(list.get(i));
+					int i2=i1.getValue();
+					count=+i2;
+				}
+				else{
+				Int i1 = (Int)(list.get(i));
+				int i2=i1.getValue();
+						count*=i2;
+				}
 			}
 
 			return count;
 		}
 		return length; 
 
-	}
-
-	public int getType17()
-	{
-		return type17;
 	}
 
 	private void cWAAS1()
@@ -87,7 +91,12 @@ public class Context {
 	}
 	private void cWAAS2()
 	{		
-		
+		Integer types=Utilities.getRandomNumberInRange(3, 5);
+		Int init = new Int(start);
+      for(int i=0;i<types;i++)
+      {
+    	list.add(init.add(new Int(Utilities.getRandomNumberInRange(2,15))));  
+      }
 	}
 	private void cWAAS3()
 	{
