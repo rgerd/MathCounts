@@ -1,10 +1,6 @@
 package CountingMultipleEvents;
 
 import java.util.ArrayList;
-
-import util.Fraction;
-import util.Int;
-import util.Number;
 import util.Utilities;
 
 public class Context {
@@ -35,7 +31,7 @@ public class Context {
 		}
 	}
 
-	public ArrayList<Number> getList() {
+	public ArrayList<String> getList() {
 		return list;
 	}
 
@@ -54,8 +50,8 @@ public class Context {
 		return null;
 	}
 	private void type01()
-
 	{
+		
 		/**Question format: You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?
 				Context: shirts and pants make an outfit
 				Variation #1: flavors + toppings on ice cream
@@ -101,6 +97,46 @@ public class Context {
 		 * restriction: 3 letters + 4 numbers restriction: 2 letters + 3 numbers
 		 * + 2 letters
 		 **/
+	}
+	
+	private void type04()
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	private void type05()
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 
