@@ -6,7 +6,7 @@ import util.Number;
 
 public class LangUtility {
 	private static LangGenerator generator = loadGenerator();
-	
+
 	public static String populate(String format, Number... nums) {
 		generator.reset();
 		StringBuilder sb = new StringBuilder(format);
@@ -23,20 +23,28 @@ public class LangUtility {
 
 				StringTokenizer st = new StringTokenizer(str, "_");
 
-				String attr = st.nextToken();
-				String ind = st.nextToken();
-				int _ind = Integer.parseInt(ind);
+				String[] tag_data = new String[st.countTokens()];
+				int tdi = 0;
+				while (st.hasMoreTokens()) {
+					tag_data[tdi] = st.nextToken();
+					tdi++;
+				}
+
+				String attr = tag_data[0];
+				int ind = -1;
+				if (tag_data.length > 1)
+					ind = Integer.parseInt(tag_data[1]);
 
 				if (attr.equals("num")) {
-					last_num = nums[_ind];
+					last_num = nums[ind];
 					components.add(new LangComponent("number", last_num.toString()));
-					if(!last_num.toString().equals("1")) {
+					if (!last_num.toString().equals("1")) {
 						generator.setPlural(true);
 					} else {
 						generator.setPlural(false);
 					}
 				} else {
-					components.add(generator.generate(attr, _ind));
+					components.add(generator.generate(tag_data));
 				}
 
 				sb.replace(start_brace, i + 1, "%s");
@@ -51,7 +59,7 @@ public class LangUtility {
 		}
 		return String.format(sb.toString(), (Object[]) strings);
 	}
-	
+
 	private static LangGenerator loadGenerator() {
 		return new LangGenerator("proto_lang_data.txt");
 	}

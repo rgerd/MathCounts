@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+
 import util.Utilities;
 
 public class LangGenerator {
@@ -59,14 +60,29 @@ public class LangGenerator {
 		}
 	}
 
-	public LangComponent generate(String type, int index) {
+	public LangComponent generate(String... tag_data) {
 		LangComponent lc = null;
+		boolean _plural = plural;
+		String type = tag_data[0];
+
+		if(type.equals("verb")) {
+			lc = components.get("verb").get(0);
+			lc.setPlural(_plural);
+
+			return lc;
+		}
+			
+		
+		int index = Integer.parseInt(tag_data[1]);
+		
+		if(tag_data.length >= 3 && tag_data[2].equals("pl"))
+			_plural = true;		
 		
 		
 		ArrayList<LangComponent> _comps = _components.get(type);
 		if(_comps != null && _comps.size() > index) {
 			lc = _comps.get(index);
-			lc.setPlural(plural);
+			lc.setPlural(_plural);
 			return lc;
 		}
 		
@@ -79,7 +95,7 @@ public class LangGenerator {
 			al.add(lc);
 			_components.put(type, al);
 		}
-		lc.setPlural(plural);
+		lc.setPlural(_plural);
 		return lc;
 	}
 

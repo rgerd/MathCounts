@@ -63,3 +63,8 @@
 	at_the_library
 	in_Chicago
 </venue>
+
+<verb>
+	is, are
+	has, have
+</verb>
