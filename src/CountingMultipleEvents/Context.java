@@ -12,7 +12,7 @@ import util.Utilities;
 public class Context {
 	private int type;
 	private int ans;
-	private ArrayList<Number> list;
+	private ArrayList<String> list;
 	private int start;
 	public Context()
 	{
@@ -25,23 +25,23 @@ public class Context {
 		if(type ==  1)
 		{
 			setType(1);
-			listGen1();
+			type01();
 		}else if(type == 2)
 		{
 			setType(2);
-			listGen2();
+			type02();
 		}else if(type == 3)
 		{
 			setType(3);
-			listGen3();
+			type03();
 		}else if(type == 4)
 		{
 			setType(4);
-			listGen4();
+			type04();
 		}else if(type == 5)
 		{
 			setType(5);
-			listGen5();
+			type05();
 		}
 	}
 
