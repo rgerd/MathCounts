@@ -1,36 +1,25 @@
 package CountingMultipleEvents;
 
+import java.util.ArrayList;
+
 import util.Utilities;
 
 
 public class Question {
-	private static final String Q = "You have (#1) (attribute #1)s and (#2) (attribute #2)s. How many ways can you choose a (collection) consisting of 1 (attribute #1) and 1 (attribute #2)?";
-	private int length;
+	private static String Q1 = "You have ";
+	private String ret;
 
 	public String getQ (Context c)
 	{
-		String st = c.getList().toString();
-		int y = 0;
-
-		for(int x =0; x<st.length();x++)
+		ArrayList<String> list = c.getList();
+		if(c.getType() == 1)
 		{
-			if(st.substring(x,x+1).equals(","))
-			{
-				y++;
-			}
-			if(y==4)
-			{
-
-				st=" "+st.substring(1,x)+"..."+st.substring(x+1,st.length()-1)+"?";
-
-				x = st.length();
-			}
+			Q1 += list.get(0) + " " + list.get(1) + "(s)  and " + list.get(2) + " " + list.get(3) + "(s). How many ways can you choose a collection consisting of 1 " + list.get(1) + " and 1 " + list.get(3) + "?";
+			ret = Q1;
 		}
-		String returnstring;
-
-		returnstring = Q + st;
-
-		return returnstring;
+		
+		return  ret;
+			
 	}
 	public static String GetRearrangement()
 	{
