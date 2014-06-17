@@ -1,13 +1,20 @@
 package CountingMultipleEvents;
 
 import java.util.ArrayList;
+
+import util.Fraction;
+import util.Int;
+import util.Number;
 import util.Utilities;
+
 
 public class Context {
 	private int type;
 	private int ans;
 	private ArrayList<String> list;
-
+	private ArrayList<Number> list2;
+	private int start;
+	private int length;
 	public void generate(int type) {
 		if (type == 1) {
 			setType(1);
@@ -36,7 +43,31 @@ public class Context {
 	}
 
 	public int getAns() {
-		return ans;
+		if(type == 2)
+		{
+			int count = 0;
+			for(int i = 0; i < list2.size(); i++)
+			{
+				if(i==0)
+				{
+					Int i1 = (Int)(list2.get(i));
+					int i2=i1.getValue();
+					System.out.println(i2);
+					count=+i2;
+				}
+				else{
+				Int i1 = (Int)(list2.get(i));
+				int i2=i1.getValue();
+				System.out.println(i2);
+						count*=i2;
+				}
+			}
+			System.out.println(count);
+
+			return count;
+		}
+		return length; 
+
 
 	}
 
@@ -68,6 +99,13 @@ public class Context {
 	restriction: 2 letters + 3 numbers + 2 letters
 
 		 **/
+		
+		Integer types=Utilities.getRandomNumberInRange(3, 5);
+		Int init = new Int(start);
+      for(int i=0;i<types;i++)
+      {
+    	list2.add(init.add(new Int(Utilities.getRandomNumberInRange(2,15))));  
+      }
 	}
 
 	private void type03()
