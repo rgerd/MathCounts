@@ -45,8 +45,8 @@ public class LangUtility {
 				} else {
 					if(attr.equals("noun"))
 						last_noun_plural = tag_data.length >= 3;
-					System.out.println(last_noun_plural + ", " + last_num_plural + ", " + (last_noun_plural || last_num_plural) + ", " + tag_data[0]);
-					components.add(generator.generate(last_noun_plural || last_num_plural, tag_data));
+					LangComponent lc = generator.generate(last_noun_plural || last_num_plural, tag_data);
+					components.add(lc);
 				}
 
 				sb.replace(start_brace, i + 1, "%s");

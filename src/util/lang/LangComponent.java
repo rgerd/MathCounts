@@ -11,6 +11,10 @@ public class LangComponent {
 		plural = false;
 	}
 	
+	public LangComponent clone() {
+		return new LangComponent(type, data);
+	}
+	
 	public String[] getData() {
 		return data;
 	}
