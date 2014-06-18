@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import util.Int;
 import util.Utilities;
 import util.lang.LangUtility;
+import util.Number;
 
 
 
@@ -39,7 +40,7 @@ public class Question {
 				String ret = Q1 +  list.get(0) + " " + list.get(1) + "(s)  and " + list.get(2) + " " + list.get(3)+ "(s)  and " +  list.get(4) + " " + list.get(5) +"(s)  and " +  list.get(6) + " " + list.get(7) +"(s)  and " +  list.get(8) + " " + list.get(9) + "(s). How many ways can you choose a(n) "  + list.get(10) +  " consisting of 1 " + list.get(1) + " and 1 " + list.get(3) +" and 1 " + list.get(5) +" and 1 " + list.get(9) + "?";
 				return ret;
 			}
-			
+
 		}
 
 		else if(c.getType()==3)
@@ -57,22 +58,23 @@ public class Question {
 		{
 			return  ret;
 		}else if(c.getType() == 5){
-			
+
 			Number[] nums = new Number[list.size()];
-			for(int i = 0; i < list.size(); i++)
+			for(int i = 0; i < list.size() -1; i++)
 			{
-				nums[i] = (Number) new Int(Integer.parseInt(list.get(i));
+				nums[i] = new Int(Integer.parseInt(list.get(i)));
 			}
-			LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", nums);
+			String chance = list.get(list.size()-1);
+			ret = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from] "+chance+"?", nums);
 			return  ret;
 		}
-		
+
 		else 
 		{
 			if(list.size()==1)
 			{
-			ret=list.get(0)+"!";
-			return  ret;
+				ret=list.get(0)+"!";
+				return  ret;
 			}
 			else
 			{

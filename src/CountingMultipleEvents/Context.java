@@ -310,29 +310,35 @@ public class Context {
 			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
 
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
-		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
+		Int numItems = new Int(3);
 		int chance = Utilities.getRandomNumberInRange(1,3);
+		String question = "";
 		if(chance == 1)
 		{
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
+			question = "if each [noun_0] is placed back into the bin after it is drawn?";
 		}else if(chance == 2)
 		{
 			ans = 1;
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
+			question = "if each [noun_0] remains outside the bin after it is drawn?";
+
 		}else
 		{
 			ans = size.getValue();
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
+			question = "the first [noun_0] is replaced after it is drawn but the second ball remains outside the bin?";
+
 		}
-		list.add(Integer.toString(chance));
 		list.add(Integer.toString(size.getValue()));
 		list.add("1");
 		list.add(Integer.toString(size.getValue()));
 		list.add(Integer.toString(numItems.getValue()));
+		list.add(question);
 		
 	}
 
