@@ -43,6 +43,10 @@ public class Context {
 		{
 			setType(5);
 			type05();
+		}else if(type == 6)
+		{
+			setType(6);
+			type06();
 		}
 	}
 
@@ -247,7 +251,10 @@ public class Context {
 	}
 
 
-
+private void type06()
+{
+	
+}
 	private int anagramhelper(String s)
 	{
 		
