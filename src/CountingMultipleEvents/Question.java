@@ -2,6 +2,7 @@ package CountingMultipleEvents;
 
 import java.util.ArrayList;
 
+import util.Utilities;
 import util.lang.LangUtility;
 
 
@@ -62,7 +63,40 @@ public class Question {
 	}
 	public static String GetRearrangement()
 	{
-		String anagram = "angi";
+		ArrayList<String> arl = new ArrayList();
+		arl.add("bottle");
+		arl.add("chair");
+		arl.add("computer");
+		arl.add("window");
+		arl.add("calculus");
+		arl.add("algebra");
+		arl.add("flap");
+		arl.add("book");
+		arl.add("oreo");
+		arl.add("cheetos");
+		arl.add("puppy");
+		arl.add("flabby");
+		arl.add("cat");
+		arl.add("douglass");
+		arl.add("caven");
+		arl.add("Quinton");
+		arl.add("angi");
+		arl.add("robert");
+		arl.add("glasses");
+		arl.add("shoe");
+		arl.add("soccer");
+		arl.add("arms");
+		arl.add("board");
+		arl.add("zebra");
+		arl.add("noodles");
+		arl.add("bag");
+		arl.add("map");
+		arl.add("white");
+		arl.add("blue");
+		arl.add("green");
+		arl.add("arctic");
+		int r =Utilities.getRandomNumberInRange(0,30);
+		String anagram = arl.get(r);
 		return anagram;
 	}
 

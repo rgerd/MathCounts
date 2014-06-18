@@ -277,26 +277,33 @@ private void type06()
 	{
 		
 		ArrayList al = new ArrayList();
+		int rep = 0;
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
+			
 			if(al.contains(st))
 			{
+				rep++;
+			}
+			al.add(st);
 				
-			}
-			else
-			{
-				al.add(st);
-			}
 		}
 		int numb = al.size();
 		int answer=1;
+		int a=1;
+		while(rep>=1)
+		{
+			a = a*rep;
+			rep--;
+		}
 		while(numb>=1)
 		{
 			answer = answer*numb;
 			numb--;
 		}
-		return answer;
+		int retans = answer/a;
+		return retans;
 		}
 
 
