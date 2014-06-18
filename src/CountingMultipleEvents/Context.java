@@ -14,7 +14,6 @@ public class Context {
 	private ArrayList<Number> list2;
 	private int start;
 	private boolean ana;
-	private int chance4;
 
 	private int length;
 
@@ -25,7 +24,7 @@ public class Context {
 	}
 	public void generate(int type) {
 		if (type == 1) {
-			
+
 			setType(1);
 			type01();
 		}else if(type == 2)
@@ -154,17 +153,17 @@ public class Context {
 			{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-				
+
 				count=+i2;
 			}
 			else{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-			
+
 				count*=i2;
 			}
 
-	
+
 		}
 		ans=count;
 
@@ -178,7 +177,7 @@ public class Context {
 		int chance =Utilities.getRandomNumberInRange(1,2);
 
 		int numb = Utilities.getRandomNumberInRange(4,10);
-		
+
 		if(chance == 1)
 		{
 
@@ -187,7 +186,7 @@ public class Context {
 			int answer =1;
 			while(numb>=1)
 			{
-				
+
 				answer = answer*numb;
 				numb--;
 			}
@@ -230,37 +229,80 @@ public class Context {
 		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
 		Do other sports**/
 
-		String s = "shirt(s)"
-		chance4 = Utilities.getRandomNumberInRange(1, 5);
+
+		int chance4 = Utilities.getRandomNumberInRange(1, 6);
+		ArrayList<String> alphabet = new ArrayList<String>();
+		alphabet.add("A");
+		alphabet.add("B");
+		alphabet.add("C");
+		alphabet.add("D");
+		alphabet.add("E");
+		alphabet.add("F");
+		alphabet.add("G");
+		alphabet.add("H");
+		alphabet.add("I");
+		alphabet.add("J");
+		alphabet.add("K");
+		alphabet.add("L");
+		alphabet.add("M");
+		alphabet.add("N");
+		alphabet.add("O");
+		alphabet.add("P");
+		alphabet.add("Q");
+		alphabet.add("R");
+		alphabet.add("S");
+		alphabet.add("T");
+		alphabet.add("U");
+		alphabet.add("V");
+		alphabet.add("W");
+		alphabet.add("X");
+		alphabet.add("Y");
+		alphabet.add("Z");
+
 		if(chance4 == 1)
 		{
-			
+			String s = "shirts";
+			String t = "ties";
+			int sNum = Utilities.getRandomNumberInRange(1, 10);
+			int tNum = Utilities.getRandomNumberInRange(1, 10);
+			int cNum = Utilities.getRandomNumberInRange(2, 10);
+
+			list.add(s);
+			list.add(t);
+			list.add(Integer.toString(sNum));
+			list.add(Integer.toString(tNum));
+			list.add(Integer.toString(cNum)); 
+
 		}else if(chance4 == 2)
 		{
-			
+
 		}else if(chance4 == 3)
 		{
-			
+
 		}else if(chance4 == 4)
 		{
-			
+
+		}else if(chance4 == 5)
+		{
+
 		}else
 		{
-			
+
 		}
+
 
 	}
 
 
 	private void type05()
 	{
-		
+
 		/** Type 05: Choosing with and without replacement
 			Example context: 12 balls numbered 1 through 12 are placed in a bin. In how many ways can 3 balls be drawn, in order, from the bin
 			if each ball remains outside the bin after it is drawn?
 			if each ball is placed back into the bin if it is drawn?
 			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
-		
+
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
 		Number[] nums = {size, new Int(1), size, numItems };
@@ -269,18 +311,37 @@ public class Context {
 	}
 
 
-private void type06()
-{
-	
-}
+	private void type06()
+	{
+		int chance=Utilities.getRandomNumberInRange(1,2); 
+		int answer =1;
+		if(chance==1)
+		{
+			int chance1=Utilities.getRandomNumberInRange(1,10);
+			list.add(Integer.toString(chance1));
+			for(int i=0;i<chance1;i++)
+			{
+				answer*=chance1;
+			}
+			ans=answer;
+		}
+		else
+		{
+			int x = Utilities.getRandomNumberInRange(2, 10);
+			int y = Utilities.getRandomNumberInRange(1, 10);
+			list.add(Integer.toString(x));
+			list.add(Integer.toString(y));
+			
+		}
+	}
 	private int anagramhelper(String s)
 	{
-		
+
 		ArrayList al = new ArrayList();
-		int rep = 0;
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
+
 			
 			
 			al.add(st);
@@ -305,7 +366,9 @@ private void type06()
 				}
 				
 			}
+		
 		}
+
 		int numb = al.size();
 		int answer=1;
 		while(numb>=1)
@@ -313,9 +376,11 @@ private void type06()
 			answer = answer*numb;
 			numb--;
 		}
+
 		int retans = answer/divideby;
 		return retans;
 		}
+
 
 
 	private void setType(int t) 
