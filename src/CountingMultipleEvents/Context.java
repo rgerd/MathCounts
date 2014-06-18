@@ -14,6 +14,7 @@ public class Context {
 	private ArrayList<Number> list2;
 	private int start;
 	private boolean ana;
+	private int chance4;
 
 	private int length;
 
@@ -229,7 +230,24 @@ public class Context {
 		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
 		Do other sports**/
 
-
+		String s = "shirt(s)"
+		chance4 = Utilities.getRandomNumberInRange(1, 5);
+		if(chance4 == 1)
+		{
+			
+		}else if(chance4 == 2)
+		{
+			
+		}else if(chance4 == 3)
+		{
+			
+		}else if(chance4 == 4)
+		{
+			
+		}else
+		{
+			
+		}
 
 	}
 
