@@ -2,17 +2,22 @@ package CountingWithAdditionAndSubtraction;
 
 import util.Number;
 import util.ProblemIO;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+
 import com.AnswerSet;
 import com.Problem;
 import com.Section;
 
 public class Driver {
+	private static final String INPUT_FILE = "input.txt";
+	private static final String OUTPUT_FILE = "output_test.txt";
+
 	public static void main(String[] args) throws FileNotFoundException {
-		ArrayList<Section> sections = ProblemIO.readSections("input1.txt");
+		ArrayList<Section> sections = ProblemIO.readSections(INPUT_FILE);
 
 		ArrayList<Problem> problems = new ArrayList<Problem>();
 
@@ -25,13 +30,13 @@ public class Driver {
 					// Generating the context
 					Context con = new Context();
 					con.generate(type);
-					
+
 					// Getting the question
 					String question = new Question().getQ(con);
-					
+
 					// Getting the correct answer
 					int ans = con.getAns();
-					
+
 					// Getting the incorrect answers
 					AnswerGen a = new AnswerGen(ans);
 					ArrayList<Number> arr = new ArrayList<Number>();
@@ -44,16 +49,15 @@ public class Driver {
 						String answer = arr.get(j).toString();
 						answers.addAnswer(answer, false);
 					}
-					
-					
-					
+
+					// Creating and adding the problem
 					Problem problem = new Problem(question, answers);
 					problems.add(problem);
 				}
 			}
 		}
-		
-		ProblemIO.printProblems("output_test.txt", problems);
+
+		ProblemIO.printProblems(OUTPUT_FILE, problems);
 	}
 
 }
