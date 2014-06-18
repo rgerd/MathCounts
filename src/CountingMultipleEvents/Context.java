@@ -321,6 +321,7 @@ public class Context {
 	{
 		int chance=Utilities.getRandomNumberInRange(1,2); 
 		int answer =1;
+		int answer1=1;
 		if(chance==1)
 		{
 			int chance1=Utilities.getRandomNumberInRange(1,10);
@@ -337,7 +338,16 @@ public class Context {
 			int y = Utilities.getRandomNumberInRange(1, 10);
 			list.add(Integer.toString(x));
 			list.add(Integer.toString(y));
-			
+			for(int i=0;i<x;i++)
+			{
+				answer*=x;
+			}
+			for(int i=0;i<y;i++)
+			{
+				answer1*=y;
+			}
+			answer/=answer1;
+			ans=answer;
 		}
 	}
 	private int anagramhelper(String s)

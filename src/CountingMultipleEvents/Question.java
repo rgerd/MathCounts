@@ -61,8 +61,15 @@ public class Question {
 		
 		else 
 		{
+			if(list.size()==1)
+			{
 			ret=list.get(0)+"!";
 			return  ret;
+			}
+			else
+			{
+				ret="P("+list.get(0)+","+list.get(1)+")";
+			}
 		}
 		return null;
 	}
