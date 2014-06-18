@@ -275,7 +275,13 @@ public class Context {
 
 		}else if(chance4 == 2)
 		{
-
+			String plate = "";
+			while(plate.length() < 3)
+				plate += alphabet.get(Utilities.getRandomNumberInRange(0, 25));
+			while(plate.length() < 5)
+			{
+				int num = Utilities.getRandomNumberInRange(, max)
+			}
 		}else if(chance4 == 3)
 		{
 
