@@ -89,13 +89,13 @@ public class Context {
 		}else if(chance == 3)
 		{
 			noun1 = "language classes";
-			noun2 = "art classe";
+			noun2 = "art classes";
 			num1 = Utilities.getRandomNumberInRange(1,15);
 			num2 = Utilities.getRandomNumberInRange(1,15);
 			action = "choose classes";
 		}else{
-			noun1 = "president";
-			noun2 = "vice-president";
+			noun1 = "presidential candidates";
+			noun2 = "vice-presidential candidates";
 			num1 = Utilities.getRandomNumberInRange(1,15);
 			num2 = Utilities.getRandomNumberInRange(1,15);
 			action = "elect candidates";
