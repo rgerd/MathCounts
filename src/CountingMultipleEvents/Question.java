@@ -3,6 +3,7 @@ package CountingMultipleEvents;
 import java.util.ArrayList;
 
 import util.Int;
+import util.Utilities;
 import util.lang.LangUtility;
 
 
@@ -54,16 +55,63 @@ public class Question {
 		}
 		else if(c.getType() == 4)
 		{
-			
+			return  ret;
 		}else if(c.getType() == 5){
+			
+			Number[] nums = new Number[list.size()];
+			for(int i = 0; i < list.size(); i++)
+			{
+				nums[i] = (Number) new Int(Integer.parseInt(list.get(i));
+			}
 			LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", nums);
+			return  ret;
 		}
-		return  ret;
-
+		
+		else 
+		{
+			ret=list.get(0)+"!";
+			return  ret;
+		}
+		return null;
 	}
 	public static String GetRearrangement()
 	{
-		String anagram = "angi";
+		ArrayList<String> arl = new ArrayList();
+		/**arl.add("bottle");
+		arl.add("chair");
+		arl.add("computer");
+		arl.add("window");
+		arl.add("calculus");
+		arl.add("algebra");
+		arl.add("flap");
+		arl.add("book");
+		arl.add("oreo");
+		arl.add("cheetos");
+		arl.add("puppy");
+		arl.add("flabby");
+		arl.add("cat");
+		arl.add("dougy");
+		arl.add("caven");
+		arl.add("Quinton");
+		arl.add("angi");
+		arl.add("robert");
+		arl.add("glasses");
+		arl.add("shoe");
+		arl.add("soccer");
+		arl.add("arms");
+		arl.add("board");
+		arl.add("zebra");
+		arl.add("noodles");
+		arl.add("bag");
+		arl.add("map");
+		arl.add("white");
+		arl.add("blue");
+		arl.add("green");
+		arl.add("arctic");**/
+		arl.add("rreen");
+		arl.add("arctrc");
+		int r =Utilities.getRandomNumberInRange(0,1);
+		String anagram = arl.get(r);
 		return anagram;
 	}
 

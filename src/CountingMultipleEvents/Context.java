@@ -24,7 +24,7 @@ public class Context {
 	}
 	public void generate(int type) {
 		if (type == 1) {
-			
+
 			setType(1);
 			type01();
 		}else if(type == 2)
@@ -43,6 +43,10 @@ public class Context {
 		{
 			setType(5);
 			type05();
+		}else if(type == 6)
+		{
+			setType(6);
+			type06();
 		}
 	}
 
@@ -149,17 +153,17 @@ public class Context {
 			{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-				
+
 				count=+i2;
 			}
 			else{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-			
+
 				count*=i2;
 			}
 
-	
+
 		}
 		ans=count;
 
@@ -173,7 +177,7 @@ public class Context {
 		int chance =Utilities.getRandomNumberInRange(1,2);
 
 		int numb = Utilities.getRandomNumberInRange(4,10);
-		
+
 		if(chance == 1)
 		{
 
@@ -182,7 +186,7 @@ public class Context {
 			int answer =1;
 			while(numb>=1)
 			{
-				
+
 				answer = answer*numb;
 				numb--;
 			}
@@ -226,22 +230,88 @@ public class Context {
 		Do other sports**/
 
 
+		int chance4 = Utilities.getRandomNumberInRange(1, 6);
+		ArrayList<String> alphabet = new ArrayList<String>();
+		alphabet.add("A");
+		alphabet.add("B");
+		alphabet.add("C");
+		alphabet.add("D");
+		alphabet.add("E");
+		alphabet.add("F");
+		alphabet.add("G");
+		alphabet.add("H");
+		alphabet.add("I");
+		alphabet.add("J");
+		alphabet.add("K");
+		alphabet.add("L");
+		alphabet.add("M");
+		alphabet.add("N");
+		alphabet.add("O");
+		alphabet.add("P");
+		alphabet.add("Q");
+		alphabet.add("R");
+		alphabet.add("S");
+		alphabet.add("T");
+		alphabet.add("U");
+		alphabet.add("V");
+		alphabet.add("W");
+		alphabet.add("X");
+		alphabet.add("Y");
+		alphabet.add("Z");
+
+		if(chance4 == 1)
+		{
+			String s = "shirts";
+			String t = "ties";
+			int sNum = Utilities.getRandomNumberInRange(1, 10);
+			int tNum = Utilities.getRandomNumberInRange(1, 10);
+			int cNum = Utilities.getRandomNumberInRange(2, 10);
+
+			list.add(s);
+			list.add(t);
+			list.add(Integer.toString(sNum));
+			list.add(Integer.toString(tNum));
+			list.add(Integer.toString(cNum)); 
+
+		}else if(chance4 == 2)
+		{
+			String plate = "";
+			while(plate.length() < 3)
+				plate += alphabet.get(Utilities.getRandomNumberInRange(0, 25));
+			while(plate.length() < 5)
+			{
+				int num = Utilities.getRandomNumberInRange(0, 9);
+			}
+		}else if(chance4 == 3)
+		{
+
+		}else if(chance4 == 4)
+		{
+
+		}else if(chance4 == 5)
+		{
+
+		}else
+		{
+
+		}
+
 
 	}
 
 
 	private void type05()
 	{
-		
+
 		/** Type 05: Choosing with and without replacement
 			Example context: 12 balls numbered 1 through 12 are placed in a bin. In how many ways can 3 balls be drawn, in order, from the bin
 			if each ball remains outside the bin after it is drawn?
 			if each ball is placed back into the bin if it is drawn?
 			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
-		
+
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
-		int chance = Utilities.getRandomNumberInRange(1,4);
+		int chance = Utilities.getRandomNumberInRange(1,3);
 		if(chance == 1)
 		{
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
@@ -253,34 +323,78 @@ public class Context {
 			}
 		}else
 		{
-			
+			ans = size.getValue();
+			for(int i = 0; i < (numItems.getValue()); i++){
+				ans *= ((size.getValue())-i); 
+			}
 		}
-		nums = new Number[4];
-		nums[0] = size;
-		nums[1] = new Int(1);
-		nums[2] = size;
-		nums[3] = numItems;
+		list.add(Integer.toString(chance));
+		list.add(Integer.toString(size.getValue()));
+		list.add("1");
+		list.add(Integer.toString(size.getValue()));
+		list.add(Integer.toString(numItems.getValue()));
 		
 	}
 
 
-
+	private void type06()
+	{
+		int chance=Utilities.getRandomNumberInRange(1,2); 
+		int answer =1;
+		if(chance==1)
+		{
+			int chance1=Utilities.getRandomNumberInRange(1,10);
+			list.add(Integer.toString(chance1));
+			for(int i=0;i<chance1;i++)
+			{
+				answer*=chance1;
+			}
+			ans=answer;
+		}
+		else
+		{
+			int x = Utilities.getRandomNumberInRange(2, 10);
+			int y = Utilities.getRandomNumberInRange(1, 10);
+			list.add(Integer.toString(x));
+			list.add(Integer.toString(y));
+			
+		}
+	}
 	private int anagramhelper(String s)
 	{
-		
+
 		ArrayList al = new ArrayList();
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
-			if(al.contains(st))
+
+			
+			
+			al.add(st);
+				
+		}
+		int divideby=1;
+		for(int x=0;x<al.size();x++)
+		{
+			int r = 0;
+			String sr = s.substring(x,x+1);
+			if(al.contains(sr))
 			{
+				for(int y=0;x<al.size();x++)
+				{
+					if(al.get(y).equals(sr))
+						r++;
+				}
+				while(r>=1)
+				{
+					divideby = divideby*r;
+					r--;
+				}
 				
 			}
-			else
-			{
-				al.add(st);
-			}
+		
 		}
+
 		int numb = al.size();
 		int answer=1;
 		while(numb>=1)
@@ -288,8 +402,11 @@ public class Context {
 			answer = answer*numb;
 			numb--;
 		}
-		return answer;
+
+		int retans = answer/divideby;
+		return retans;
 		}
+
 
 
 	private void setType(int t) 
