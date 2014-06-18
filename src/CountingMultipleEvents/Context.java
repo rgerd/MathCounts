@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import util.Utilities;
 import util.Int;
 import util.Number;
-import util.lang.LangUtility;
 
 public class Context {
 	private int type;
 	private int ans;
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
+	private Number[] nums;
 	private int start;
 	private boolean ana;
 
@@ -275,7 +275,13 @@ public class Context {
 
 		}else if(chance4 == 2)
 		{
-
+			String plate = "";
+			while(plate.length() < 3)
+				plate += alphabet.get(Utilities.getRandomNumberInRange(0, 25));
+			while(plate.length() < 5)
+			{
+				int num = Utilities.getRandomNumberInRange(0, 9);
+			}
 		}else if(chance4 == 3)
 		{
 
@@ -305,9 +311,29 @@ public class Context {
 
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
-		Number[] nums = {size, new Int(1), size, numItems };
-		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", size, new Int(1), size, numItems);
-		System.out.println(an);
+		int chance = Utilities.getRandomNumberInRange(1,3);
+		if(chance == 1)
+		{
+			ans = (int) Math.pow(size.getValue(), numItems.getValue());
+		}else if(chance == 2)
+		{
+			ans = 1;
+			for(int i = 0; i < (numItems.getValue()); i++){
+				ans *= ((size.getValue())-i); 
+			}
+		}else
+		{
+			ans = size.getValue();
+			for(int i = 0; i < (numItems.getValue()); i++){
+				ans *= ((size.getValue())-i); 
+			}
+		}
+		list.add(Integer.toString(chance));
+		list.add(Integer.toString(size.getValue()));
+		list.add("1");
+		list.add(Integer.toString(size.getValue()));
+		list.add(Integer.toString(numItems.getValue()));
+		
 	}
 
 
@@ -315,23 +341,38 @@ public class Context {
 	{
 		int chance=Utilities.getRandomNumberInRange(1,2); 
 		int answer =1;
+		int answer1=1;
 		if(chance==1)
 		{
 			int chance1=Utilities.getRandomNumberInRange(1,10);
 			list.add(Integer.toString(chance1));
 			for(int i=0;i<chance1;i++)
 			{
-				answer*=chance1;
+				answer*=i+1;
 			}
 			ans=answer;
 		}
 		else
 		{
-			int x = Utilities.getRandomNumberInRange(2, 10);
-			int y = Utilities.getRandomNumberInRange(1, 10);
+			int x=0;
+			int y=1;
+			while(x<y)
+			{
+			 x = Utilities.getRandomNumberInRange(2, 10);
+			 y = Utilities.getRandomNumberInRange(1, 10);
+			}
 			list.add(Integer.toString(x));
 			list.add(Integer.toString(y));
-			
+			for(int i=0;i<x;i++)
+			{
+				answer*=i+1;
+			}
+			for(int i=0;i<y;i++)
+			{
+				answer1*=i+1;
+			}
+			answer/=answer1;
+			ans=answer;
 		}
 	}
 	private int anagramhelper(String s)
