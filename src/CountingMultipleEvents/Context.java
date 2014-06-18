@@ -310,26 +310,11 @@ public class Context {
 			
 			for(int i = 0; i < numBooks; i++)
 			{
-				num = num*(numBooks -1);
+				numBooks--;
+				num = num*numBooks;
 			}
 			
-		}else if(chance4 == 4)
-		{
-			
-		}else if(chance4 == 5)
-		{
-
-		}else if(chance4 == 6)
-		{
-
-		}else if(chance4 == 7)
-		{
-			
-		}else if(chance4 == 8)
-		{
-			
-		}else
-		{
+			ans = num*2;
 			
 		}
 
