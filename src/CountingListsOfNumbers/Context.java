@@ -1,5 +1,7 @@
 package CountingListsOfNumbers;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 import util.Fraction;
@@ -22,98 +24,22 @@ public class Context {
 
 	public void generate(int type)
 	{	
-		if(type ==  1)
-		{
-			setType(1);
-			listGen1();
-		}else if(type == 2)
-		{
-			setType(2);
-			listGen2();
-		}else if(type == 3)
-		{
-			setType(3);
-			listGen3();
-		}else if(type == 4)
-		{
-			setType(4);
-			listGen4();
-		}else if(type == 5)
-		{
-			setType(5);
-			listGen5();
-		}else if(type == 6)
-		{
-			setType(6);
-			listGen6();
-		}else if(type == 7)
-		{
-			setType(7);
-			listGen7();
-		}else if(type == 8)
-		{
-			setType(8);
-			listGen8();
-		}else if(type == 9)
-		{
-			setType(9);
-			listGen9();
-		}else if(type == 10)
-		{
-			setType(10);
-			listGen10();
-		}else if(type == 11)
-		{
-			setType(11);
-			listGen11();
-		}else if(type == 12)
-		{
-			setType(12);
-			listGen12();
-		}else if(type == 13)
-		{
-			setType(13);
-			listGen13();
-		}else if(type == 14)
-		{
-			setType(14);
-			listGen14();
-		}else if(type == 15)
-		{
-			setType(15);
-			listGen15();
-		}else if(type == 16)
-		{
-			setType(16);
-			listGen16();
-		}else if(type == 17)
-		{
-			setType(17);
-			listGen17();
-		}else if(type == 18)
-		{
-			setType(18);
-			listGen18();
-		}else if(type == 19)
-		{
-			setType(19);
-			listGen19();
-		}else if(type == 20)
-		{
-			setType(20);
-			listGen20();
-		}else if(type == 21)
-		{
-			setType(21);
-			listGen15();
-		}else if(type == 22)
-		{
-			setType(22);
-			listGen19();
-		}else if(type == 23)
-		{
-			setType(23);
-			listGen20();
+		this.setType(type);
+		Class<?> cls = this.getClass();
+		try {
+			Method m = cls.getDeclaredMethod("listGen" + type, new Class[0]);
+			m.setAccessible(true);
+			m.invoke(this);
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
 		}
 	}
 
