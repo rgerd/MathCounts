@@ -134,19 +134,15 @@ public class Question {
 		arl.add("white");
 		arl.add("blue");
 		arl.add("green");
-<<<<<<< HEAD
-		arl.add("arctic");**/
-		arl.add("rreen");
-		arl.add("arctrc");
-		int r =Utilities.getRandomNumberInRange(0,1);
-=======
+
+	
 
 		arl.add("arctic");
 		
 		int r =Utilities.getRandomNumberInRange(0,30);
 
 		
->>>>>>> FETCH_HEAD
+
 		String anagram = arl.get(r);
 		return anagram;
 	}
