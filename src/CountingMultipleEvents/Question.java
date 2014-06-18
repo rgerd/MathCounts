@@ -79,6 +79,7 @@ public class Question {
 			else
 			{
 				ret="P("+list.get(0)+","+list.get(1)+")";
+				return ret;
 			}
 		}
 		return null;
