@@ -69,7 +69,7 @@ public class Question {
 	public static String GetRearrangement()
 	{
 		ArrayList<String> arl = new ArrayList();
-		/**arl.add("bottle");
+		arl.add("bottle");
 		arl.add("chair");
 		arl.add("computer");
 		arl.add("window");
@@ -99,10 +99,9 @@ public class Question {
 		arl.add("white");
 		arl.add("blue");
 		arl.add("green");
-		arl.add("arctic");**/
-		arl.add("rreen");
-		arl.add("arctrc");
-		int r =Utilities.getRandomNumberInRange(0,1);
+		arl.add("arctic");
+		
+		int r =Utilities.getRandomNumberInRange(0,30);
 		String anagram = arl.get(r);
 		return anagram;
 	}
