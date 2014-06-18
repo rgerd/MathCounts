@@ -405,31 +405,35 @@ public class Context {
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
-
-			
-			
 			al.add(st);
 				
 		}
 		int divideby=1;
+		int r=0;
 		for(int x=0;x<al.size();x++)
 		{
-			int r = 0;
+			 r = 0;
 			String sr = s.substring(x,x+1);
-			if(al.contains(sr))
-			{
-				for(int y=0;x<al.size();x++)
+			
+				for(int y=0;y<al.size();y++)
 				{
+					
 					if(al.get(y).equals(sr))
+					{
 						r++;
+						al.set(y, "*");
+					}
+					
 				}
 				while(r>=1)
 				{
 					divideby = divideby*r;
 					r--;
+					
 				}
 				
-			}
+			
+			System.out.println(divideby);
 		
 		}
 
@@ -440,8 +444,10 @@ public class Context {
 			answer = answer*numb;
 			numb--;
 		}
+		
 
 		int retans = answer/divideby;
+		
 		return retans;
 		}
 
