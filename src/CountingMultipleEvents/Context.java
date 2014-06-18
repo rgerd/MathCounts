@@ -282,27 +282,38 @@ private void type06()
 		{
 			String st = s.substring(i,i+1);
 			
-			if(al.contains(st))
-			{
-				rep++;
-			}
+			
 			al.add(st);
 				
 		}
+		int divideby=1;
+		for(int x=0;x<al.size();x++)
+		{
+			int r = 0;
+			String sr = s.substring(x,x+1);
+			if(al.contains(sr))
+			{
+				for(int y=0;x<al.size();x++)
+				{
+					if(al.get(y).equals(sr))
+						r++;
+				}
+				while(r>=1)
+				{
+					divideby = divideby*r;
+					r--;
+				}
+				
+			}
+		}
 		int numb = al.size();
 		int answer=1;
-		int a=1;
-		while(rep>=1)
-		{
-			a = a*rep;
-			rep--;
-		}
 		while(numb>=1)
 		{
 			answer = answer*numb;
 			numb--;
 		}
-		int retans = answer/a;
+		int retans = answer/divideby;
 		return retans;
 		}
 
