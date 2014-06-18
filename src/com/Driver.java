@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Driver {
 	private static final String INPUT_FILE = "input.txt";
-	private static final String OUTPUT_FILE = "output_test.txt";
+	private static final String OUTPUT_FILE = "output.txt";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		ArrayList<Section> sections = ProblemIO.readSections(INPUT_FILE);
