@@ -3,6 +3,10 @@ package com;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/*
+ * Super Context class. All Context classes should extend from this.
+ */
+
 public abstract class Context {
 	private int type;
 	
