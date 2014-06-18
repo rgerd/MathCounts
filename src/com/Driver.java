@@ -80,5 +80,4 @@ public class Driver {
 
 		ProblemIO.printProblems(OUTPUT_FILE, problems);
 	}
-
 }
