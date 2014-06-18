@@ -118,7 +118,7 @@ public class Question {
 		arl.add("blue");
 		arl.add("green");
 		arl.add("arctic");**/
-		arl.add("rreen");
+		arl.add("RT^");
 		arl.add("arctrc");
 		int r =Utilities.getRandomNumberInRange(0,1);
 		String anagram = arl.get(r);
