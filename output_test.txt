@@ -1,0 +1,10 @@
+MC	null	-1	incorrect	0	correct	1	incorrect	-2	incorrect	-3	incorrect
+MC	null	-3	incorrect	-4	incorrect	-1	incorrect	0	correct	-2	incorrect
+MC	null	-3	incorrect	-1	incorrect	-4	incorrect	-2	incorrect	0	correct
+MC	null	0	correct	2	incorrect	-2	incorrect	-1	incorrect	1	incorrect
+MC	null	-2	incorrect	-3	incorrect	-4	incorrect	-1	incorrect	0	correct
+MC	null	0	correct	-3	incorrect	-2	incorrect	-1	incorrect	1	incorrect
+MC	null	1	incorrect	0	correct	4	incorrect	2	incorrect	3	incorrect
+MC	null	-2	incorrect	1	incorrect	2	incorrect	-1	incorrect	0	correct
+MC	null	-2	incorrect	-1	incorrect	-3	incorrect	1	incorrect	0	correct
+MC	null	-1	incorrect	-4	incorrect	0	correct	-2	incorrect	-3	incorrect
