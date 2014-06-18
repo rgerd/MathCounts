@@ -1,81 +1,63 @@
 package CountingListsOfNumbers;
 
-import java.io.File;
-
 import util.Number;
-import util.Int;
+import util.ProblemIO;
 
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Set;
 
-import util.Utilities;
+import com.AnswerSet;
+import com.Problem;
+import com.Section;
 
-public class Driver 
-{
-	public static void main(String[] args) throws FileNotFoundException
-	{
-		Scanner in = new Scanner(new File("input1.txt"));
-		PrintWriter output = null;
-		try {
-			File f = new File("output.txt");
-			output = new PrintWriter(new FileWriter(f));
-			while(in.hasNextLine())
-			{
-				 String[] s = in.nextLine().split("\t");
-				 
-				 ArrayList<Integer> nums = new ArrayList<Integer>();
-				 ArrayList<Integer> types = new ArrayList<Integer>();
-				 for(int i = 2; i < s.length; i++)
-				 {
-					 String[] t = s[i].split(" ");
-					 nums.add(Integer.parseInt(t[0]));
-					 String ty = t[1];
-					 int type = Integer.parseInt(ty.substring(1, ty.length()));
-					 types.add(type);
-				 }
-				 
-				 for(int j = 0; j < types.size(); j++)
-				 {
-					 int typee = types.get(j);
-					 for(int k = 0; k < nums.get(j); k++)
-					 {
-						 Context con = new Context();
-						 con.generate(typee);
-						 Question quest = new Question();
-						 String q = quest.getQ(con);
-						 output.print("MC"+"\t"+q+"\t");
-						 
-						 int ans = con.getAns();
-						 AnswerGen a = new AnswerGen(ans);
-						 ArrayList<Number> arr = new ArrayList<Number>();
-						 arr = a.getWrong("window");
-						 
-						 int r= Utilities.getRandomNumberInRange(1, 5);
-						 if(r==1)
-							 output.println(arr.get(0)+"\t"+ "correct"+"\t"+arr.get(1)+"\t"+ "incorrect"+"\t"+arr.get(2)+"\t"+ "incorrect"+"\t"+arr.get(3)+"\t"+ "incorrect"+"\t"+arr.get(4)+"\t"+ "incorrect");
-						 else if(r==2)
-							 output.println(arr.get(4)+"\t"+ "incorrect"+"\t"+arr.get(0)+"\t"+ "correct"+"\t"+arr.get(1)+"\t"+ "incorrect"+"\t"+arr.get(2)+"\t"+ "incorrect"+"\t"+arr.get(3)+"\t"+ "incorrect");
-						 else if(r==3)
-							 output.println(arr.get(3)+"\t"+ "incorrect"+"\t"+arr.get(4)+"\t"+ "incorrect"+"\t"+arr.get(0)+"\t"+ "correct"+"\t"+arr.get(1)+"\t"+ "incorrect"+"\t"+arr.get(2)+"\t"+ "incorrect");
-						 else if(r==4)
-							 output.println(arr.get(2)+"\t"+ "incorrect"+"\t"+arr.get(3)+"\t"+ "incorrect"+"\t"+arr.get(4)+"\t"+ "incorrect"+"\t"+arr.get(0)+"\t"+ "correct"+"\t"+arr.get(1)+"\t"+ "incorrect");
-						 else
-							 output.println(arr.get(1)+"\t"+ "incorrect"+"\t"+arr.get(2)+"\t"+ "incorrect"+"\t"+arr.get(3)+"\t"+ "incorrect"+"\t"+arr.get(4)+"\t"+ "incorrect"+"\t"+arr.get(0)+"\t"+ "correct");
-					 }
-				 }
-					
+public class Driver {
+	private static final String INPUT_FILE = "input.txt";
+	private static final String OUTPUT_FILE = "output_test.txt";
+
+	public static void main(String[] args) throws FileNotFoundException {
+		ArrayList<Section> sections = ProblemIO.readSections(INPUT_FILE);
+
+		ArrayList<Problem> problems = new ArrayList<Problem>();
+
+		for (Section section : sections) {
+			HashMap<Integer, Integer> questions = section.getQuestions();
+			Set<Integer> types = questions.keySet();
+			for (Integer type : types) {
+				int numberOfQuestions = questions.get(type);
+				for (int i = 0; i < numberOfQuestions; i++) {
+					// Generating the context
+					Context con = new Context();
+					con.generate(type);
+
+					// Getting the question
+					String question = new Question().getQ(con);
+
+					// Getting the correct answer
+					int ans = con.getAns();
+
+					// Getting the incorrect answers
+					AnswerGen a = new AnswerGen(ans);
+					ArrayList<Number> arr = new ArrayList<Number>();
+					arr = a.getWrong("window");
+
+					// Adding answers to set of correct & incorrect answers
+					AnswerSet answers = new AnswerSet();
+					answers.addAnswer(arr.get(0).toString(), true);
+					for (int j = 1; j < arr.size(); j++) {
+						String answer = arr.get(j).toString();
+						answers.addAnswer(answer, false);
+					}
+
+					// Creating and adding the problem
+					Problem problem = new Problem(question, answers);
+					problems.add(problem);
+				}
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			output.close();
 		}
 
-	}
-		
+		ProblemIO.printProblems(OUTPUT_FILE, problems);
 	}
 
+}
