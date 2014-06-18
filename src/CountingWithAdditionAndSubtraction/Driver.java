@@ -2,15 +2,23 @@ package CountingWithAdditionAndSubtraction;
 
 
 import java.io.File;
+
 import util.Number;
 import util.Int;
+import util.ProblemIO;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
+
+import com.Section;
 
 import util.Utilities;
 
@@ -18,7 +26,21 @@ public class Driver
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
-		Scanner in = new Scanner(new File("input1.txt"));
+		ArrayList<Section> sections = ProblemIO.readSections("input1.txt");
+		
+		for(Section section : sections) {
+			HashMap<Integer, Integer> questions = section.getQuestions();
+			Set<Integer> types = questions.keySet();
+			for(Integer type : types) {
+				int numberOfQuestions = questions.get(type);
+				for(int i = 0; i < numberOfQuestions; i++) {
+					 Context con = new Context();
+					 con.generate(type);
+				}
+			}
+		}
+		
+		
 		PrintWriter output = null;
 		try {
 			File f = new File("output.txt");
