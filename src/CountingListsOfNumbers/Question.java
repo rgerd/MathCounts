@@ -3,7 +3,7 @@ package CountingListsOfNumbers;
 import util.Utilities;
 
 
-public class Question {
+public class Question extends com.Question {
 	private static final String Q = "How many numbers are in the list:";
 	private static final String Q_T14 = "How many positive numbers under ";
 	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
@@ -16,8 +16,10 @@ public class Question {
 	private static final String Q_TYPE22 = "You are counting players with odd jerseys on a team. If the first jersey is labeled ";
 	private int length;
 
-	public String getQ (Context c)
+	public String getQ (com.Context _c)
 	{
+		Context c = (Context) _c;
+		
 		if(c.getType() == 17)
 		{
 			String str = Q_TYPE17 + c.getType17() + "?";
@@ -84,5 +86,4 @@ public class Question {
 		}
 
 	}
-
 }

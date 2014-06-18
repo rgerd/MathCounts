@@ -1,10 +1,7 @@
 package CountingWithAdditionAndSubtraction;
 
 
-import util.Utilities;
-
-
-public class Question {
+public class Question extends com.Question {
 	private static final String Q = "How many numbers are in the list:";
 	private static final String Q_T14 = "How many positive numbers under ";
 	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
@@ -12,8 +9,9 @@ public class Question {
 	private static final String Q_TYPE17 = "How many pairs of consecutive integers have products less than ";
 	private int length;
 	
-	public String getQ (Context c)
+	public String getQ (com.Context _c)
 	{
+		Context c = (Context) _c;
 		return null;
 		//Commented out until someone can fix the errors
 		/*
