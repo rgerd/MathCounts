@@ -263,15 +263,12 @@ public class Context {
 		{
 			String s = "shirts";
 			String t = "ties";
-			int sNum = Utilities.getRandomNumberInRange(1, 10);
-			int tNum = Utilities.getRandomNumberInRange(1, 10);
 			int cNum = Utilities.getRandomNumberInRange(2, 10);
 
 			list.add(s);
 			list.add(t);
-			list.add(Integer.toString(sNum));
-			list.add(Integer.toString(tNum));
 			list.add(Integer.toString(cNum)); 
+			ans = cNum * (cNum-1);
 
 		}else if(chance4 == 2)
 		{
@@ -281,21 +278,60 @@ public class Context {
 			while(plate.length() < 5)
 			{
 				int num = Utilities.getRandomNumberInRange(0, 9);
+				if(num == 0)
+				{
+					if(!plate.contains("O"))
+						plate += num;
+				}
+				else
+				{
+					if(num % 2 == 0)
+						plate+= num;
+				}
 			}
+			while(plate.length() < 7)
+			{
+				int num = Utilities.getRandomNumberInRange(1, 9);
+				if(num %2 != 0)
+					plate+=num;
+			}
+			list.add(plate);
+			
+			ans = anagramhelper(plate);
+			
 		}else if(chance4 == 3)
 		{
-
+			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+			String numMbooks = "2";
+			list.add(numBooks + "");
+			list.add(numMbooks);
+			
+			int num = 1;
+			
+			for(int i = 0; i < numBooks; i++)
+			{
+				num = num*(numBooks -1);
+			}
+			
 		}else if(chance4 == 4)
 		{
-
+			
 		}else if(chance4 == 5)
 		{
 
-		}else
+		}else if(chance4 == 6)
 		{
 
+		}else if(chance4 == 7)
+		{
+			
+		}else if(chance4 == 8)
+		{
+			
+		}else
+		{
+			
 		}
-
 
 	}
 
