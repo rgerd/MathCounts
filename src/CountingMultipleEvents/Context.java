@@ -345,7 +345,7 @@ public class Context {
 		}else
 		{
 			ans = size.getValue();
-			for(int i = 0; i < (numItems.getValue()); i++){
+			for(int i = 0; i < 2; i++){
 				ans *= ((size.getValue())-i); 
 			}
 			question = "if the first [noun_0] is replaced after it is drawn but the second [noun_0] remains outside the [container_0]?";
