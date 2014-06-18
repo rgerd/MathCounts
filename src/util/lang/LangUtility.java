@@ -43,6 +43,12 @@ public class LangUtility {
 				if (attr.equals("noun"))
 					last_noun_plural = tag_flags.contains("pl");
 				this_plural = last_noun_plural || last_num_plural;
+				if(attr.equals("verb")) {
+					last_noun_plural = false;
+					last_num_plural = false;
+				}
+				
+				this_plural &= !tag_flags.contains("sng");
 
 				if (this_plural)
 					tag_flags.add("pl");

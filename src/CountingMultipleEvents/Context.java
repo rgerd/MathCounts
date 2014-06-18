@@ -349,14 +349,14 @@ public class Context extends com.Context {
 		if(chance == 1)
 		{
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
-			question = "if each [noun_0] is placed back into the [container_0] after it is drawn?";
+			question = "if each [noun_0_sng] is placed back into the [container_0] after it is drawn?";
 		}else if(chance == 2)
 		{
 			ans = 1;
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
-			question = "if each [noun_0] remains outside the [container_0] after it is drawn?";
+			question = "if each [noun_0_sng] remains outside the [container_0] after it is drawn?";
 
 		}else
 		{
@@ -364,7 +364,7 @@ public class Context extends com.Context {
 			for(int i = 0; i < 2; i++){
 				ans *= ((size.getValue())-i); 
 			}
-			question = "if the first [noun_0] is replaced after it is drawn but the second [noun_0] remains outside the [container_0]?";
+			question = "if the first [noun_0_sng] is replaced after it is drawn but the second [noun_0_sng] remains outside the [container_0]?";
 
 		}
 		list.add(Integer.toString(size.getValue()));
