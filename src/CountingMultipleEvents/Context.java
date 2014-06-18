@@ -348,23 +348,28 @@ public class Context {
 			list.add(Integer.toString(chance1));
 			for(int i=0;i<chance1;i++)
 			{
-				answer*=chance1;
+				answer*=i+1;
 			}
 			ans=answer;
 		}
 		else
 		{
-			int x = Utilities.getRandomNumberInRange(2, 10);
-			int y = Utilities.getRandomNumberInRange(1, 10);
+			int x=0;
+			int y=1;
+			while(x<y)
+			{
+			 x = Utilities.getRandomNumberInRange(2, 10);
+			 y = Utilities.getRandomNumberInRange(1, 10);
+			}
 			list.add(Integer.toString(x));
 			list.add(Integer.toString(y));
 			for(int i=0;i<x;i++)
 			{
-				answer*=x;
+				answer*=i+1;
 			}
 			for(int i=0;i<y;i++)
 			{
-				answer1*=y;
+				answer1*=i+1;
 			}
 			answer/=answer1;
 			ans=answer;
