@@ -13,6 +13,9 @@ public class Question {
 	private static final String Q1 = "You have ";
 	private static final String Q3 = "In how many ways can I arrange ";
 	private static final String QANA = "How many different arrangements of the word ";
+	private static final String Q4_1 = "You have 1 shirt and 1 tie in ";
+	private static final String Q4_2 = "In how many ways can the following liscense plate be arranged: ";
+	private static final String Q4_3 = "How many ways can ";
 	private String ret;
 
 	public String getQ (Context c)
@@ -56,7 +59,21 @@ public class Question {
 		}
 		else if(c.getType() == 4)
 		{
-			return  ret;
+			if(c.chance4() == 1)
+			{
+				String ret = Q4_1 + list.get(0) + " different colors each. How many different pairings can be made if the shirt and tie must be different colors?";
+				return ret;
+			}else if(c.chance4() == 2)
+			{
+				String ret = Q4_2 + list.get(0) + " ?";
+				return ret;
+			}else if(c.chance4() == 3)
+			{
+				String ret = Q4_3 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf with one math book on each end?";
+				return ret;
+			}
+			String ret = "hello?";
+			
 		}else if(c.getType() == 5){
 
 			Number[] nums = new Number[list.size()];
@@ -68,7 +85,7 @@ public class Question {
 			ret = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from] "+chance+"?", nums);
 			return  ret;
 		}
-
+		
 		else 
 		{
 			if(list.size()==1)
@@ -117,12 +134,19 @@ public class Question {
 		arl.add("white");
 		arl.add("blue");
 		arl.add("green");
+<<<<<<< HEAD
+		arl.add("arctic");**/
+		arl.add("rreen");
+		arl.add("arctrc");
+		int r =Utilities.getRandomNumberInRange(0,1);
+=======
 
 		arl.add("arctic");
 		
 		int r =Utilities.getRandomNumberInRange(0,30);
 
 		
+>>>>>>> FETCH_HEAD
 		String anagram = arl.get(r);
 		return anagram;
 	}

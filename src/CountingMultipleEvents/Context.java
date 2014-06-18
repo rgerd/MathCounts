@@ -14,6 +14,7 @@ public class Context {
 	private Number[] nums;
 	private int start;
 	private boolean ana;
+	private int chance4;
 
 	private int length;
 
@@ -87,7 +88,7 @@ public class Context {
 			action = "order";
 		}else if(chance == 3)
 		{
-			noun1 = "language classe";
+			noun1 = "language classes";
 			noun2 = "art classe";
 			num1 = Utilities.getRandomNumberInRange(1,15);
 			num2 = Utilities.getRandomNumberInRange(1,15);
@@ -230,7 +231,7 @@ public class Context {
 		Do other sports**/
 
 
-		int chance4 = Utilities.getRandomNumberInRange(1, 6);
+		chance4 = Utilities.getRandomNumberInRange(1, 3);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -261,12 +262,7 @@ public class Context {
 
 		if(chance4 == 1)
 		{
-			String s = "shirts";
-			String t = "ties";
 			int cNum = Utilities.getRandomNumberInRange(2, 10);
-
-			list.add(s);
-			list.add(t);
 			list.add(Integer.toString(cNum)); 
 			ans = cNum * (cNum-1);
 
@@ -337,14 +333,14 @@ public class Context {
 		if(chance == 1)
 		{
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
-			question = "if each [noun_0] is placed back into the bin after it is drawn?";
+			question = "if each [noun_0] is placed back into the [container_0] after it is drawn?";
 		}else if(chance == 2)
 		{
 			ans = 1;
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
-			question = "if each [noun_0] remains outside the bin after it is drawn?";
+			question = "if each [noun_0] remains outside the [container_0] after it is drawn?";
 
 		}else
 		{
@@ -352,7 +348,7 @@ public class Context {
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
-			question = "the first [noun_0] is replaced after it is drawn but the second ball remains outside the bin?";
+			question = "the first [noun_0] is replaced after it is drawn but the second [noun_0] remains outside the [container_0]?";
 
 		}
 		list.add(Integer.toString(size.getValue()));
@@ -471,4 +467,8 @@ public class Context {
 		return ana;
 	}
 
+	public int chance4()
+	{
+		return chance4;
+	}
 }
