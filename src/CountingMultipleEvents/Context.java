@@ -231,7 +231,7 @@ public class Context {
 		Do other sports**/
 
 
-		chance4 = Utilities.getRandomNumberInRange(1, 4);
+		chance4 = Utilities.getRandomNumberInRange(1, 5);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -341,6 +341,22 @@ public class Context {
 			n1 = (numBooks-1) * n1;
 			
 			ans = answer - n1;
+		}else if(chance4 == 5)
+		{
+			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+			String numMbooks = "2";
+			list.add(numBooks + "");
+			list.add(numMbooks);
+			
+			int num = numBooks -2;
+			int n = num;
+			
+			for(int i = 1; i < num; i++)
+			{
+				n = n*(num-i);
+			}
+			
+			ans = (numBooks-2)*n;
 		}
 
 	}

@@ -30,7 +30,6 @@ public class Question {
 		}
 		else if(c.getType()==2)
 		{ 
-			System.out.println(list);
 			if(list.size()==7)
 			{
 				String ret = Q1 +  list.get(0) + " " + list.get(1) + "(s)  and " + list.get(2) + " " + list.get(3)+ "(s)  and " +  list.get(4) + " " + list.get(5) + "(s). How many ways can you choose a(n) "  + list.get(6) +  " consisting of 1 " + list.get(1) + " and 1 " + list.get(3) +" and 1 " + list.get(5) + "?";
@@ -74,7 +73,11 @@ public class Question {
 				return ret;
 			}else if(c.chance4() == 4)
 			{
-				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books can't be next to eachother?";
+				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books can't be next to each other?";
+				return ret;
+			}else if(c.chance4() == 5)
+			{
+				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books must be one apart?";
 				return ret;
 			}
 
@@ -139,20 +142,11 @@ public class Question {
 		arl.add("white");
 		arl.add("blue");
 		arl.add("green");
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
 		arl.add("arctic");
 		
 		int r =Utilities.getRandomNumberInRange(0,30);
 
-		
-<<<<<<< HEAD
 
-		
-=======
->>>>>>> FETCH_HEAD
 		String anagram = arl.get(r);
 		return anagram;
 	}
