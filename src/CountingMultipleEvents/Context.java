@@ -280,7 +280,7 @@ public class Context {
 				plate += alphabet.get(Utilities.getRandomNumberInRange(0, 25));
 			while(plate.length() < 5)
 			{
-				int num = Utilities.getRandomNumberInRange(, max)
+				int num = Utilities.getRandomNumberInRange(0, 9);
 			}
 		}else if(chance4 == 3)
 		{
