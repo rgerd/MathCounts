@@ -231,7 +231,7 @@ public class Context {
 		Do other sports**/
 
 
-		chance4 = Utilities.getRandomNumberInRange(1, 3);
+		chance4 = Utilities.getRandomNumberInRange(1, 4);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -302,16 +302,45 @@ public class Context {
 			list.add(numBooks + "");
 			list.add(numMbooks);
 			
-			int num = 1;
 			
-			for(int i = 0; i < numBooks; i++)
+			numBooks -=2;
+			int num = numBooks;
+			
+			for(int i = 1; i < numBooks; i++)
 			{
-				numBooks--;
-				num = num*numBooks;
+
+				num = num*(numBooks-i);
+				
 			}
+			
 			
 			ans = num*2;
 			
+		}else if(chance4 == 4)
+		{
+			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+			String numMbooks = "2";
+			list.add(numBooks + "");
+			list.add(numMbooks);
+			
+			int n = numBooks;
+			for(int i = 1; i < numBooks; i++)
+			{
+				n = n*(numBooks-i);
+			}
+			
+			int answer = n/2;
+			
+			int num = numBooks -2;
+			int n1 = num;
+			for(int i = 1; i < num; i++)
+			{
+				n1 = n1 * (num - i);
+			}
+			
+			n1 = (numBooks-1) * n1;
+			
+			ans = answer - n1;
 		}
 
 	}
@@ -433,7 +462,7 @@ public class Context {
 				}
 				
 			
-			System.out.println(divideby);
+	
 		
 		}
 
