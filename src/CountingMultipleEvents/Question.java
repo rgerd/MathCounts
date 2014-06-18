@@ -74,7 +74,8 @@ public class Question {
 				return ret;
 			}else if(c.chance4() == 4)
 			{
-				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged"
+				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books can't be next to eachother?";
+				return ret;
 			}
 
 			
