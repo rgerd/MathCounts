@@ -263,15 +263,12 @@ public class Context {
 		{
 			String s = "shirts";
 			String t = "ties";
-			int sNum = Utilities.getRandomNumberInRange(1, 10);
-			int tNum = Utilities.getRandomNumberInRange(1, 10);
 			int cNum = Utilities.getRandomNumberInRange(2, 10);
 
 			list.add(s);
 			list.add(t);
-			list.add(Integer.toString(sNum));
-			list.add(Integer.toString(tNum));
 			list.add(Integer.toString(cNum)); 
+			ans = cNum * (cNum-1);
 
 		}else if(chance4 == 2)
 		{
@@ -281,21 +278,45 @@ public class Context {
 			while(plate.length() < 5)
 			{
 				int num = Utilities.getRandomNumberInRange(0, 9);
+				if(num == 0)
+				{
+					if(!plate.contains("O"))
+						plate += num;
+				}
+				else
+				{
+					if(num % 2 == 0)
+						plate+= num;
+				}
 			}
+			while(plate.length() < 7)
+			{
+				int num = Utilities.getRandomNumberInRange(1, 9);
+				if(num %2 != 0)
+					plate+=num;
+			}
+			list.add(plate);
+			
+			ans = anagramhelper(plate);
+			
 		}else if(chance4 == 3)
 		{
-
-		}else if(chance4 == 4)
-		{
-
-		}else if(chance4 == 5)
-		{
-
-		}else
-		{
-
+			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+			String numMbooks = "2";
+			list.add(numBooks + "");
+			list.add(numMbooks);
+			
+			int num = 1;
+			
+			for(int i = 0; i < numBooks; i++)
+			{
+				numBooks--;
+				num = num*numBooks;
+			}
+			
+			ans = num*2;
+			
 		}
-
 
 	}
 
@@ -310,29 +331,35 @@ public class Context {
 			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
 
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
-		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
+		Int numItems = new Int(3);
 		int chance = Utilities.getRandomNumberInRange(1,3);
+		String question = "";
 		if(chance == 1)
 		{
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
+			question = "if each [noun_0] is placed back into the bin after it is drawn?";
 		}else if(chance == 2)
 		{
 			ans = 1;
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
+			question = "if each [noun_0] remains outside the bin after it is drawn?";
+
 		}else
 		{
 			ans = size.getValue();
 			for(int i = 0; i < (numItems.getValue()); i++){
 				ans *= ((size.getValue())-i); 
 			}
+			question = "the first [noun_0] is replaced after it is drawn but the second ball remains outside the bin?";
+
 		}
-		list.add(Integer.toString(chance));
 		list.add(Integer.toString(size.getValue()));
 		list.add("1");
 		list.add(Integer.toString(size.getValue()));
 		list.add(Integer.toString(numItems.getValue()));
+		list.add(question);
 		
 	}
 
