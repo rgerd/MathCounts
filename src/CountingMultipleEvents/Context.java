@@ -14,7 +14,6 @@ public class Context {
 	private ArrayList<Number> list2;
 	private int start;
 	private boolean ana;
-	private int chance4;
 
 	private int length;
 
@@ -230,34 +229,7 @@ public class Context {
 		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
 		Do other sports**/
 
-		chance4 = Utilities.getRandomNumberInRange(1, 5);
-		if(chance4 == 1)
-		{
-			String s = "shirts";
-			String t = "ties";
-			int sNum = Utilities.getRandomNumberInRange(1, 10);
-			int tNum = Utilities.getRandomNumberInRange(1, 10);
-			int cNum = Utilities.getRandomNumberInRange(2, 10);
-			
-			list.add(s);
-			list.add(t);
-			list.add(Integer.toString(sNum));
-			list.add(Integer.toString(tNum));
-			list.add(Integer.toString(cNum)); 
-			
-		}else if(chance4 == 2)
-		{
-			
-		}else if(chance4 == 3)
-		{
-			
-		}else if(chance4 == 4)
-		{
-			
-		}else
-		{
-			
-		}
+
 
 	}
 
@@ -281,39 +253,47 @@ public class Context {
 
 private void type06()
 {
+int chance=Utilities.getRandomNumberInRange(1,2); 
+int answer =1;
+if(chance==1)
+{
+	int chance1=Utilities.getRandomNumberInRange(1,10);
+	list.add(Integer.toString(chance1));
+	for(int i=0;i<chance1;i++)
+	{
+		answer*=chance1;
+	}
+	ans=answer;
+}
+else
+{
 	
+}
 }
 	private int anagramhelper(String s)
 	{
 		
 		ArrayList al = new ArrayList();
-		int rep = 0;
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
-			
 			if(al.contains(st))
 			{
-				rep++;
-			}
-			al.add(st);
 				
+			}
+			else
+			{
+				al.add(st);
+			}
 		}
 		int numb = al.size();
 		int answer=1;
-		int a=1;
-		while(rep>=1)
-		{
-			a = a*rep;
-			rep--;
-		}
 		while(numb>=1)
 		{
 			answer = answer*numb;
 			numb--;
 		}
-		int retans = answer/a;
-		return retans;
+		return answer;
 		}
 
 
