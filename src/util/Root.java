@@ -86,7 +86,7 @@ public class Root implements Number {
 	}
 
 	public Number add(Number n) {
-		Root _n = (Root)n;
+		// Root _n = (Root)n;
 		return null;
 	}
 
@@ -99,7 +99,7 @@ public class Root implements Number {
 	 * @return the result (a fraction).
 	 */
 	public Number div(Number n) {
-		Root _n = (Root) n;
+		// Root _n = (Root) n;
 		
 		return null;
 	}
