@@ -14,6 +14,7 @@ public class Context {
 	private Number[] nums;
 	private int start;
 	private boolean ana;
+	private int chance4;
 
 	private int length;
 
@@ -230,7 +231,7 @@ public class Context {
 		Do other sports**/
 
 
-		int chance4 = Utilities.getRandomNumberInRange(1, 6);
+		chance4 = Utilities.getRandomNumberInRange(1, 3);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -261,12 +262,7 @@ public class Context {
 
 		if(chance4 == 1)
 		{
-			String s = "shirts";
-			String t = "ties";
 			int cNum = Utilities.getRandomNumberInRange(2, 10);
-
-			list.add(s);
-			list.add(t);
 			list.add(Integer.toString(cNum)); 
 			ans = cNum * (cNum-1);
 
@@ -465,4 +461,8 @@ public class Context {
 		return ana;
 	}
 
+	public int chance4()
+	{
+		return chance4;
+	}
 }
