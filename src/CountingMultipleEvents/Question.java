@@ -54,12 +54,17 @@ public class Question {
 		}
 		else if(c.getType() == 4)
 		{
-			
+			return  ret;
 		}else if(c.getType() == 5){
-			
+			return  ret;
 		}
-		return  ret;
-
+		
+		else 
+		{
+			ret=list.get(0)+"!";
+			return  ret;
+		}
+		return null;
 	}
 	public static String GetRearrangement()
 	{
