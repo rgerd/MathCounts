@@ -41,7 +41,7 @@ public class Question {
 				return ret;
 			}
 			else if (list.size() == 11){ 
-				String ret = Q1 +  list.get(0) + " " + list.get(1) + "(s)  and " + list.get(2) + " " + list.get(3)+ "(s)  and " +  list.get(4) + " " + list.get(5) +"(s)  and " +  list.get(6) + " " + list.get(7) +"(s)  and " +  list.get(8) + " " + list.get(9) + "(s). How many ways can you choose a(n) "  + list.get(10) +  " consisting of 1 " + list.get(1) + " and 1 " + list.get(3) +" and 1 " + list.get(5) +" and 1 " + list.get(9) + "?";
+				String ret = Q1 +  list.get(0) + " " + list.get(1) + "(s)  and " + list.get(2) + " " + list.get(3)+ "(s)  and " +  list.get(4) + " " + list.get(5) +"(s)  and " +  list.get(6) + " " + list.get(7) +"(s)  and " +  list.get(8) + " " + list.get(9) + "(s). How many ways can you choose a(n) "  + list.get(10) +  " consisting of 1 " + list.get(1) + " and 1 " + list.get(3) +" and 1 " + list.get(5) +" and 1 " + list.get(7) +" and 1 " + list.get(9) + "?";
 				return ret;
 			}
 
@@ -138,14 +138,20 @@ public class Question {
 		arl.add("white");
 		arl.add("blue");
 		arl.add("green");
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 		arl.add("arctic");
 		
 		int r =Utilities.getRandomNumberInRange(0,30);
 
 		
+<<<<<<< HEAD
 
 		
+=======
+>>>>>>> FETCH_HEAD
 		String anagram = arl.get(r);
 		return anagram;
 	}

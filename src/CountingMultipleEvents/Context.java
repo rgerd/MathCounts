@@ -89,13 +89,13 @@ public class Context {
 		}else if(chance == 3)
 		{
 			noun1 = "language classes";
-			noun2 = "art classe";
+			noun2 = "art classes";
 			num1 = Utilities.getRandomNumberInRange(1,15);
 			num2 = Utilities.getRandomNumberInRange(1,15);
 			action = "choose classes";
 		}else{
-			noun1 = "president";
-			noun2 = "vice-president";
+			noun1 = "presidential candidates";
+			noun2 = "vice-presidential candidates";
 			num1 = Utilities.getRandomNumberInRange(1,15);
 			num2 = Utilities.getRandomNumberInRange(1,15);
 			action = "elect candidates";
@@ -374,10 +374,10 @@ public class Context {
 		}else
 		{
 			ans = size.getValue();
-			for(int i = 0; i < (numItems.getValue()); i++){
+			for(int i = 0; i < 2; i++){
 				ans *= ((size.getValue())-i); 
 			}
-			question = "the first [noun_0] is replaced after it is drawn but the second [noun_0] remains outside the [container_0]?";
+			question = "if the first [noun_0] is replaced after it is drawn but the second [noun_0] remains outside the [container_0]?";
 
 		}
 		list.add(Integer.toString(size.getValue()));

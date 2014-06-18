@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 Counting Multiple Events	2	10 t4
+=======
+Counting Multiple Events	2	10 t1
+Counting Multiple Events	2	10 t2
+Counting Multiple Events	2	10 t3
+Counting Multiple Events	2	10 t4
+Counting Multiple Events	2	10 t5
+Counting Multiple Events	2	10 t6
+>>>>>>> FETCH_HEAD
