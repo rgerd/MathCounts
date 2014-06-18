@@ -1,10 +1,10 @@
-MC	null	-1	incorrect	0	correct	1	incorrect	-2	incorrect	-3	incorrect
-MC	null	-3	incorrect	-4	incorrect	-1	incorrect	0	correct	-2	incorrect
-MC	null	-3	incorrect	-1	incorrect	-4	incorrect	-2	incorrect	0	correct
-MC	null	0	correct	2	incorrect	-2	incorrect	-1	incorrect	1	incorrect
-MC	null	-2	incorrect	-3	incorrect	-4	incorrect	-1	incorrect	0	correct
-MC	null	0	correct	-3	incorrect	-2	incorrect	-1	incorrect	1	incorrect
-MC	null	1	incorrect	0	correct	4	incorrect	2	incorrect	3	incorrect
-MC	null	-2	incorrect	1	incorrect	2	incorrect	-1	incorrect	0	correct
-MC	null	-2	incorrect	-1	incorrect	-3	incorrect	1	incorrect	0	correct
-MC	null	-1	incorrect	-4	incorrect	0	correct	-2	incorrect	-3	incorrect
+MC	How many numbers are in the list: -412, -413, -414, -415... -568?	158	incorrect	160	incorrect	156	incorrect	157	correct	159	incorrect
+MC	How many numbers are in the list: 635, 634, 633, 632... 524?	116	incorrect	115	incorrect	112	correct	114	incorrect	113	incorrect
+MC	How many numbers are in the list: 327, 326, 325, 324... -835?	1164	incorrect	1162	incorrect	1163	correct	1160	incorrect	1161	incorrect
+MC	How many numbers are in the list: 874, 873, 872, 871... -941?	1813	incorrect	1812	incorrect	1816	correct	1815	incorrect	1814	incorrect
+MC	How many numbers are in the list: -626, -627, -628, -629... -902?	279	incorrect	276	incorrect	275	incorrect	278	incorrect	277	correct
+MC	How many numbers are in the list: 46, 45, 44, 43... -59?	106	correct	107	incorrect	105	incorrect	104	incorrect	103	incorrect
+MC	How many numbers are in the list: 32, 31, 30, 29... -864?	896	incorrect	895	incorrect	898	incorrect	897	correct	899	incorrect
+MC	How many numbers are in the list: -869, -870, -871, -872... -952?	82	incorrect	86	incorrect	85	incorrect	84	correct	83	incorrect
+MC	How many numbers are in the list: -641, -642, -643, -644... -929?	289	correct	293	incorrect	291	incorrect	292	incorrect	290	incorrect
+MC	How many numbers are in the list: -271, -272, -273, -274... -828?	557	incorrect	560	incorrect	558	correct	556	incorrect	559	incorrect
