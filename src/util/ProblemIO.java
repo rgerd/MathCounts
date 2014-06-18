@@ -22,6 +22,8 @@ public class ProblemIO {
 			String line = null;
 
 			while ((line = in.readLine()) != null) {
+				if (line.replaceAll(" ", "").length() == 0 || line.startsWith("#"))
+					continue;
 				StringTokenizer st = new StringTokenizer(line, "\t");
 				String title = st.nextToken();
 				int level = Integer.parseInt(st.nextToken());
@@ -51,7 +53,7 @@ public class ProblemIO {
 
 	public static void printProblems(String output_file, ArrayList<Problem> problems) {
 		PrintWriter output = null;
-		
+
 		try {
 			output = new PrintWriter(new File(output_file));
 		} catch (FileNotFoundException e) {
@@ -59,8 +61,8 @@ public class ProblemIO {
 		}
 
 		for (Problem problem : problems)
-			output.println(problem.toString());
-		
+			output.println(problem == null ? "" : problem.toString());
+
 		output.close();
 	}
 }

@@ -2,14 +2,10 @@ package com;
 
 import util.Number;
 import util.ProblemIO;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
-
-import CountingListsOfNumbers.Context;
-import CountingListsOfNumbers.Question;
 
 public class Driver {
 	private static final String INPUT_FILE = "input.txt";
@@ -75,6 +71,7 @@ public class Driver {
 					Problem problem = new Problem(q, answers);
 					problems.add(problem);
 				}
+				problems.add(null);
 			}
 		}
 
