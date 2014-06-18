@@ -28,7 +28,7 @@ public class Driver {
 				int numberOfQuestions = questions.get(type);
 				for (int i = 0; i < numberOfQuestions; i++) {
 					// Generating the context
-					Context con = new Context();
+					Context_1 con = new Context_1();
 					con.generate(type);
 
 					// Getting the question

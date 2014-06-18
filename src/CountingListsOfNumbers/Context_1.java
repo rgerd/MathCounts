@@ -1,46 +1,23 @@
 package CountingListsOfNumbers;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
+
+import com.Context;
 
 import util.Fraction;
 import util.Int;
 import util.Number;
 import util.Utilities;
 
-public class Context {
-	private int type;
+public class Context_1 extends Context {
 	private int length;
 	private ArrayList<Number> list;
 	private int start;
 	private int type17;
 
-	public Context()
+	public Context_1()
 	{
 		list = new ArrayList<Number>();
-	}
-
-
-	public void generate(int type)
-	{	
-		this.setType(type);
-		Class<?> cls = this.getClass();
-		try {
-			Method m = cls.getDeclaredMethod("listGen" + type, new Class[0]);
-			m.setAccessible(true);
-			m.invoke(this);
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public ArrayList<Number> getList()
@@ -50,7 +27,7 @@ public class Context {
 
 	public int getAns() 
 	{
-		if(type == 17)
+		if(getType() == 17)
 		{
 			int count = 0;
 			for(int i = 1; i < type17/2; i++)
@@ -530,16 +507,5 @@ public class Context {
 				counter++;
 		}
 		length = counter;
-	}
-	
-
-	private void setType(int t)
-	{
-		type = t;
-	}
-
-	public int getType()
-	{
-		return type;
 	}
 }

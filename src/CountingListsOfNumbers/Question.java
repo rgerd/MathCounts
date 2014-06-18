@@ -16,7 +16,7 @@ public class Question {
 	private static final String Q_TYPE22 = "You are counting players with odd jerseys on a team. If the first jersey is labeled ";
 	private int length;
 
-	public String getQ (Context c)
+	public String getQ (Context_1 c)
 	{
 		if(c.getType() == 17)
 		{
