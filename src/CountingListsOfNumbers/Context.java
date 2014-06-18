@@ -1,21 +1,18 @@
 package CountingListsOfNumbers;
 
 import java.util.ArrayList;
-
-import com.Context;
-
 import util.Fraction;
 import util.Int;
 import util.Number;
 import util.Utilities;
 
-public class Context_1 extends Context {
+public class Context extends com.Context {
 	private int length;
 	private ArrayList<Number> list;
 	private int start;
 	private int type17;
 
-	public Context_1()
+	public Context()
 	{
 		list = new ArrayList<Number>();
 	}
@@ -47,7 +44,7 @@ public class Context_1 extends Context {
 		return type17;
 	}
 
-	private void listGen1()
+	private void gen1()
 	{
 		start = 1;
 		length=Utilities.getRandomNumberInRange(5,998);
@@ -59,7 +56,7 @@ public class Context_1 extends Context {
 		list.add(init.add(new Int(length-1)));
 	}
 
-	private void listGen2()
+	private void gen2()
 	{		
 		start=Utilities.getRandomNumberInRange(1,994);
 		length=Utilities.getRandomNumberInRange(5,999-start);
@@ -71,7 +68,7 @@ public class Context_1 extends Context {
 		list.add(init.add(new Int(length-1)));
 	}
 
-	private void listGen3()
+	private void gen3()
 	{
 		start = Utilities.getRandomNumberInRange(-1000,994);
 		length=Utilities.getRandomNumberInRange(5,999-start);
@@ -83,7 +80,7 @@ public class Context_1 extends Context {
 		list.add(init.add(new Int(length-1)));
 	}
 
-	private void listGen4()
+	private void gen4()
 	{
 		start = Utilities.getRandomNumberInRange(-994,1000);
 		length=Utilities.getRandomNumberInRange(5,Math.abs(-999-start));
@@ -95,7 +92,7 @@ public class Context_1 extends Context {
 		list.add(init.sub(new Int(length-1)));
 	}
 
-	private void listGen5()
+	private void gen5()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -120,7 +117,7 @@ public class Context_1 extends Context {
 
 	}
 
-	private void listGen6()
+	private void gen6()
 	{
 		start = Utilities.getRandomNumberInRange(-199,199);
 		while(start == 0)
@@ -152,7 +149,7 @@ public class Context_1 extends Context {
 	}
 
 
-	private void listGen7()
+	private void gen7()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		//How long should the list of unit fractions be?
@@ -176,7 +173,7 @@ public class Context_1 extends Context {
 
 	}
 
-	private void listGen8()
+	private void gen8()
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		length = Utilities.getRandomNumberInRange(15,25);
@@ -200,7 +197,7 @@ public class Context_1 extends Context {
 		length = length +1;
 
 	}
-	private void listGen9()
+	private void gen9()
 	{
 		int g1 = Utilities.getRandomNumberInRange(1, 8);
 
@@ -234,7 +231,7 @@ public class Context_1 extends Context {
 		}
 	}
 
-	private void listGen10()//DO THIS
+	private void gen10()//DO THIS
 	{
 		start = Utilities.getRandomNumberInRange(2,10);
 		int lengthRange = (1000/start)-1;
@@ -247,7 +244,7 @@ public class Context_1 extends Context {
 		list.add(new Fraction(1,start*(length-1)).simplify());
 	}
 
-	private void listGen11()
+	private void gen11()
 	{
 		int chance = Utilities.getRandomNumberInRange(1,2);
 		start = Utilities.getRandomNumberInRange(1,20);
@@ -280,7 +277,7 @@ public class Context_1 extends Context {
 
 	}
 
-	private void listGen12()
+	private void gen12()
 	{
 
 		start = Utilities.getRandomNumberInRange(1,5);
@@ -306,7 +303,7 @@ public class Context_1 extends Context {
 		}
 	}
 
-	private void listGen13()//REMEMBER ANSWERS DONT COUNT 0 OR 1000
+	private void gen13()//REMEMBER ANSWERS DONT COUNT 0 OR 1000
 	{
 
 		start = 1;
@@ -350,7 +347,7 @@ public class Context_1 extends Context {
 
 	}
 
-	private void listGen14()
+	private void gen14()
 	{
 
 		start = 1;
@@ -392,7 +389,7 @@ public class Context_1 extends Context {
 
 	}
 
-	private void listGen15()
+	private void gen15()
 	{
 		start = Utilities.getRandomNumberInRange(1, 25);
 		length = Utilities.getRandomNumberInRange(5, 999);
@@ -401,17 +398,17 @@ public class Context_1 extends Context {
 		list.add(new Int(end));
 
 	}
-	private void listGen16()//DO THIS
+	private void gen16()//DO THIS
 	{
 
 	}
 
-	private void listGen17()
+	private void gen17()
 	{
 		type17 = Utilities.getRandomNumberInRange(1, 999);
 	}
 
-	private void listGen18()
+	private void gen18()
 	{
 		int rNum = Utilities.getRandomNumberInRange(1,1);
 		int rDen = Utilities.getRandomNumberInRange(2, 8);
@@ -479,7 +476,7 @@ public class Context_1 extends Context {
 		}
 
 	}
-	private void listGen19()
+	private void gen19()
 	{
 		start = Utilities.getRandomNumberInRange(1, 25);
 		length = Utilities.getRandomNumberInRange(5, 999);
@@ -494,7 +491,7 @@ public class Context_1 extends Context {
 		length = counter;
 	}
 	
-	private void listGen20()
+	private void gen20()
 	{
 		start = Utilities.getRandomNumberInRange(1, 25);
 		length = Utilities.getRandomNumberInRange(5, 999);

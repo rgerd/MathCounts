@@ -7,14 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Set;
 import java.util.StringTokenizer;
-
-import CountingWithAdditionAndSubtraction.AnswerGen;
-
-import com.AnswerSet;
 import com.Problem;
 import com.Section;
 
@@ -43,7 +37,7 @@ public class ProblemIO {
 				Section section = new Section(title, level, questions);
 				sections.add(section);
 			}
-		} catch (Exception e) {
+		} catch (IOException e) {
 		} finally {
 			try {
 				in.close();

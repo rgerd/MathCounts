@@ -6,8 +6,7 @@ import util.Utilities;
 import util.Int;
 import util.Number;
 
-public class Context {
-	private int type;
+public class Context extends com.Context {
 	private int ans;
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
@@ -15,40 +14,12 @@ public class Context {
 	private int start;
 	private boolean ana;
 	private int chance4;
-
 	private int length;
 
 	public Context()
 	{
 		list = new ArrayList<String>();
 		list2 = new ArrayList<Number>();
-	}
-	public void generate(int type) {
-		if (type == 1) {
-
-			setType(1);
-			type01();
-		}else if(type == 2)
-		{
-			setType(2);
-			type02();
-		}else if(type == 3)
-		{
-			setType(3);
-			type03();
-		}else if(type == 4)
-		{
-			setType(4);
-			type04();
-		}else if(type == 5)
-		{
-			setType(5);
-			type05();
-		}else if(type == 6)
-		{
-			setType(6);
-			type06();
-		}
 	}
 
 	public ArrayList<String> getList() {
@@ -64,7 +35,7 @@ public class Context {
 
 	}
 
-	private void type01()
+	private void gen1()
 	{
 		int chance = Utilities.getRandomNumberInRange(1,4);
 		String noun1;
@@ -109,7 +80,7 @@ public class Context {
 		ans = num1 * num2;
 
 	}
-	private void type02()
+	private void gen2()
 
 	{
 
@@ -170,7 +141,7 @@ public class Context {
 
 	}
 
-	private void type03()
+	private void gen3()
 
 	{
 
@@ -207,7 +178,7 @@ public class Context {
 
 	}
 
-	private void type04()
+	private void gen4()
 	{
 
 		/**Type 04: Arrangements with restrictions
@@ -292,54 +263,54 @@ public class Context {
 					plate+=num;
 			}
 			list.add(plate);
-			
+
 			ans = anagramhelper(plate);
-			
+
 		}else if(chance4 == 3)
 		{
 			int numBooks = Utilities.getRandomNumberInRange(3, 10);
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
-			
-			
+
+
 			numBooks -=2;
 			int num = numBooks;
-			
+
 			for(int i = 1; i < numBooks; i++)
 			{
 
 				num = num*(numBooks-i);
-				
+
 			}
-			
-			
+
+
 			ans = num*2;
-			
+
 		}else if(chance4 == 4)
 		{
 			int numBooks = Utilities.getRandomNumberInRange(3, 10);
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
-			
+
 			int n = numBooks;
 			for(int i = 1; i < numBooks; i++)
 			{
 				n = n*(numBooks-i);
 			}
-			
+
 			int answer = n/2;
-			
+
 			int num = numBooks -2;
 			int n1 = num;
 			for(int i = 1; i < num; i++)
 			{
 				n1 = n1 * (num - i);
 			}
-			
+
 			n1 = (numBooks-1) * n1;
-			
+
 			ans = answer - n1;
 		}else if(chance4 == 5)
 		{
@@ -347,22 +318,22 @@ public class Context {
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
-			
+
 			int num = numBooks -2;
 			int n = num;
-			
+
 			for(int i = 1; i < num; i++)
 			{
 				n = n*(num-i);
 			}
-			
+
 			ans = (numBooks-2)*n;
 		}
 
 	}
 
 
-	private void type05()
+	private void gen5()
 	{
 
 		/** Type 05: Choosing with and without replacement
@@ -401,11 +372,11 @@ public class Context {
 		list.add(Integer.toString(size.getValue()));
 		list.add(Integer.toString(numItems.getValue()));
 		list.add(question);
-		
+
 	}
 
 
-	private void type06()
+	private void gen6()
 	{
 		int chance=Utilities.getRandomNumberInRange(1,2); 
 		int answer =1;
@@ -426,8 +397,8 @@ public class Context {
 			int y=1;
 			while(x<y)
 			{
-			 x = Utilities.getRandomNumberInRange(2, 10);
-			 y = Utilities.getRandomNumberInRange(1, 10);
+				x = Utilities.getRandomNumberInRange(2, 10);
+				y = Utilities.getRandomNumberInRange(1, 10);
 			}
 			list.add(Integer.toString(x));
 			list.add(Integer.toString(y));
@@ -451,35 +422,35 @@ public class Context {
 		{
 			String st = s.substring(i,i+1);
 			al.add(st);
-				
+
 		}
 		int divideby=1;
 		int r=0;
 		for(int x=0;x<al.size();x++)
 		{
-			 r = 0;
+			r = 0;
 			String sr = s.substring(x,x+1);
-			
-				for(int y=0;y<al.size();y++)
+
+			for(int y=0;y<al.size();y++)
+			{
+
+				if(al.get(y).equals(sr))
 				{
-					
-					if(al.get(y).equals(sr))
-					{
-						r++;
-						al.set(y, "*");
-					}
-					
+					r++;
+					al.set(y, "*");
 				}
-				while(r>=1)
-				{
-					divideby = divideby*r;
-					r--;
-					
-				}
-				
-			
-	
-		
+
+			}
+			while(r>=1)
+			{
+				divideby = divideby*r;
+				r--;
+
+			}
+
+
+
+
 		}
 
 		int numb = al.size();
@@ -489,24 +460,13 @@ public class Context {
 			answer = answer*numb;
 			numb--;
 		}
-		
+
 
 		int retans = answer/divideby;
-		
+
 		return retans;
-		}
-
-
-
-	private void setType(int t) 
-	{
-		type = t;
 	}
 
-	public int getType() {
-		return type;
-
-	}
 	public boolean getAna()
 	{
 		return ana;

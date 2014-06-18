@@ -11,7 +11,7 @@ public abstract class Context {
 		this.setType(type);
 		Class<?> cls = this.getClass();
 		try {
-			Method m = cls.getDeclaredMethod("listGen" + type, new Class[0]);
+			Method m = cls.getDeclaredMethod("gen" + type, new Class[0]);
 			m.setAccessible(true);
 			m.invoke(this);
 		} catch (SecurityException e) {
@@ -36,4 +36,6 @@ public abstract class Context {
 	{
 		return type;
 	}
+	
+	public abstract int getAns();
 }

@@ -8,7 +8,7 @@ public class Section {
 	private HashMap<Integer, Integer> questions;
 	
 	public Section(String title, int level, HashMap<Integer, Integer> questions) {
-		this.title = title;
+		this.title = title.replaceAll(" ", "");
 		this.level = level;
 		this.questions = questions;
 	}

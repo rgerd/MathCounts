@@ -1,4 +1,4 @@
-package CountingWithAdditionAndSubtraction;
+package com;
 
 import util.Number;
 import util.ProblemIO;
@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.AnswerSet;
-import com.Problem;
-import com.Section;
+import CountingListsOfNumbers.Context;
+import CountingListsOfNumbers.Question;
 
 public class Driver {
 	private static final String INPUT_FILE = "input.txt";
@@ -27,15 +26,37 @@ public class Driver {
 			for (Integer type : types) {
 				int numberOfQuestions = questions.get(type);
 				for (int i = 0; i < numberOfQuestions; i++) {
-					// Generating the context
-					Context con = new Context();
-					con.generate(type);
+					
+					// Getting the context and question objects for the section
+					Class<?> _context = null;
+					Context context = null;
+					Class<?> _question = null;
+					Question question = null;
+					try {
+						_context = Class.forName(section.getTitle() + ".Context");
+						context = (Context) _context.newInstance();
+						
+						_question = Class.forName(section.getTitle() + ".Question");
+						question = (Question) _question.newInstance();
+					} catch (ClassNotFoundException e) {
+						System.err.println("Could not find Context or Question classes in package " + section.getTitle());
+						System.err.println("Please check the input file for typos.");
+						System.err.println("Are your classes and packages named correctly?");
+						System.exit(-1);
+					} catch (InstantiationException e) {
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					}
 
+					// Generating the context
+					context.generate(type);
+					
 					// Getting the question
-					String question = new Question().getQ(con);
+					String q = question.getQ(context);
 
 					// Getting the correct answer
-					int ans = con.getAns();
+					int ans = context.getAns();
 
 					// Getting the incorrect answers
 					AnswerGen a = new AnswerGen(ans);
@@ -51,7 +72,7 @@ public class Driver {
 					}
 
 					// Creating and adding the problem
-					Problem problem = new Problem(question, answers);
+					Problem problem = new Problem(q, answers);
 					problems.add(problem);
 				}
 			}
