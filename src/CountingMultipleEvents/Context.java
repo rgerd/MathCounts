@@ -230,10 +230,20 @@ public class Context {
 		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
 		Do other sports**/
 
-		String s = "shirt(s)"
 		chance4 = Utilities.getRandomNumberInRange(1, 5);
 		if(chance4 == 1)
 		{
+			String s = "shirts";
+			String t = "ties";
+			int sNum = Utilities.getRandomNumberInRange(1, 10);
+			int tNum = Utilities.getRandomNumberInRange(1, 10);
+			int cNum = Utilities.getRandomNumberInRange(2, 10);
+			
+			list.add(s);
+			list.add(t);
+			list.add(Integer.toString(sNum));
+			list.add(Integer.toString(tNum));
+			list.add(Integer.toString(cNum)); 
 			
 		}else if(chance4 == 2)
 		{
