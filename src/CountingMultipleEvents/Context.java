@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import util.Utilities;
 import util.Int;
 import util.Number;
-import util.lang.LangUtility;
 
 public class Context {
 	private int type;
 	private int ans;
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
+	private Number[] nums;
 	private int start;
 	private boolean ana;
 
@@ -241,9 +241,26 @@ public class Context {
 		
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
-		Number[] nums = {size, new Int(1), size, numItems };
-		String an = LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", size, new Int(1), size, numItems);
-		System.out.println(an);
+		int chance = Utilities.getRandomNumberInRange(1,4);
+		if(chance == 1)
+		{
+			ans = (int) Math.pow(size.getValue(), numItems.getValue());
+		}else if(chance == 2)
+		{
+			ans = 1;
+			for(int i = 0; i < (numItems.getValue()); i++){
+				ans *= ((size.getValue())-i); 
+			}
+		}else
+		{
+			
+		}
+		nums = new Number[4];
+		nums[0] = size;
+		nums[1] = new Int(1);
+		nums[2] = size;
+		nums[3] = numItems;
+		
 	}
 
 

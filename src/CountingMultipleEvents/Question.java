@@ -2,6 +2,7 @@ package CountingMultipleEvents;
 
 import java.util.ArrayList;
 
+import util.Int;
 import util.lang.LangUtility;
 
 
@@ -55,7 +56,7 @@ public class Question {
 		{
 			
 		}else if(c.getType() == 5){
-			
+			LangUtility.populate("[num_0] [noun_0] numbered [num_1] through [num_2] are placed [container_0]. In how many ways can [num_3] [noun_0] be chosen, in order, [container_0_from]?", nums);
 		}
 		return  ret;
 
