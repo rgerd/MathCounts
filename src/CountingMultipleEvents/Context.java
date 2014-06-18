@@ -24,7 +24,7 @@ public class Context {
 	}
 	public void generate(int type) {
 		if (type == 1) {
-			
+
 			setType(1);
 			type01();
 		}else if(type == 2)
@@ -153,17 +153,17 @@ public class Context {
 			{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-				
+
 				count=+i2;
 			}
 			else{
 				Int i1 = (Int)(list2.get(i));
 				int i2=i1.getValue();
-			
+
 				count*=i2;
 			}
 
-	
+
 		}
 		ans=count;
 
@@ -177,7 +177,7 @@ public class Context {
 		int chance =Utilities.getRandomNumberInRange(1,2);
 
 		int numb = Utilities.getRandomNumberInRange(4,10);
-		
+
 		if(chance == 1)
 		{
 
@@ -186,7 +186,7 @@ public class Context {
 			int answer =1;
 			while(numb>=1)
 			{
-				
+
 				answer = answer*numb;
 				numb--;
 			}
@@ -258,7 +258,7 @@ public class Context {
 		alphabet.add("X");
 		alphabet.add("Y");
 		alphabet.add("Z");
-		
+
 		if(chance4 == 1)
 		{
 			String s = "shirts";
@@ -266,28 +266,28 @@ public class Context {
 			int sNum = Utilities.getRandomNumberInRange(1, 10);
 			int tNum = Utilities.getRandomNumberInRange(1, 10);
 			int cNum = Utilities.getRandomNumberInRange(2, 10);
-			
+
 			list.add(s);
 			list.add(t);
 			list.add(Integer.toString(sNum));
 			list.add(Integer.toString(tNum));
 			list.add(Integer.toString(cNum)); 
-			
+
 		}else if(chance4 == 2)
 		{
-			
+
 		}else if(chance4 == 3)
 		{
-			
+
 		}else if(chance4 == 4)
 		{
-			
+
 		}else if(chance4 == 5)
 		{
-			
+
 		}else
 		{
-			
+
 		}
 
 
@@ -296,13 +296,13 @@ public class Context {
 
 	private void type05()
 	{
-		
+
 		/** Type 05: Choosing with and without replacement
 			Example context: 12 balls numbered 1 through 12 are placed in a bin. In how many ways can 3 balls be drawn, in order, from the bin
 			if each ball remains outside the bin after it is drawn?
 			if each ball is placed back into the bin if it is drawn?
 			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
-		
+
 		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
 		Int numItems = new Int (Utilities.getRandomNumberInRange(3,6));
 		Number[] nums = {size, new Int(1), size, numItems };
@@ -311,35 +311,39 @@ public class Context {
 	}
 
 
-private void type06()
-{
-int chance=Utilities.getRandomNumberInRange(1,2); 
-int answer =1;
-if(chance==1)
-{
-	int chance1=Utilities.getRandomNumberInRange(1,10);
-	list.add(Integer.toString(chance1));
-	for(int i=0;i<chance1;i++)
+	private void type06()
 	{
-		answer*=chance1;
+		int chance=Utilities.getRandomNumberInRange(1,2); 
+		int answer =1;
+		if(chance==1)
+		{
+			int chance1=Utilities.getRandomNumberInRange(1,10);
+			list.add(Integer.toString(chance1));
+			for(int i=0;i<chance1;i++)
+			{
+				answer*=chance1;
+			}
+			ans=answer;
+		}
+		else
+		{
+			int x = Utilities.getRandomNumberInRange(2, 10);
+			int y = Utilities.getRandomNumberInRange(1, 10);
+			list.add(Integer.toString(x));
+			list.add(Integer.toString(y));
+			
+		}
 	}
-	ans=answer;
-}
-else
-{
-	
-}
-}
 	private int anagramhelper(String s)
 	{
-		
+
 		ArrayList al = new ArrayList();
 		for(int i=0; i<s.length(); i++)
 		{
 			String st = s.substring(i,i+1);
 			if(al.contains(st))
 			{
-				
+
 			}
 			else
 			{
@@ -354,7 +358,7 @@ else
 			numb--;
 		}
 		return answer;
-		}
+	}
 
 
 	private void setType(int t) 
