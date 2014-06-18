@@ -16,7 +16,7 @@ public class Utilities {
 	 * @return A random integer between two numbers.
 	 */
 	public static int getRandomNumberInRange(int min, int max) {
-		return min + (int)(Math.random() * ((max - min) + 1));
+		return min + (int)(rand.nextDouble() * ((max - min) + 1));
 	}
 
 	/**
