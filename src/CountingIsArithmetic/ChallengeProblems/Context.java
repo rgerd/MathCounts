@@ -32,6 +32,7 @@ public class Context extends com.Context {
 		int length = Utilities.getRandomNumberInRange(10,1000);
 		int numSquares = Utilities.getRandomNumberInRange(2,8);
 
+
 	}
 
 	private void gen2() {
@@ -75,7 +76,7 @@ public class Context extends com.Context {
 		{
 			
 		}
-		
+
 
 	}
 
