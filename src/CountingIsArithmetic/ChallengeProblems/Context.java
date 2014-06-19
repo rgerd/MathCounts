@@ -2,7 +2,9 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
+import util.Int;
 import util.Number;
+import util.Utilities;
 
 public class Context extends com.Context{
 	private int ans;
@@ -61,10 +63,21 @@ public class Context extends com.Context{
 	
 	private void gen4()
 	{
+		int answer=0;
 		
-		
-		
-		
+		int g=Utilities.getRandomNumberInRange(2, 100);
+		int i=Utilities.getRandomNumberInRange(2, 100);
+		list.add(new Int(g));
+		list.add(new Int(g));
+		for(int x=0;x<g;x++)
+		{
+			for(int y=0;y<i;y++)
+			{
+				if(i%2==1)
+					answer++;
+			}
+		}
+		ans=answer;
 		
 		
 		
@@ -94,3 +107,4 @@ public class Context extends com.Context{
 		
 	}
 }
+
