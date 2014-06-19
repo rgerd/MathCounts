@@ -25,20 +25,12 @@ public class Context extends com.Context {
 		return ans;
 	}
 
-	
 	private void gen1()
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
 		sum of (#2) positive perfect squares? **/
 		int length = Utilities.getRandomNumberInRange(10,1000);
 		int numSquares = Utilities.getRandomNumberInRange(2,8);
-		
-		
-		
-		
-		
-		
-		
 
 	}
 
@@ -46,7 +38,6 @@ public class Context extends com.Context {
 
 	}
 
-	
 	private void gen3()
 	{
 		/**Type 03: Math with factorials
