@@ -67,6 +67,7 @@ public class Question extends com.Question {
 			} else if(c.chance4() == 6)
 			{
 				String ret = Q4_5 + list.get(0) + "?";
+				return ret;
 			}
 
 		} else if (c.getType() == 5) {

@@ -200,7 +200,7 @@ public class Context extends com.Context {
 		Do other sports**/
 
 
-		chance4 = Utilities.getRandomNumberInRange(1, 5);
+		chance4 = Utilities.getRandomNumberInRange(1, 6);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -331,6 +331,7 @@ public class Context extends com.Context {
 			int studentPop = Utilities.getRandomNumberInRange(100, 999);
 			int n = studentPop;
 			int k = studentPop-4;
+			list.add(studentPop + "");
 			
 			for(int i = 1; i < studentPop; i++)
 			{
