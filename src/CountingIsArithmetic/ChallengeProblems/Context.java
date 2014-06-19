@@ -39,7 +39,7 @@ public class Context extends com.Context {
 		int leftovers = length - upperLimit;
 		for(int i = 0; i < leftovers; i++)
 		{
-			
+			int uppercombos = (upperLimit + i);
 		}
 		
 		
