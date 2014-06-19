@@ -1,20 +1,17 @@
 package CountingListsOfNumbers;
 
-import util.Utilities;
-
-
 public class Question extends com.Question {
 	private static final String Q = "How many numbers are in the list:";
 	private static final String Q_T14 = "How many positive numbers under ";
-	private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
-	private static final String M = "How Many numbers are multiples of";
+	//private static final String R = "How many roots between 1 and 10 inclusive are not included in the list";
+	//private static final String M = "How Many numbers are multiples of";
 	private static final String Q_TYPE17 = "How many pairs of consecutive integers have products less than ";
 	private static final String Q_TYPE15 = "You are assigned homework problems from ";
 	private static final String Q_TYPE21 = "You are numbering jerseys for a sports team. How many players are on the team if the first jersey is labeled ";
 	private static final String Q_TYPE19 = "You are assigned odd homework problems from ";
 	private static final String Q_TYPE20 = "You are assigned even homework problems from ";
 	private static final String Q_TYPE22 = "You are counting players with odd jerseys on a team. If the first jersey is labeled ";
-	private int length;
+	//private int length;
 
 	public String getQ (com.Context _c)
 	{
