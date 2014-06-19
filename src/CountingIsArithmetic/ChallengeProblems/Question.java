@@ -19,11 +19,16 @@ public class Question extends com.Question{
 		{
 			String question = LangUtility.populate("How many positive integers less than [num_0] can be written as the sum of [num_1] positive perfect squares.", c.getList().get(0));
 		}
-		else if(c.getType() == 3)
+		if(c.getType() == 3)
 		{
 			String q = LangUtility.populate("What is the greatest common factor of [num_0]!, [num_1]!, and [num_2]! ?", c.getList().get(0), c.getList().get(1), c.getList().get(2));
 			return q;
 
+		}
+		if(c.getType() == 4)
+		{
+			String zimzambabityboopity=("My house has " +c.getList.get(0)+ ""(arrangements) of (objects), with (#2) (objects) in each (arrangement). The (objects) in each (arrangement) are numbered from 1 to (#2). How many (objects) have odd numbers?
+")
 		}
 
 		return null;
