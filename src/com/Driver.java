@@ -17,6 +17,7 @@ public class Driver {
 		ArrayList<Problem> problems = new ArrayList<Problem>();
 
 		for (Section section : sections) {
+			String _package = section.getChapter() + "." + section.getTitle();
 			HashMap<Integer, Integer> questions = section.getQuestions();
 			Set<Integer> types = questions.keySet();
 			for (Integer type : types) {
@@ -29,10 +30,10 @@ public class Driver {
 					Class<?> _question = null;
 					Question question = null;
 					try {
-						_context = Class.forName(section.getTitle() + ".Context");
+						_context = Class.forName(_package + ".Context");
 						context = (Context) _context.newInstance();
 						
-						_question = Class.forName(section.getTitle() + ".Question");
+						_question = Class.forName(_package + ".Question");
 						question = (Question) _question.newInstance();
 					} catch (ClassNotFoundException e) {
 						System.err.println("Could not find Context or Question classes in package " + section.getTitle());

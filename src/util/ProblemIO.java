@@ -15,6 +15,7 @@ import com.Section;
 public class ProblemIO {
 	public static ArrayList<Section> readSections(String input_file) {
 		ArrayList<Section> sections = new ArrayList<Section>();
+		String chapter = null;
 		BufferedReader in = null;
 		try {
 			in = new BufferedReader(new FileReader(new File(input_file)));
@@ -24,6 +25,12 @@ public class ProblemIO {
 			while ((line = in.readLine()) != null) {
 				if (line.replaceAll(" ", "").length() == 0 || line.startsWith("#"))
 					continue;
+				
+				if(line.startsWith(">")) {
+					line = line.replaceAll(" ", "").substring(1);
+					chapter = line;
+				}
+				
 				StringTokenizer st = new StringTokenizer(line, "\t");
 				String title = st.nextToken();
 				int level = Integer.parseInt(st.nextToken());
@@ -36,7 +43,7 @@ public class ProblemIO {
 					questions.put(type, number);
 				}
 
-				Section section = new Section(title, level, questions);
+				Section section = new Section(chapter, title, level, questions);
 				sections.add(section);
 			}
 		} catch (IOException e) {
