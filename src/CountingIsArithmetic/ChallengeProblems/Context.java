@@ -79,19 +79,7 @@ public class Context extends com.Context{
 	
 	private void gen5()
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//How many integers n satisfy (#1 / #2) < 1 / n < (#3 / #4)?
 		
 	}
 }
