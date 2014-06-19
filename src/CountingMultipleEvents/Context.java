@@ -235,7 +235,7 @@ public class Context extends com.Context {
 		Do other sports**/
 
 
-		chance4 = Utilities.getRandomNumberInRange(1, 6);
+		chance4 = Utilities.getRandomNumberInRange(1, 7);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -363,23 +363,35 @@ public class Context extends com.Context {
 			ans = (numBooks-2)*n;
 		}else if(chance4 == 6)
 		{
-			int studentPop = Utilities.getRandomNumberInRange(100, 999);
+			int studentPop = Utilities.getRandomNumberInRange(5, 20);
 			int n = studentPop;
-			int k = studentPop-4;
+
+			
 			list.add(studentPop + "");
 			
-			for(int i = 1; i < studentPop; i++)
+			for(int i = 1; i < 4; i++)
 			{
 				n = n*(studentPop-i);
 			}
-			for(int i = 1; i < studentPop-4; i++)
-			{
-				k = k*(studentPop -4 -i);
-			}
-			System.out.println(n);
-			System.out.println(k);
+
 			
-			ans = n/k;
+			ans = n;
+		}else if(chance4 == 7)
+		{
+			int numAth = Utilities.getRandomNumberInRange(5, 20);
+			int n = numAth;
+
+			
+			list.add(numAth + "");
+			
+			for(int i = 1; i < 3; i++)
+			{
+				n = n*(numAth-i);
+			}
+
+			
+			ans = n;
+			
 		}
 
 	}
