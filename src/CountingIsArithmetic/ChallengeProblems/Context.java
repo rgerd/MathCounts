@@ -32,8 +32,9 @@ public class Context extends com.Context {
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
 		sum of (#2) positive perfect squares? **/
-		int length = Utilities.getRandomNumberInRange(10,1000);
-		int numSquares = Utilities.getRandomNumberInRange(2,8);
+		int length = Utilities.getRandomNumberInRange(1,1000);
+		int combos = 0;
+		int limit = (int) Math.sqrt((double) length);
 		
 		
 		
