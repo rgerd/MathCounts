@@ -6,7 +6,6 @@ import util.Fraction;
 import util.Int;
 import util.Utilities;
 import util.Number;
-import util.Int;
 
 public class Context extends com.Context {
 	private int ans;
@@ -24,7 +23,11 @@ public class Context extends com.Context {
 	public int getAns() {
 		return ans;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> FETCH_HEAD
 	private void gen1()
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
@@ -37,13 +40,21 @@ public class Context extends com.Context {
 		
 		
 		
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> FETCH_HEAD
 	}
 
 	private void gen2() {
 
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> FETCH_HEAD
 	private void gen3()
 	{
 		/**Type 03: Math with factorials
@@ -82,7 +93,10 @@ public class Context extends com.Context {
 			
 		}
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 	}
 
 	private void gen4() {
