@@ -1,7 +1,7 @@
 package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
-
+import util.Utilities;
 import util.Number;
 
 public class Context extends com.Context{
@@ -24,7 +24,8 @@ public class Context extends com.Context{
 	
 	private void gen1()
 	{
-		
+		int length = Utilities.getRandomNumberInRange(10,1000);
+		int numSquares = Utilities.getRandomNumberInRange(2,8);
 		
 		
 		
