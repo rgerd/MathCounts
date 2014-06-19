@@ -26,7 +26,7 @@ public class Question extends com.Question {
 		ArrayList<String> list = c.getList();
 
 		if (c.getType() == 1) {
-			String ret = LangUtility.populate("You have [num_0] [noun_0] and [num_1] [noun_1]. How many ways can you choose a collection consisting of 1 [noun_0_sig] and 1 [noun_1]?", new Int(Integer.parseInt(list.get(0))), new Int(Integer.parseInt(list.get(1))));
+			String ret = LangUtility.populate("You have [num_0] [noun_0] and [num_1] [noun_1]. How many ways can you choose a collection consisting of 1 [noun_0_sng] and 1 [noun_1_sng]?", new Int(Integer.parseInt(list.get(0))), new Int(Integer.parseInt(list.get(1))));
 			return ret;
 		} else if (c.getType() == 2) {
 			if (list.size() == 7) {
