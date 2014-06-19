@@ -13,7 +13,7 @@ public class Context extends com.Context{
 		
 	}
 
-	public ArrayList<String> getList() {
+	public ArrayList<Number> getList() {
 		return list;
 	}
 
