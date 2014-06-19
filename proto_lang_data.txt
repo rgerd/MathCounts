@@ -25,6 +25,19 @@
 	woof
 </noun>
 
+<clothes [person]>
+	hats
+	pants
+	shirts
+	socks
+	shoes
+	underwear
+	glasses
+	gloves
+	scarfs
+	sweatshirts
+</noun>
+
 <adj>
 	red
 	blue
