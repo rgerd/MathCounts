@@ -17,6 +17,7 @@ public class Question extends com.Question {
 	private static final String Q4_4 = "How many ways can ";
 	private static final String Q4_5 = "How many ways can a school elect a President, Vice President, Secretary, and Treasurer if the student pool is ";
 	private static final String Q4_6 = "How many ways can 3 Olympic athletes get Gold, Silver, and Bronze medals if the number of athletes competing is ";
+	private static final String Q4_7 = "How many ways can a basketball coach choose a center, a point guard, a shooting forward, and a shooting guard from a player pool of ";
 	private String ret;
 
 	public String getQ(com.Context _c) {
@@ -80,6 +81,10 @@ public class Question extends com.Question {
 			}else if (c.chance4() == 7)
 			{
 				String ret = Q4_6 + list.get(0) + "?";
+				return ret;
+			}else if(c.chance4() == 8)
+			{
+				String ret = Q4_7 + list.get(0) + "?";
 				return ret;
 			}
 
