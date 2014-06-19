@@ -2,20 +2,19 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
-
+import util.Fraction;
 import util.Int;
 import util.Number;
 import util.Utilities;
 
 
-public class Context extends com.Context{
+public class Context extends com.Context {
 	private int ans;
 	private ArrayList<Number> list;
 	private int chance;
-	
-	public Context()
-	{
-		
+
+	public Context() {
+		list = new ArrayList<Number>();
 	}
 
 	public ArrayList<Number> getList() {
@@ -23,8 +22,9 @@ public class Context extends com.Context{
 	}
 
 	public int getAns() {
-		return ans; 
+		return ans;
 	}
+
 	
 	private void gen1()
 	{
@@ -39,20 +39,13 @@ public class Context extends com.Context{
 		
 		
 		
+
 	}
-	
-	private void gen2()
-	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+	private void gen2() {
+
 	}
+
 	
 	private void gen3()
 	{
@@ -72,6 +65,17 @@ public class Context extends com.Context{
 			list.add(new Int(num2));
 			list.add(new Int(num3));
 			
+			int min = Math.min(num1, num2);
+			min = Math.min(num2, num3);
+			
+			int answer = min;
+			
+			for(int i = 1; i < min; i++)
+			{
+				answer = answer*(min-i);
+			}
+			
+			ans = answer;
 			
 		} else if(chance == 2)
 		{
@@ -81,7 +85,9 @@ public class Context extends com.Context{
 			
 		}
 		
+
 	}
+
 	
 	private void gen4()
 	{
@@ -105,16 +111,26 @@ public class Context extends com.Context{
 		
 		
 		
-		
-		
-		
-		
+
 	}
-	
-	private void gen5()
-	{
-		//How many integers n satisfy (#1 / #2) < 1 / n < (#3 / #4)?
-		
+
+	private void gen5() {
+
+		int num_0 = Utilities.getRandomNumberInRange(0, 1000);
+		int den_0 = Utilities.getRandomNumberInRange(0, 1000);
+
+		int num_1 = Utilities.getRandomNumberInRange(0, 1000);
+		int den_1 = Utilities.getRandomNumberInRange(0, 1000);
+
+		Fraction frac_0 = new Fraction(num_0, den_0);
+		Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
+		list.add(frac_0);
+		list.add(frac_1);
+
+		int top = (int) frac_1.reciprocal().divide();
+		int bottom = (int) frac_0.reciprocal().divide();
+
+		list.add(new Int(top - bottom + 1));
 	}
 }
 
