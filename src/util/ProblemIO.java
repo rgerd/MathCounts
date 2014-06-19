@@ -29,6 +29,7 @@ public class ProblemIO {
 				if(line.startsWith(">")) {
 					line = line.replaceAll(" ", "").substring(1);
 					chapter = line;
+					continue;
 				}
 				
 				StringTokenizer st = new StringTokenizer(line, "\t");

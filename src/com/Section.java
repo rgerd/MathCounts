@@ -9,6 +9,7 @@ public class Section {
 	private String chapter;
 	
 	public Section(String chapter, String title, int level, HashMap<Integer, Integer> questions) {
+		this.chapter = chapter;
 		this.title = title.replaceAll(" ", "");
 		this.level = level;
 		this.questions = questions;

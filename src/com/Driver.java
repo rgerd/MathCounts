@@ -18,6 +18,15 @@ public class Driver {
 
 		for (Section section : sections) {
 			String _package = section.getChapter() + "." + section.getTitle();
+			
+			if(section.getChapter() == null) {
+				System.err.println("Section " + section.getTitle() + " is not associated with a chapter!");
+				System.err.println("Make sure you specify chapters in the input file like so:");
+				System.err.println("> Chapter Name");
+				System.err.println("Before you specify the section.");
+				System.exit(-1);
+			}
+			
 			HashMap<Integer, Integer> questions = section.getQuestions();
 			Set<Integer> types = questions.keySet();
 			for (Integer type : types) {
