@@ -10,11 +10,9 @@ public class Context extends com.Context {
 	private int ans;
 	private ArrayList<String> list;
 	private ArrayList<Number> list2;
-	private Number[] nums;
 	private int start;
 	private boolean ana;
 	private int chance4;
-	private int length;
 
 	public Context()
 	{
