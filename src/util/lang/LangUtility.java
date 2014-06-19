@@ -2,7 +2,6 @@ package util.lang;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.StringTokenizer;
 
 import util.Number;
 
@@ -10,9 +9,15 @@ public class LangUtility {
 	private static LangGenerator generator = loadGenerator();
 
 	public static String populate(String format, ArrayList<Number> nums) {
-		return populate(format, (Number[])nums.toArray());
+		Number[] _nums = new Number[nums.size()];
+
+		for (int i = 0; i < _nums.length; i++) {
+			_nums[i] = nums.get(i);
+		}
+
+		return populate(format, _nums);
 	}
-	
+
 	/**
 	 * Populates a format string. Read LANG_README.txt to learn the format.
 	 * 
@@ -25,10 +30,10 @@ public class LangUtility {
 	public static String populate(String format, Number... nums) {
 		generator.reset();
 		ArrayList<LangComponent> components = new ArrayList<LangComponent>();
-		
+
 		StringBuilder sb = new StringBuilder(format);
 		ArrayList<TagData> tags = LangParser.getTags(sb);
-		
+
 		boolean last_num_plural = false;
 		boolean last_noun_plural = false;
 
@@ -37,7 +42,7 @@ public class LangUtility {
 			String attr = tag.getAttr();
 			int ind = tag.getIndex();
 			HashSet<String> tag_flags = tag.getFlags();
-			
+
 			if (attr.equals("num")) {
 				Number num = nums[ind];
 				components.add(LangComponent.createNumberComponent(num));
@@ -47,11 +52,11 @@ public class LangUtility {
 				if (attr.equals("noun"))
 					last_noun_plural = tag_flags.contains("pl");
 				this_plural = last_noun_plural || last_num_plural;
-				if(attr.equals("verb")) {
+				if (attr.equals("verb")) {
 					last_noun_plural = false;
 					last_num_plural = false;
 				}
-				
+
 				this_plural &= !tag_flags.contains("sng");
 
 				if (this_plural)
