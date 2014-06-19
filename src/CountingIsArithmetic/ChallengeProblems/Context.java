@@ -70,6 +70,17 @@ public class Context extends com.Context{
 			list.add(new Int(num2));
 			list.add(new Int(num3));
 			
+			int min = Math.min(num1, num2);
+			min = Math.min(num2, num3);
+			
+			int answer = min;
+			
+			for(int i = 1; i < min; i++)
+			{
+				answer = answer*(min-i);
+			}
+			
+			ans = answer;
 			
 		} else if(chance == 2)
 		{
