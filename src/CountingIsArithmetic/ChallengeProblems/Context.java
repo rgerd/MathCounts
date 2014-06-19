@@ -7,6 +7,7 @@ import util.Number;
 public class Context extends com.Context{
 	private int ans;
 	private ArrayList<Number> list;
+	private int chance;
 	
 	public Context()
 	{
