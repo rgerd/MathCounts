@@ -9,6 +9,10 @@ import util.Number;
 public class LangUtility {
 	private static LangGenerator generator = loadGenerator();
 
+	public static String populate(String format, ArrayList<Number> nums) {
+		return populate(format, (Number[])nums.toArray());
+	}
+	
 	/**
 	 * Populates a format string. Read LANG_README.txt to learn the format.
 	 * 
