@@ -146,7 +146,7 @@ public class Context extends com.Context {
 			}	
 			list2.add(init.add(new Int(i4)));  
 		}
-		list.add("outfits");
+		list.add("outfit");
 
 		int count = 0;
 		for(int i = 0; i < list2.size(); i++)

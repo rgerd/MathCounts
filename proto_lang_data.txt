@@ -31,8 +31,8 @@
 	shirts
 	socks
 	shoes
-	underwear
-	glasses
+	undergarments
+	ties
 	gloves
 	scarfs
 	sweatshirts

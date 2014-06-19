@@ -30,13 +30,13 @@ public class Question extends com.Question {
 			return ret;
 		} else if (c.getType() == 2) {
 			if (list.size() == 7) {
-				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", and " + list.get(4) + " " + list.get(5) + ". How many ways can you choose a(n) " + list.get(6) + " consisting of 1 " + list.get(1) + ", 1 " + list.get(3) + ", and 1 " + list.get(5) + "?";
+				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", and " + list.get(4) + " " + list.get(5) + ". How many ways can you choose an " + list.get(6) + " consisting of 1 " + list.get(1).substring(0, list.get(1).length()-1) + ", 1 " + list.get(3).substring(0, list.get(3).length()-1) + ", and 1 " + list.get(5).substring(0, list.get(5).length()-1) + "?";
 				return ret;
 			} else if (list.size() == 9) {
-				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", " + list.get(4) + " " + list.get(5) + ", and " + list.get(6) + " " + list.get(7) + ". How many ways can you choose a(n) " + list.get(8) + " consisting of 1 " + list.get(1) + ", 1 " + list.get(3) + ", 1 " + list.get(5) + " and 1 " + list.get(7) + "?";
+				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", " + list.get(4) + " " + list.get(5) + ", and " + list.get(6) + " " + list.get(7) + ". How many ways can you choose an " + list.get(8) + " consisting of 1 " + list.get(1).substring(0, list.get(1).length()-1) + ", 1 " + list.get(3).substring(0, list.get(3).length()-1) + ", 1 " + list.get(5).substring(0, list.get(5).length()-1) + " and 1 " + list.get(7).substring(0, list.get(7).length()-1) + "?";
 				return ret;
 			} else if (list.size() == 11) {
-				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", " + list.get(4) + " " + list.get(5) + ", " + list.get(6) + " " + list.get(7) + ", and " + list.get(8) + " " + list.get(9) + ". How many ways can you choose a(n) " + list.get(10) + " consisting of 1 " + list.get(1) + ", 1 " + list.get(3) + ", 1 " + list.get(5) + ", 1 " + list.get(7) + ", and 1 " + list.get(9) + "?";
+				String ret = Q1 + list.get(0) + " " + list.get(1) + ", " + list.get(2) + " " + list.get(3) + ", " + list.get(4) + " " + list.get(5) + ", " + list.get(6) + " " + list.get(7) + ", and " + list.get(8) + " " + list.get(9) + ". How many ways can you choose an " + list.get(10) + " consisting of 1 " + list.get(1).substring(0, list.get(1).length()-1) + ", 1 " + list.get(3).substring(0, list.get(3).length()-1) + ", 1 " + list.get(5).substring(0, list.get(5).length()-1) + ", 1 " + list.get(7).substring(0, list.get(7).length()-1) + ", and 1 " + list.get(9).substring(0, list.get(9).length()-1) + "?";
 				return ret;
 			}
 
