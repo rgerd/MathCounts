@@ -90,7 +90,7 @@ public class Context extends com.Context {
 		int g=Utilities.getRandomNumberInRange(2, 100);
 		int i=Utilities.getRandomNumberInRange(2, 100);
 		list.add(new Int(g));
-		list.add(new Int(g));
+		list.add(new Int(i));
 		for(int x=0;x<g;x++)
 		{
 			for(int y=0;y<i;y++)

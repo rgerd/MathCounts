@@ -27,7 +27,7 @@ public class Question extends com.Question{
 		}
 		if(c.getType() == 4)
 		{
-			String zimzambabityboopity=("My house has " +c.getList().get(0)+ "herds of cats, with "+c.getList().get(1) + "cats in each herd. The cats in each herd are numbered from 1 to"+c.getList().get(1)+". How many cats have odd numbers?");
+			String zimzambabityboopity=("My house has " +c.getList().get(0)+ " herds of cats, with "+c.getList().get(1) + " cats in each herd. The cats in each herd are numbered from 1 to"+c.getList().get(1)+". How many cats have odd numbers?");
 			return zimzambabityboopity;
 		}
 
