@@ -72,10 +72,7 @@ public class Context extends com.Context {
 		}
 
 		list.add(Integer.toString(num1));
-		list.add(noun1);
 		list.add(Integer.toString(num2));
-		list.add(noun2);
-		list.add(action);
 		ans = num1 * num2;
 
 	}
