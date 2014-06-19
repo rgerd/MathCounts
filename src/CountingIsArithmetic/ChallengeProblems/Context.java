@@ -127,12 +127,11 @@ public class Context extends com.Context {
 	}
 
 	private void gen5() {
+		int num_0 = Utilities.getRandomNumberInRange(0, 10);
+		int den_0 = Utilities.getRandomNumberInRange(1, 10);
 
-		int num_0 = Utilities.getRandomNumberInRange(0, 1000);
-		int den_0 = Utilities.getRandomNumberInRange(0, 1000);
-
-		int num_1 = Utilities.getRandomNumberInRange(0, 1000);
-		int den_1 = Utilities.getRandomNumberInRange(0, 1000);
+		int num_1 = Utilities.getRandomNumberInRange(0, 10);
+		int den_1 = Utilities.getRandomNumberInRange(1, 10);
 
 		Fraction frac_0 = new Fraction(num_0, den_0);
 		Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
@@ -141,7 +140,7 @@ public class Context extends com.Context {
 
 		int top = (int) frac_1.reciprocal().divide();
 		int bottom = (int) frac_0.reciprocal().divide();
-
+		
 		list.add(new Int(top - bottom + 1));
 	}
 }

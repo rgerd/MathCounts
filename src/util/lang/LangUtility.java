@@ -14,7 +14,7 @@ public class LangUtility {
 		for (int i = 0; i < _nums.length; i++) {
 			_nums[i] = nums.get(i);
 		}
-
+		
 		return populate(format, _nums);
 	}
 
