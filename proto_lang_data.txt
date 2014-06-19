@@ -17,6 +17,14 @@
 	poster, posters
 </noun>
 
+<noun [animal_sound]>
+	moo
+	meow
+	oink
+	baah
+	woof
+</noun>
+
 <adj>
 	red
 	blue
