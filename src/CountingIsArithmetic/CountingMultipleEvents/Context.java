@@ -1,4 +1,4 @@
-package CountingMultipleEvents;
+package CountingIsArithmetic.CountingMultipleEvents;
 
 import java.util.ArrayList;
 

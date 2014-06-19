@@ -1,4 +1,4 @@
-package CountingListsOfNumbers;
+package CountingIsArithmetic.CountingListsOfNumbers;
 
 public class Question extends com.Question {
 	private static final String Q = "How many numbers are in the list:";

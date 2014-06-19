@@ -1,4 +1,4 @@
-package CountingListsOfNumbers;
+package CountingIsArithmetic.CountingListsOfNumbers;
 
 import java.util.ArrayList;
 

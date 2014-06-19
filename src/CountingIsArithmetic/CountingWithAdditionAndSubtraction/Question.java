@@ -1,4 +1,4 @@
-package CountingWithAdditionAndSubtraction;
+package CountingIsArithmetic.CountingWithAdditionAndSubtraction;
 
 
 public class Question extends com.Question {

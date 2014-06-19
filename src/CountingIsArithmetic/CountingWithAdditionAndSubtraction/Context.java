@@ -1,4 +1,4 @@
-package CountingWithAdditionAndSubtraction;
+package CountingIsArithmetic.CountingWithAdditionAndSubtraction;
 
 import java.util.ArrayList;
 
