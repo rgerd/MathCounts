@@ -27,8 +27,8 @@ public class Question extends com.Question{
 		}
 		if(c.getType() == 4)
 		{
-			String zimzambabityboopity=("My house has " +c.getList.get(0)+ ""(arrangements) of (objects), with (#2) (objects) in each (arrangement). The (objects) in each (arrangement) are numbered from 1 to (#2). How many (objects) have odd numbers?
-")
+			String zimzambabityboopity=("My house has " +c.getList().get(0)+ "herds of cats, with "+c.getList().get(1) + "cats in each herd. The cats in each herd are numbered from 1 to"+c.getList().get(1)+". How many cats have odd numbers?");
+			return zimzambabityboopity;
 		}
 
 		return null;
