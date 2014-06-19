@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import util.Fraction;
 import util.Int;
-import util.Utilities;
 import util.Number;
+import util.Utilities;
+
 
 public class Context extends com.Context {
 	private int ans;
@@ -29,15 +30,24 @@ public class Context extends com.Context {
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
 		sum of (#2) positive perfect squares? **/
+
 		int length = Utilities.getRandomNumberInRange(1,1000);
 		int combos = 0;
-		int limit = (int) Math.sqrt((double) length);
+		int upperLimit = (int) Math.sqrt((double) length);
+		int divide = (int) Math.sqrt((length-1)/2);
+		combos += divide*2;
+		int leftovers = length - upperLimit;
+		for(int i = 0; i < leftovers; i++)
+		{
+			
+		}
 		
 		
 		
 		
 		
 		
+
 
 
 	}
@@ -47,6 +57,7 @@ public class Context extends com.Context {
 	}
 
 	
+
 	private void gen3()
 	{
 		/**Type 03: Math with factorials
@@ -84,10 +95,34 @@ public class Context extends com.Context {
 		{
 			
 		}
-		
+
+
+
 	}
 
-	private void gen4() {
+	
+	private void gen4()
+	{
+		int answer=0;
+		
+		int g=Utilities.getRandomNumberInRange(2, 100);
+		int i=Utilities.getRandomNumberInRange(2, 100);
+		list.add(new Int(g));
+		list.add(new Int(g));
+		for(int x=0;x<g;x++)
+		{
+			for(int y=0;y<i;y++)
+			{
+				if(i%2==1)
+					answer++;
+			}
+		}
+		ans=answer;
+		
+		
+		
+		
+		
 
 	}
 
@@ -110,3 +145,4 @@ public class Context extends com.Context {
 		list.add(new Int(top - bottom + 1));
 	}
 }
+

@@ -2,9 +2,14 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import util.lang.LangUtility;
 
+
+
 public class Question extends com.Question{
 	
 	public String getQ(com.Context _c) {
+		
+
+
 		Context c = (Context) _c;
 		
 		if(c.getType() == 5) {
@@ -18,8 +23,11 @@ public class Question extends com.Question{
 		{
 			String q = LangUtility.populate("What is the greatest common factor of [num_0]!, [num_1]!, and [num_2]! ?", c.getList().get(0), c.getList().get(1), c.getList().get(2));
 			return q;
+
 		}
 
 		return null;
 	}
+
+
 }
