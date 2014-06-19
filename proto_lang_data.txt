@@ -25,7 +25,7 @@
 	woof
 </noun>
 
-<clothes [person]>
+<clothes>
 	hats
 	pants
 	shirts
@@ -36,7 +36,7 @@
 	gloves
 	scarfs
 	sweatshirts
-</noun>
+</clothes>
 
 <adj>
 	red
