@@ -341,6 +341,8 @@ public class Context extends com.Context {
 			{
 				k = k*(studentPop -4 -i);
 			}
+			System.out.println(n);
+			System.out.println(k);
 			
 			ans = n/k;
 		}
