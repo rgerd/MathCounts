@@ -15,6 +15,7 @@ public class Question extends com.Question {
 	private static final String Q4_2 = "In how many ways can the following license plate be arranged: ";
 	private static final String Q4_3 = "How many ways can ";
 	private static final String Q4_4 = "How many ways can ";
+	private static final String Q4_5 = "How many ways can a school elect a President, Vice President, Secretary, and Treasurer if the student population is ";
 	private String ret;
 
 	public String getQ(com.Context _c) {
@@ -63,6 +64,9 @@ public class Question extends com.Question {
 			} else if (c.chance4() == 5) {
 				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books must be one apart?";
 				return ret;
+			} else if(c.chance4() == 6)
+			{
+				String ret = Q4_5 + list.get(0) + "?";
 			}
 
 		} else if (c.getType() == 5) {

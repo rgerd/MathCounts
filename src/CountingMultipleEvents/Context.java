@@ -328,6 +328,22 @@ public class Context extends com.Context {
 			}
 
 			ans = (numBooks-2)*n;
+		}else if(chance4 == 6)
+		{
+			int studentPop = Utilities.getRandomNumberInRange(100, 999);
+			int n = studentPop;
+			int k = studentPop-4;
+			
+			for(int i = 1; i < studentPop; i++)
+			{
+				n = n*(studentPop-i);
+			}
+			for(int i = 1; i < studentPop-4; i++)
+			{
+				k = k*(studentPop -4 -i);
+			}
+			
+			ans = n/k;
 		}
 
 	}
