@@ -41,8 +41,16 @@ public class Question extends com.Question {
 		}
 
 		else if (c.getType() == 3) {
-			String ret = Q3 + list.get(0) + " books on a shelf?";
-
+			int chance = Utilities.getRandomNumberInRange(1,4);
+			String ret = null;
+					if(chance==1)
+						 ret = Q3 + list.get(0) + " books on a shelf?";
+					if(chance==2)
+						 ret = Q3 + list.get(0) + " people in a line?";
+					if(chance==3)
+						 ret = Q3 + list.get(0) + " food in a buffet line?";
+					else
+						 ret = Q3 + list.get(0) + " birds on a power line?";
 			if (c.getAna()) {
 				ret = QANA + list.get(0) + " can you make?";
 			}
