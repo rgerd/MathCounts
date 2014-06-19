@@ -233,7 +233,6 @@ public class Context extends com.Context {
 
 
 		chance4 = Utilities.getRandomNumberInRange(1, 8);
-		chance4 = 8;
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");

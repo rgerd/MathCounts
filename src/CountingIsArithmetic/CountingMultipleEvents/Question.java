@@ -11,10 +11,6 @@ public class Question extends com.Question {
 	private static final String Q1 = "You have ";
 	private static final String Q3 = "In how many ways can I arrange ";
 	private static final String QANA = "How many different arrangements of the word ";
-	private static final String Q4_1 = "You have 1 shirt and 1 tie in ";
-	private static final String Q4_2 = "In how many ways can the following license plate be arranged: ";
-	private static final String Q4_3 = "How many ways can ";
-	private static final String Q4_4 = "How many ways can ";
 	private static final String Q4_5 = "How many ways can a school elect a President, Vice President, Secretary, and Treasurer if the student pool is ";
 	private static final String Q4_6 = "How many ways can 3 Olympic athletes get Gold, Silver, and Bronze medals if the number of athletes competing is ";
 	private static final String Q4_7 = "How many ways can a basketball coach choose a center, a point guard, a shooting forward, and a shooting guard from a player pool of ";
@@ -60,19 +56,21 @@ public class Question extends com.Question {
 
 		} else if (c.getType() == 4) {
 			if (c.chance4() == 1) {
-				String ret = Q4_1 + list.get(0) + " different colors each. How many different pairings can be made if the shirt and tie must be different colors?";
+				String ret = LangUtility.populate("You have 1 [noun_0_sng] and 1 [noun_1_sng] in [num_0] different colors each. How many different pairings can be made if the [noun_0_sng] and [noun_1_sng] must be different colors?", new Int(Integer.parseInt(list.get(0))));
 				return ret;
 			} else if (c.chance4() == 2) {
-				String ret = Q4_2 + list.get(0) + " ?";
+				String ret = "In how many ways can the following liscense plate be arranged: " + list.get(0) + " ?";
 				return ret;
 			} else if (c.chance4() == 3) {
-				String ret = Q4_3 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf with one math book on each end?";
+				String ret = LangUtility.populate("How many ways can [num_0] [noun_0], [num_1] of which are [adj_0], be arranged on a shelf with one [adj_0] [noun_0_sng] on each end?", new Int(Integer.parseInt(list.get(0))), new Int(Integer.parseInt(list.get(1))));
+				
 				return ret;
 			} else if (c.chance4() == 4) {
-				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books can't be next to each other?";
+				String ret = LangUtility.populate("How many ways can [num_0] [noun_0], [num_1] of which are [adj_0], be arranged on a shelf if the [adj_0] [noun_0] can't be next to each other?", new Int(Integer.parseInt(list.get(0))), new Int(Integer.parseInt(list.get(1))));
+				
 				return ret;
 			} else if (c.chance4() == 5) {
-				String ret = Q4_4 + list.get(0) + " books, " + list.get(1) + " of which are math, be arranged on a shelf if the math books must be one apart?";
+				String ret = LangUtility.populate("How many ways can [num_0] [noun_0], [num_1] of which are [adj_0], be arranged on a shelf if the [adj_0] [noun_0] must always be one apart?", new Int(Integer.parseInt(list.get(0))), new Int(Integer.parseInt(list.get(1))));
 				return ret;
 			} else if(c.chance4() == 6)
 			{
