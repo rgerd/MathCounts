@@ -25,6 +25,7 @@ public class Context extends com.Context {
 		return ans;
 	}
 
+
 	private void gen1()
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
@@ -32,7 +33,21 @@ public class Context extends com.Context {
 
 		int length = Utilities.getRandomNumberInRange(1,1000);
 		int combos = 0;
-		int limit = (int) Math.sqrt((double) length);
+		int upperLimit = (int) Math.sqrt((double) length);
+		int divide = (int) Math.sqrt((length-1)/2);
+		combos += divide*2;
+		int leftovers = length - upperLimit;
+		for(int i = 0; i < leftovers; i++)
+		{
+			
+		}
+		
+		
+		
+		
+		
+		
+
 
 
 	}
@@ -40,6 +55,8 @@ public class Context extends com.Context {
 	private void gen2() {
 
 	}
+
+	
 
 	private void gen3()
 	{
@@ -78,6 +95,7 @@ public class Context extends com.Context {
 		{
 			
 		}
+
 
 
 	}
