@@ -17,7 +17,7 @@
 	poster, posters
 </noun>
 
-<noun [animal_sound]>
+<sound [animal]>
 	moo
 	meow
 	oink
