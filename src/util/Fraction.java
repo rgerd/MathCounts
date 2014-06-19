@@ -14,6 +14,11 @@ public class Fraction implements Number {
 	public Fraction(int numerator, int denominator) {
 		num = numerator;
 		den = denominator;
+		
+		if(denominator == 0) {
+			System.err.println("FRACTIONS SHOULD NOT HAVE DENOMINATORS OF ZERO.");
+			System.exit(-1);
+		}
 	}
 
 	/**

@@ -16,7 +16,7 @@ public class Utilities {
 	 * @return A random integer between two numbers.
 	 */
 	public static int getRandomNumberInRange(int min, int max) {
-		return min + (int)(rand.nextDouble() * ((max - min) + 1));
+		return min + (int) (rand.nextDouble() * ((max - min) + 1));
 	}
 
 	/**
@@ -55,6 +55,8 @@ public class Utilities {
 			int least = nums[0];
 			int least_index = 0;
 			for (int i = 1; i < nums.length; i++) {
+				if(nums[i] == 0)
+					return 0;
 				if (nums[i] != nums[0])
 					done = false;
 				if (nums[i] < least) {
