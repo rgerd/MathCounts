@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import util.Utilities;
 import util.Int;
 import util.Number;
+import util.lang.LangUtility;
 
 public class Context extends com.Context {
 	private int ans;
@@ -93,7 +94,11 @@ public class Context extends com.Context {
 	restriction: 2 letters + 3 numbers + 2 letters
 
 		 **/
-
+		String p="";
+		String q="";
+		String x="";
+		String y="";
+		String z="";
 
 		Integer types=Utilities.getRandomNumberInRange(3, 5);
 		Int init = new Int(start);
@@ -102,16 +107,46 @@ public class Context extends com.Context {
 			int i4=Utilities.getRandomNumberInRange(2,15);
 			list.add(Integer.toString(i4));
 			if(i==0)
-				list.add("hat");
+			{
+				p=LangUtility.populate("[clothes_0]");
+				list.add(p);
+			}
 			if(i==1)
-				list.add("sock");
+			{
+				q=LangUtility.populate("[clothes_0]");
+				while(q.equals(p))
+				{
+				q=LangUtility.populate("[clothes_0]");
+				}
+				list.add(q);
+			}	
 			if(i==2)
-				list.add("shoe");
+			{
+				x=LangUtility.populate("[clothes_0]");
+				while(x.equals(p)||x.equals(q))
+				{
+				x=LangUtility.populate("[clothes_0]");
+				}
+				list.add(x);
+			}	
 			if(i==3)
-				list.add("shirt");
+			{
+				y=LangUtility.populate("[clothes_0]");
+				while(y.equals(p)||y.equals(q)||y.equals(x))
+				{
+				y=LangUtility.populate("[clothes_0]");
+				}
+				list.add(y);
+			}	
 			if(i==4)
-				list.add("pant");
-
+			{
+				z=LangUtility.populate("[clothes_0]");
+				while(z.equals(p)||z.equals(q)||z.equals(x)||z.equals(y))
+				{
+				z=LangUtility.populate("[clothes_0]");
+				}
+				list.add(z);
+			}	
 			list2.add(init.add(new Int(i4)));  
 		}
 		list.add("outfits");
