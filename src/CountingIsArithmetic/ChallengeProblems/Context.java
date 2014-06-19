@@ -2,11 +2,8 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
 import util.Fraction;
 import util.Int;
-=======
->>>>>>> FETCH_HEAD
 import util.Utilities;
 import util.Number;
 import util.Int;
@@ -27,13 +24,6 @@ public class Context extends com.Context {
 	public int getAns() {
 		return ans;
 	}
-<<<<<<< HEAD
-
-	private void gen1() {
-		int length = Utilities.getRandomNumberInRange(10, 1000);
-		int numSquares = Utilities.getRandomNumberInRange(2, 8);
-
-=======
 	
 	private void gen1()
 	{
@@ -47,18 +37,12 @@ public class Context extends com.Context {
 		
 		
 		
-		
->>>>>>> FETCH_HEAD
+
 	}
 
 	private void gen2() {
 
 	}
-<<<<<<< HEAD
-
-	private void gen3() {
-
-=======
 	
 	private void gen3()
 	{
@@ -98,7 +82,7 @@ public class Context extends com.Context {
 			
 		}
 		
->>>>>>> FETCH_HEAD
+
 	}
 
 	private void gen4() {
