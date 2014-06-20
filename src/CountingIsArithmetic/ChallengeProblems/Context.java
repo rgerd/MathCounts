@@ -28,15 +28,15 @@ public class Context extends com.Context {
 	private void gen1() {
 		/**
 		 * Question format: How many positive integers less than (#1) can be
-		 * written as the sum of (#2) positive perfect squares?
+		 * written as the sum of 2 positive perfect squares?
 		 **/
 
-		int length = Util.getRandomNumberInRange(1, 1000);
+		int length = Util.getRandomNumberInRange(1, 200);
 		int combos = 0;
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
 		combos += (new Factorial(divide)).getValue();
-		System.out.println("length: " + length + " combos: " + length + " divide: " + divide);
+		System.out.println("length: " + length + " combos: " + combos + " divide: " + divide);
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
