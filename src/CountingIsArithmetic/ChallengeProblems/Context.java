@@ -2,6 +2,8 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
+import javax.swing.text.Utilities;
+
 import util.Factorial;
 import util.Fraction;
 import util.Int;
@@ -58,13 +60,13 @@ public class Context extends com.Context {
 		What is the units digit of 1! + 2! + 3! +4! + É +(#1)!?
 		How many of the factorials from (#1)! to (#2)! are divisible by (#3)?
 		 **/
-		chance = Utilities.getRandomNumberInRange(1, 3);
+		chance = Util.getRandomNumberInRange(1, 3);
 		chance =1;
 		if(chance == 1)
 		{
-			int num1 = Utilities.getRandomNumberInRange(10, 100);
-			int num2 = Utilities.getRandomNumberInRange(10, 100);
-			int num3 = Utilities.getRandomNumberInRange(10, 100);
+			int num1 = Util.getRandomNumberInRange(10, 100);
+			int num2 = Util.getRandomNumberInRange(10, 100);
+			int num3 = Util.getRandomNumberInRange(10, 100);
 			
 			list.add(new Int(num1));
 			list.add(new Int(num2));
