@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 import util.Int;
 import util.Number;
-import util.Utilities;
+import util.Util;
 
 
 public class AnswerGen 
@@ -24,7 +24,7 @@ public class AnswerGen
 		h = new HashSet<Number>();
 		if(type.equals("window"))
 		{
-			int chance = Utilities.getRandomNumberInRange(1,5);
+			int chance = Util.getRandomNumberInRange(1,5);
 			if(chance == 1)
 			{
 				Int an = new Int(ans);

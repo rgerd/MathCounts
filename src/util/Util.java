@@ -2,7 +2,7 @@ package util;
 
 import java.util.Random;
 
-public class Utilities {
+public class Util {
 	/* Random is more random than Math.random() */
 	private static Random rand = new Random();
 
@@ -69,5 +69,18 @@ public class Utilities {
 			answer = least;
 		}
 		return answer;
+	}
+	
+	/**
+	 * Returns the factorial of a number; n!
+	 * A classic recursion problem.
+	 * 
+	 * @param n the number.
+	 * @return the number's factorial.
+	 */
+	public static int factorial(int n) {
+		if(n == 1)
+			return 1;
+		return n * factorial(n - 1);
 	}
 }

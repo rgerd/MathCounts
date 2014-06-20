@@ -1,6 +1,6 @@
 package CountingIsArithmetic.ChallengeProblems;
 
-import util.lang.LangUtility;
+import util.lang.LangUtil;
 
 public class Question extends com.Question {
 	private static String[] questions = new String[5];
@@ -14,6 +14,6 @@ public class Question extends com.Question {
 
 	public String getQ(com.Context _c) {
 		Context c = (Context) _c;
-		return LangUtility.populate(questions[c.getType() - 1], c.getList());
+		return LangUtil.populate(questions[c.getType() - 1], c.getList());
 	}
 }
