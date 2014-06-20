@@ -1,6 +1,7 @@
 package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import util.Factorial;
 import util.Fraction;
@@ -30,19 +31,22 @@ public class Context extends com.Context {
 		 * Question format: How many positive integers less than (#1) can be
 		 * written as the sum of 2 positive perfect squares?
 		 **/
-
-		int length = Util.getRandomNumberInRange(1, 200);
+		HashSet<Integer> hs = new HashSet<Integer>();
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		int max = Util.getRandomNumberInRange(1, 200);
 		int combos = 0;
-		int upperLimit = (int) Math.sqrt((double) length);
-		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += (new Factorial(divide)).getValue();
-		System.out.println("length: " + length + " combos: " + combos + " divide: " + divide);
-		int leftovers = length - upperLimit;
-		for (int i = 0; i < leftovers; i++) {
-			int uppercombos = (upperLimit + i);
-			combos+= (int) Math.sqrt(length - uppercombos);
-		} 
-		list.add(new Int(length));
+		int upperLimit = (int) Math.sqrt((double) max);
+		for(int i = 1; i < upperLimit; i++)
+		{
+			nums.add(i);
+			for(int a = 0; a < nums.size(); a++)
+			{
+				hs.add(i+ (int)Math.pow(nums.get(a), 2.0));
+			}
+		}
+		list.add(new Int(max));
+		combos = hs.size();
+		System.out.println(nums.toString() + " length: " + max);
 		ans = (new Int(combos));
 	}
 
