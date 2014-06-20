@@ -48,6 +48,24 @@ public class Context extends com.Context {
 		combos = hs.size();
 		System.out.println(nums.toString() + " length: " + max);
 		ans = (new Int(combos));
+
+
+
+		int max = Util.getRandomNumberInRange(1, 200);
+		int answer = 0;
+		int uppersquare = (int) Math.sqrt((double) max);
+		int middle = (int) Math.sqrt((max - 1) / 2);
+		answer += (new Factorial(middle)).getValue();
+		System.out.println("length: " + max + " combos: " + max + " divide: " + max);
+		int leftovers = max - uppersquare;
+
+		for (int i = 0; i < leftovers; i++) {
+			int uppercombos = (uppersquare + i);
+			answer+= (int) Math.sqrt(max - uppercombos);
+		} 
+		list.add(new Int(max));
+		ans = (new Int(answer));
+
 	}
 
 	private void gen2() {
@@ -75,7 +93,9 @@ public class Context extends com.Context {
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
 
-
+			list.add(new Factorial(num1));
+			list.add(new Factorial(num2));
+			list.add(new Factorial(num3));
 
 			int min = Math.min(num1, Math.min(num2, num3));
 

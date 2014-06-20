@@ -63,7 +63,7 @@ public class Driver {
 					String q = question.getQ(context);
 
 					// Getting the correct answer
-					int ans = ((Int)context.getAnswer()).getValue();
+					Number ans = context.getAnswer();
 
 					// Getting the incorrect answers
 					AnswerGen a = new AnswerGen(ans);
