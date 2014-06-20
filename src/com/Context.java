@@ -9,9 +9,8 @@ import java.lang.reflect.Method;
 
 public abstract class Context {
 	private int type;
-	
-	public void generate(int type)
-	{	
+
+	public void generate(int type) {
 		this.setType(type);
 		Class<?> cls = this.getClass();
 		try {
@@ -30,16 +29,14 @@ public abstract class Context {
 			e.printStackTrace();
 		}
 	}
-	
-	private void setType(int t)
-	{
+
+	private void setType(int t) {
 		type = t;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		return type;
 	}
 	
-	public abstract int getAns();
+	public abstract util.Number getAnswer();
 }

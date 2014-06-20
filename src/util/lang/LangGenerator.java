@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import util.Utilities;
+import util.Util;
 
 public class LangGenerator {
 	private HashMap<String, ArrayList<LangComponent>> components;
@@ -38,7 +38,7 @@ public class LangGenerator {
 		
 		// If it does not exist
 		ArrayList<LangComponent> comps = components.get(type);
-		lc = comps.remove(Utilities.getRandomNumberInRange(0, comps.size() - 1)).clone();
+		lc = comps.remove(Util.getRandomNumberInRange(0, comps.size() - 1)).clone();
 		if(_components.containsKey(type)) {
 			_components.get(type).add(lc);
 		} else {

@@ -14,6 +14,13 @@ public class Fraction implements Number {
 	public Fraction(int numerator, int denominator) {
 		num = numerator;
 		den = denominator;
+		this_simplify();
+
+		if (denominator == 0) {
+			System.err.println("FRACTIONS SHOULD NOT HAVE DENOMINATORS OF ZERO.");
+			System.err.printf("This is the fraction you attempted to create: (%i / %i)", num, den);
+			System.exit(-1);
+		}
 	}
 
 	/**
@@ -26,53 +33,80 @@ public class Fraction implements Number {
 	}
 
 	/**
-	 * Returns the result when this fraction is multiplied by another.
+	 * Returns the result when this fraction is multiplied by another. If the
+	 * number provided is not a fraction, this fraction will be returned
+	 * unchanged.
 	 * 
 	 * @param other
 	 *            the other fraction.
 	 * @return the result when this fraction is multiplied by another.
 	 */
 	public Number mult(Number other) {
+		if (other instanceof Int)
+			return new Fraction(num * ((Int) other).getValue(), den);
+
+		if (!(other instanceof Fraction))
+			return this;
 		Fraction _other = (Fraction) other;
 		return new Fraction(num * _other.num, den * _other.den);
 	}
 
 	/**
-	 * Returns the result when this fraction is divided by another.
+	 * Returns the result when this fraction is divided by another. If the
+	 * number provided is not a fraction, this fraction will be returned
+	 * unchanged.
 	 * 
 	 * @param other
 	 *            the other fraction.
 	 * @return the result when this fraction is divided by another.
 	 */
 	public Number div(Number other) {
+		if (other instanceof Int)
+			return new Fraction(num, den * ((Int) other).getValue());
+		
+		if (!(other instanceof Fraction))
+			return this;
 		return mult(((Fraction) other).reciprocal());
 	}
 
 	/**
-	 * Returns the result when the fraction is added to another.
+	 * Returns the result when the fraction is added to another. If the number
+	 * provided is not a fraction, this fraction will be returned unchanged.
 	 * 
 	 * @param other
 	 *            the other fraction.
 	 * @return the result when the fraction is added to another.
 	 */
 	public Number add(Number other) {
+		if (other instanceof Int)
+			return new Fraction(num + ((Int) other).getValue() * den, den);
+		
+		if (!(other instanceof Fraction))
+			return this;
 		Fraction _other = (Fraction) other;
-		int lcm = Utilities.LCM(den, _other.den);
+		int lcm = Util.LCM(den, _other.den);
 		int mult1 = lcm / den;
 		int mult2 = lcm / _other.den;
 		return new Fraction(num * mult1 + _other.num * mult2, lcm);
 	}
 
 	/**
-	 * Returns the result when the fraction is subtracted from another.
+	 * Returns the result when the fraction is subtracted from another. If the
+	 * number provided is not a fraction, this fraction will be returned
+	 * unchanged.
 	 * 
 	 * @param other
 	 *            the other fraction.
 	 * @return the result when the fraction is subtracted from another.
 	 */
 	public Number sub(Number other) {
+		if (other instanceof Int)
+			return new Fraction(num - ((Int) other).getValue() * den, den);
+		
+		if (!(other instanceof Fraction))
+			return this;
 		Fraction _other = (Fraction) other;
-		int lcm = Utilities.LCM(den, _other.den);
+		int lcm = Util.LCM(den, _other.den);
 		int mult1 = lcm / den;
 		int mult2 = lcm / _other.den;
 		return new Fraction(num * mult1 - _other.num * mult2, lcm);
@@ -86,19 +120,32 @@ public class Fraction implements Number {
 	public Fraction reciprocal() {
 		return new Fraction(den, num);
 	}
-
+	
 	/**
 	 * Returns a simplified version of the fraction.
 	 * 
 	 * @return a simplified version of the fraction.
 	 */
+	/*
 	public Fraction simplify() {
-		int gcd = Utilities.GCD(num, den);
-		if(den < 1) {
+		int gcd = Util.GCD(num, den);
+		if (den < 1) {
 			num *= -1;
 			den *= -1;
 		}
 		return new Fraction(num / gcd, den / gcd);
+	}
+	*/
+	
+	private void this_simplify() {
+		int gcd = Util.GCD(num, den);
+		if (den < 1) {
+			num *= -1;
+			den *= -1;
+		}
+		
+		num /= gcd;
+		den /= gcd;
 	}
 
 	/**
@@ -107,9 +154,8 @@ public class Fraction implements Number {
 	 * @return a string representation of the fraction.
 	 */
 	public String toString() {
-		Fraction simp = this.simplify();
-		if (simp.den == 1)
-			return Integer.toString(simp.num);
+		if (den == 1)
+			return Integer.toString(num);
 		return num + "/" + den;
 	}
 
@@ -139,10 +185,13 @@ public class Fraction implements Number {
 	 * @return whether this fraction equals another.
 	 */
 	public boolean equals(Number other) {
+		if (other instanceof Int)
+			return (int) (num / den) == ((Int) other).getValue();
+		else if (!(other instanceof Fraction))
+			return false;
+
 		Fraction _other = (Fraction) other;
-		Fraction frac_0 = this.simplify();
-		Fraction frac_1 = _other.simplify();
-		return (frac_0.num == frac_1.num) && (frac_0.den == frac_1.den);
+		return (num == _other.num) && (den == _other.den);
 	}
-	
+
 }

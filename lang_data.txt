@@ -38,6 +38,13 @@
 	sweatshirts
 </clothes>
 
+<collection>
+	group, groups
+	herd, herds
+	pack, packs
+	gaggle, gaggles
+</collection>
+
 <adj>
 	red
 	blue

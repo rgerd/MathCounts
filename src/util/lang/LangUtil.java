@@ -5,16 +5,17 @@ import java.util.HashSet;
 
 import util.Number;
 
-public class LangUtility {
+public class LangUtil {
+	private static final String LANG_DATA_FILE = "lang_data.txt";
 	private static LangGenerator generator = loadGenerator();
-
+	
 	public static String populate(String format, ArrayList<Number> nums) {
 		Number[] _nums = new Number[nums.size()];
 
 		for (int i = 0; i < _nums.length; i++) {
 			_nums[i] = nums.get(i);
 		}
-
+		
 		return populate(format, _nums);
 	}
 
@@ -75,6 +76,6 @@ public class LangUtility {
 	}
 
 	private static LangGenerator loadGenerator() {
-		return new LangGenerator("proto_lang_data.txt");
+		return new LangGenerator(LANG_DATA_FILE);
 	}
 }
