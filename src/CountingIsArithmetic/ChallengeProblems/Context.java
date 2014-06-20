@@ -1,6 +1,7 @@
 package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import util.Factorial;
 import util.Fraction;
@@ -30,6 +31,24 @@ public class Context extends com.Context {
 		 * Question format: How many positive integers less than (#1) can be
 		 * written as the sum of 2 positive perfect squares?
 		 **/
+		HashSet<Integer> hs = new HashSet<Integer>();
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		int max = Util.getRandomNumberInRange(1, 200);
+		int combos = 0;
+		int upperLimit = (int) Math.sqrt((double) max);
+		for(int i = 1; i < upperLimit; i++)
+		{
+			nums.add(i);
+			for(int a = 0; a < nums.size(); a++)
+			{
+				hs.add(i+ (int)Math.pow(nums.get(a), 2.0));
+			}
+		}
+		list.add(new Int(max));
+		combos = hs.size();
+		System.out.println(nums.toString() + " length: " + max);
+		ans = (new Int(combos));
+
 
 
 		/**int max = Util.getRandomNumberInRange(1, 200);
@@ -89,6 +108,9 @@ public class Context extends com.Context {
 		list.add(listaddd);
 		
 		
+
+	
+
 	}
 
 	private void gen2() {
