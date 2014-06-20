@@ -42,7 +42,16 @@ public class Context extends com.Context {
 
 	private void gen4() 
 	{
-		
+		int p= Util.getRandomNumberInRange(5,100);
+		int p1= Util.getRandomNumberInRange(5,100);
+		int p2= Util.getRandomNumberInRange(5,100);
+		list.add(new Int(p));
+		list.add(new Int(p1));
+		list.add(new Int(p2));
+		p*=p1;
+		p*=p2;
+		Int q=new Int(p);
+		ans=q;
 	}
 
 
