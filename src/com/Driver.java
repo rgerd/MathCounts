@@ -1,6 +1,7 @@
 package com;
 
 import util.Number;
+import util.Int;
 import util.ProblemIO;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class Driver {
 					String q = question.getQ(context);
 
 					// Getting the correct answer
-					int ans = context.getAns();
+					int ans = ((Int)context.getAnswer()).getValue();
 
 					// Getting the incorrect answers
 					AnswerGen a = new AnswerGen(ans);

@@ -2,10 +2,10 @@ package CountingIsArithmetic.CountingMultipleEvents;
 
 import java.util.ArrayList;
 
-import util.Utilities;
+import util.Util;
 import util.Int;
 import util.Number;
-import util.lang.LangUtility;
+import util.lang.LangUtil;
 
 public class Context extends com.Context {
 	private int ans;
@@ -15,8 +15,7 @@ public class Context extends com.Context {
 	private boolean ana;
 	private int chance4;
 
-	public Context()
-	{
+	public Context() {
 		list = new ArrayList<String>();
 		list2 = new ArrayList<Number>();
 	}
@@ -25,49 +24,40 @@ public class Context extends com.Context {
 		return list;
 	}
 
-	public int getAns() {
-
-
-
-		return ans; 
-
-
+	public Int getAnswer() {
+		return new Int(ans);
 	}
 
-	private void gen1()
-	{
-		int chance = Utilities.getRandomNumberInRange(1,4);
+	private void gen1() {
+		int chance = Util.getRandomNumberInRange(1, 4);
 		String noun1;
 		String noun2;
 		int num1;
 		int num2;
-		String action ="";
-		if(chance == 1)
-		{
-			num1 = Utilities.getRandomNumberInRange(1,15);
-			num2 = Utilities.getRandomNumberInRange(1,15);
+		String action = "";
+		if (chance == 1) {
+			num1 = Util.getRandomNumberInRange(1, 15);
+			num2 = Util.getRandomNumberInRange(1, 15);
 			noun1 = "shirt";
 			noun2 = "pair of pants";
 			action = "arrange an outfit";
-		}else if(chance == 2)
-		{
+		} else if (chance == 2) {
 			noun1 = "flavor";
 			noun2 = "topping";
-			num1 = Utilities.getRandomNumberInRange(1,15);
-			num2 = Utilities.getRandomNumberInRange(1,15);
+			num1 = Util.getRandomNumberInRange(1, 15);
+			num2 = Util.getRandomNumberInRange(1, 15);
 			action = "order";
-		}else if(chance == 3)
-		{
+		} else if (chance == 3) {
 			noun1 = "language classes";
 			noun2 = "art classes";
-			num1 = Utilities.getRandomNumberInRange(1,15);
-			num2 = Utilities.getRandomNumberInRange(1,15);
+			num1 = Util.getRandomNumberInRange(1, 15);
+			num2 = Util.getRandomNumberInRange(1, 15);
 			action = "choose classes";
-		}else{
+		} else {
 			noun1 = "presidential candidates";
 			noun2 = "vice-presidential candidates";
-			num1 = Utilities.getRandomNumberInRange(1,15);
-			num2 = Utilities.getRandomNumberInRange(1,15);
+			num1 = Util.getRandomNumberInRange(1, 15);
+			num2 = Util.getRandomNumberInRange(1, 15);
 			action = "elect candidates";
 		}
 
@@ -76,98 +66,86 @@ public class Context extends com.Context {
 		ans = num1 * num2;
 
 	}
+
 	private void gen2()
 
 	{
 
 		/**
-	Same as previous type, but with more options to fill
-	Example: In how many ways can we form an international commission if we must choose one European country from among 6 European countries, one Asian country from among 4, one North American Country from among 3, and one African country from among 7?
-	Variation #1: choose animals for a zoo
-	Variation #2: choose topping types for ice cream (types of fruit + types of nuts + types of candies + types of sauce)
-	Variation #3: license plate combinations
-	context will involve types of restrictions
-	restriction: 3 letters + 4 numbers
-	restriction: 2 letters + 3 numbers + 2 letters
-
+		 * Same as previous type, but with more options to fill Example: In how
+		 * many ways can we form an international commission if we must choose
+		 * one European country from among 6 European countries, one Asian
+		 * country from among 4, one North American Country from among 3, and
+		 * one African country from among 7? Variation #1: choose animals for a
+		 * zoo Variation #2: choose topping types for ice cream (types of fruit
+		 * + types of nuts + types of candies + types of sauce) Variation #3:
+		 * license plate combinations context will involve types of restrictions
+		 * restriction: 3 letters + 4 numbers restriction: 2 letters + 3 numbers
+		 * + 2 letters
 		 **/
-		String p="";
-		String q="";
-		String x="";
-		String y="";
-		String z="";
+		String p = "";
+		String q = "";
+		String x = "";
+		String y = "";
+		String z = "";
 
-		Integer types=Utilities.getRandomNumberInRange(3, 5);
+		Integer types = Util.getRandomNumberInRange(3, 5);
 		Int init = new Int(start);
-		for(int i=0;i<types;i++)
-		{
-			int i4=Utilities.getRandomNumberInRange(2,15);
+		for (int i = 0; i < types; i++) {
+			int i4 = Util.getRandomNumberInRange(2, 15);
 			list.add(Integer.toString(i4));
-			if(i==0)
-			{
-				p=LangUtility.populate("[clothes_0]");
+			if (i == 0) {
+				p = LangUtil.populate("[clothes_0]");
 				list.add(p);
 			}
-			if(i==1)
-			{
-				q=LangUtility.populate("[clothes_0]");
-				while(q.equals(p))
-				{
-				q=LangUtility.populate("[clothes_0]");
+			if (i == 1) {
+				q = LangUtil.populate("[clothes_0]");
+				while (q.equals(p)) {
+					q = LangUtil.populate("[clothes_0]");
 				}
 				list.add(q);
-			}	
-			if(i==2)
-			{
-				x=LangUtility.populate("[clothes_0]");
-				while(x.equals(p)||x.equals(q))
-				{
-				x=LangUtility.populate("[clothes_0]");
+			}
+			if (i == 2) {
+				x = LangUtil.populate("[clothes_0]");
+				while (x.equals(p) || x.equals(q)) {
+					x = LangUtil.populate("[clothes_0]");
 				}
 				list.add(x);
-			}	
-			if(i==3)
-			{
-				y=LangUtility.populate("[clothes_0]");
-				while(y.equals(p)||y.equals(q)||y.equals(x))
-				{
-				y=LangUtility.populate("[clothes_0]");
+			}
+			if (i == 3) {
+				y = LangUtil.populate("[clothes_0]");
+				while (y.equals(p) || y.equals(q) || y.equals(x)) {
+					y = LangUtil.populate("[clothes_0]");
 				}
 				list.add(y);
-			}	
-			if(i==4)
-			{
-				z=LangUtility.populate("[clothes_0]");
-				while(z.equals(p)||z.equals(q)||z.equals(x)||z.equals(y))
-				{
-				z=LangUtility.populate("[clothes_0]");
+			}
+			if (i == 4) {
+				z = LangUtil.populate("[clothes_0]");
+				while (z.equals(p) || z.equals(q) || z.equals(x) || z.equals(y)) {
+					z = LangUtil.populate("[clothes_0]");
 				}
 				list.add(z);
-			}	
-			list2.add(init.add(new Int(i4)));  
+			}
+			list2.add(init.add(new Int(i4)));
 		}
 		list.add("outfit");
 
 		int count = 0;
-		for(int i = 0; i < list2.size(); i++)
-		{
-			if(i==0)
-			{
-				Int i1 = (Int)(list2.get(i));
-				int i2=i1.getValue();
+		for (int i = 0; i < list2.size(); i++) {
+			if (i == 0) {
+				Int i1 = (Int) (list2.get(i));
+				int i2 = i1.getValue();
 
-				count=+i2;
+				count = +i2;
+			} else {
+				Int i1 = (Int) (list2.get(i));
+				int i2 = i1.getValue();
+
+				count *= i2;
 			}
-			else{
-				Int i1 = (Int)(list2.get(i));
-				int i2=i1.getValue();
-
-				count*=i2;
-			}
-
 
 		}
-		ans=count;
+		ans = count;
 
 	}
 
@@ -176,28 +154,23 @@ public class Context extends com.Context {
 	{
 
 		ana = false;
-		int chance =Utilities.getRandomNumberInRange(1,2);
+		int chance = Util.getRandomNumberInRange(1, 2);
 
-		int numb = Utilities.getRandomNumberInRange(4,10);
+		int numb = Util.getRandomNumberInRange(4, 10);
 
-		if(chance == 1)
-		{
+		if (chance == 1) {
 
 			String g = Integer.toString(numb);
 			list.add(g);
-			int answer =1;
-			while(numb>=1)
-			{
+			int answer = 1;
+			while (numb >= 1) {
 
-				answer = answer*numb;
+				answer = answer * numb;
 				numb--;
 			}
-			ans=answer;
+			ans = answer;
 
-
-		}
-		else
-		{
+		} else {
 			String h = Question.GetRearrangement();
 			ans = anagramhelper(h);
 			list.add(h);
@@ -205,34 +178,28 @@ public class Context extends com.Context {
 
 		}
 
-
 	}
 
-	private void gen4()
-	{
+	private void gen4() {
 
-		/**Type 04: Arrangements with restrictions
-		Context: Have 1 shirt and 1 tie in each of 8 different colors. How many outfits can be made, if the shirt and tie must be different colors?
-		Variation #1: Licence plates
-		Can’t choose both number 0 and letter O
-		3 letters + 2 even digits + 2 odd digits
-		etc
-		Variation #2: Books on a shelf
-		6 books, 2 of which are math, arranged with math on ends of stack
-		6 books, 2 of which are math, arranged with math books not next to each other
-		6 books, 2 of which are math, arranged with math exactly 1 space apart
-		Variation #3: Medals to Olympians
-		Context: various sports
-		Context: countries, with and without restrictions of how many times each country can win
-		Variation #4: Student council
-		President, Vice President, Secretary, Treasurer
-		Boys vs Girls
-		Variation #5: People on a sports team
-		Example = Basketball - 1 center, 1 power forward, 1 shooting forward, 1 point guard, 1 shooting guard
-		Do other sports**/
+		/**
+		 * Type 04: Arrangements with restrictions Context: Have 1 shirt and 1
+		 * tie in each of 8 different colors. How many outfits can be made, if
+		 * the shirt and tie must be different colors? Variation #1: Licence
+		 * plates Can’t choose both number 0 and letter O 3 letters + 2 even
+		 * digits + 2 odd digits etc Variation #2: Books on a shelf 6 books, 2
+		 * of which are math, arranged with math on ends of stack 6 books, 2 of
+		 * which are math, arranged with math books not next to each other 6
+		 * books, 2 of which are math, arranged with math exactly 1 space apart
+		 * Variation #3: Medals to Olympians Context: various sports Context:
+		 * countries, with and without restrictions of how many times each
+		 * country can win Variation #4: Student council President, Vice
+		 * President, Secretary, Treasurer Boys vs Girls Variation #5: People on
+		 * a sports team Example = Basketball - 1 center, 1 power forward, 1
+		 * shooting forward, 1 point guard, 1 shooting guard Do other sports
+		 **/
 
-
-		chance4 = Utilities.getRandomNumberInRange(1, 8);
+		chance4 = Util.getRandomNumberInRange(1, 8);
 		ArrayList<String> alphabet = new ArrayList<String>();
 		alphabet.add("A");
 		alphabet.add("B");
@@ -261,184 +228,154 @@ public class Context extends com.Context {
 		alphabet.add("Y");
 		alphabet.add("Z");
 
-		if(chance4 == 1)
-		{
-			int cNum = Utilities.getRandomNumberInRange(2, 10);
-			list.add(Integer.toString(cNum)); 
-			ans = cNum * (cNum-1);
+		if (chance4 == 1) {
+			int cNum = Util.getRandomNumberInRange(2, 10);
+			list.add(Integer.toString(cNum));
+			ans = cNum * (cNum - 1);
 
-		}else if(chance4 == 2)
-		{
+		} else if (chance4 == 2) {
 			String plate = "";
-			while(plate.length() < 3)
-				plate += alphabet.get(Utilities.getRandomNumberInRange(0, 25));
-			while(plate.length() < 5)
-			{
-				int num = Utilities.getRandomNumberInRange(0, 9);
-				if(num == 0)
-				{
-					if(!plate.contains("O"))
+			while (plate.length() < 3)
+				plate += alphabet.get(Util.getRandomNumberInRange(0, 25));
+			while (plate.length() < 5) {
+				int num = Util.getRandomNumberInRange(0, 9);
+				if (num == 0) {
+					if (!plate.contains("O"))
+						plate += num;
+				} else {
+					if (num % 2 == 0)
 						plate += num;
 				}
-				else
-				{
-					if(num % 2 == 0)
-						plate+= num;
-				}
 			}
-			while(plate.length() < 7)
-			{
-				int num = Utilities.getRandomNumberInRange(1, 9);
-				if(num %2 != 0)
-					plate+=num;
+			while (plate.length() < 7) {
+				int num = Util.getRandomNumberInRange(1, 9);
+				if (num % 2 != 0)
+					plate += num;
 			}
 			list.add(plate);
 
 			ans = anagramhelper(plate);
 
-		}else if(chance4 == 3)
-		{
-			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+		} else if (chance4 == 3) {
+			int numBooks = Util.getRandomNumberInRange(3, 10);
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
 
-
-			numBooks -=2;
+			numBooks -= 2;
 			int num = numBooks;
 
-			for(int i = 1; i < numBooks; i++)
-			{
+			for (int i = 1; i < numBooks; i++) {
 
-				num = num*(numBooks-i);
+				num = num * (numBooks - i);
 
 			}
 
+			ans = num * 2;
 
-			ans = num*2;
-
-		}else if(chance4 == 4)
-		{
-			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+		} else if (chance4 == 4) {
+			int numBooks = Util.getRandomNumberInRange(3, 10);
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
 
 			int n = numBooks;
-			for(int i = 1; i < numBooks; i++)
-			{
-				n = n*(numBooks-i);
+			for (int i = 1; i < numBooks; i++) {
+				n = n * (numBooks - i);
 			}
 
-			int answer = n/2;
+			int answer = n / 2;
 
-			int num = numBooks -2;
+			int num = numBooks - 2;
 			int n1 = num;
-			for(int i = 1; i < num; i++)
-			{
+			for (int i = 1; i < num; i++) {
 				n1 = n1 * (num - i);
 			}
 
-			n1 = (numBooks-1) * n1;
+			n1 = (numBooks - 1) * n1;
 
 			ans = answer - n1;
-		}else if(chance4 == 5)
-		{
-			int numBooks = Utilities.getRandomNumberInRange(3, 10);
+		} else if (chance4 == 5) {
+			int numBooks = Util.getRandomNumberInRange(3, 10);
 			String numMbooks = "2";
 			list.add(numBooks + "");
 			list.add(numMbooks);
 
-			int num = numBooks -2;
+			int num = numBooks - 2;
 			int n = num;
 
-			for(int i = 1; i < num; i++)
-			{
-				n = n*(num-i);
+			for (int i = 1; i < num; i++) {
+				n = n * (num - i);
 			}
 
-			ans = (numBooks-2)*n;
-		}else if(chance4 == 6)
-		{
-			int studentPop = Utilities.getRandomNumberInRange(5, 20);
+			ans = (numBooks - 2) * n;
+		} else if (chance4 == 6) {
+			int studentPop = Util.getRandomNumberInRange(5, 20);
 			int n = studentPop;
 
-			
 			list.add(studentPop + "");
-			
-			for(int i = 1; i < 4; i++)
-			{
-				n = n*(studentPop-i);
+
+			for (int i = 1; i < 4; i++) {
+				n = n * (studentPop - i);
 			}
 
-			
 			ans = n;
-		}else if(chance4 == 7)
-		{
-			int numAth = Utilities.getRandomNumberInRange(5, 20);
+		} else if (chance4 == 7) {
+			int numAth = Util.getRandomNumberInRange(5, 20);
 			int n = numAth;
 
-			
 			list.add(numAth + "");
-			
-			for(int i = 1; i < 3; i++)
-			{
-				n = n*(numAth-i);
+
+			for (int i = 1; i < 3; i++) {
+				n = n * (numAth - i);
 			}
 
-			
 			ans = n;
-			
-		}else if(chance4 == 8)
-		{
-			int studentPop = Utilities.getRandomNumberInRange(5, 20);
+
+		} else if (chance4 == 8) {
+			int studentPop = Util.getRandomNumberInRange(5, 20);
 			int n = studentPop;
 
-			
 			list.add(studentPop + "");
-			
-			for(int i = 1; i < 4; i++)
-			{
-				n = n*(studentPop-i);
+
+			for (int i = 1; i < 4; i++) {
+				n = n * (studentPop - i);
 			}
 
-			
 			ans = n;
 		}
 
 	}
 
+	private void gen5() {
 
-	private void gen5()
-	{
+		/**
+		 * Type 05: Choosing with and without replacement Example context: 12
+		 * balls numbered 1 through 12 are placed in a bin. In how many ways can
+		 * 3 balls be drawn, in order, from the bin if each ball remains outside
+		 * the bin after it is drawn? if each ball is placed back into the bin
+		 * if it is drawn? the first ball is replaced after it is drawn but the
+		 * second ball remains outside the bin?
+		 **/
 
-		/** Type 05: Choosing with and without replacement
-			Example context: 12 balls numbered 1 through 12 are placed in a bin. In how many ways can 3 balls be drawn, in order, from the bin
-			if each ball remains outside the bin after it is drawn?
-			if each ball is placed back into the bin if it is drawn?
-			the first ball is replaced after it is drawn but the second ball remains outside the bin? **/
-
-		Int size = new Int (Utilities.getRandomNumberInRange(5, 60));
+		Int size = new Int(Util.getRandomNumberInRange(5, 60));
 		Int numItems = new Int(3);
-		int chance = Utilities.getRandomNumberInRange(1,3);
+		int chance = Util.getRandomNumberInRange(1, 3);
 		String question = "";
-		if(chance == 1)
-		{
+		if (chance == 1) {
 			ans = (int) Math.pow(size.getValue(), numItems.getValue());
 			question = "if each [noun_0_sng] is placed back into the [container_0] after it is drawn?";
-		}else if(chance == 2)
-		{
+		} else if (chance == 2) {
 			ans = 1;
-			for(int i = 0; i < (numItems.getValue()); i++){
-				ans *= ((size.getValue())-i); 
+			for (int i = 0; i < (numItems.getValue()); i++) {
+				ans *= ((size.getValue()) - i);
 			}
 			question = "if each [noun_0_sng] remains outside the [container_0] after it is drawn?";
 
-		}else
-		{
+		} else {
 			ans = size.getValue();
-			for(int i = 0; i < 2; i++){
-				ans *= ((size.getValue())-i); 
+			for (int i = 0; i < 2; i++) {
+				ans *= ((size.getValue()) - i);
 			}
 			question = "if the first [noun_0_sng] is replaced after it is drawn but the second [noun_0_sng] remains outside the [container_0]?";
 
@@ -451,105 +388,84 @@ public class Context extends com.Context {
 
 	}
 
-
-	private void gen6()
-	{
-		int chance=Utilities.getRandomNumberInRange(1,2); 
-		int answer =1;
-		int answer1=1;
-		if(chance==1)
-		{
-			int chance1=Utilities.getRandomNumberInRange(1,10);
+	private void gen6() {
+		int chance = Util.getRandomNumberInRange(1, 2);
+		int answer = 1;
+		int answer1 = 1;
+		if (chance == 1) {
+			int chance1 = Util.getRandomNumberInRange(1, 10);
 			list.add(Integer.toString(chance1));
-			for(int i=0;i<chance1;i++)
-			{
-				answer*=i+1;
+			for (int i = 0; i < chance1; i++) {
+				answer *= i + 1;
 			}
-			ans=answer;
-		}
-		else
-		{
-			int x=0;
-			int y=1;
-			while(x<y)
-			{
-				x = Utilities.getRandomNumberInRange(2, 10);
-				y = Utilities.getRandomNumberInRange(1, 10);
+			ans = answer;
+		} else {
+			int x = 0;
+			int y = 1;
+			while (x < y) {
+				x = Util.getRandomNumberInRange(2, 10);
+				y = Util.getRandomNumberInRange(1, 10);
 			}
 			list.add(Integer.toString(x));
 			list.add(Integer.toString(y));
-			for(int i=0;i<x;i++)
-			{
-				answer*=i+1;
+			for (int i = 0; i < x; i++) {
+				answer *= i + 1;
 			}
-			for(int i=0;i<y;i++)
-			{
-				answer1*=i+1;
+			for (int i = 0; i < y; i++) {
+				answer1 *= i + 1;
 			}
-			answer/=answer1;
-			ans=answer;
+			answer /= answer1;
+			ans = answer;
 		}
 	}
-	private int anagramhelper(String s)
-	{
+
+	private int anagramhelper(String s) {
 
 		ArrayList al = new ArrayList();
-		for(int i=0; i<s.length(); i++)
-		{
-			String st = s.substring(i,i+1);
+		for (int i = 0; i < s.length(); i++) {
+			String st = s.substring(i, i + 1);
 			al.add(st);
 
 		}
-		int divideby=1;
-		int r=0;
-		for(int x=0;x<al.size();x++)
-		{
+		int divideby = 1;
+		int r = 0;
+		for (int x = 0; x < al.size(); x++) {
 			r = 0;
-			String sr = s.substring(x,x+1);
+			String sr = s.substring(x, x + 1);
 
-			for(int y=0;y<al.size();y++)
-			{
+			for (int y = 0; y < al.size(); y++) {
 
-				if(al.get(y).equals(sr))
-				{
+				if (al.get(y).equals(sr)) {
 					r++;
 					al.set(y, "*");
 				}
 
 			}
-			while(r>=1)
-			{
-				divideby = divideby*r;
+			while (r >= 1) {
+				divideby = divideby * r;
 				r--;
 
 			}
 
-
-
-
 		}
 
 		int numb = al.size();
-		int answer=1;
-		while(numb>=1)
-		{
-			answer = answer*numb;
+		int answer = 1;
+		while (numb >= 1) {
+			answer = answer * numb;
 			numb--;
 		}
 
-
-		int retans = answer/divideby;
+		int retans = answer / divideby;
 
 		return retans;
 	}
 
-	public boolean getAna()
-	{
+	public boolean getAna() {
 		return ana;
 	}
 
-	public int chance4()
-	{
+	public int chance4() {
 		return chance4;
 	}
 }

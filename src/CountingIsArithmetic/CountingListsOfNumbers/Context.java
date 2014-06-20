@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import util.Fraction;
 import util.Int;
 import util.Number;
-import util.Utilities;
+import util.Util;
 
 public class Context extends com.Context {
 	private int length;
@@ -21,7 +21,7 @@ public class Context extends com.Context {
 		return list;
 	}
 
-	public int getAns() {
+	public Int getAnswer() {
 		if (getType() == 17) {
 			int count = 0;
 			for (int i = 1; i < type17 / 2; i++) {
@@ -29,10 +29,9 @@ public class Context extends com.Context {
 					count++;
 			}
 
-			return count;
+			return new Int(count);
 		}
-		return length;
-
+		return new Int(length);
 	}
 
 	public int getType17() {
@@ -41,7 +40,7 @@ public class Context extends com.Context {
 
 	private void gen1() {
 		start = 1;
-		length = Utilities.getRandomNumberInRange(5, 998);
+		length = Util.getRandomNumberInRange(5, 998);
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.add(new Int(1)));
@@ -51,8 +50,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen2() {
-		start = Utilities.getRandomNumberInRange(1, 994);
-		length = Utilities.getRandomNumberInRange(5, 999 - start);
+		start = Util.getRandomNumberInRange(1, 994);
+		length = Util.getRandomNumberInRange(5, 999 - start);
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.add(new Int(1)));
@@ -62,8 +61,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen3() {
-		start = Utilities.getRandomNumberInRange(-1000, 994);
-		length = Utilities.getRandomNumberInRange(5, 999 - start);
+		start = Util.getRandomNumberInRange(-1000, 994);
+		length = Util.getRandomNumberInRange(5, 999 - start);
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.add(new Int(1)));
@@ -73,8 +72,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen4() {
-		start = Utilities.getRandomNumberInRange(-994, 1000);
-		length = Utilities.getRandomNumberInRange(5, Math.abs(-999 - start));
+		start = Util.getRandomNumberInRange(-994, 1000);
+		length = Util.getRandomNumberInRange(5, Math.abs(-999 - start));
 		Int init = new Int(start);
 		list.add(init);
 		list.add(init.sub(new Int(1)));
@@ -84,10 +83,10 @@ public class Context extends com.Context {
 	}
 
 	private void gen5() {
-		start = Utilities.getRandomNumberInRange(2, 10);
+		start = Util.getRandomNumberInRange(2, 10);
 		int lengthRange = (1000 / start) - 1;
-		length = Utilities.getRandomNumberInRange(2, lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		length = Util.getRandomNumberInRange(2, lengthRange);
+		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
 			list.add(new Int(start));
 			list.add(new Int(start + start));
@@ -105,13 +104,13 @@ public class Context extends com.Context {
 	}
 
 	private void gen6() {
-		start = Utilities.getRandomNumberInRange(-199, 199);
+		start = Util.getRandomNumberInRange(-199, 199);
 		while (start == 0) {
-			Utilities.getRandomNumberInRange(-199, 199);
+			Util.getRandomNumberInRange(-199, 199);
 		}
 		int lengthRange = 1000 / Math.abs((start));
-		length = Utilities.getRandomNumberInRange(5, lengthRange);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		length = Util.getRandomNumberInRange(5, lengthRange);
+		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
 			// increasing
 
@@ -132,10 +131,10 @@ public class Context extends com.Context {
 	}
 
 	private void gen7() {
-		start = Utilities.getRandomNumberInRange(2, 10);
+		start = Util.getRandomNumberInRange(2, 10);
 		// How long should the list of unit fractions be?
-		length = Utilities.getRandomNumberInRange(5, 999);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		length = Util.getRandomNumberInRange(5, 999);
+		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
 			list.add(new Fraction(1, start).simplify());
 			list.add(new Fraction(1 + 1, start).simplify());
@@ -153,10 +152,10 @@ public class Context extends com.Context {
 	}
 
 	private void gen8() {
-		start = Utilities.getRandomNumberInRange(2, 10);
-		length = Utilities.getRandomNumberInRange(15, 25);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		int rand = Utilities.getRandomNumberInRange(1, 10);
+		start = Util.getRandomNumberInRange(2, 10);
+		length = Util.getRandomNumberInRange(15, 25);
+		int chance = Util.getRandomNumberInRange(1, 2);
+		int rand = Util.getRandomNumberInRange(1, 10);
 		if (chance == 1) {
 			list.add(new Fraction(rand, start).simplify());
 			list.add(new Fraction(rand + 1, start).simplify());
@@ -175,16 +174,16 @@ public class Context extends com.Context {
 	}
 
 	private void gen9() {
-		int g1 = Utilities.getRandomNumberInRange(1, 8);
+		int g1 = Util.getRandomNumberInRange(1, 8);
 
-		double r = Utilities.getRandomNumberInRange(2, 4);
+		double r = Util.getRandomNumberInRange(2, 4);
 		start = g1;
 
-		length = Utilities.getRandomNumberInRange(5, 8);
+		length = Util.getRandomNumberInRange(5, 8);
 		int end = (int) Math.pow(r, (double) length - 1);
 		end = end * start;
 
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
 			list.add(new Int(start));
 			list.add(new Int(start * (int) Math.pow(r, 1)));
@@ -206,9 +205,9 @@ public class Context extends com.Context {
 
 	private void gen10()// DO THIS
 	{
-		start = Utilities.getRandomNumberInRange(2, 10);
+		start = Util.getRandomNumberInRange(2, 10);
 		int lengthRange = (1000 / start) - 1;
-		length = Utilities.getRandomNumberInRange(5, lengthRange);
+		length = Util.getRandomNumberInRange(5, lengthRange);
 
 		list.add(new Fraction(1, start).simplify());
 		list.add(new Fraction(1, start * 2).simplify());
@@ -218,13 +217,13 @@ public class Context extends com.Context {
 	}
 
 	private void gen11() {
-		int chance = Utilities.getRandomNumberInRange(1, 2);
-		start = Utilities.getRandomNumberInRange(1, 20);
-		length = Utilities.getRandomNumberInRange(1, 20);
+		int chance = Util.getRandomNumberInRange(1, 2);
+		start = Util.getRandomNumberInRange(1, 20);
+		length = Util.getRandomNumberInRange(1, 20);
 		if (chance == 1) {
 			// increasing
-			start = Utilities.getRandomNumberInRange(1, 15);
-			length = Utilities.getRandomNumberInRange(5, 20 - start);
+			start = Util.getRandomNumberInRange(1, 15);
+			length = Util.getRandomNumberInRange(5, 20 - start);
 			list.add(new Int((int) (Math.pow(start, 2))));
 			list.add(new Int((int) (Math.pow(start + 1, 2))));
 			list.add(new Int((int) (Math.pow(start + 2, 2))));
@@ -233,8 +232,8 @@ public class Context extends com.Context {
 
 		} else {
 			// decreasing
-			start = Utilities.getRandomNumberInRange(5, 20);
-			length = Utilities.getRandomNumberInRange(5, Math.abs(0 - start));
+			start = Util.getRandomNumberInRange(5, 20);
+			length = Util.getRandomNumberInRange(5, Math.abs(0 - start));
 			list.add(new Int((int) (Math.pow(start, 2))));
 			list.add(new Int((int) (Math.pow(start - 1, 2))));
 			list.add(new Int((int) (Math.pow(start - 2, 2))));
@@ -246,9 +245,9 @@ public class Context extends com.Context {
 
 	private void gen12() {
 
-		start = Utilities.getRandomNumberInRange(1, 5);
-		length = Utilities.getRandomNumberInRange(start + 4, 10);
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		start = Util.getRandomNumberInRange(1, 5);
+		length = Util.getRandomNumberInRange(start + 4, 10);
+		int chance = Util.getRandomNumberInRange(1, 2);
 
 		if (chance == 1) {
 			// increasing
@@ -273,11 +272,11 @@ public class Context extends com.Context {
 		length = 30;
 		int i = 1;
 		int i1 = 1;
-		while (util.Utilities.GCD(i, i1) != 1 || i == i1 || (i % i1) == 0) {
-			i = Utilities.getRandomNumberInRange(2, 15);
-			i1 = Utilities.getRandomNumberInRange(2, 15);
+		while (util.Util.GCD(i, i1) != 1 || i == i1 || (i % i1) == 0) {
+			i = Util.getRandomNumberInRange(2, 15);
+			i1 = Util.getRandomNumberInRange(2, 15);
 		}
-		length = Utilities.getRandomNumberInRange(100, 700);
+		length = Util.getRandomNumberInRange(100, 700);
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x = 1;
 
@@ -309,11 +308,11 @@ public class Context extends com.Context {
 		length = 30;
 		int i = 1;
 		int i1 = 1;
-		while (util.Utilities.GCD(i, i1) == 1 || i == i1 || (i % i1) == 0) {
-			i = Utilities.getRandomNumberInRange(2, 15);
-			i1 = Utilities.getRandomNumberInRange(2, 15);
+		while (util.Util.GCD(i, i1) == 1 || i == i1 || (i % i1) == 0) {
+			i = Util.getRandomNumberInRange(2, 15);
+			i1 = Util.getRandomNumberInRange(2, 15);
 		}
-		length = Utilities.getRandomNumberInRange(100, 700);
+		length = Util.getRandomNumberInRange(100, 700);
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		int x = 1;
 
@@ -340,8 +339,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen15() {
-		start = Utilities.getRandomNumberInRange(1, 25);
-		length = Utilities.getRandomNumberInRange(5, 999);
+		start = Util.getRandomNumberInRange(1, 25);
+		length = Util.getRandomNumberInRange(5, 999);
 		int end = start + length - 1;
 		list.add(new Int(start));
 		list.add(new Int(end));
@@ -353,14 +352,14 @@ public class Context extends com.Context {
 	}
 
 	private void gen17() {
-		type17 = Utilities.getRandomNumberInRange(1, 999);
+		type17 = Util.getRandomNumberInRange(1, 999);
 	}
 
 	private void gen18() {
-		int rNum = Utilities.getRandomNumberInRange(1, 1);
-		int rDen = Utilities.getRandomNumberInRange(2, 8);
-		int g1 = Utilities.getRandomNumberInRange(1, 5);
-		length = Utilities.getRandomNumberInRange(5, 8);
+		int rNum = Util.getRandomNumberInRange(1, 1);
+		int rDen = Util.getRandomNumberInRange(2, 8);
+		int g1 = Util.getRandomNumberInRange(1, 5);
+		length = Util.getRandomNumberInRange(5, 8);
 		Fraction r = new Fraction(rNum, rDen);
 		int start = g1;
 		int num = r.getNumerator();
@@ -368,7 +367,7 @@ public class Context extends com.Context {
 		Fraction end = new Fraction((int) Math.pow(num, length - 1), (int) Math.pow(den, length - 1));;
 		end = new Fraction(end.getNumerator() * start, end.getDenominator());
 
-		int chance = Utilities.getRandomNumberInRange(1, 2);
+		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
 			list.add(new Int(start));
 			num = r.getNumerator();
@@ -421,8 +420,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen19() {
-		start = Utilities.getRandomNumberInRange(1, 25);
-		length = Utilities.getRandomNumberInRange(5, 999);
+		start = Util.getRandomNumberInRange(1, 25);
+		length = Util.getRandomNumberInRange(5, 999);
 		list.add(new Int(start));
 		list.add(new Int(length * 2 + start));
 		int counter = 0;
@@ -434,8 +433,8 @@ public class Context extends com.Context {
 	}
 
 	private void gen20() {
-		start = Utilities.getRandomNumberInRange(1, 25);
-		length = Utilities.getRandomNumberInRange(5, 999);
+		start = Util.getRandomNumberInRange(1, 25);
+		length = Util.getRandomNumberInRange(5, 999);
 		list.add(new Int(start));
 		list.add(new Int(length * 2 + start));
 		int counter = 0;
