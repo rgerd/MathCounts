@@ -54,6 +54,7 @@ public class Context extends com.Context {
 		 * divisible by (#3)?
 		 **/
 		chance = Util.getRandomNumberInRange(1, 3);
+		chance = 1;
 
 		if (chance == 1) {
 			int num1 = Util.getRandomNumberInRange(10, 100);
@@ -65,15 +66,13 @@ public class Context extends com.Context {
 			list.add(new Factorial(num3));
 
 			int min = Math.min(num1, Math.min(num2, num3));
+			
+			ans = new Int(min);
 
-			int answer = min;
-			for (int i = 1; i < min; i++) {
-				answer *= min - i;
-			}
-
-			ans = new Int(answer);
+			/**ans = new Factorial(min);**//**PROBLEM CASTING HERE**/
 
 		} else if (chance == 2) {
+			int end = Util.getRandomNumberInRange(10, 100);
 
 		} else if (chance == 3) {
 

@@ -25,18 +25,9 @@ public class AnswerGen
 	public ArrayList<Number> getWrong(String type)
 	{
 		h = new HashSet<Number>();
-<<<<<<< HEAD
-
-
-			if(type.equals("window"))
-=======
 		if(type.equals("window"))
 		{
 			int chance = Util.getRandomNumberInRange(1,5);
-			if(chance == 1)
->>>>>>> FETCH_HEAD
-			{
-				int chance = Utilities.getRandomNumberInRange(1,5);
 				if(chance == 1)
 				{
 					Int an = new Int(ans);
@@ -87,6 +78,6 @@ public class AnswerGen
 
 			return h1;
 		}
-
+	
 	
 }
