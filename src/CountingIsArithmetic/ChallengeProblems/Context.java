@@ -73,7 +73,9 @@ public class Context extends com.Context {
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
 
-
+			list.add(new Factorial(num1));
+			list.add(new Factorial(num2));
+			list.add(new Factorial(num3));
 
 			int min = Math.min(num1, Math.min(num2, num3));
 
