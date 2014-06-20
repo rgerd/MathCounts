@@ -87,11 +87,11 @@ public class Root implements Number {
 
 	public Number add(Number n) {
 		// Root _n = (Root)n;
-		return null;
+		return this;
 	}
 
 	public Number sub(Number n) {
-		return null;
+		return this;
 	}
 
 	/**
@@ -100,8 +100,7 @@ public class Root implements Number {
 	 */
 	public Number div(Number n) {
 		// Root _n = (Root) n;
-		
-		return null;
+		return this;
 	}
 
 	/**
@@ -109,8 +108,11 @@ public class Root implements Number {
 	 * @return the result.
 	 */
 	public Number mult(Number n) {
+		if(!(n instanceof Root))
+			return this;
+		
 		Root _n = (Root) n;
-		int lcm = Utilities.LCM(this.degree, _n.degree);
+		int lcm = Util.LCM(this.degree, _n.degree);
 		int mult_0 = lcm / degree;
 		int mult_1 = lcm / _n.degree;
 		int prime_0 = (int) Math.pow(this.prime, mult_0);
@@ -126,6 +128,9 @@ public class Root implements Number {
 	 * @return whether this root is equal to another.
 	 */
 	public boolean equals(Number n) {
+		if(!(n instanceof Root))
+			return false;
+		
 		return factor == ((Root) n).factor && prime == ((Root) n).prime && degree == ((Root) n).degree;
 	}
 }
