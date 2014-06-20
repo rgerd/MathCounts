@@ -31,15 +31,16 @@ public class Context extends com.Context {
 		 * written as the sum of (#2) positive perfect squares?
 		 **/
 
-		int length = Util.getRandomNumberInRange(1, 1000);
+		/**int length = Util.getRandomNumberInRange(1, 1000);
 		int combos = 0;
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += divide * 2;
+		combos += (new Factorial(divide)).getValue();
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
-		}
+		} **/
+		
 	}
 
 	private void gen2() {
