@@ -14,7 +14,7 @@ public class Fraction implements Number {
 	public Fraction(int numerator, int denominator) {
 		num = numerator;
 		den = denominator;
-		simplify();
+		this_simplify();
 
 		if (denominator == 0) {
 			System.err.println("FRACTIONS SHOULD NOT HAVE DENOMINATORS OF ZERO.");
@@ -120,12 +120,13 @@ public class Fraction implements Number {
 	public Fraction reciprocal() {
 		return new Fraction(den, num);
 	}
-
+	
 	/**
 	 * Returns a simplified version of the fraction.
 	 * 
 	 * @return a simplified version of the fraction.
 	 */
+	/*
 	public Fraction simplify() {
 		int gcd = Util.GCD(num, den);
 		if (den < 1) {
@@ -134,6 +135,18 @@ public class Fraction implements Number {
 		}
 		return new Fraction(num / gcd, den / gcd);
 	}
+	*/
+	
+	private void this_simplify() {
+		int gcd = Util.GCD(num, den);
+		if (den < 1) {
+			num *= -1;
+			den *= -1;
+		}
+		
+		num /= gcd;
+		den /= gcd;
+	}
 
 	/**
 	 * Returns a string representation of the fraction.
@@ -141,9 +154,8 @@ public class Fraction implements Number {
 	 * @return a string representation of the fraction.
 	 */
 	public String toString() {
-		Fraction simp = this.simplify();
-		if (simp.den == 1)
-			return Integer.toString(simp.num);
+		if (den == 1)
+			return Integer.toString(num);
 		return num + "/" + den;
 	}
 
@@ -179,9 +191,7 @@ public class Fraction implements Number {
 			return false;
 
 		Fraction _other = (Fraction) other;
-		Fraction frac_0 = this.simplify();
-		Fraction frac_1 = _other.simplify();
-		return (frac_0.num == frac_1.num) && (frac_0.den == frac_1.den);
+		return (num == _other.num) && (den == _other.den);
 	}
 
 }

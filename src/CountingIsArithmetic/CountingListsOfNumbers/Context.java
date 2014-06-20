@@ -136,17 +136,17 @@ public class Context extends com.Context {
 		length = Util.getRandomNumberInRange(5, 999);
 		int chance = Util.getRandomNumberInRange(1, 2);
 		if (chance == 1) {
-			list.add(new Fraction(1, start).simplify());
-			list.add(new Fraction(1 + 1, start).simplify());
-			list.add(new Fraction(1 + 2, start).simplify());
-			list.add(new Fraction(1 + 3, start).simplify());
-			list.add(new Fraction(1 + length - 1, start).simplify());
+			list.add(new Fraction(1, start));
+			list.add(new Fraction(1 + 1, start));
+			list.add(new Fraction(1 + 2, start));
+			list.add(new Fraction(1 + 3, start));
+			list.add(new Fraction(1 + length - 1, start));
 		} else {
-			list.add(new Fraction(1, start).simplify());
-			list.add(new Fraction(0, start).simplify());
-			list.add(new Fraction(-1, start).simplify());
-			list.add(new Fraction(-2, start).simplify());
-			list.add(new Fraction(1 - (length - 1), start).simplify());
+			list.add(new Fraction(1, start));
+			list.add(new Fraction(0, start));
+			list.add(new Fraction(-1, start));
+			list.add(new Fraction(-2, start));
+			list.add(new Fraction(1 - (length - 1), start));
 		}
 
 	}
@@ -157,17 +157,17 @@ public class Context extends com.Context {
 		int chance = Util.getRandomNumberInRange(1, 2);
 		int rand = Util.getRandomNumberInRange(1, 10);
 		if (chance == 1) {
-			list.add(new Fraction(rand, start).simplify());
-			list.add(new Fraction(rand + 1, start).simplify());
-			list.add(new Fraction(rand + 2, start).simplify());
-			list.add(new Fraction(rand + 3, start).simplify());
-			list.add(new Fraction(rand + length, start).simplify());
+			list.add(new Fraction(rand, start));
+			list.add(new Fraction(rand + 1, start));
+			list.add(new Fraction(rand + 2, start));
+			list.add(new Fraction(rand + 3, start));
+			list.add(new Fraction(rand + length, start));
 		} else {
-			list.add(new Fraction(-rand, start).simplify());
-			list.add(new Fraction(-rand + 1, start).simplify());
-			list.add(new Fraction(-rand + 2, start).simplify());
-			list.add(new Fraction(-rand + 3, start).simplify());
-			list.add(new Fraction(-rand + length, start).simplify());
+			list.add(new Fraction(-rand, start));
+			list.add(new Fraction(-rand + 1, start));
+			list.add(new Fraction(-rand + 2, start));
+			list.add(new Fraction(-rand + 3, start));
+			list.add(new Fraction(-rand + length, start));
 		}
 		length = length + 1;
 
@@ -209,11 +209,11 @@ public class Context extends com.Context {
 		int lengthRange = (1000 / start) - 1;
 		length = Util.getRandomNumberInRange(5, lengthRange);
 
-		list.add(new Fraction(1, start).simplify());
-		list.add(new Fraction(1, start * 2).simplify());
-		list.add(new Fraction(1, start * 3).simplify());
-		list.add(new Fraction(1, start * 4).simplify());
-		list.add(new Fraction(1, start * (length - 1)).simplify());
+		list.add(new Fraction(1, start));
+		list.add(new Fraction(1, start * 2));
+		list.add(new Fraction(1, start * 3));
+		list.add(new Fraction(1, start * 4));
+		list.add(new Fraction(1, start * (length - 1)));
 	}
 
 	private void gen11() {
@@ -374,21 +374,21 @@ public class Context extends com.Context {
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
 			r = new Fraction(r.getNumerator() * start, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
 			r = new Fraction(r.getNumerator() * start, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
 			r = new Fraction(r.getNumerator() * start, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
-			list.add(end.simplify());
+			list.add(end);
 		} else {
 			list.add(new Int(start));
 
@@ -396,23 +396,23 @@ public class Context extends com.Context {
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 1), (int) Math.pow(den, 1));
 			r = new Fraction(r.getNumerator() * start * -1, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 2));
 			r = new Fraction(r.getNumerator() * start, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
 			num = r.getNumerator();
 			den = r.getDenominator();
 			r = new Fraction((int) Math.pow(num, 2), (int) Math.pow(den, 3));
 			r = new Fraction(r.getNumerator() * start * -1, r.getDenominator());
-			list.add(r.simplify());
+			list.add(r);
 
 			Fraction e = (Fraction) end.mult(new Fraction(-1, 1));
 			if (length % 2 == 0)
-				list.add(e.simplify());
+				list.add(e);
 			else
 				list.add(end);
 		}
