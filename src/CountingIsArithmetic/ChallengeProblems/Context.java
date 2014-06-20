@@ -127,13 +127,9 @@ public class Context extends com.Context {
 		chance = Util.getRandomNumberInRange(1, 3);
 
 
-		chance =1;
+
 		if(chance == 1)
 		{
-
-
-	
-
 			int num1 = Util.getRandomNumberInRange(10, 100);
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
@@ -144,21 +140,29 @@ public class Context extends com.Context {
 
 			int min = Math.min(num1, Math.min(num2, num3));
 
-
-			
-			/*
-			int answer = min;
-			for (int i = 1; i < min; i++) {
-				answer *= min - i;
-			}
-			*/
-
 			ans = new Factorial(min);
 		} else if (chance == 2) {
 			int end = Util.getRandomNumberInRange(10, 100);
+			list.add(new Factorial(end));
+			ans = new Int(3);
 
 		} else if (chance == 3) {
-
+			int num1 = Util.getRandomNumberInRange(1, 999);
+			int num2 = Util.getRandomNumberInRange(2, 999);
+			int divisor = Util.getRandomNumberInRange(2, 999);
+			list.add(new Factorial(num1));
+			list.add(new Factorial(num2));
+			list.add(new Int(divisor));
+			
+			int a = Math.max(num1, num2);
+			int b = Math.min(num1, num2);
+			
+			if(a-divisor < 0)
+				ans = new Int(0);
+			else if(divisor < b)
+				ans = new Int(a-b);
+			else
+				ans = new Int(a-divisor);
 		}
 
 	}
@@ -181,21 +185,26 @@ public class Context extends com.Context {
 	}
 
 
-private void gen5() {
-	int num_0 = Util.getRandomNumberInRange(1, 10);
-	int den_0 = Util.getRandomNumberInRange(1, 10);
+	private void gen5() {
+		int num_0 = Util.getRandomNumberInRange(1, 10);
+		int den_0 = Util.getRandomNumberInRange(1, 10);
 
-	int num_1 = Util.getRandomNumberInRange(1, 5);
-	int den_1 = Util.getRandomNumberInRange(5, 10);
+		int num_1 = Util.getRandomNumberInRange(1, 5);
+		int den_1 = Util.getRandomNumberInRange(5, 10);
 
-	Fraction frac_0 = new Fraction(num_0, den_0);
-	Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
-	list.add(frac_0);
-	list.add(frac_1);
+		Fraction frac_0 = new Fraction(num_0, den_0);
+		Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
+		list.add(frac_0);
+		list.add(frac_1);
 
-	int top = (int) frac_1.reciprocal().divide();
-	int bottom = (int) frac_0.reciprocal().divide();
+		int top = (int) frac_1.reciprocal().divide();
+		int bottom = (int) frac_0.reciprocal().divide();
 
-	ans = new Int(Math.abs(top - bottom) + 1);
-}
+		ans = new Int(Math.abs(top - bottom) + 1);
+	}
+
+	public int chance()
+	{
+		return chance;
+	}
 }
