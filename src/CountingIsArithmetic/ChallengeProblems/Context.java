@@ -175,12 +175,12 @@ public class Context extends com.Context {
 		int i = Util.getRandomNumberInRange(2, 100);
 		list.add(new Int(g));
 		list.add(new Int(i));
-		for (int x = 0; x < g; x++) {
-			for (int y = 0; y < i; y++) {
-				if (y+1 % 2 == 1)
+	
+			for (int y = 0; y < i; y+=2) {
+				
 					answer++;
 			}
-		}
+		answer*=g;
 		ans = new Int(answer);
 	}
 
