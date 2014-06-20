@@ -25,28 +25,30 @@ public class Context extends com.Context {
 		return ans;
 	}
 
-
 	private void gen1() {
 		/**
 		 * Question format: How many positive integers less than (#1) can be
 		 * written as the sum of (#2) positive perfect squares?
 		 **/
 
-		int length = Util.getRandomNumberInRange(1, 1000);
+		/**int length = Util.getRandomNumberInRange(1, 1000);
 		int combos = 0;
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += divide * 2;
+		combos += (new Factorial(divide)).getValue();
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
-		}
+
+		} **/
+		
 
 	}
 
 	private void gen2() {
 
 	}
+
 
 
 	private void gen3()
@@ -72,6 +74,7 @@ public class Context extends com.Context {
 			min = Math.min(num2, num3);
 
 			
+
 			int answer = min;
 			for (int i = 1; i < min; i++) {
 				answer *= min - i;
@@ -87,7 +90,8 @@ public class Context extends com.Context {
 
 	}
 
-	private void gen4() {
+	private void gen4() 
+	{
 		int answer = 0;
 
 		int g = Util.getRandomNumberInRange(2, 100);
@@ -103,21 +107,22 @@ public class Context extends com.Context {
 		ans = new Int(answer);
 	}
 
-	private void gen5() {
-		int num_0 = Util.getRandomNumberInRange(1, 10);
-		int den_0 = Util.getRandomNumberInRange(1, 10);
 
-		int num_1 = Util.getRandomNumberInRange(1, 5);
-		int den_1 = Util.getRandomNumberInRange(5, 10);
+private void gen5() {
+	int num_0 = Util.getRandomNumberInRange(1, 10);
+	int den_0 = Util.getRandomNumberInRange(1, 10);
 
-		Fraction frac_0 = new Fraction(num_0, den_0);
-		Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
-		list.add(frac_0);
-		list.add(frac_1);
+	int num_1 = Util.getRandomNumberInRange(1, 5);
+	int den_1 = Util.getRandomNumberInRange(5, 10);
 
-		int top = (int) frac_1.reciprocal().divide();
-		int bottom = (int) frac_0.reciprocal().divide();
+	Fraction frac_0 = new Fraction(num_0, den_0);
+	Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
+	list.add(frac_0);
+	list.add(frac_1);
 
-		ans = new Int(Math.abs(top - bottom) + 1);
-	}
+	int top = (int) frac_1.reciprocal().divide();
+	int bottom = (int) frac_0.reciprocal().divide();
+
+	ans = new Int(Math.abs(top - bottom) + 1);
+}
 }
