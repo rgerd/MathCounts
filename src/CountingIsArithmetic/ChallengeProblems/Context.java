@@ -2,6 +2,7 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
+import util.Factorial;
 import util.Fraction;
 import util.Int;
 import util.Number;
@@ -58,9 +59,9 @@ public class Context extends com.Context {
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
 
-			list.add(new Int(num1));
-			list.add(new Int(num2));
-			list.add(new Int(num3));
+			list.add(new Factorial(num1));
+			list.add(new Factorial(num2));
+			list.add(new Factorial(num3));
 
 			int min = Math.min(num1, num2);
 			min = Math.min(num2, num3);
@@ -71,6 +72,7 @@ public class Context extends com.Context {
 				answer = answer * (min - i);
 			}
 
+			// Working on making this a factorial
 			ans = answer;
 
 		} else if (chance == 2) {
