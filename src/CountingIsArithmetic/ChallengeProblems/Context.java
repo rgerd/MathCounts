@@ -2,6 +2,8 @@ package CountingIsArithmetic.ChallengeProblems;
 
 import java.util.ArrayList;
 
+import javax.swing.text.Utilities;
+
 import util.Factorial;
 import util.Fraction;
 import util.Int;
@@ -31,36 +33,55 @@ public class Context extends com.Context {
 		 * written as the sum of (#2) positive perfect squares?
 		 **/
 
-		int length = Util.getRandomNumberInRange(1, 1000);
+		/**int length = Util.getRandomNumberInRange(1, 1000);
 		int combos = 0;
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += divide * 2;
+		combos += (new Factorial(divide)).getValue();
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
-		}
+
+		} **/
+		
+
 	}
 
 	private void gen2() {
 
 	}
 
-	private void gen3() {
-		/**
-		 * Type 03: Math with factorials What is the greatest common factor of
-		 * (#1)!, (#2)!, and (#3)!? What is the units digit of 1! + 2! + 3! +4!
-		 * + É +(#1)!? How many of the factorials from (#1)! to (#2)! are
-		 * divisible by (#3)?
+
+
+	private void gen3()
+	{
+		/**Type 03: Math with factorials
+		What is the greatest common factor of (#1)!, (#2)!, and (#3)!?
+		What is the units digit of 1! + 2! + 3! +4! + É +(#1)!?
+		How many of the factorials from (#1)! to (#2)! are divisible by (#3)?
 		 **/
 		chance = Util.getRandomNumberInRange(1, 3);
+<<<<<<< HEAD
 		chance = 1;
 
 		if (chance == 1) {
+=======
+		chance =1;
+		if(chance == 1)
+		{
+>>>>>>> FETCH_HEAD
 			int num1 = Util.getRandomNumberInRange(10, 100);
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
+			
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			
+			int min = Math.min(num1, num2);
+			min = Math.min(num2, num3);
 
+<<<<<<< HEAD
 			list.add(new Factorial(num1));
 			list.add(new Factorial(num2));
 			list.add(new Factorial(num3));
@@ -68,6 +89,9 @@ public class Context extends com.Context {
 			int min = Math.min(num1, Math.min(num2, num3));
 			
 			ans = new Int(min);
+=======
+			
+>>>>>>> FETCH_HEAD
 
 			/**ans = new Factorial(min);**//**PROBLEM CASTING HERE**/
 
@@ -88,12 +112,12 @@ public class Context extends com.Context {
 		int i = Util.getRandomNumberInRange(2, 100);
 		list.add(new Int(g));
 		list.add(new Int(i));
-		for (int x = 0; x < g; x++) {
-			for (int y = 0; y < i; y++) {
-				if (y+1 % 2 == 1)
+		
+			for (int y = 0; y < i; y+=2) {
+				
 					answer++;
 			}
-		}
+		answer*=g;
 		ans = new Int(answer);
 	}
 
