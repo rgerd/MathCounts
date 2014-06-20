@@ -31,19 +31,19 @@ public class Context extends com.Context {
 		 * written as the sum of (#2) positive perfect squares?
 		 **/
 
-		int length = Util.getRandomNumberInRange(1, 1000);
-		int combos = 0;
-		int upperLimit = (int) Math.sqrt((double) length);
-		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += (new Factorial(divide)).getValue();
-		System.out.println("length: " + length + " combos: " + length + " divide: " + divide);
-		int leftovers = length - upperLimit;
+		int max = Util.getRandomNumberInRange(1, 200);
+		int answer = 0;
+		int uppersquare = (int) Math.sqrt((double) max);
+		int middle = (int) Math.sqrt((max - 1) / 2);
+		answer += (new Factorial(middle)).getValue();
+		System.out.println("length: " + max + " combos: " + max + " divide: " + max);
+		int leftovers = max - uppersquare;
 		for (int i = 0; i < leftovers; i++) {
-			int uppercombos = (upperLimit + i);
-			combos+= (int) Math.sqrt(length - uppercombos);
+			int uppercombos = (uppersquare + i);
+			answer+= (int) Math.sqrt(max - uppercombos);
 		} 
-		list.add(new Int(length));
-		ans = (new Int(combos));
+		list.add(new Int(max));
+		ans = (new Int(answer));
 	}
 
 	private void gen2() {
