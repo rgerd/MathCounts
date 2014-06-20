@@ -32,7 +32,7 @@ public class Context extends com.Context {
 		 **/
 
 
-		int max = Util.getRandomNumberInRange(1, 200);
+		/**int max = Util.getRandomNumberInRange(1, 200);
 		int answer = 0;
 		int uppersquare = (int) Math.sqrt((double) max);
 		int middle = (int) Math.sqrt((max - 1) / 2);
@@ -45,7 +45,50 @@ public class Context extends com.Context {
 			answer+= (int) Math.sqrt(max - uppercombos);
 		} 
 		list.add(new Int(max));
-		ans = (new Int(answer));
+		ans = (new Int(answer));**/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		int maximum = Util.getRandomNumberInRange(1, 200);
+		int answe=0;
+		ArrayList<Integer> AL = new ArrayList();
+		int x=2;
+		int squared=(int) Math.pow(x,  3);
+		
+		while(squared<maximum)
+		{
+			AL.add(squared);
+			x++;
+			squared = (int) Math.pow(x,  3);
+		}
+		ArrayList<Integer> an = new ArrayList();
+		for(int a =0; a<AL.size(); a++)
+		{
+			for(int b=0; b<AL.size();b++)
+			{
+				if(an.contains(AL.get(a)+AL.get(b))||AL.get(a)+AL.get(b)>=maximum)
+				{
+					
+				}
+				else
+				{
+					an.add(AL.get(a)+AL.get(b));
+				}
+			}
+		}
+		Int ad = new Int(an.size());
+		ans = ad;
+		Int listaddd = new Int(maximum);
+		list.add(listaddd);
+		
+		
 	}
 
 	private void gen2() {
