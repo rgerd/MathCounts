@@ -35,11 +35,15 @@ public class Context extends com.Context {
 		int combos = 0;
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
-		combos += divide * 2;
+		combos += (new Factorial(divide)).getValue();
+		System.out.println("length: " + length + " combos: " + length + " divide: " + divide);
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
-		}
+			combos+= (int) Math.sqrt(length - uppercombos);
+		} 
+		list.add(new Int(length));
+		ans = (new Int(combos));
 	}
 
 	private void gen2() {
@@ -54,18 +58,26 @@ public class Context extends com.Context {
 		 * divisible by (#3)?
 		 **/
 		chance = Util.getRandomNumberInRange(1, 3);
-		
-		if (chance == 1) {
+
+
+		chance =1;
+		if(chance == 1)
+		{
+
+
+	
+
 			int num1 = Util.getRandomNumberInRange(10, 100);
 			int num2 = Util.getRandomNumberInRange(10, 100);
 			int num3 = Util.getRandomNumberInRange(10, 100);
 
-			list.add(new Factorial(num1));
-			list.add(new Factorial(num2));
-			list.add(new Factorial(num3));
+
 
 			int min = Math.min(num1, Math.min(num2, num3));
+
+
 			
+<<<<<<< HEAD
 			/*
 			int answer = min;
 			for (int i = 1; i < min; i++) {
@@ -74,15 +86,26 @@ public class Context extends com.Context {
 			*/
 
 			ans = new Factorial(min);
+=======
+
+			
+			ans = new Int(min);
+
+
+			/**ans = new Factorial(min);**//**PROBLEM CASTING HERE**/
+>>>>>>> FETCH_HEAD
 
 		} else if (chance == 2) {
+			int end = Util.getRandomNumberInRange(10, 100);
 
 		} else if (chance == 3) {
 
 		}
+
 	}
 
-	private void gen4() {
+	private void gen4() 
+	{
 		int answer = 0;
 
 		int g = Util.getRandomNumberInRange(2, 100);
@@ -91,28 +114,29 @@ public class Context extends com.Context {
 		list.add(new Int(i));
 		for (int x = 0; x < g; x++) {
 			for (int y = 0; y < i; y++) {
-				if (i % 2 == 1)
+				if (y+1 % 2 == 1)
 					answer++;
 			}
 		}
 		ans = new Int(answer);
 	}
 
-	private void gen5() {
-		int num_0 = Util.getRandomNumberInRange(1, 10);
-		int den_0 = Util.getRandomNumberInRange(1, 10);
 
-		int num_1 = Util.getRandomNumberInRange(1, 5);
-		int den_1 = Util.getRandomNumberInRange(5, 10);
+private void gen5() {
+	int num_0 = Util.getRandomNumberInRange(1, 10);
+	int den_0 = Util.getRandomNumberInRange(1, 10);
 
-		Fraction frac_0 = new Fraction(num_0, den_0);
-		Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
-		list.add(frac_0);
-		list.add(frac_1);
+	int num_1 = Util.getRandomNumberInRange(1, 5);
+	int den_1 = Util.getRandomNumberInRange(5, 10);
 
-		int top = (int) frac_1.reciprocal().divide();
-		int bottom = (int) frac_0.reciprocal().divide();
+	Fraction frac_0 = new Fraction(num_0, den_0);
+	Fraction frac_1 = (Fraction) new Fraction(num_1, den_1).add(frac_0);
+	list.add(frac_0);
+	list.add(frac_1);
 
-		ans = new Int(Math.abs(top - bottom) + 1);
-	}
+	int top = (int) frac_1.reciprocal().divide();
+	int bottom = (int) frac_0.reciprocal().divide();
+
+	ans = new Int(Math.abs(top - bottom) + 1);
+}
 }
