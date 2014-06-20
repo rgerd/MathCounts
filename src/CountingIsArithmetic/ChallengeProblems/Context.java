@@ -46,12 +46,11 @@ public class Context extends com.Context {
 		}
 		list.add(new Int(max));
 		combos = hs.size();
-		System.out.println(nums.toString() + " length: " + max);
 		ans = (new Int(combos));
 
 
 
-		int max = Util.getRandomNumberInRange(1, 200);
+		max = Util.getRandomNumberInRange(1, 200);
 		int answer = 0;
 		int uppersquare = (int) Math.sqrt((double) max);
 		int middle = (int) Math.sqrt((max - 1) / 2);
