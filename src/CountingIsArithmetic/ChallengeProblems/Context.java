@@ -9,7 +9,7 @@ import util.Number;
 import util.Util;
 
 public class Context extends com.Context {
-	private int ans;
+	private Number ans;
 	private ArrayList<Number> list;
 	private int chance;
 
@@ -21,10 +21,10 @@ public class Context extends com.Context {
 		return list;
 	}
 
-	public Int getAnswer() {
-		return new Int(ans);
+	public Number getAnswer() {
+		return ans;
 	}
-	
+
 	private void gen1() {
 		/**
 		 * Question format: How many positive integers less than (#1) can be
@@ -54,6 +54,7 @@ public class Context extends com.Context {
 		 * divisible by (#3)?
 		 **/
 		chance = Util.getRandomNumberInRange(1, 3);
+		
 		if (chance == 1) {
 			int num1 = Util.getRandomNumberInRange(10, 100);
 			int num2 = Util.getRandomNumberInRange(10, 100);
@@ -63,17 +64,14 @@ public class Context extends com.Context {
 			list.add(new Factorial(num2));
 			list.add(new Factorial(num3));
 
-			int min = Math.min(num1, num2);
-			min = Math.min(num2, num3);
-
+			int min = Math.min(num1, Math.min(num2, num3));
+			
 			int answer = min;
-
 			for (int i = 1; i < min; i++) {
-				answer = answer * (min - i);
+				answer *= min - i;
 			}
 
-			// Working on making this a factorial
-			ans = answer;
+			ans = new Int(answer);
 
 		} else if (chance == 2) {
 
@@ -95,7 +93,7 @@ public class Context extends com.Context {
 					answer++;
 			}
 		}
-		ans = answer;
+		ans = new Int(answer);
 	}
 
 	private void gen5() {
@@ -113,6 +111,6 @@ public class Context extends com.Context {
 		int top = (int) frac_1.reciprocal().divide();
 		int bottom = (int) frac_0.reciprocal().divide();
 
-		ans = new Int(Math.abs(top - bottom) + 1).getValue();
+		ans = new Int(Math.abs(top - bottom) + 1);
 	}
 }
