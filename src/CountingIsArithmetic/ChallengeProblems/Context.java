@@ -51,7 +51,7 @@ public class Context extends com.Context {
 
 
 
-		int max = Util.getRandomNumberInRange(1, 200);
+		max = Util.getRandomNumberInRange(1, 200);
 		int answer = 0;
 		int uppersquare = (int) Math.sqrt((double) max);
 		int middle = (int) Math.sqrt((max - 1) / 2);
