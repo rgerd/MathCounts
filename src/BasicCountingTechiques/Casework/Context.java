@@ -1,5 +1,5 @@
 package BasicCountingTechiques.Casework;
 
-public class Context {
+public class Context extends com.Context{
 
 }
