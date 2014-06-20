@@ -77,7 +77,6 @@ public class Context extends com.Context {
 
 
 			
-<<<<<<< HEAD
 			/*
 			int answer = min;
 			for (int i = 1; i < min; i++) {
@@ -86,15 +85,6 @@ public class Context extends com.Context {
 			*/
 
 			ans = new Factorial(min);
-=======
-
-			
-			ans = new Int(min);
-
-
-			/**ans = new Factorial(min);**//**PROBLEM CASTING HERE**/
->>>>>>> FETCH_HEAD
-
 		} else if (chance == 2) {
 			int end = Util.getRandomNumberInRange(10, 100);
 
