@@ -144,7 +144,7 @@ public class Context extends com.Context {
 		list.add(new Int(i));
 		for (int x = 0; x < g; x++) {
 			for (int y = 0; y < i; y++) {
-				if (i % 2 == 1)
+				if (y+1 % 2 == 1)
 					answer++;
 			}
 		}
