@@ -28,8 +28,9 @@ public class Context extends com.Context {
 	private void gen1() {
 		/**
 		 * Question format: How many positive integers less than (#1) can be
-		 * written as the sum of (#2) positive perfect squares?
+		 * written as the sum of 2 positive perfect squares?
 		 **/
+
 
 		int max = Util.getRandomNumberInRange(1, 200);
 		int answer = 0;
@@ -38,6 +39,7 @@ public class Context extends com.Context {
 		answer += (new Factorial(middle)).getValue();
 		System.out.println("length: " + max + " combos: " + max + " divide: " + max);
 		int leftovers = max - uppersquare;
+
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (uppersquare + i);
 			answer+= (int) Math.sqrt(max - uppercombos);
