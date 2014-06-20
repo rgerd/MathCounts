@@ -36,7 +36,7 @@ public class Context extends com.Context {
 		int upperLimit = (int) Math.sqrt((double) length);
 		int divide = (int) Math.sqrt((length - 1) / 2);
 		combos += (new Factorial(divide)).getValue();
-		System.out.println("length: " + length + " combos: " + length);
+		System.out.println("length: " + length + " combos: " + length + " divide: " + divide);
 		int leftovers = length - upperLimit;
 		for (int i = 0; i < leftovers; i++) {
 			int uppercombos = (upperLimit + i);
