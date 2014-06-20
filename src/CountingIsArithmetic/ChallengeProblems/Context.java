@@ -66,12 +66,14 @@ public class Context extends com.Context {
 
 			int min = Math.min(num1, Math.min(num2, num3));
 			
+			/*
 			int answer = min;
 			for (int i = 1; i < min; i++) {
 				answer *= min - i;
 			}
+			*/
 
-			ans = new Int(answer);
+			ans = new Factorial(min);
 
 		} else if (chance == 2) {
 
