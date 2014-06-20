@@ -1,8 +1,6 @@
 package CountingIsArithmetic.CountingWithAdditionAndSubtraction;
 
 import java.util.ArrayList;
-
-import util.Fraction;
 import util.Int;
 import util.Number;
 import util.Util;
