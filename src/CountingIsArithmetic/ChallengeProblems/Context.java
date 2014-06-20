@@ -31,63 +31,22 @@ public class Context extends com.Context {
 		 * Question format: How many positive integers less than (#1) can be
 		 * written as the sum of 2 positive perfect squares?
 		 **/
-		HashSet<Integer> hs = new HashSet<Integer>();
-		ArrayList<Integer> nums = new ArrayList<Integer>();
-		int max = Util.getRandomNumberInRange(1, 200);
-		int combos = 0;
-		int upperLimit = (int) Math.sqrt((double) max);
-		for(int i = 1; i < upperLimit; i++)
+		chance = 1;
+		if(chance == 1)
 		{
-			nums.add(i);
-			for(int a = 0; a < nums.size(); a++)
-			{
-				hs.add(i+ (int)Math.pow(nums.get(a), 2.0));
-			}
-		}
-		list.add(new Int(max));
-		combos = hs.size();
-		ans = (new Int(combos));
-
-
-
-
-		int max = Util.getRandomNumberInRange(1, 200);
-		int answer = 0;
-		int uppersquare = (int) Math.sqrt((double) max);
-		int middle = (int) Math.sqrt((max - 1) / 2);
-		answer += (new Factorial(middle)).getValue();
-		System.out.println("length: " + max + " combos: " + max + " divide: " + max);
-		int leftovers = max - uppersquare;
-
-		for (int i = 0; i < leftovers; i++) {
-			int uppercombos = (uppersquare + i);
-			answer+= (int) Math.sqrt(max - uppercombos);
-		} 
-		list.add(new Int(max));
-		ans = (new Int(answer));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		int maximum = Util.getRandomNumberInRange(1, 200);
-		int answe=0;
-		ArrayList<Integer> AL = new ArrayList();
+		int answer=0;
+		ArrayList<Integer> AL = new ArrayList<Integer>();
 		int x=2;
-		int squared=(int) Math.pow(x,  3);
+		int squared=(int) Math.pow(x,  2);
 		
 		while(squared<maximum)
 		{
 			AL.add(squared);
 			x++;
-			squared = (int) Math.pow(x,  3);
+			squared = (int) Math.pow(x,  2);
 		}
-		ArrayList<Integer> an = new ArrayList();
+		ArrayList<Integer> an = new ArrayList<Integer>();
 		for(int a =0; a<AL.size(); a++)
 		{
 			for(int b=0; b<AL.size();b++)
@@ -106,10 +65,39 @@ public class Context extends com.Context {
 		ans = ad;
 		Int listaddd = new Int(maximum);
 		list.add(listaddd);
+		}else if(chance == 2){
+		int maximum = Util.getRandomNumberInRange(1, 200);
+		int answer=0;
+		ArrayList<Integer> AL = new ArrayList<Integer>();
+		int x=2;
+		int squared=(int) Math.pow(x,  3);
 		
-		
-
-	
+		while(squared<maximum)
+		{
+			AL.add(squared);
+			x++;
+			squared = (int) Math.pow(x,  3);
+		}
+		ArrayList<Integer> an = new ArrayList<Integer>();
+		for(int a =0; a<AL.size(); a++)
+		{
+			for(int b=0; b<AL.size();b++)
+			{
+				if(an.contains(AL.get(a)+AL.get(b))||AL.get(a)+AL.get(b)>=maximum)
+				{
+					
+				}
+				else
+				{
+					an.add(AL.get(a)+AL.get(b));
+				}
+			}
+		}
+		Int ad = new Int(an.size());
+		ans = ad;
+		Int listaddd = new Int(maximum);
+		list.add(listaddd);
+		}
 
 	}
 
