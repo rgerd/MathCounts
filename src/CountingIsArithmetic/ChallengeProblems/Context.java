@@ -23,11 +23,7 @@ public class Context extends com.Context {
 	public int getAns() {
 		return ans;
 	}
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> FETCH_HEAD
 	private void gen1()
 	{
 		/**Question format: How many positive integers less than (#1) can be written as the
@@ -40,21 +36,13 @@ public class Context extends com.Context {
 		
 		
 		
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> FETCH_HEAD
 	}
 
 	private void gen2() {
 
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> FETCH_HEAD
 	private void gen3()
 	{
 		/**Type 03: Math with factorials
@@ -63,6 +51,7 @@ public class Context extends com.Context {
 		How many of the factorials from (#1)! to (#2)! are divisible by (#3)?
 		 **/
 		chance = Utilities.getRandomNumberInRange(1, 3);
+		chance =1;
 		if(chance == 1)
 		{
 			int num1 = Utilities.getRandomNumberInRange(10, 100);
@@ -93,10 +82,6 @@ public class Context extends com.Context {
 			
 		}
 		
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
 	}
 
 	private void gen4() {
