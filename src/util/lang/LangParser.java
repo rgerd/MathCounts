@@ -88,7 +88,10 @@ public class LangParser {
 				start_brace = i;
 			} else if (c == ']') {
 				String tag_str = sb.substring(start_brace + 1, i);
-				tags.add(new TagData(tag_str));
+				TagData tag = new TagData(tag_str);
+				if(start_brace == 0)
+					tag.setFlag("upper");
+				tags.add(tag);
 
 				sb.replace(start_brace, i + 1, "%s");
 				i -= (i + 1) - start_brace;
