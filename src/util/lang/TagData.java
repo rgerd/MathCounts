@@ -35,4 +35,12 @@ public class TagData {
 	public String toString() {
 		return attr + ", " + index + ", " + flags;
 	}
+
+	public void setFlag(String string) {
+		flags.add(string);
+	}
+	
+	public void removeFlag(String string) {
+		flags.remove(string);
+	}
 }
