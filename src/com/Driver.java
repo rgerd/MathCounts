@@ -85,7 +85,6 @@ public class Driver {
 				problems.add(null);
 			}
 		}
-
 		ProblemIO.printProblems(OUTPUT_FILE, problems);
 	}
 }
