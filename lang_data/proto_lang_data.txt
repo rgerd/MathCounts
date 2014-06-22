@@ -1,0 +1,55 @@
+~ import adjectives.ld
+~ import nouns.ld
+~ import verbs.ld
+~ import places.ld
+
+<noun>
+	cupcake, cupcakes
+	cat, cats
+	kitten, kittens
+	computer, computers
+	
+	person, people
+	woman, women
+	man, men
+	teacher, teachers
+	phone, phones
+	whiteboard, whiteboards
+	microwave, microwaves
+	student, students
+	desk, desks
+	poster, posters
+</noun>
+
+<sound [animal]>
+	moo
+	meow
+	oink
+	baah
+	woof
+</noun>
+
+<clothes>
+	hats
+	pants
+	shirts
+	socks
+	shoes
+	undergarments
+	ties
+	gloves
+	scarfs
+	sweatshirts
+</clothes>
+
+<collection>
+	group, groups
+	herd, herds
+	pack, packs
+	gaggle, gaggles
+</collection>
+
+<verb>
+	is, are
+#	has, have
+</verb>
