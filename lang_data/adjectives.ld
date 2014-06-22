@@ -1,4 +1,6 @@
-<age -> adj>
+<adj -> attr>
+
+<age>
 	<young>
 	</young>
 	
@@ -9,7 +11,7 @@
 	</old>
 </age>
 
-<strength -> adj>
+<strength>
 	<strong>
 		strong
 		hard
@@ -25,7 +27,7 @@
 	</weak>
 </strength>
 
-<emotion -> adj>
+<emotion>
 	excited
 	amazed
 	shocked
@@ -42,7 +44,7 @@
 	</bad>	
 </emotion>
 
-<intelligence -> adj>
+<intelligence>
 	<smart>
 		intelligent
 		smart
@@ -56,7 +58,7 @@
 	</dumb>
 </intelligence>
 
-<coolness -> adj>
+<coolness>
 	<cool>
 		awesome
 		amazing
@@ -78,7 +80,7 @@
 	</lame>
 </coolness>
 
-<color -> adj>
+<color>
 	red
 	orange
 	yellow
@@ -91,7 +93,7 @@
 	turquoise
 </color>
 
-<size -> adj>
+<size>
 	<large>
 		tall
 		big
@@ -110,3 +112,5 @@
 		tiny
 	</small>
 </size>
+
+</adj>
