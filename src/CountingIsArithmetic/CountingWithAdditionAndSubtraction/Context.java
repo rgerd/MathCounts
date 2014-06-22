@@ -31,6 +31,15 @@ public class Context extends com.Context {
 	}
 
 	private void gen2() {
+		Int total = new Int(Util.getRandomNumberInRange(10, 100));
+		Int num_0 = new Int(Util.getRandomNumberInRange((int) (total.getValue() * 0.1), (int) (total.getValue() * 0.9)));
+		Int num_1 = (Int) total.sub(num_0);
+		
+		list.add(total);
+		list.add(num_0);
+		list.add(num_1);
+		
+		answer = total.sub(num_0.add(num_1));
 	}
 
 	private void gen3() {
