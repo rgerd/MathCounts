@@ -21,7 +21,10 @@ public class Question extends com.Question {
 			else 
 				return questions[1]+c.getList().get(0)+" and "+c.getList().get(1)+" are not perfect squares?";
 		}
-		return LangUtil.populate(questions[c.getType() - 1], c.getList());
-
+		else if(c.getType() == 2)
+		{
+			return "The Li family has "+c.getList().get(1)+" sons and "+ c.getList().get(3)+" daughters. In how many ways can they be sated in a row of "+c.getList().get(0)+" chairs so that "+c.getList().get(2)+" boys can sit next to eachother";
+		}
+		return null;
 	}
 }
