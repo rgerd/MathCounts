@@ -101,3 +101,11 @@
 	is, are
 #	has, have
 </verb>
+
+<civilization>
+	Mumble
+	Land of Boshkoff
+	Petruccia
+	Gerdisch
+	Land of ooo
+</civilization>
