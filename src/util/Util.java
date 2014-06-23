@@ -83,4 +83,26 @@ public class Util {
 			return 1;
 		return n * factorial(n - 1);
 	}
+	
+	
+	public static boolean isSquare(int n)
+	{
+	int k=1;
+	while (n!=0)
+	{
+	if (n<0)
+	{
+		
+	return false;
+	}
+
+	else
+	{
+	n=n-k;
+	k+=2;
+	}
+	}
+
+	return true;
+	}
 }
