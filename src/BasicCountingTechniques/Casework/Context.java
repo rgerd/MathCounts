@@ -1,4 +1,4 @@
-package BasicCountingTechiques.Casework;
+package BasicCountingTechniques.Casework;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -59,6 +59,7 @@ public class Context extends com.Context {
 		String alph = "";
 		
 		int length = Util.getRandomNumberInRange(5, 10);
+		list.add(new Int(length));
 		
 		while(alph.length() < 5)
 		{
@@ -70,7 +71,16 @@ public class Context extends com.Context {
 		list.add(new CustomNumber(alph));
 		
 		int numLetters = Util.getRandomNumberInRange(3, length);
+		list.add(new Int(numLetters));
 		
+		int answer = 1;
+		
+		while(numLetters >0)
+		{
+			answer += (int) Math.pow( length,  numLetters); 
+			numLetters --;
+		}
+		ans = new Int(answer);
 	}
 
 	private void gen2() {

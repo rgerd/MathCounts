@@ -1,4 +1,4 @@
-package BasicCountingTechiques.ComplementaryCounting;
+package BasicCountingTechniques.ComplementaryCounting;
 
 
 

@@ -1,4 +1,4 @@
-package BasicCountingTechiques.Casework;
+package BasicCountingTechniques.Casework;
 
 import util.lang.LangUtil;
 
