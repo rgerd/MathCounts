@@ -75,17 +75,50 @@ public class Context extends com.Context {
 		list.add(new Int(f2));
 		list.add(new Int(f3));
 		list.add(new Int(f4));
-		int answer=f;
+		int answer=f-f3+1;
 		answer*=f2;
 		answer*=f2-1;
+		if(f3==3)
+			answer*=f2-2;
+		if(f3==4)
+			answer*=f2-3;
 		answer*=Util.factorial(f-f3);
 		ans=new Int(answer);
 				
 		
 	}
 
-	private void gen3() {
-	
+	private void gen3()
+	{
+		ArrayList<String> alphabet = new ArrayList<String>();
+		alphabet.add("A");
+		alphabet.add("B");
+		alphabet.add("C");
+		alphabet.add("D");
+		alphabet.add("E");
+		alphabet.add("F");
+		alphabet.add("G");
+		alphabet.add("H");
+		alphabet.add("I");
+		alphabet.add("J");
+		alphabet.add("K");
+		alphabet.add("L");
+		alphabet.add("M");
+		alphabet.add("N");
+		alphabet.add("O");
+		alphabet.add("P");
+		alphabet.add("Q");
+		alphabet.add("R");
+		alphabet.add("S");
+		alphabet.add("T");
+		alphabet.add("U");
+		alphabet.add("V");
+		alphabet.add("W");
+		alphabet.add("X");
+		alphabet.add("Y");
+		alphabet.add("Z");
+		
+		
 
 	}
 

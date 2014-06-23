@@ -23,7 +23,8 @@ public class Question extends com.Question {
 		}
 		else if(c.getType() == 2)
 		{
-			return "The Li family has "+c.getList().get(1)+" sons and "+ c.getList().get(3)+" daughters. In how many ways can they be sated in a row of "+c.getList().get(0)+" chairs so that "+c.getList().get(2)+" boys can sit next to eachother";
+			String i ="The [family_0] family has "+c.getList().get(1)+" sons and "+ c.getList().get(3)+" daughters. In how many ways can they be sated in a row of "+c.getList().get(0)+" chairs so that "+c.getList().get(2)+" boys can sit next to eachother";
+	        return LangUtil.populate(i,c.getList());	
 		}
 		return null;
 	}
