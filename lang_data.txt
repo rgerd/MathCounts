@@ -104,8 +104,46 @@
 
 <civilization>
 	Mumble
-	Land of Boshkoff
+	Boshkoff
 	Petruccia
 	Gerdisch
-	Land of ooo
+	Vulcan
 </civilization>
+
+<foodshop>
+	sub, subs
+	coffee, coffee
+	froyo, froyo
+	nacho, nachos
+	pizza, pizzas
+	taco, tacos
+</foodshop>
+
+<toppings>
+	meatball, meatballs
+	turkey, turkey
+	ham, ham
+	cheese, cheese
+	lettuce, lettuce
+	tomato, tomatos
+	mochi, mochi
+	fudge, fudge
+	olive, olives
+	pickle, pickles
+	cream, cream
+	sugar, sugar
+</toppings>
+
+<family>
+	Li
+	Petrucciani
+	Gerdisch
+	Montel
+	Boshkoff
+	Taylor
+	Tewari
+	Stark
+	Jones
+	Smith
+	Borgdorg
+</family>
