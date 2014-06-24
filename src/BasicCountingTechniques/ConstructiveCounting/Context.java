@@ -61,6 +61,15 @@ public class Context extends com.Context {
 		ans = new Int(possibilities * ((possibilities - 1) * length));
 	}
 	
+	
+	private void gen3() {
+		Int length = new Int(Util.getRandomNumberInRange(400,600));
+		for(int i = 1; i < length.getValue(); i++)
+		{
+			
+		}
+		list.add(length);
+	}
 	public int getChance()
 	{
 		return chance;
