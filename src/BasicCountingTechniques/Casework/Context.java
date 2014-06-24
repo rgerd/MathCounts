@@ -166,37 +166,32 @@ public class Context extends com.Context {
 	}
 
 	private void gen5() {
-		int num1 = Util.getRandomNumberInRange(5, 7);
-		list.add(new Int(num1));
-		int num2 = num1 + 1;
+		int hat1 = Util.getRandomNumberInRange(4, 15);
+		list.add(new Int(hat1));
+		int num2 = hat1 + 1;
 		list.add(new Int(num2));
-		int num3 = Util.getRandomNumberInRange(3, 4);
+		int num3 = Util.getRandomNumberInRange(4, 15);
+		int hat2 = num3;
 		num3 = num2 +num3;
 		list.add(new Int(num3));
 		
-		int numBalls = Util.getRandomNumberInRange(2, 5);
+		
+		int numBalls = Util.getRandomNumberInRange(2, 4);
 		list.add(new Int(numBalls));
 		
-		int hat1Balls = num1;
-		int hat2Balls = num3-num2;
+		int ans1 = hat1;
+		int ans2 = hat2;
 		
-		int firstHat = hat1Balls;
-		int secondHat = hat2Balls;
-		
-		for(int i = 1; i <= numBalls; i++)
+		for(int i = 1; i < numBalls; i++)
 		{
-			hat1Balls--;
-			firstHat = firstHat*hat1Balls;
+			hat1--;
+			ans1 = ans1*hat1;
 			
-			hat2Balls--;
-			secondHat = firstHat*hat2Balls;
-		
+			hat2--;
+			ans2 = ans2*hat2;
 		}
-		
-		if(hat1Balls <= 0 || hat2Balls <= 0)
-			System.out.println("IT EQUALS ZERO FUCK!");
-		
-		ans = new Int(2*(secondHat + firstHat));
+		int answer = ans1 + ans2;
+		ans = new Int(2*answer);
 	}
 
 	public int chance() {

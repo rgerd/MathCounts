@@ -169,3 +169,8 @@
 	Smith
 	Borgdorg
 </family>
+
+<chap2casework5>
+	ball, balls
+	rabbit, rabbits
+</chap2casework5>
