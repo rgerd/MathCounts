@@ -24,7 +24,7 @@ public class Context extends com.Context {
 	
 	private void gen1()
 	{
-		chance = Util.getRandomNumberInRange(1,4);
+		chance = Util.getRandomNumberInRange(1,2);
 		if(chance == 1)
 		{
 			int numDigits = Util.getRandomNumberInRange(2,4);
@@ -41,11 +41,22 @@ public class Context extends com.Context {
 			list.add(new Int(numDigits));
 		}else if(chance == 2)
 		{
-			/**
-			 * 
-			 */
-			ans = new Int(10 * 3);
+			int times = Util.getRandomNumberInRange(2,4);
+			int digits = Util.getRandomNumberInRange(3,4);
+			
+			ans = new Int(((digits - 3) * 9) * 10 * (9/times));
+			list.add(new Int(digits));
+			list.add(new Int(times));
 		}
+	}
+	
+	private void gen2() {
+		
+	}
+	
+	public int getChance()
+	{
+		return chance;
 	}
 	
 }
