@@ -36,7 +36,7 @@ public class Context extends com.Context {
 			ans = new Int(9 *(8 + 9));
 			}else if(numDigits == 4)
 			{
-				ans = new Int(81 + 9 * (8+9));
+				ans = new Int((81 + (18 * 8)) * 9);
 			}
 			list.add(new Int(numDigits));
 		}else if(chance == 2)
@@ -44,14 +44,21 @@ public class Context extends com.Context {
 			int times = Util.getRandomNumberInRange(2,4);
 			int digits = Util.getRandomNumberInRange(3,4);
 			
-			ans = new Int(((digits - 3) * 9) * 10 * (9/times));
+			ans = new Int( ((int) Math.pow(9, digits - 3)) * 10 * (9/times));
 			list.add(new Int(digits));
 			list.add(new Int(times));
 		}
 	}
 	
 	private void gen2() {
-		
+		int length = Util.getRandomNumberInRange(5, 9);
+		int lower = Util.getRandomNumberInRange(0,3);
+		int upper = Util.getRandomNumberInRange(5,9);
+		int possibilities = upper - lower - 1;
+		list.add(new Int(lower));
+		list.add(new Int(upper));
+		list.add(new Int(length));
+		ans = new Int(possibilities * ((possibilities - 1) * length));
 	}
 	
 	public int getChance()
