@@ -26,6 +26,11 @@ public class Question extends com.Question {
 			String i ="The [family_0] family has "+c.getList().get(1)+" sons and "+ c.getList().get(3)+" daughters. In how many ways can they be sated in a row of "+c.getList().get(0)+" chairs so that "+c.getList().get(2)+" boys can sit next to eachother";
 	        return LangUtil.populate(i,c.getList());	
 		}
+		else if(c.getType() == 4)
+		{
+			String i ="The guy has [num_0] [clothes_0], [num_0] [clothes_1] and [num_0] [clothes_2] Each item comes in the same [num_0] colors (so that I have 1 one item of each color). He refuses to wear an outfit in which all 3 items are the same color. How many choices for outfits do I have?";
+	        return LangUtil.populate(i,c.getList());	
+		}
 		return null;
 	}
 }

@@ -124,7 +124,11 @@ public class Context extends com.Context {
 
 	private void gen4() 
 	{
-		
+		int r= Util.getRandomNumberInRange(5, 15);
+		list.add(new Int(r));
+		int a = r*r*r;
+		a-=r;
+		ans=new Int(a);
 	}
 
 

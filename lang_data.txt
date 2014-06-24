@@ -45,6 +45,8 @@
 	gaggle, gaggles
 </collection>
 
+
+
 <adj>
 	red
 	blue
@@ -103,11 +105,13 @@
 </verb>
 
 <civilization>
-	Mumble
-	Boshkoff
-	Petruccia
-	Gerdisch
-	Vulcan
+	Mumble, Mumblian
+	Boshkoff, Boshkoffian
+	Li, Liolian
+	Petruccia, Petrucciones
+	Gerdisch, GerdiWerdis
+	Vulcan, vulcans
+	ooo, oooians
 </civilization>
 
 <foodshop>
