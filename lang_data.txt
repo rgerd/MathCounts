@@ -23,6 +23,8 @@
 	oink
 	baah
 	woof
+	purr
+	PREFUNRRR
 </noun>
 
 <clothes>
@@ -137,6 +139,22 @@
 	cream, cream
 	sugar, sugar
 </toppings>
+
+<names>
+	jhon
+	doulass
+	angie
+	wobert
+	cavin
+	quintien
+	tobais
+	anthony
+	isacc
+	magdaline
+	spok
+	aragern
+	trondlemore
+</names>
 
 <family>
 	Li

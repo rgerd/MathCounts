@@ -132,7 +132,15 @@ public class Context extends com.Context {
 	}
 
 
-	private void gen5() {
+	private void gen5() 
+	{
+		int r=Util.getRandomNumberInRange(5, 15);
+		list.add(new Int(r));
+		int answer=Util.factorial(r);
+		int j=r-1;
+		j*=2;
+		ans=new Int(answer-j);
+				
 		
 	}
 

@@ -31,6 +31,11 @@ public class Question extends com.Question {
 			String i ="The guy has [num_0] [clothes_0], [num_0] [clothes_1] and [num_0] [clothes_2] Each item comes in the same [num_0] colors (so that I have 1 one item of each color). He refuses to wear an outfit in which all 3 items are the same color. How many choices for outfits do I have?";
 	        return LangUtil.populate(i,c.getList());	
 		}
+		else if(c.getType() == 5)
+		{
+			String i ="In how many ways can [num_0] people be seated in a row of chairs if two of the people, [names_0] and [names_1], refuse to sit next to each other?";
+	        return LangUtil.populate(i,c.getList());	
+		}
 		return null;
 	}
 }
