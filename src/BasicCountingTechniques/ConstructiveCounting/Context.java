@@ -52,7 +52,7 @@ public class Context extends com.Context {
 	
 	private void gen2() {
 		int length = Util.getRandomNumberInRange(5, 9);
-		int lower = Util.getRandomNumberInRange(0,3);
+		int lower = Util.getRandomNumberInRange(0,2);
 		int upper = Util.getRandomNumberInRange(5,9);
 		int possibilities = upper - lower - 1;
 		list.add(new Int(lower));
