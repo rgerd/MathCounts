@@ -142,26 +142,61 @@ public class Context extends com.Context {
 
 	private void gen3() {
 		int num = Util.getRandomNumberInRange(3, 6);
+		int num1 = Util.getRandomNumberInRange(1, 5);
 		list.add(new Int(num));
-		ans = new Int(num);
+		list.add(new Int(num1));
+		ans = new Int(2*num*num1);
 
 	}
 
 	private void gen4() {
-		int p = Util.getRandomNumberInRange(5, 100);
-		int p1 = Util.getRandomNumberInRange(5, 100);
-		int p2 = Util.getRandomNumberInRange(5, 100);
-		list.add(new Int(p));
-		list.add(new Int(p1));
-		list.add(new Int(p2));
-		p *= p1;
-		p *= p2;
-		Int q = new Int(p);
-		ans = q;
+		int num = Util.getRandomNumberInRange(5, 999);
+		list.add(new Int(num));
+		int answer = 0;
+		
+		int root = (int) Math.sqrt(num);
+		while(root > 0)
+		{
+			int square = (int) Math.pow(root, 2);
+			answer+= num-square-1;
+			root--;
+		}
+		
+		ans = new Int(answer);
 	}
 
 	private void gen5() {
-
+		int num1 = Util.getRandomNumberInRange(5, 7);
+		list.add(new Int(num1));
+		int num2 = num1 + 1;
+		list.add(new Int(num2));
+		int num3 = Util.getRandomNumberInRange(3, 4);
+		num3 = num2 +num3;
+		list.add(new Int(num3));
+		
+		int numBalls = Util.getRandomNumberInRange(2, 5);
+		list.add(new Int(numBalls));
+		
+		int hat1Balls = num1;
+		int hat2Balls = num3-num2;
+		
+		int firstHat = hat1Balls;
+		int secondHat = hat2Balls;
+		
+		for(int i = 1; i <= numBalls; i++)
+		{
+			hat1Balls--;
+			firstHat = firstHat*hat1Balls;
+			
+			hat2Balls--;
+			secondHat = firstHat*hat2Balls;
+		
+		}
+		
+		if(hat1Balls <= 0 || hat2Balls <= 0)
+			System.out.println("IT EQUALS ZERO FUCK!");
+		
+		ans = new Int(2*(secondHat + firstHat));
 	}
 
 	public int chance() {
