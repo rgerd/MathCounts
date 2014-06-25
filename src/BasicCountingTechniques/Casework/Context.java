@@ -196,7 +196,125 @@ public class Context extends com.Context {
 	
 	private void gen6()
 	{
-		ans = new Int(0);
+		ArrayList<String> villages = new ArrayList<String>();
+		
+		villages.add("A");
+		villages.add("B");
+		villages.add("C");
+		villages.add("D");
+		villages.add("E");
+		villages.add("F");
+		villages.add("G");
+		
+		chance = Util.getRandomNumberInRange(1, 5);
+		if(chance == 1)
+		{
+			int num1 = Util.getRandomNumberInRange(1, 10);
+			int num2 = Util.getRandomNumberInRange(1, 10);
+			int num3 = Util.getRandomNumberInRange(1, 10);
+			int num4 = Util.getRandomNumberInRange(1, 10);
+			
+			list.add(new Int(57));
+			list.add(new Int(198));
+			list.add(new Int(134));
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			list.add(new Int(num4));
+			
+			int answer = (num1*num2) + (num3*num4);
+			ans = new Int(answer);
+		}else if(chance == 2)
+		{
+			int num1 = Util.getRandomNumberInRange(1, 10);
+			int num2 = Util.getRandomNumberInRange(1, 10);
+			int num3 = Util.getRandomNumberInRange(1, 10);
+			int num4 = Util.getRandomNumberInRange(1, 10);
+			int num5 = Util.getRandomNumberInRange(1, 10);
+			int num6 = Util.getRandomNumberInRange(1, 10);
+			
+			list.add(new Int(58));
+			list.add(new Int(198));
+			list.add(new Int(134));
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			list.add(new Int(num4));
+			list.add(new Int(num5));
+			list.add(new Int(num6));
+			
+			int answer = (num1*num4) + (num2*num5) + (num3 * num6);
+			ans = new Int(answer);
+		}else if(chance == 3)
+		{
+			int num1 = Util.getRandomNumberInRange(1, 10);
+			int num2 = Util.getRandomNumberInRange(1, 10);
+			int num3 = Util.getRandomNumberInRange(1, 10);
+			int num4 = Util.getRandomNumberInRange(1, 10);
+			int num5 = Util.getRandomNumberInRange(1, 10);
+			int num6 = Util.getRandomNumberInRange(1, 10);
+			
+			list.add(new Int(59));
+			list.add(new Int(198));
+			list.add(new Int(134));
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			list.add(new Int(num4));
+			list.add(new Int(num5));
+			list.add(new Int(num6));
+			
+			int answer = (num1*num4) + (num2*num5) + (num3 * num6);
+			ans = new Int(answer);
+		}else if(chance == 4)
+		{
+			int num1 = Util.getRandomNumberInRange(1, 10);
+			int num2 = Util.getRandomNumberInRange(1, 10);
+			int num3 = Util.getRandomNumberInRange(1, 10);
+			int num4 = Util.getRandomNumberInRange(1, 10);
+			int num5 = Util.getRandomNumberInRange(1, 10);
+			int num6 = Util.getRandomNumberInRange(1, 10);
+			int num7 = Util.getRandomNumberInRange(1, 10);
+			
+			list.add(new Int(60));
+			list.add(new Int(198));
+			list.add(new Int(134));
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			list.add(new Int(num4));
+			list.add(new Int(num5));
+			list.add(new Int(num6));
+			list.add(new Int(num7));
+			
+			int answer = (num1*num3*num5*num7) + (num2*num4*num5*num7) + (num2 * num7*num6);
+			ans = new Int(answer);
+		}else if(chance == 5)
+		{
+			int num1 = Util.getRandomNumberInRange(1, 10);
+			int num2 = Util.getRandomNumberInRange(1, 10);
+			int num3 = Util.getRandomNumberInRange(1, 10);
+			int num4 = Util.getRandomNumberInRange(1, 10);
+			int num5 = Util.getRandomNumberInRange(1, 10);
+			int num6 = Util.getRandomNumberInRange(1, 10);
+			int num7 = Util.getRandomNumberInRange(1, 10);
+			int num8 = Util.getRandomNumberInRange(1, 10);
+			
+			list.add(new Int(61));
+			list.add(new Int(198));
+			list.add(new Int(134));
+			list.add(new Int(num1));
+			list.add(new Int(num2));
+			list.add(new Int(num3));
+			list.add(new Int(num4));
+			list.add(new Int(num5));
+			list.add(new Int(num6));
+			list.add(new Int(num7));
+			list.add(new Int(num8));
+			
+			int answer = (num1*num3*num5*num7) + (num1*num3*num6*num8) + (num2 * num4*num6*num8) + (num2 * num4 * num5 * num7);
+			ans = new Int(answer);
+		}
 	}
 
 	public int chance() {
