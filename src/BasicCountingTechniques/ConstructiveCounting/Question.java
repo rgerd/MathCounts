@@ -1,11 +1,9 @@
 package BasicCountingTechniques.ConstructiveCounting;
 
-import java.util.ArrayList;
-
 import util.lang.LangUtil;
 
 public class Question extends com.Question {
-	private static String[] questions = new String[7];
+	private static String[] questions = new String[20];
 	static {
 	questions[0] = "How many [num_0] digit numbers have exactly one zero?";
 	questions[1] = "How many [num_0] digit numbers have the property that the third digit is [num_1] times the first digit?";
@@ -14,7 +12,10 @@ public class Question extends com.Question {
 	questions[4] = "How many license plates can be formed if every license plate has [num_0] different letters followed by [num_1] different digits?";
 	questions[5] = "How many 3 digit numbers have the property that the first digit is at least twice the second digit?";
 	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
-	questions[7] = "How many sequences of 6 digits x1, x2, x3, … , x[num_0] can we form such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, xi x2 and x3 cannot both be odd or both be even.)";
+	questions[7] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, x1, x2, and x3 cannot both be odd or both be even.)";
+	questions[8] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even? (Parity means “odd” or “even”, so for example, x1, x2 and x3 cannot both be odd or both be even.)";
+	questions[9] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are odd? (Parity means “odd” or “even”, so for example, x1, x2 and x3 cannot both be odd or both be even.)";
+
 	}
 	private static final String[] places = {"1st","2nd","3rd"};
 	
@@ -51,7 +52,16 @@ public class Question extends com.Question {
 			}
 		}else if(c.getType() ==  6)
 		{
-			
+			int chance = 1;
+			if(chance == 1)
+			{
+				return LangUtil.populate(questions[7], c.getList());
+			}else if(chance == 2){
+				return LangUtil.populate(questions[8], c.getList());
+			}else if(chance == 3)
+			{
+				return LangUtil.populate(questions[9],c.getList());
+			}
 		}
 		return null;
 	}

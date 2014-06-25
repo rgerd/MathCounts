@@ -198,3 +198,8 @@
 	ball, balls
 	rabbit, rabbits
 </chap2casework5>
+
+<parity>
+	odd
+	even
+</parity>

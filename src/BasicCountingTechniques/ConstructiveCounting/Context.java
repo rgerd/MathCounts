@@ -113,15 +113,23 @@ public class Context extends com.Context {
 		int length = Util.getRandomNumberInRange(5,9);
 		int temp = length;
 		int answer = 0;
-		if(temp % 2 == 0)
+		int chance = 1;
+		list.add(new Int(length));
+		if(chance == 1)
 		{
-			answer += 4*(temp/2) + 5*(temp/2);
-		}else
+			if(temp % 2 == 0)
+			{
+				answer += Math.pow(4,(temp/2)) * Math.pow(5,(temp/2));
+				answer *= 2;
+			}else
+			{
+				answer += 5*(temp/2) + 4 * (temp - (temp/2));
+				answer += 4*(temp/2) + 5 * (temp - (temp/2));
+			}
+		}else if(chance == 2)
 		{
-			answer += 5*(temp/2) + 4 * (temp - (temp/2));
-			answer += 4*(temp/2) + 5 * (temp - (temp/2));
+			
 		}
-		
 		ans = new Int(answer);
 	}
 	public int getChance()
