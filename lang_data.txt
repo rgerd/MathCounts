@@ -156,6 +156,19 @@
 	trondlemore
 </names>
 
+<subject>
+	Math
+	Science
+	Music
+	World civ
+	English
+	Chinese
+	French
+	Spanish
+	Compsci
+	Band
+</subject>
+
 <family>
 	Li
 	Petrucciani
@@ -169,6 +182,17 @@
 	Smith
 	Borgdorg
 </family>
+
+<countries>
+	german
+	italian
+	french
+	greek
+	belgian
+	irish
+	scottish
+	portugues
+</countries>
 
 <chap2casework5>
 	ball, balls
