@@ -193,6 +193,11 @@ public class Context extends com.Context {
 		int answer = ans1 + ans2;
 		ans = new Int(2*answer);
 	}
+	
+	private void gen6()
+	{
+		ans = new Int(0);
+	}
 
 	public int chance() {
 		return chance;

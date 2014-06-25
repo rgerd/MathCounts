@@ -10,6 +10,7 @@ public class Question extends com.Question {
 		questions[2] = "At a [foodshop_0] shop, you can order your [toppings_0] [foodshop_0_pl] in [num_1] sizes, with or without [toppings_1_pl], and you get your choice of [num_0] different types of [toppings_2_pl]. How many different [toppings_0] [foodshop_0_pl] are there?";
 		questions[3] = "How many pairs of positive integers (m,n) satisfy m^2 + n < [num_0]";
 		questions[4] = "I have 2 hats. In one hat are [chap2casework5_0_pl] numbered 1 through [num_0]. In the next hat are [chap2casework5_0_pl] numbered [num_1] through [num_2]. If I first choose a hat, then from that hat I choose [num_3] [chap2casework5_0_pl] without replacing the [chap2casework5_0_pl] between selections. How many different ordered selections of [num_3] [chap2casework5_0_pl] are possible?";
+		questions[5] = "<p><img src=\"https://parktudor.blackboard.com/bbcswebdav/xid-53057_1\" width=\"158\" height=\"147\" /><br> Here is a picture.";
 	}
 
 	public String getQ(com.Context _c) {
