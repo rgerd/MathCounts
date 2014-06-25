@@ -14,6 +14,7 @@ public class Question extends com.Question {
 	questions[4] = "How many license plates can be formed if every license plate has [num_0] different letters followed by [num_1] different digits?";
 	questions[5] = "How many 3 digit numbers have the property that the first digit is at least twice the second digit?";
 	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
+	questions[7] = "How many sequences of 6 digits x1, x2, x3, … , x[num_0] can we form such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, xi x2 and x3 cannot both be odd or both be even.)";
 	}
 	private static final String[] places = {"1st","2nd","3rd"};
 	
@@ -48,6 +49,9 @@ public class Question extends com.Question {
 			{
 				return LangUtil.populate(questions[6],c.getList());
 			}
+		}else if(c.getType() ==  6)
+		{
+			
 		}
 		return null;
 	}

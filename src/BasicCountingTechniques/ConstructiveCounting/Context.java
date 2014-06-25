@@ -102,11 +102,27 @@ public class Context extends com.Context {
 		{
 			int digit1 = Util.getRandomNumberInRange(1,3);
 			int digit2 = Util.getRandomNumberInRange(1,3);
-			ans = new Int(9 + 19*2 + 29*2 + 39*2 + 49*2);
+			
+			
 		}else if(chance == 2)
 		{
-			ans = 
 		}
+	}
+	
+	private void gen6(){
+		int length = Util.getRandomNumberInRange(5,9);
+		int temp = length;
+		int answer = 0;
+		if(temp % 2 == 0)
+		{
+			answer += 4*(temp/2) + 5*(temp/2);
+		}else
+		{
+			answer += 5*(temp/2) + 4 * (temp - (temp/2));
+			answer += 4*(temp/2) + 5 * (temp - (temp/2));
+		}
+		
+		ans = new Int(answer);
 	}
 	public int getChance()
 	{
