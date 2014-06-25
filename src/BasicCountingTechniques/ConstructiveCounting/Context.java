@@ -1,7 +1,6 @@
 package BasicCountingTechniques.ConstructiveCounting;
 
 import java.util.ArrayList;
-
 import util.Number;
 import util.*;
 
@@ -63,12 +62,42 @@ public class Context extends com.Context {
 	
 	
 	private void gen3() {
-		Int length = new Int(Util.getRandomNumberInRange(400,600));
-		for(int i = 1; i < length.getValue(); i++)
+		int original = Util.getRandomNumberInRange(400,600);
+		Int length = new Int(original/2);
+		int x = 1;
+		int answer = 0;
+		while(Math.round((double) x) < (length.getValue() + (x/2)))
 		{
-			
+			answer += (((int) (length.getValue() + x/2)) - x);
+			x++;
 		}
-		list.add(length);
+		ans = new Int(answer);
+		list.add(new Int(original));
+	}
+	
+	private void gen4() {
+		int num1 = Util.getRandomNumberInRange(1,3);
+		int num2 = Util.getRandomNumberInRange(1,3);
+		list.add(new Int(num1));
+		list.add(new Int(num2));
+		int answer = 1;
+		
+		while(num1 > 0)
+		{
+			answer *= (26 - num1 + 1);
+			num1--;
+		}while(num2 > 0)
+		{
+			answer *= (9 - num2 + 1);
+			num2--;
+		}
+		ans = new Int(answer);
+		
+	}
+	
+	private void gen5()
+	{
+		String[] places = {"1st","2nd","3rd"};
 	}
 	public int getChance()
 	{

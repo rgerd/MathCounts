@@ -25,6 +25,7 @@
 	woof
 	purr
 	PREFUNRRR
+	HNNGGGGGGG
 </noun>
 
 <clothes>
