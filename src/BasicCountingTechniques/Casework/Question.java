@@ -11,6 +11,7 @@ public class Question extends com.Question {
 		questions[3] = "How many pairs of positive integers (m,n) satisfy m^2 + n < [num_0]";
 		questions[4] = "I have 2 hats. In one hat are [chap2casework5_0_pl] numbered 1 through [num_0]. In the next hat are [chap2casework5_0_pl] numbered [num_1] through [num_2]. If I first choose a hat, then from that hat I choose [num_3] [chap2casework5_0_pl] without replacing the [chap2casework5_0_pl] between selections. How many different ordered selections of [num_3] [chap2casework5_0_pl] are possible?";
 		questions[5] = "<p><img src=\"https://parktudor.blackboard.com/bbcswebdav/xid-530[num_0]_1\" width=\"[num_1]\" height=\"[num_2]\" /><br>";
+		questions[6] = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a [num_0]-sided polygon?";
 	}
 
 	public String getQ(com.Context _c) {
@@ -40,6 +41,32 @@ public class Question extends com.Question {
 			}
 			return null;
 				
+		}else if(c.getType() == 7)
+		{
+			if(c.chance() == 1)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a quadrilateral?"; 
+			}else if(c.chance() == 2)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a pentagon?"; 
+			}else if(c.chance() == 3)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a hexagon?"; 
+			}else if(c.chance() == 4)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a heptagon?"; 
+			}else if(c.chance() == 5)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a octagon?"; 
+			}else if(c.chance() == 6)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a enneagon?"; 
+			}else if(c.chance() == 7)
+			{
+				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a decagon?"; 
+			}
+			else
+				return LangUtil.populate(questions[c.getType() - 1], c.getList());
 		}else
 		return LangUtil.populate(questions[c.getType() - 1], c.getList());
 	}

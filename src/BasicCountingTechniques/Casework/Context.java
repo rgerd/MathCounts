@@ -316,6 +316,11 @@ public class Context extends com.Context {
 			ans = new Int(answer);
 		}
 	}
+	
+	private void gen7()
+	{
+		
+	}
 
 	public int chance() {
 		return chance;
