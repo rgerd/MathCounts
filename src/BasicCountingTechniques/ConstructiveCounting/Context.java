@@ -29,13 +29,13 @@ public class Context extends com.Context {
 			int numDigits = Util.getRandomNumberInRange(2,4);
 			if(numDigits == 2)
 			{
-				ans = new Int(9);
+				ans = new Int(9*2);
 			}else if(numDigits == 3)
 			{
-			ans = new Int(9 *(8 + 9));
+			ans = new Int(9 *(8 + 9) * 2);
 			}else if(numDigits == 4)
 			{
-				ans = new Int((81 + (18 * 8)) * 9);
+				ans = new Int((81 + (18 * 8)) * 9 * 2);
 			}
 			list.add(new Int(numDigits));
 		}else if(chance == 2)
@@ -43,7 +43,7 @@ public class Context extends com.Context {
 			int times = Util.getRandomNumberInRange(2,4);
 			int digits = Util.getRandomNumberInRange(3,4);
 			
-			ans = new Int( ((int) Math.pow(9, digits - 3)) * 10 * (9/times));
+			ans = new Int(2 * ((int) Math.pow(9, digits - 3)) * 10 * (9/times));
 			list.add(new Int(digits));
 			list.add(new Int(times));
 		}
@@ -97,7 +97,16 @@ public class Context extends com.Context {
 	
 	private void gen5()
 	{
-		String[] places = {"1st","2nd","3rd"};
+		int chance = Util.getRandomNumberInRange(1,4);
+		if(chance == 1)
+		{
+			int digit1 = Util.getRandomNumberInRange(1,3);
+			int digit2 = Util.getRandomNumberInRange(1,3);
+			ans = new Int(9 + 19*2 + 29*2 + 39*2 + 49*2);
+		}else if(chance == 2)
+		{
+			ans = 
+		}
 	}
 	public int getChance()
 	{

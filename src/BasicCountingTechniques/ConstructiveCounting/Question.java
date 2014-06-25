@@ -13,6 +13,7 @@ public class Question extends com.Question {
 	questions[3] = "In how many ways can we choose a group of 3 different numbers from the group 1, 2, 3, … , [num_0] such that one number is the average of the other two? (The order in which we choose the numbers does not matter.)";
 	questions[4] = "How many license plates can be formed if every license plate has [num_0] different letters followed by [num_1] different digits?";
 	questions[5] = "How many 3 digit numbers have the property that the first digit is at least twice the second digit?";
+	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
 	}
 	private static final String[] places = {"1st","2nd","3rd"};
 	
@@ -43,6 +44,9 @@ public class Question extends com.Question {
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[5],c.getList());
+			}else if(chance == 2)
+			{
+				return LangUtil.populate(questions[6],c.getList());
 			}
 		}
 		return null;
