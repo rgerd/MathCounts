@@ -59,6 +59,9 @@ public class Context extends com.Context {
 
 	private void gen4() 
 	{
+		int totalNum = Util.getRandomNumberInRange(5, 10);
+		int duplicates = Util.getRandomNumberInRange(2, 4);
+		
 		
 	}
 	

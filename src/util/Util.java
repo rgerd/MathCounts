@@ -83,6 +83,15 @@ public class Util {
 			return 1;
 		return n * factorial(n - 1);
 	}
+	
+	public static int perm(int n, int k)
+	{
+		int top = n;
+		int bottom = n-k;
+		
+		return factorial(top)/factorial(bottom);
+	}
+	
 	public static int combo(int n,int r) {
 	int top=n;
 	int bot=r;
