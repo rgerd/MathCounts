@@ -88,7 +88,7 @@ public class Util {
 	int bot=r;
 	int j=factorial(top);
 
-	int b=bot*factorial(top-bot);
+	int b=factorial(bot)*factorial(top-bot);
 	
 	j/=b;
 	return j;
