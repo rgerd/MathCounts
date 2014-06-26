@@ -33,7 +33,6 @@ public class Question extends com.Question {
 	public String getQ(com.Context _c) {
 		Context c = (Context) _c;
 		int chance = c.getChance();
-		System.out.println("chance: " +  chance + " type: " + c.getType());
 		if(c.getType() == 1)
 		{
 			if(chance == 1)
@@ -85,8 +84,16 @@ public class Question extends com.Question {
 			}
 		}
 		else {
-			System.out.println("here");
-			return null;
+			//section 7 dear god what have I done
+			int length = Util.getRandomNumberInRange(50, 100);
+			for(int i = 1; i < (length/i); i++)
+			{
+				for(int a = length; a < (length/i); a++)
+				{
+					
+				}
+			}
+			
 		}
 		return null;
 
