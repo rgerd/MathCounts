@@ -83,7 +83,7 @@ public class Util {
 			return 1;
 		return n * factorial(n - 1);
 	}
-	public static int perm(int n,int r) {
+	public static int combo(int n,int r) {
 	int top=n;
 	int bot=r;
 	int j=factorial(top);
