@@ -7,8 +7,6 @@ public class Question extends com.Question {
 	private static String[] questions = new String[7];
 	static {
 		/* type 1 */ 
-		questions[0] = "How Many 3 digit numbers arent multiples of ";
-		questions[1] = "How many numbers between : ";
 	}
 
 	public String getQ(com.Context _c) {
@@ -22,6 +20,25 @@ public class Question extends com.Question {
 		{
 			String st="The Super Awesome High School’s European debate club has [num_1] [countries_0] delegates, [num_2] [countries_1] delegates, and [num_3] [countries_2] delegates. In how many ways can these [num_0] delegates sit in a row of [num_0] chairs, if each country’s delegates insist on all sitting next to each other?";
 			return LangUtil.populate(st, c.getList());
+		}
+		else if(c.getType() == 3)
+		{
+			if(c.chance()==1)
+			{
+			String st="Our math club has [num_0] members and 3 officers: President, Vice President, and Treasurer. However, one member, [names_0], dislikes another member, [names_1]. How many ways can we fill the offices if [names_0] refuses to serve as an officer if [names_1] is also an officer?";
+			return LangUtil.populate(st, c.getList());
+			}
+			else if(c.chance()==2)
+			{
+			String st="Club has [num_1] boys and [num_2] girls. How many ways to choose if President and Vice president must be of same gender?";
+			return LangUtil.populate(st, c.getList());
+			}
+			else if(c.chance()==3)
+			{
+			String st="Club has [num_1] boys and [num_2] girls. How many ways to choose if President and Vice president must be of different gender?";
+			return LangUtil.populate(st, c.getList());
+			}
+			
 		}	
 		return null;
 	}

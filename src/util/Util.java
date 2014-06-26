@@ -83,6 +83,17 @@ public class Util {
 			return 1;
 		return n * factorial(n - 1);
 	}
+	public static int perm(int n,int r) {
+	int top=n;
+	int bot=r;
+	int j=factorial(top);
+
+	int b=bot*factorial(top-bot);
+	
+	j/=b;
+	return j;
+	
+	}
 	
 	
 	public static boolean isSquare(int n)
