@@ -2,6 +2,7 @@ package BasicCountingTechniques.ComplementaryCounting;
 
 
 
+import util.Util;
 import util.lang.LangUtil;
 
 public class Question extends com.Question {
@@ -25,6 +26,35 @@ public class Question extends com.Question {
 		{
 			String i ="The [family_0] family has "+c.getList().get(1)+" sons and "+ c.getList().get(3)+" daughters. In how many ways can they be sated in a row of "+c.getList().get(0)+" chairs so that "+c.getList().get(2)+" boys can sit next to eachother";
 	        return LangUtil.populate(i,c.getList());	
+		}
+		else if(c.getType() == 3)
+		{
+			if(c.chance() == 1)
+			{
+				String i = "How many [num_0]-letter words with at least one vowel can be constructed from the letters A, B, C, D, E?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 2)
+			{
+				String i = "How many [num_0]-letter words with at least one consonant can be constructed from the letters A, B, C, D, E?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 3)
+			{
+				String i = "How many [num_0]-letter words with at least two vowels can be constructed from the letters A, B, C, D, E?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 4)
+			{
+				String i = "How many [num_0] digit numbers have at least one zero?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else
+			{
+				String i = "How many [num_0] digit numbers have at least two zeros?";
+				return LangUtil.populate(i, c.getList());
+			}
+			
 		}
 		else if(c.getType() == 4)
 		{

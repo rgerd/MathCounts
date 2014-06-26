@@ -118,7 +118,62 @@ public class Context extends com.Context {
 		alphabet.add("Y");
 		alphabet.add("Z");
 		
+		chance = Util.getRandomNumberInRange(1, 5);
 		
+		if(chance == 1)
+		{
+			int length1 = Util.getRandomNumberInRange(1,4);
+			list.add(new Int(length1));
+			int answer = (int) Math.pow(5, length1);
+			Factorial n = new Factorial(40);
+			int val = n.getValue();
+			answer = (int) (answer - Math.pow(3, length1));
+			ans = new Int(answer);
+		}
+		else if(chance == 2)
+		{
+			int num1 = Util.getRandomNumberInRange(1,4);
+			list.add(new Int(num1));
+			int answer = (int) Math.pow(5, num1);
+			answer = (int) (answer - Math.pow(2, num1));
+			ans = new Int(answer);
+		}
+		else if(chance == 3)
+		{
+			int num1 = Util.getRandomNumberInRange(1,4);
+			list.add(new Int(num1));
+			int answer = (int) Math.pow(5, num1);
+			answer = (int) (answer - Math.pow(3, num1));
+			answer = (int) (answer - 2*num1*Math.pow(3, num1-1));
+			ans = new Int(answer);
+		}
+		else if(chance == 4) //one zero
+		{
+			int num1 = Util.getRandomNumberInRange (2, 5);
+			list.add(new Int(num1));
+			int answer = (int) (9*Math.pow(10, num1-1));
+			answer = (int) (answer - Math.pow(9, num1));
+			ans = new Int(answer);
+		}
+		else if(chance == 5) //two zeros
+		{
+			int num1 = Util.getRandomNumberInRange (2, 5);
+			list.add(new Int(num1));
+			int answer = (int) (9*Math.pow(10, num1-1));
+			answer = (int) (answer - Math.pow(9, num1));
+			answer = (int) (answer - Math.pow(9, num1-1)*(num1-1));
+			ans = new Int(answer);
+		}
+		else //three zeros
+		{
+			int num1 = Util.getRandomNumberInRange (2, 5);
+			list.add(new Int(num1));
+			int answer = (int) (9*Math.pow(10, num1-1));
+			answer = (int) (answer - Math.pow(9, num1));
+			answer = (int) (answer - Math.pow(9, num1-1)*(num1-1));
+			ans = new Int(answer);
+		}
+
 
 	}
 
@@ -140,7 +195,6 @@ public class Context extends com.Context {
 		int j=r-1;
 		j*=2;
 		ans=new Int(answer-j);
-				
 		
 	}
 

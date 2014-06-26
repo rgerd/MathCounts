@@ -122,6 +122,7 @@ public class Context extends com.Context {
 			if(!alph.contains(alphabet.get(rand)))
 				alph += alphabet.get(rand);
 		}
+		
 		int index = Util.getRandomNumberInRange(0, alph.length()-1);
 		String let = alph.substring(index, index+1);
 		
