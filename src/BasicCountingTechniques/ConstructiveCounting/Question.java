@@ -1,10 +1,14 @@
 package BasicCountingTechniques.ConstructiveCounting;
 
+import java.util.HashMap;
+
+import util.Int;
 import util.Util;
 import util.lang.LangUtil;
 
 public class Question extends com.Question {
 	private static String[] questions = new String[20];
+	private static HashMap<Integer,String> hs = new HashMap<Integer,String>();
 	static {
 	questions[0] = "How many [num_0] digit numbers have exactly one zero?";
 	questions[1] = "How many [num_0] digit numbers have the property that the third digit is [num_1] times the first digit?";
@@ -19,10 +23,12 @@ public class Question extends com.Question {
 	questions[10] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are odd?";
 	questions[11] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even?";
 	questions[12] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can we form such that numbers follow the pattern of two odd and one even?";
-	questions[13] = "How many 4-digit numbers have only even numbers?";
+	questions[13] = "How many 4-digit numbers have only ";
+	hs.put(1, "only even digits?");
+	hs.put(2, "only even digits?");
+	hs.put(3, "digits with the same parity?");
 	}
 	
-	HashSet<Integer,String> hs = new HashSet<Integer,String>();
 	
 	public String getQ(com.Context _c) {
 		Context c = (Context) _c;
@@ -74,16 +80,8 @@ public class Question extends com.Question {
 				return LangUtil.populate(questions[12],c.getList());
 			}else if(chance == 5)
 			{
-				int newChance = Util.getRandomNumberInRange(1,3);
-				if(newChance == 1)
-				{
-					return questions[13] + "only odd digits?";
-				}else if(newChance == 2)
-				{
-					return questions[13] + "only even digits?";
-				}else{
-					return questions[13] + "digits with the same parity?";
-				}
+				int newChance = ((Int) c.getList().get(0)).getValue();
+				return questions[13] + hs.get(newChance);
 			}
 		}
 		else {

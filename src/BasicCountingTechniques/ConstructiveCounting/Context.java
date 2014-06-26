@@ -142,7 +142,19 @@ public class Context extends com.Context {
 			answer = (length/3 * 4) + (5*(length - length/2)) * 3;
 		}else
 		{
-			
+			int secondChance = Util.getRandomNumberInRange(1,3);
+			list.add(new Int(secondChance));
+			int digits = Util.getRandomNumberInRange(3,5);
+			if(secondChance == 1)
+			{
+				
+				answer = (int) Math.pow(5, digits);
+			}else if(secondChance == 2){
+				answer = (int) Math.pow(4, digits);
+			}else if(secondChance == 3)
+			{
+				answer = (int) ( Math.pow(5,digits) + Math.pow(4,digits));
+			}
 		}
 		ans = new Int(answer);
 	}
