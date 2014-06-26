@@ -319,8 +319,50 @@ public class Context extends com.Context {
 	
 	private void gen7()
 	{
-		
+		chance = Util.getRandomNumberInRange(1, 13);
+		if(chance == 1)
+		{
+			
+		}else if(chance == 2)
+		{
+			
+		}else if(chance == 3)
+		{
+			
+		}else if(chance == 4)
+		{
+			
+		}else if(chance == 5)
+		{
+			
+		}else if(chance == 6)
+		{
+			
+		}else if(chance == 7)
+		{
+			
+		}else if(chance == 8)
+		{
+			
+		}else if(chance == 9)
+		{
+			
+		}else if(chance == 10)
+		{
+			
+		}else if(chance == 11)
+		{
+			
+		}else if(chance == 12)
+		{
+			
+		}else if(chance == 13)
+		{
+			
+		}
 	}
+	
+	
 
 	public int chance() {
 		return chance;
