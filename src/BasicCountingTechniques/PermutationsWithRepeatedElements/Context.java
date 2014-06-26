@@ -59,10 +59,14 @@ public class Context extends com.Context {
 
 	private void gen4() 
 	{
-		int totalNum = Util.getRandomNumberInRange(5, 10);
+		int totalNum = Util.getRandomNumberInRange(5, 8);
 		int duplicates = Util.getRandomNumberInRange(2, 4);
 		
+		list.add(new Int(totalNum));
+		list.add(new Int(duplicates));
 		
+		int answer = Util.perm(totalNum, totalNum)/Util.factorial(duplicates);
+		ans = new Int(answer);
 	}
 	
 	private int anagramhelper(String s) 
