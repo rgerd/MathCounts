@@ -47,9 +47,9 @@ public class Context extends com.Context {
 	private void gen2() 
 	{
 		
-		int x=Util.getRandomNumberInRange(3, 4);
-		int x2=Util.getRandomNumberInRange(3, 5);
-		int x3=Util.getRandomNumberInRange(3, 5);
+		int x=Util.getRandomNumberInRange(3, 6);
+		int x2=Util.getRandomNumberInRange(3, 6);
+		int x3=Util.getRandomNumberInRange(3, 6);
 		int n=x+x2+x3;
 		list.add(new Int(n));
 		list.add(new Int(x));
@@ -66,7 +66,16 @@ public class Context extends com.Context {
 
 	private void gen3()
 	{
-		
+		int chance=Util.getRandomNumberInRange(1, 4);
+		int r=Util.getRandomNumberInRange(20, 27);
+		list.add(new Int(r));
+		int answer=r;
+	answer*=r-1;
+	answer*=r-2;
+	int remove=r-2;
+	remove*=6;
+	answer-=remove;
+	ans=new Int(answer);
 
 	}
 
