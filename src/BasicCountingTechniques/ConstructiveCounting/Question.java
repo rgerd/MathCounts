@@ -13,18 +13,17 @@ public class Question extends com.Question {
 	questions[5] = "How many 3 digit numbers have the property that the first digit is at least twice the second digit?";
 	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
 	questions[7] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, x1, x2, and x3 cannot both be odd or both be even.)";
-	questions[8] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even? (Parity means “odd” or “even”, so for example, x1, x2 and x3 cannot both be odd or both be even.)";
-	questions[9] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are odd? (Parity means “odd” or “even”, so for example, x1, x2 and x3 cannot both be odd or both be even.)";
-
+	questions[8] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are odd?";
+	questions[9] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even?";
+	questions[10] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can we form such that numbers follow the pattern of two odd and one even?";
 	}
 	private static final String[] places = {"1st","2nd","3rd"};
 	
 	public String getQ(com.Context _c) {
 		Context c = (Context) _c;
-
+		int chance = c.getChance();
 		if(c.getType() == 1)
 		{
-			int chance = c.getChance();
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[0], c.getList());
@@ -42,7 +41,6 @@ public class Question extends com.Question {
 			return LangUtil.populate(questions[4], c.getList());
 		}else if(c.getType() == 5)
 		{
-			int chance = c.getChance();
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[5],c.getList());
@@ -52,7 +50,6 @@ public class Question extends com.Question {
 			}
 		}else if(c.getType() ==  6)
 		{
-			int chance = 1;
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[7], c.getList());
@@ -61,8 +58,13 @@ public class Question extends com.Question {
 			}else if(chance == 3)
 			{
 				return LangUtil.populate(questions[9],c.getList());
+			}else if(chance == 4)
+			{
+				return LangUtil.populate(questions[10],c.getList());
 			}
 		}
+		System.out.println("here");
+
 		return null;
 	}
 	

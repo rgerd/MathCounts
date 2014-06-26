@@ -1,6 +1,7 @@
 package BasicCountingTechniques.ConstructiveCounting;
 
 import java.util.ArrayList;
+
 import util.Number;
 import util.*;
 
@@ -109,11 +110,12 @@ public class Context extends com.Context {
 		}
 	}
 	
-	private void gen6(){
-		int length = Util.getRandomNumberInRange(5,9);
+	private void gen6()
+	{
+		int length = Util.getRandomNumberInRange(4,7);
 		int temp = length;
 		int answer = 0;
-		int chance = 1;
+		int chance = Util.getRandomNumberInRange(1,4);
 		list.add(new Int(length));
 		if(chance == 1)
 		{
@@ -128,7 +130,16 @@ public class Context extends com.Context {
 			}
 		}else if(chance == 2)
 		{
-			
+			list.add(new Int(length));
+			answer = (int)Math.pow(5, length);
+		}else if(chance == 3)
+		{
+			list.add(new Int(length));
+			answer = (int)Math.pow(4,length);
+		}else if(chance == 4)
+		{
+			list.add(new Int(length));
+			answer = (length/3 * 4) + (5*(length - length/2)) * 3;
 		}
 		ans = new Int(answer);
 	}
