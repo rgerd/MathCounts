@@ -84,15 +84,6 @@ public class Question extends com.Question {
 			}
 		}
 		else {
-			//section 7 dear god what have I done
-			int length = Util.getRandomNumberInRange(50, 100);
-			for(int i = 1; i < (length/i); i++)
-			{
-				for(int a = length; a < (length/i); a++)
-				{
-					
-				}
-			}
 			
 		}
 		return null;

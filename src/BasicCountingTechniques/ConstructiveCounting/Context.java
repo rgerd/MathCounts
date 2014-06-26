@@ -158,6 +158,20 @@ public class Context extends com.Context {
 		}
 		ans = new Int(answer);
 	}
+	
+	private void gen7()
+	{
+		int length = Util.getRandomNumberInRange(50, 100);
+		int combos = 0;
+		for(int i = 1; i < (length/i); i++)
+		{
+			for(int a = length; a > (i * (i+1)); a--)
+			{
+				combos += a/i -(i+1);
+			}
+		}
+		ans = new Int(combos);
+	}
 	public int getChance()
 	{
 		return chance;
