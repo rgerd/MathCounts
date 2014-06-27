@@ -15,8 +15,8 @@ public class Question extends com.Question {
 	questions[2] = "How many sequences, x1, x2, x3, … , x[num_2] can be formed in which all the xi integers greater than [num_0] and less than [num_1], and no two adjacent xi are equal?";
 	questions[3] = "In how many ways can we choose a group of 3 different numbers from the group 1, 2, 3, … , [num_0] such that one number is the average of the other two? (The order in which we choose the numbers does not matter.)";
 	questions[4] = "How many license plates can be formed if every license plate has [num_0] different letters followed by [num_1] different digits?";
-	questions[5] = "How many 3 digit numbers have the property that the first digit is at least twice the second digit?";
-	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
+	questions[5] = "How many 3 digit numbers have the property that the [num_0] digit is at least twice the [num_1] digit?";
+	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the [num_0] digit and the [num_1] digit equals the [num_2] digit?";
 	questions[7] = "How many 4 digit numbers have the second digit even and the fourth digit at least twice the second digit?";
 	questions[8] = "How many 4 digit number have the property that the last digit is equal to the sum of the first 2 digits?";
 	questions[9] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, x1, x2, and x3 cannot both be odd or both be even.)";
@@ -24,6 +24,7 @@ public class Question extends com.Question {
 	questions[11] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even?";
 	questions[12] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can we form such that numbers follow the pattern of two odd and one even?";
 	questions[13] = "How many 4-digit numbers have only ";
+	questions[14] = "In how many ways can we pick 3 different numbers out of the group 1, 2, 3, … [num_0] such that the largest number is larger than the product of the two smaller ones? (The other in which we choose does not matter.)";
 	hs.put(1, "only even digits?");
 	hs.put(2, "only even digits?");
 	hs.put(3, "digits with the same parity?");
@@ -56,6 +57,7 @@ public class Question extends com.Question {
 		}
 		else if(c.getType() == 5)
 		{
+
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[5],c.getList());
@@ -63,6 +65,8 @@ public class Question extends com.Question {
 			{
 				return LangUtil.populate(questions[6],c.getList());
 			}
+			System.out.println("chance: " + chance);
+
 		}
 		else if(c.getType() ==  6)
 		{
@@ -84,7 +88,7 @@ public class Question extends com.Question {
 			}
 		}
 		else {
-			
+			return LangUtil.populate(questions[14],c.getList());
 		}
 		return null;
 

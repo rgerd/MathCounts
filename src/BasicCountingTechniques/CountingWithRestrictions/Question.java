@@ -38,6 +38,34 @@ public class Question extends com.Question {
 			String st="Club has [num_1] boys and [num_2] girls. How many ways to choose if President and Vice president must be of different gender?";
 			return LangUtil.populate(st, c.getList());
 			}
+			else if(c.chance()==4)
+			{
+			String st="How many 3-letter words can be formed from the standard 26-letter alphabet, if the first letter must be a vowel?";
+			return LangUtil.populate(st, c.getList());
+			}
+			
+		}	
+		else if(c.getType() == 4)
+		{
+		
+			
+			String st="Our math club has [num_0] members and 3 officers: President, Vice President, and Treasurer. However, one member, [names_0], has a crush another member, [names_1]. How many ways can we fill the offices if [names_0] refuses to serve as an officer if [names_1] is not an officer? [names_1] is unaware of [names_0]'s affections, and is perfectly happy to serve even if [names_0] does not.";
+			return LangUtil.populate(st, c.getList());
+		
+			
+		}	
+		else if(c.getType() == 5)
+		{
+		
+			if(c.chance()==1)
+			{
+			String st="Our math club has [num_0] members and 3 officers: President, Vice President, and Treasurer. However, one member, [names_0], has a crush another member, [names_1]. How many ways can we fill the offices if [names_0] refuses to serve as an officer if [names_1] is not an officer? [names_1] is unaware of [names_0]'s affections, and is perfectly happy to serve even if [names_0] does not.";
+			return LangUtil.populate(st, c.getList());
+			}
+			if(c.chance()==2)
+			{}
+			if(c.chance()==3)
+			{}
 			
 		}	
 		return null;

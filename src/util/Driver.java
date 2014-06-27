@@ -10,7 +10,7 @@ public class Driver {
 		ArrayList<Number> nums = new ArrayList<Number>();
 		nums.add(new Int(4));
 		System.out.println(a + " * " + b + " = " + a.mult(b));*/
-	System.out.println(Util.perm(8, 1));
+	
 
 		
 	}

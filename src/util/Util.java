@@ -99,8 +99,14 @@ public class Util {
 
 	int b=factorial(bot)*factorial(top-bot);
 	
+<<<<<<< HEAD
 	int ans = j/b;
 	return ans;
+=======
+	
+	j/=b;
+	return j;
+>>>>>>> FETCH_HEAD
 	
 	}
 	
