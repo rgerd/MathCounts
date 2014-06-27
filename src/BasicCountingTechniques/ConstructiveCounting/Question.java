@@ -24,6 +24,7 @@ public class Question extends com.Question {
 	questions[11] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that all numbers are even?";
 	questions[12] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can we form such that numbers follow the pattern of two odd and one even?";
 	questions[13] = "How many 4-digit numbers have only ";
+	questions[14] = "In how many ways can we pick 3 different numbers out of the group 1, 2, 3, … [num_0] such that the largest number is larger than the product of the two smaller ones? (The other in which we choose does not matter.)";
 	hs.put(1, "only even digits?");
 	hs.put(2, "only even digits?");
 	hs.put(3, "digits with the same parity?");
@@ -84,7 +85,7 @@ public class Question extends com.Question {
 			}
 		}
 		else {
-			
+			return LangUtil.populate(questions[14],c.getList());
 		}
 		return null;
 

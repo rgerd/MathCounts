@@ -103,11 +103,11 @@ public class Context extends com.Context {
 		{
 			int digit1 = Util.getRandomNumberInRange(1,3);
 			int digit2 = Util.getRandomNumberInRange(1,3);
-			
-			
-		}else if(chance == 2)
-		{
+			if(digit1 == 2)
+			{}
 		}
+			
+		
 	}
 	
 	private void gen6()
@@ -167,9 +167,10 @@ public class Context extends com.Context {
 		{
 			for(int a = length; a > (i * (i+1)); a--)
 			{
-				combos += a/i -(i+1);
+				combos += Math.ceil(((double)a/(double)i)) -(i+1);
 			}
 		}
+		list.add(new Int(length));
 		ans = new Int(combos);
 	}
 	public int getChance()
