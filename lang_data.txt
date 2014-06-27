@@ -418,3 +418,33 @@
 	WABBIT
 	YAHOO
 </longwords>
+
+<sport>
+	volleyball
+	tennis
+	basketball
+	ping-pong
+	soccer
+	curling
+	fuseball
+	chess
+	league-of-legends
+	bowling
+	starcraft
+	swimming
+	diving
+	gymnastics
+	skiing
+	skateboarding
+</sport>
+
+<club>
+	math
+	science
+	recycling
+	chess
+	my-little-pony
+	harry-potter
+	robotics
+	key
+</club>
