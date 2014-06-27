@@ -16,7 +16,7 @@ public class Question extends com.Question {
 	questions[3] = "In how many ways can we choose a group of 3 different numbers from the group 1, 2, 3, … , [num_0] such that one number is the average of the other two? (The order in which we choose the numbers does not matter.)";
 	questions[4] = "How many license plates can be formed if every license plate has [num_0] different letters followed by [num_1] different digits?";
 	questions[5] = "How many 3 digit numbers have the property that the [num_0] digit is at least twice the [num_1] digit?";
-	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the hundreds digit and the tens digit equals the units digit?";
+	questions[6] = "How many positive, even 3-digit numbers exist such that the sum of the [num_0] digit and the [num_1] digit equals the [num_2] digit?";
 	questions[7] = "How many 4 digit numbers have the second digit even and the fourth digit at least twice the second digit?";
 	questions[8] = "How many 4 digit number have the property that the last digit is equal to the sum of the first 2 digits?";
 	questions[9] = "How many sequences of [num_0] digits x1, x2, x3, … , x[num_0] can be formed such that no two adjacent have the same parity? (Parity means “odd” or “even”, so for example, x1, x2, and x3 cannot both be odd or both be even.)";
@@ -57,9 +57,7 @@ public class Question extends com.Question {
 		}
 		else if(c.getType() == 5)
 		{
-			hs.put(0, "third");
-			hs.put(1, "second");
-			hs.put(2, "first");
+
 			if(chance == 1)
 			{
 				return LangUtil.populate(questions[5],c.getList());
@@ -67,6 +65,8 @@ public class Question extends com.Question {
 			{
 				return LangUtil.populate(questions[6],c.getList());
 			}
+			System.out.println("chance: " + chance);
+
 		}
 		else if(c.getType() ==  6)
 		{
