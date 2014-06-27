@@ -118,21 +118,19 @@ public class Context extends com.Context {
 		alphabet.add("Y");
 		alphabet.add("Z");
 		
-		chance = Util.getRandomNumberInRange(1, 5);
+		chance = Util.getRandomNumberInRange(1, 6);
 		
 		if(chance == 1)
 		{
-			int length1 = Util.getRandomNumberInRange(1,4);
+			int length1 = Util.getRandomNumberInRange(2,4);
 			list.add(new Int(length1));
 			int answer = (int) Math.pow(5, length1);
-			Factorial n = new Factorial(40);
-			int val = n.getValue();
 			answer = (int) (answer - Math.pow(3, length1));
 			ans = new Int(answer);
 		}
 		else if(chance == 2)
 		{
-			int num1 = Util.getRandomNumberInRange(1,4);
+			int num1 = Util.getRandomNumberInRange(2,4);
 			list.add(new Int(num1));
 			int answer = (int) Math.pow(5, num1);
 			answer = (int) (answer - Math.pow(2, num1));
@@ -140,7 +138,7 @@ public class Context extends com.Context {
 		}
 		else if(chance == 3)
 		{
-			int num1 = Util.getRandomNumberInRange(1,4);
+			int num1 = Util.getRandomNumberInRange(2,4);
 			list.add(new Int(num1));
 			int answer = (int) Math.pow(5, num1);
 			answer = (int) (answer - Math.pow(3, num1));
@@ -149,7 +147,7 @@ public class Context extends com.Context {
 		}
 		else if(chance == 4) //one zero
 		{
-			int num1 = Util.getRandomNumberInRange (2, 5);
+			int num1 = Util.getRandomNumberInRange (2, 6);
 			list.add(new Int(num1));
 			int answer = (int) (9*Math.pow(10, num1-1));
 			answer = (int) (answer - Math.pow(9, num1));
@@ -157,7 +155,7 @@ public class Context extends com.Context {
 		}
 		else if(chance == 5) //two zeros
 		{
-			int num1 = Util.getRandomNumberInRange (2, 5);
+			int num1 = Util.getRandomNumberInRange (3, 6);
 			list.add(new Int(num1));
 			int answer = (int) (9*Math.pow(10, num1-1));
 			answer = (int) (answer - Math.pow(9, num1));
@@ -166,11 +164,18 @@ public class Context extends com.Context {
 		}
 		else //three zeros
 		{
-			int num1 = Util.getRandomNumberInRange (2, 5);
+			int num1 = Util.getRandomNumberInRange (4, 6);
 			list.add(new Int(num1));
 			int answer = (int) (9*Math.pow(10, num1-1));
 			answer = (int) (answer - Math.pow(9, num1));
 			answer = (int) (answer - Math.pow(9, num1-1)*(num1-1));
+			
+			Factorial f1 = new Factorial(num1-1);
+			int val = f1.getValue();
+			Factorial f2 = new Factorial(num1-3);
+			int val2 = f2.getValue();
+			
+			answer = answer - (val/(2*val2));
 			ans = new Int(answer);
 		}
 

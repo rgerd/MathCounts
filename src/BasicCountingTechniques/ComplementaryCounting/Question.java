@@ -49,9 +49,14 @@ public class Question extends com.Question {
 				String i = "How many [num_0] digit numbers have at least one zero?";
 				return LangUtil.populate(i, c.getList());
 			}
-			else
+			else if(c.chance() == 5)
 			{
 				String i = "How many [num_0] digit numbers have at least two zeros?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else
+			{
+				String i = "How many [num_0] digit numbers have at least three zeros?";
 				return LangUtil.populate(i, c.getList());
 			}
 			
