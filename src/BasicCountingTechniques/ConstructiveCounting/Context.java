@@ -99,12 +99,27 @@ public class Context extends com.Context {
 	private void gen5()
 	{
 		int chance = Util.getRandomNumberInRange(1,4);
+		int answer = 0;
 		if(chance == 1)
 		{
-			int digit1 = Util.getRandomNumberInRange(1,3);
-			int digit2 = Util.getRandomNumberInRange(1,3);
-			if(digit1 == 2)
-			{}
+			int digit1 = Util.getRandomNumberInRange(0,1);
+			int digit2 = Util.getRandomNumberInRange(digit1+1,2);
+			for(int i = 100; i < 1000; i++)
+			{
+				int temp = i;
+				ArrayList<Integer> digits = new ArrayList<Integer>();
+				while(temp < 0)
+				{
+					digits.add(temp % 10);
+					temp = temp/10;
+				}
+				// digit1 = 1, digit2 = 2
+				// 7,3,1
+				if(digits.get(digit2) > digits.get(digit1) * 2)
+				{
+					answer++;
+				}
+			}
 		}
 			
 		
