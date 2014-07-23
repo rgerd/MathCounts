@@ -5,6 +5,7 @@ package BasicCountingTechniques.ComplementaryCounting;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import util.CustomNumber;
 import util.Factorial;
 import util.Fraction;
 import util.Int;
@@ -132,6 +133,10 @@ public class Context extends com.Context {
 		{
 			int num1 = Util.getRandomNumberInRange(2,4);
 			list.add(new Int(num1));
+			String s = "";
+			list.add(new CustomNumber(s));
+			int num = Util.combo(3, 2);
+			int perm = Util.perm(3,2);
 			int answer = (int) Math.pow(5, num1);
 			answer = (int) (answer - Math.pow(2, num1));
 			ans = new Int(answer);
@@ -169,13 +174,7 @@ public class Context extends com.Context {
 			int answer = (int) (9*Math.pow(10, num1-1));
 			answer = (int) (answer - Math.pow(9, num1));
 			answer = (int) (answer - Math.pow(9, num1-1)*(num1-1));
-			
-			Factorial f1 = new Factorial(num1-1);
-			int val = f1.getValue();
-			Factorial f2 = new Factorial(num1-3);
-			int val2 = f2.getValue();
-			
-			answer = answer - (val/(2*val2));
+			answer = (int) (answer - Math.pow(9, num1-2)*Util.combo(num1-1, 2));
 			ans = new Int(answer);
 		}
 
