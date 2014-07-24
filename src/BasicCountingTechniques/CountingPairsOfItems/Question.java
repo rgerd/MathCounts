@@ -13,6 +13,69 @@ public class Question extends com.Question {
 
 	public String getQ(com.Context _c) {
 		Context c = (Context) _c;
+		if(c.getType() == 3)
+		{
+			if(c.chance() == 4)
+			{
+				String i = "How many diagonals does a convex quadrilateral have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 5)
+			{
+				String i = "How many diagonals does a convex pentagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 6)
+			{
+				String i = "How many diagonals does a convex hexagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 7)
+			{
+				String i = "How many diagonals does a convex heptagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 8)
+			{
+				String i = "How many diagonals does a convex octagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 9)
+			{
+				String i = "How many diagonals does a convex nonagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 10)
+			{
+				String i = "How many diagonals does a convex decagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 11)
+			{
+				String i = "How many diagonals does a convex 11-gon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 12)
+			{
+				String i = "How many diagonals does a convex dodecagon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 13)
+			{
+				String i = "How many diagonals does a convex 13-gon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 14)
+			{
+				String i = "How many diagonals does a convex 14-gon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+			if(c.chance() == 15)
+			{
+				String i = "How many diagonals does a convex 15-gon have?";
+				return LangUtil.populate(i, c.getList());
+			}
+		}
 		if(c.getType() == 6)
 		{
 			if(c.chance() == 1)

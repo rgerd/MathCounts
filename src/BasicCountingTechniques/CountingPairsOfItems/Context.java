@@ -52,7 +52,10 @@ public class Context extends com.Context {
 
 	private void gen3()
 	{
-		
+		chance = Util.getRandomNumberInRange(4, 15);
+		int answer = (chance*(chance-3))/2;
+		ans = new Int(answer);
+
 	}
 
 	private void gen4() 
