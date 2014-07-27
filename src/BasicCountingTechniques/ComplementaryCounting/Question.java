@@ -29,7 +29,7 @@ public class Question extends com.Question {
 		}
 		else if(c.getType() == 3)
 		{
-			if(c.chance() == 1)
+			if(c.chance() == 1) 
 			{
 				String i = "How many [num_0]-letter words with at least one vowel can be constructed from the letters A, B, C, D, E?";
 				return LangUtil.populate(i, c.getList());

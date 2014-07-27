@@ -320,46 +320,36 @@ public class Context extends com.Context {
 	
 	private void gen7()
 	{
-		chance = Util.getRandomNumberInRange(1, 13);
-		if(chance == 1)
+		chance = Util.getRandomNumberInRange(1, 6);
+		if(chance == 1) // quadrilateral
 		{
-			
-		}else if(chance == 2)
+			int answer = 1;
+			ans = new Int(answer);
+		}
+		else if(chance == 2) //pentagon
 		{
-			
-		}else if(chance == 3)
+			int answer = 2;
+			ans = new Int(answer);
+		}
+		else if(chance == 3) //hexagon
 		{
-			
-		}else if(chance == 4)
+			int answer = 3;
+			ans = new Int(answer);
+		}
+		else if(chance == 4) //octagon
 		{
-			
-		}else if(chance == 5)
+			int answer = 5;
+			ans = new Int(answer);
+		}
+		else if(chance == 5) //decagon
 		{
-			
-		}else if(chance == 6)
+			int answer = 8;
+			ans = new Int(answer);
+		}
+		else //dodecagon 
 		{
-			
-		}else if(chance == 7)
-		{
-			
-		}else if(chance == 8)
-		{
-			
-		}else if(chance == 9)
-		{
-			
-		}else if(chance == 10)
-		{
-			
-		}else if(chance == 11)
-		{
-			
-		}else if(chance == 12)
-		{
-			
-		}else if(chance == 13)
-		{
-			
+			int answer = 13;
+			ans = new Int(answer);
 		}
 	}
 	

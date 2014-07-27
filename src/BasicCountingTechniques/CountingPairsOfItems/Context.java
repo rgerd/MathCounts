@@ -54,7 +54,7 @@ public class Context extends com.Context {
 	{
 		chance = Util.getRandomNumberInRange(4, 15);
 		int answer = (chance*(chance-3))/2;
-		ans = new Int(answer);
+		ans = new Int(answer);  
 
 	}
 
@@ -78,7 +78,7 @@ public class Context extends com.Context {
 				totalNumTeams = rand;
 				exit = true;
 			}
-		}
+		}   
 		
 		list.add(new Int(totalNumTeams));
 		list.add(new Int(totalNumTeams/2));

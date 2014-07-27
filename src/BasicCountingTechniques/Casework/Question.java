@@ -45,28 +45,34 @@ public class Question extends com.Question {
 		{
 			if(c.chance() == 1)
 			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a quadrilateral?"; 
-			}else if(c.chance() == 2)
+				String i =  "How many non-congruent triangles can be formed by connecting 3 of the vertices of a quadrilateral?"; 
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 2)
 			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a pentagon?"; 
-			}else if(c.chance() == 3)
+				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a pentagon?"; 
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 3)
 			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a hexagon?"; 
-			}else if(c.chance() == 4)
+				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a hexagon?"; 
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 4)
 			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a heptagon?"; 
-			}else if(c.chance() == 5)
+				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a octagon?"; 
+				return LangUtil.populate(i, c.getList());
+			}
+			else if(c.chance() == 5)
 			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a octagon?"; 
-			}else if(c.chance() == 6)
-			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a enneagon?"; 
-			}else if(c.chance() == 7)
-			{
-				return "How many non-congruent triangles can be formed by connecting 3 of the vertices of a decagon?"; 
+				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a decagon?"; 
+				return LangUtil.populate(i, c.getList());
 			}
 			else
-				return LangUtil.populate(questions[c.getType() - 1], c.getList());
+			{
+				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a dodecagon?"; 
+				return LangUtil.populate(i, c.getList());
+			}
 		}else
 		return LangUtil.populate(questions[c.getType() - 1], c.getList());
 	}
