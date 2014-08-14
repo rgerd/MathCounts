@@ -353,7 +353,41 @@ public class Context extends com.Context {
 		}
 	}
 	
-	
+	private void gen8()
+	{
+		int length1 = Util.getRandomNumberInRange(4, 8);
+		int length2 = Util.getRandomNumberInRange(4, 8);
+		list.add(new Int(length1));
+		list.add(new Int(length2));
+		chance = Util.getRandomNumberInRange(1, 2);
+		
+		if(chance == 1) //square grid, squares
+		{
+			int answer = 0;
+			while(length1 >0 && length2 > 0)
+			{
+				answer += length1*length2;
+				length1--;
+				length2--;
+			}
+			ans = new Int(answer);
+		}
+		if(chance == 2) //square grid, rectangles
+		{
+			int answer = 0; 
+			for(int i = length1; i > 0; i--)
+			{
+				for(int j = length2; j > 1; j-- )
+				{
+					answer += i*j;
+				}
+			}
+			ans = new Int(answer);
+			
+		}
+		
+		
+	}
 
 	public int chance() {
 		return chance;

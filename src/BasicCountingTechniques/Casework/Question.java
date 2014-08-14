@@ -73,7 +73,19 @@ public class Question extends com.Question {
 				String i = "How many non-congruent triangles can be formed by connecting 3 of the vertices of a dodecagon?"; 
 				return LangUtil.populate(i, c.getList());
 			}
+		}else if(c.getType() == 8)
+		{
+			if(c.chance() == 1)
+			{
+				String i = "A [num_0]X[num_1] grid is made up of equally spaced dots. How many squares of any size can be formed by connecting the dots in the grid?";
+				return LangUtil.populate(i, c.getList());
+			}
+			else
+			{
+				String i = "A [num_0]X[num_1] grid is made up of equally spaced dots. How many rectangles of any size can be formed by connecting the dots in the grid?";
+				return LangUtil.populate(i, c.getList());
+			}
 		}else
-		return LangUtil.populate(questions[c.getType() - 1], c.getList());
+			return LangUtil.populate(questions[c.getType() - 1], c.getList());
 	}
 }
